@@ -1,20 +1,68 @@
-from django.shortcuts import render
-from django.http import HttpResponse
-# Create your views here.
-# function based view, easier than class based but I guess less strong?
+from django.shortcuts import render, get_object_or_404, redirect
+from django.http import HttpResponse, HttpResponseRedirect
+from django.contrib import messages
+
+# function based view, easier than class based but less strong
+from .models import Post
+from .forms import PostForm
 
 def post_create(request):
-    return HttpResponse("<h1>Create </h1>")
+    form = PostForm(request.POST or None)
+    if form.is_valid():
+        instance = form.save(commit=False)
+        instance.save()
+        messages.success(request, "Successfully Created")
+        return HttpResponseRedirect(instance.get_absolute_url())
 
-def post_detail(request):
-    return HttpResponse("<h1>Detail </h1>")
+    else:
+        messages.error(request, "Ah ah ah!")
+    context={
+        "form": form,
+    }
+    return render(request, "post_form.html", context)
+
+def post_detail(request, id=None):
+    instance = get_object_or_404(Post, id=id)
+    context_data = {
+        "title": instance.title,
+        "instance":instance,
+    }
+    return render(request, "post_detail.html", context_data)
 
 def post_list(request):
-    return HttpResponse("<h1>List </h1>")
+    queryset = Post.objects.all()
+    if request.user.is_authenticated():
+        context_data = {
+            "object_list":queryset,
+            "title":"Logged in list"
+        }
+    else:
+        context_data = {
+            "title":"List"
+        }
 
-def post_update(request):
-    return HttpResponse("<h1>Update </h1>")
+    return render(request, "index.html", context_data)
 
-def post_delete(request):
-    return HttpResponse("<h1>Delete </h1>")
+def post_update(request, id=None):
+    instance = get_object_or_404(Post, id=id)
+    form = PostForm(request.POST or None, instance=instance)
+    if form.is_valid():
+        instance = form.save(commit=False)
+        instance.save()
+        messages.success(request, "Item Saved")
+        return HttpResponseRedirect(instance.get_absolute_url())
+
+    context_data = {
+        "title": instance.title,
+        "instance":instance,
+        "form": form,
+    }
+    return render(request, "post_form.html", context_data)
+
+def post_delete(request, id=None):
+    instance = get_object_or_404(Post, id=id)
+    instance.delete()
+    messages.success(request, "Successfully deleted")
+
+    return redirect("post:list")
 
