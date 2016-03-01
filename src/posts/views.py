@@ -13,9 +13,6 @@ def post_create(request):
         instance.save()
         messages.success(request, "Successfully Created")
         return HttpResponseRedirect(instance.get_absolute_url())
-
-    else:
-        messages.error(request, "Ah ah ah!")
     context={
         "form": form,
     }
@@ -41,7 +38,7 @@ def post_list(request):
             "title":"List"
         }
 
-    return render(request, "index.html", context_data)
+    return render(request, "post_list.html", context_data)
 
 def post_update(request, id=None):
     instance = get_object_or_404(Post, id=id)
@@ -49,7 +46,7 @@ def post_update(request, id=None):
     if form.is_valid():
         instance = form.save(commit=False)
         instance.save()
-        messages.success(request, "Item Saved")
+        messages.success(request, "Item Saved", extra_tags='html_safe')
         return HttpResponseRedirect(instance.get_absolute_url())
 
     context_data = {
