@@ -13,8 +13,11 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
+from django.conf import settings
 from django.conf.urls import include, url
+from django.conf.urls.static import static
 from django.contrib import admin
+
 #from posts import views
 
 urlpatterns = [
@@ -22,3 +25,6 @@ urlpatterns = [
     #url(r'^posts/$', views.post_home), not good for function type views
     url(r'^posts/', include("posts.urls", namespace= 'posts')) # string with path for function type views
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
