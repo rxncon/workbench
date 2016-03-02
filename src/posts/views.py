@@ -27,14 +27,10 @@ def post_detail(request, id=None):
     return render(request, "post_detail.html", context_data)
 
 def post_list(request):
-    queryset = Post.objects.all()
+    queryset = Post.objects.all().order_by('-updated')
     if request.user.is_authenticated():
         context_data = {
             "object_list":queryset,
-            "title":"Logged in list"
-        }
-    else:
-        context_data = {
             "title":"List"
         }
 
