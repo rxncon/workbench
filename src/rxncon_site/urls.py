@@ -23,7 +23,8 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     #url(r'^posts/$', views.post_home), not good for function type views
-    url(r'^posts/', include("posts.urls", namespace= 'posts')) # string with path for function type views
+    url(r'^posts/', include("posts.urls", namespace= 'posts')),# string with path for function type views
+    url(r'^files/', include("fileTree.urls", namespace= 'fileTree'))
 ]
 
 if settings.DEBUG:
