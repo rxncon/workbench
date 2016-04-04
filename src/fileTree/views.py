@@ -39,11 +39,11 @@ def file_list(request):
 
 def file_detail(request, slug=None):
     # instance = get_object_or_404(File, slug=slug)
-    queryset = File.objects.filter(slug=slug)
-    instance = queryset.latest("updated")
+    project_files = File.objects.filter(slug=slug)
+    instance = project_files.latest("updated")
     context_data = {
+        "project_files":project_files,
         "title": instance.project_name,
-        "file": instance.file,
         "instance":instance,
     }
     return render(request, "file_detail.html", context_data)
