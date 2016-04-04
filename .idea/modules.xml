@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/rxncon.iml" filepath="$PROJECT_DIR$/.idea/rxncon.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/rxncon_django.iml" filepath="$PROJECT_DIR$/.idea/rxncon_django.iml" />
     </modules>
   </component>
 </project>

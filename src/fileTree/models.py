@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.core.urlresolvers import reverse
 from django.db import models
 from django.db.models.signals import pre_save
@@ -12,6 +13,7 @@ def upload_location(instance, filename):
 
 class File(models.Model):
     project_name = models.CharField(max_length=120)
+    loaded=False
     older_version_ids=[]
     slug = models.SlugField(blank=True) # TODO: take blank out when file_upload with automated slug creation is done
     file = models.FileField(upload_to=upload_location, null=False, blank=False)
@@ -27,10 +29,19 @@ class File(models.Model):
     def get_project_slug(self):
         return self.slug
 
+    def get_absolute_url(self):
+        return reverse("fileTree:detail", kwargs={"slug": self.slug, })
 
-    # def get_absolute_url(self):
-    #     #return "/posts/%s/" %(self.id)
-    #     return reverse("fileTree:detail", kwargs={"slug": self.slug})
+    def get_download_url(self):
+        media_url= settings.MEDIA_URL
+        return media_url+"%s" %(self.file)
+
+    def load_file(self):
+        self.loaded=True
+        # hier muss ein return reverse an eine "successfully loaded" seite gemacht werden. in der enstprechnenden
+        # view dann sowas wie:
+        # File.objects.all().update(loaded=False)
+        # File.objects.filter(id=load_id).update(loaded=True) oder so
 
     class Meta:
         ordering = ["-timestamp", "-updated"]

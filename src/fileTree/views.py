@@ -37,6 +37,17 @@ def file_list(request):
 
     return render(request, "file_list.html", context_data)
 
+def file_detail(request, slug=None):
+    # instance = get_object_or_404(File, slug=slug)
+    queryset = File.objects.filter(slug=slug)
+    instance = queryset.latest("updated")
+    context_data = {
+        "title": instance.project_name,
+        "file": instance.file,
+        "instance":instance,
+    }
+    return render(request, "file_detail.html", context_data)
+
 # def get_slug_dir_list(dict_list):
 #     return [dict["slug"] for  dict in dict_list]
 #     # slug_set = set(queryset_list.slug)
