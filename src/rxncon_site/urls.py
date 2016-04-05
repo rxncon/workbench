@@ -17,6 +17,7 @@ from django.conf import settings
 from django.conf.urls import include, url
 from django.conf.urls.static import static
 from django.contrib import admin
+from django.views.generic.base import TemplateView
 
 #from posts import views
 
@@ -24,7 +25,9 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     #url(r'^posts/$', views.post_home), not good for function type views
     url(r'^posts/', include("posts.urls", namespace= 'posts')),# string with path for function type views
-    url(r'^files/', include("fileTree.urls", namespace= 'fileTree'))
+    url(r'^files/', include("fileTree.urls", namespace= 'fileTree')),
+    url(r'^', TemplateView.as_view(template_name='static_pages/index.html'),
+        name='home'),
 ]
 
 if settings.DEBUG:

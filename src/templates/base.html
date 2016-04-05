@@ -8,27 +8,37 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <!--TODO css files must be referenced to locally for the framework to function without internet connection-->
     <link rel="stylesheet" href='{% static "css/base.css" %}' />
     <style>
-        {% block style %} Try Django 1.9 {% endblock %}
+        {% block style %} Rxncon {% endblock %}
     </style>
+
 </head>
 <body>
-{% comment %}
-{% include "messages_display.html" %} {% endcomment %}
+{% comment %} {% include "messages_display.html" %} {% endcomment %}
     <div class="container">
         {% include "base_header.html" %}
         <div class="sidebar1">
             {% comment %}
             {% include "files" %}
             {% endcomment %}
+            <p> Sidebar 1</p>
         </div>
-        {% block content%}
-        {% endblock content %}
-    </div>
+        <div class="content">
+            {% block content%}
+            {% endblock content %}
+        </div>
 
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+          <div class="footer">
+            {% include "static_pages/footer.html" %}
+            <p>Footer</p>
+          </div>
+
+    </div>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
 </body>
 </html>
 

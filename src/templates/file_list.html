@@ -2,21 +2,9 @@
 
 {% block content%}
 
-{% comment %}
-slugList:
-{{ slug_list }}
-</br> </br>
-versions:
-{{ versions }}
-
-<h1>Files</h1>
-{% endcomment %}
 <!--<div class="col-sm-6 col-sm-offset-3">-->
     <h2> {{ title }}</h2>
     <!--<div class="row">-->
-        {% comment %}
-            {% for obj in object_list %}
-        {% endcomment %}
     {% for project in projects %}
        <!--<div class="col-sm-12">-->
 
@@ -25,7 +13,7 @@ versions:
             <h3><b>
             <!--<h3><a href="{{ project.get_absolute_url }}">-->
                     {{ latest_project.project_name }} </b>
-                    </a> <small>{{ latest_project.timestamp|timesince}} ago</small> </h3>
+                <small>{{ latest_project.timestamp|timesince}} ago</small> </h3>
                 <p> <a href="{{ latest_project.get_absolute_url }}" class="btn btn-primary" role="button">View details</a>
                     <a href="{{ latest_project.load_file }}" class="btn btn-primary" role="button">Load project file</a>
                     <a href="{{ latest_project.get_download_url }}" class="btn btn-primary" role="button">Download</a>
@@ -36,22 +24,24 @@ versions:
         <!--</div>-->
       <!--</div>-->
     {% endfor %}
+    {% comment %}
         <!--<div class="pagination">-->
         <!--<span class="step-links">-->
-            <!--{% if object_list.has_previous %}-->
-                <!--<a href="?{{ page_request_var }}={{ object_list.previous_page_number }}">previous</a>-->
+            <!--{% if projects.has_previous %}-->
+                <!--<a href="?{{ page_request_var }}={{ projects.previous_page_number }}">previous</a>-->
             <!--{% endif %}-->
 
             <!--<span class="current">-->
-                <!--Page {{ object_list.number }} of {{ object_list.paginator.num_pages }}.-->
+                <!--Page {{ projects.number }} of {{ projects.paginator.num_pages }}.-->
             <!--</span>-->
 
-            <!--{% if object_list.has_next %}-->
-                <!--<a href="?{{ page_request_var }}={{ object_list.next_page_number }}">next</a>-->
+            <!--{% if projects.has_next %}-->
+                <!--<a href="?{{ page_request_var }}={{ projects.next_page_number }}">next</a>-->
             <!--{% endif %}-->
         <!--</span>-->
         <!--</div>-->
 <!--</div>-->
+    {% endcomment %}
 
 <h2>Archive</h2>
 {%endblock content%}
