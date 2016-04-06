@@ -69,6 +69,12 @@ a:hover, a:active, a:focus { /* Durch diese Gruppe von Selektoren wird bei Verwe
 	background-color: #F4F4F4;
 	padding-bottom: 10px;
 }
+
+
+h3.caption {
+	display: inline-block;
+}
+
 .content {
 	padding: 10px 0;
 	width: 70%;

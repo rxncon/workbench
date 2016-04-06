@@ -1,7 +1,12 @@
 {% extends "base.html" %}
 {% block head_title %} {{ instance.title }} | {{ block.super }}  {% endblock %}
+
+{% block fileTree %}
+
+{% endblock fileTree %}
+
 {% block content %}
-<div class="col-sm-6 col-sm-offset-3">
+<!--<div class="col-sm-6 col-sm-offset-3">-->
 
 <h1> {{ title }} <small>{{instance.timestamp}}</small></h1>
 
@@ -14,5 +19,5 @@
     {% endfor %}
     </ul>
 
-</div>
+<!--</div>-->
 {% endblock content %}
