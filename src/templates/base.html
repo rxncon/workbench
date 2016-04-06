@@ -21,8 +21,78 @@
         {% include "base_header.html" %}
         <div class="sidebar1">
             {% block sidebar1 %}
-                {% block fileTree %}
-                {% endblock fileTree %}
+                <h2> {{ title }}</h2>
+    <!--<div class="row">-->
+    {% for project in projects %}
+       <!--<div class="col-sm-12">-->
+          <div class="caption">
+
+          {% with project|first as latest_project %}
+            <h4 class="caption">
+            <!--<a href="{{ project.get_absolute_url }}">-->
+                {{ latest_project.project_name }}
+            <!--</a>-->
+            </h4>
+                <!--<small>{{ latest_project.timestamp|timesince}} ago</small> </h3>-->
+
+                <!--Big text Buttons: -->
+                <!--<p> <a href="{{ latest_project.get_absolute_url }}" class="btn btn-primary" role="button">View details</a>-->
+                    <!--<a href="{{ latest_project.load_file }}" class="btn btn-primary" role="button">Load project file</a>-->
+                    <!--<a href="{{ latest_project.get_download_url }}" class="btn btn-primary" role="button">Download</a>-->
+                <!--</p>-->
+                <!--<p>-->
+
+              <!--Icon style buttons: -->
+              <div class="btn-group btn-group-sm" role="group">
+                  <a href="{{ latest_project.get_absolute_url }}" class="btn btn-sm" role="button"
+                     title="View details">
+                  <!--<a href="{{ latest_project.get_absolute_url }}" class="btn btn-default" role="button"title="View details">-->
+                      <!-- mit den boxen drum herum die class überall zu btn btn-default aendern -->
+
+                       <span class="glyphicon glyphicon-eye-open" aria-hidden="true"> </span>
+                       <!--Alternatives -->
+                       <!--<span class="glyphicon glyphicon-search" >-->
+                       <!--<span class="glyphicon glyphicon-file" >-->
+                       <!--<span class="glyphicon glyphicon-folder-open" >-->
+                       <!--<span class="" >-->
+                       <!--<span class="" >-->
+                       </span>
+                  </a>
+                  <a href="{{ latest_project.load_file }}" class="btn btn-sm" title="Load file"
+                           role="button">
+                       <span class="glyphicon glyphicon-flash" aria-hidden="true">
+                       <!--Alternatives: -->
+                       <!--<span class="glyphicon glyphicon-road" >-->
+                       <!--<span class="glyphicon glyphicon-upload" >-->
+                       <!--<span class="glyphicon glyphicon-play-circle" >-->
+                       <!--<span class="glyphicon glyphicon-play" >-->
+                       <!--<span class="glyphicon glyphicon-share-alt" >-->
+                       <!--<span class="glyphicon glyphicon-briefcase" >-->
+                       <!--<span class="glyphicon glyphicon-screenshot" >-->
+                       <!--<span class="glyphicon glyphicon-copy" >-->
+                       <!--<span class="" >-->
+                       <!--<span class="" >-->
+                       </span>
+                </a>
+                <a href="{{ latest_project.get_download_url }}" class="btn btn-sm" role="button"
+                   title="Download">
+                   <span class="glyphicon glyphicon-download-alt" aria-hidden="true" >
+                   <!--Alternatives: -->
+                   <!--<span class="glyphicon glyphicon-download" >-->
+                   <!--<span class="glyphicon glyphicon-hdd" >-->
+                   <!--<span class="glyphicon glyphicon-circle-arrow-down" >-->
+                   <!--<span class="glyphicon glyphicon-save" >-->
+                   <!--<span class="" >-->
+                   <!--<span class="" >-->
+                   <!--<span class="" >-->
+                    </span>
+                </a>
+              </div>
+          {% endwith %}
+          </div>
+        <!--</div>-->
+      <!--</div>-->
+    {% endfor %}
             {% endblock sidebar1 %}
         </div>
         <div class="content">

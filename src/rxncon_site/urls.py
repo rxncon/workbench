@@ -19,6 +19,7 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.views.generic.base import TemplateView
 from fileTree import views as fviews
+from . import views
 #from posts import views
 
 urlpatterns = [

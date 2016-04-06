@@ -71,7 +71,7 @@ a:hover, a:active, a:focus { /* Durch diese Gruppe von Selektoren wird bei Verwe
 }
 
 
-h3.caption {
+h4.caption {
 	display: inline-block;
 }
 
