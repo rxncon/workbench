@@ -20,10 +20,10 @@
     <div class="container">
         {% include "base_header.html" %}
         <div class="sidebar1">
-            {% comment %}
-            {% include "files" %}
-            {% endcomment %}
-            <p> Sidebar 1</p>
+            {% block sidebar1 %}
+                {% block fileTree %}
+                {% endblock fileTree %}
+            {% endblock sidebar1 %}
         </div>
         <div class="content">
             {% block content%}

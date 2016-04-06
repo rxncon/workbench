@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block content%}
+{% block fileTree%}
 
 <!--<div class="col-sm-6 col-sm-offset-3">-->
     <h2> {{ title }}</h2>
@@ -44,6 +44,12 @@
     {% endcomment %}
 
 <h2>Archive</h2>
+{%endblock fileTree%}
+
+{% block content%}
+
+{% include "static_pages/index.html" %}
+
 {%endblock content%}
 
 
