@@ -1,13 +1,19 @@
 from fileTree.models import File
 
-
 # http://stackoverflow.com/questions/28533854/provide-extra-context-to-all-views
 
 def file_list(request):
     # queryset_list = File.objects.all()
-    queryset_list = File.objects.all().order_by("slug", "-updated")
-    slug_list = list(set([File.get_project_slug() for File in queryset_list])) # list(set()) to get unique values
-    projects= [queryset_list.filter(slug=slug).order_by("-updated") for slug in slug_list]
+    queryset_list = File.objects.all().order_by("-updated")
+
+    slug_list = []
+    for file in queryset_list:
+        # get unique slug list in correct order
+        current_slug= file.get_project_slug()
+        if not current_slug in slug_list:
+            slug_list.append(current_slug)
+
+    files= [queryset_list.filter(slug=slug).order_by("-updated") for slug in slug_list]
 
 
 
@@ -28,6 +34,6 @@ def file_list(request):
         "object_list":queryset_list,
         "title":"Projects",
         "slug_list": slug_list,
-        "projects": projects,
+        "files": files,
         # "page_request_var":page_request_var,
     }

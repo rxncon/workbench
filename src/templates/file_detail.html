@@ -1,23 +1,49 @@
 {% extends "base.html" %}
 {% block head_title %} {{ instance.title }} | {{ block.super }}  {% endblock %}
 
-{% block fileTree %}
-
-{% endblock fileTree %}
 
 {% block content %}
 <!--<div class="col-sm-6 col-sm-offset-3">-->
-
-<h1> {{ title }} <small>{{instance.timestamp}}</small></h1>
-
-{{instance.comment|linebreaks}} <br/>
+<div class="detail">
+    <h2> {{ title }} </br> <small>{{instance.timestamp}}</small></h2>
+    <h5>Filename: </h5>
+    <p>{{ instance.get_filename }}</p>
 
     <h5>Versions:</h5>
+        <ul>
+        {% for file in project_files %}
+            <li> {{file.timestamp}}
+                <div class="btn-group btn-group-sm" role="group">
+                    <a href="{{ file.get_absolute_url }}" class="btn btn-sm" role="button" title="View details">
+                        <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+                    </a>
+                    <a href="{{ file.load_file }}" class="btn btn-sm" title="Load file" role="button">
+                        <span class="glyphicon glyphicon-flash" aria-hidden="true"></span>
+                    </a>
+                    <a href="{{ file.get_download_url }}" class="btn btn-sm" role="button" title="Download">
+                        <span class="glyphicon glyphicon-download-alt" aria-hidden="true" ></span>
+                    </a>
+                    <a href="{{ file.delete }}" class="btn btn-sm" role="button" title="Delete File">
+                        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                    </a>
+                </div>
+            </li>
+        {% endfor %}
+        </ul>
+
+
+    <h5>Comment:</h5>
+    <p>{{instance.comment|linebreaks}}</p>
+
+    <h5>Infos:</h5>
     <ul>
-    {% for file in project %}
-        <li> {{file.timestamp}} </li>
-    {% endfor %}
+        <li>Number of Reactions: {{ nr_reactions }}</li>
+
+
     </ul>
+
+
+</div>
 
 <!--</div>-->
 {% endblock content %}

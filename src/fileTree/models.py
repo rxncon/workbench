@@ -4,7 +4,6 @@ from django.db import models
 from django.db.models.signals import pre_save
 from django.utils.text import slugify
 
-import os
 
 
 def upload_location(instance, filename):
@@ -26,6 +25,9 @@ class File(models.Model):
     def __unicode__(self):
         return self.file.name
 
+    def get_filename(self):
+        return str(self.file.name).split("/")[-1]
+
     def get_project_slug(self):
         return self.slug
 
@@ -35,6 +37,16 @@ class File(models.Model):
     def get_download_url(self):
         media_url= settings.MEDIA_URL
         return media_url+"%s" %(self.file)
+
+    def get_absolute_path(self):
+        media_root=settings.MEDIA_ROOT
+        return media_root+"/%s" %(self.file)
+
+    def delete(self):
+        pass
+
+    def delete_whole_project(self):
+        pass
 
     def load_file(self):
         self.loaded=True

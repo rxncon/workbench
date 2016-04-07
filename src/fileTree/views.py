@@ -2,11 +2,13 @@ from django.contrib import messages
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404, redirect
+import rxncon.input.excel_book.excel_book as rxncon_excel
+
 
 from .models import File
 #from .forms import FileForm
 
-# def file_list(request):  moved to context processor
+def file_list(request):  #moved to context processor
 #     # queryset_list = File.objects.all()
 #     queryset_list = File.objects.all().order_by("slug")
 #     slug_list = list(set([File.get_project_slug() for File in queryset_list])) # list(set()) to get unique values
@@ -36,15 +38,21 @@ from .models import File
 #     }
 #
 #     return render(request, "file_list.html", context_data)
+    pass
 
 def file_detail(request, slug=None):
     # instance = get_object_or_404(File, slug=slug)
     project_files = File.objects.filter(slug=slug)
     instance = project_files.latest("updated")
+    book= rxncon_excel.ExcelBook(instance.get_absolute_path())
+    rxncon_system = book.rxncon_system
+
     context_data = {
         "project_files":project_files,
         "title": instance.project_name,
         "instance":instance,
+        "book":book,
+        "nr_reactions":len(rxncon_system.reactions)
     }
     return render(request, "file_detail.html", context_data)
 

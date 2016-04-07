@@ -81,6 +81,15 @@ h4.caption {
 	float: left;
 }
 
+.detail ul {
+	/*text-indent: 20px;*/
+	list-style-type: none;
+}
+
+.detail p {
+	text-indent: 25px;
+}
+
 /* ~~ Dieser gruppierte Selektor gibt die Listen im .content-Bereich an. ~~ */
 .content ul, .content ol {
 	padding: 0 15px 15px 40px; /* Diese Auffüllung setzt die rechte Auffüllung in der obigen Regel für Überschriften und Absätze fort. Die Auffüllung wurde unten für den Abstand zwischen anderen Elementen in den Listen und links für den Einzug platziert. Sie können die Werte nach Bedarf ändern. */

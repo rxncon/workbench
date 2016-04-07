@@ -2,13 +2,13 @@
     <!--<h2> {{ title }}</h2>-->
     <h2>Projects</h2>
     <!--<div class="row">-->
-    {% for project in projects %}
+    {% for file in files %}
        <!--<div class="col-sm-12">-->
           <div class="caption">
-          {% with project|first as latest_project %}
+          {% with file|first as latest_file %}
             <h3 class="caption">
             <!--<a href="{{ project.get_absolute_url }}">-->
-                {{ latest_project.project_name }}
+                {{ latest_file.project_name }}
             <!--</a>-->
             </h3>
                 <!--<small>{{ latest_project.timestamp|timesince}} ago</small> </h3>-->
@@ -22,11 +22,10 @@
 
               <!--Icon style buttons: -->
               <div class="btn-group btn-group-sm" role="group">
-                  <a href="{{ latest_project.get_absolute_url }}" class="btn btn-sm" role="button" title="View details">
+                  <a href="{{ latest_file.get_absolute_url }}" class="btn btn-sm" role="button" title="View details">
                   <!--<a href="{{ latest_project.get_absolute_url }}" class="btn btn-default" role="button"title="View details">-->
                       <!-- mit den boxen drum herum die class überall zu btn btn-default aendern -->
-
-                       <span class="glyphicon glyphicon-eye-open" aria-hidden="true"> </span>
+                       <span class="glyphicon glyphicon-eye-open" aria-hidden="true">
                        <!--Alternatives -->
                        <!--<span class="glyphicon glyphicon-search" >-->
                        <!--<span class="glyphicon glyphicon-file" >-->
@@ -35,7 +34,7 @@
                        <!--<span class="" >-->
                        </span>
                   </a>
-                  <a href="{{ latest_project.load_file }}" class="btn btn-sm" title="Load file"
+                  <a href="{{ latest_file.load_file }}" class="btn btn-sm" title="Load file"
                            role="button">
                        <span class="glyphicon glyphicon-flash" aria-hidden="true">
                        <!--Alternatives: -->
@@ -51,7 +50,7 @@
                        <!--<span class="" >-->
                        </span>
                 </a>
-                <a href="{{ latest_project.get_download_url }}" class="btn btn-sm" role="button"
+                <a href="{{ latest_file.get_download_url }}" class="btn btn-sm" role="button"
                    title="Download">
                    <span class="glyphicon glyphicon-download-alt" aria-hidden="true" >
                    <!--Alternatives: -->
@@ -64,6 +63,10 @@
                    <!--<span class="" >-->
                     </span>
                 </a>
+                  <a href="{{ latest_file.delete_whole_project }}" class="btn btn-sm" role="button"
+                     title="Delete Project">
+                        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                    </a>
               </div>
           {% endwith %}
           </div>
