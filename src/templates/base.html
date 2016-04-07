@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title> {% block head_title %} Try Django 1.9 {% endblock %} </title>
+    <title> {% block head_title %} Rxncon {% endblock %} </title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <!-- Optional theme -->
@@ -21,8 +21,7 @@
         {% include "base_header.html" %}
         <div class="sidebar1">
             {% block sidebar1 %}
-                {% block fileTree %}
-                {% endblock fileTree %}
+            {% include "file_list.html" %}
             {% endblock sidebar1 %}
         </div>
         <div class="content">
