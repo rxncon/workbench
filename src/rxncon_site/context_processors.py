@@ -5,9 +5,9 @@ from fileTree.models import File
 
 def file_list(request):
     # queryset_list = File.objects.all()
-    queryset_list = File.objects.all().order_by("slug")
+    queryset_list = File.objects.all().order_by("slug", "-updated")
     slug_list = list(set([File.get_project_slug() for File in queryset_list])) # list(set()) to get unique values
-    projects= [queryset_list.filter(slug=slug).order_by("-timestamp") for slug in slug_list]
+    projects= [queryset_list.filter(slug=slug).order_by("-updated") for slug in slug_list]
 
 
 

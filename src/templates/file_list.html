@@ -1,9 +1,6 @@
-{% extends "base.html" %}
-
-{% block fileTree%}
-
 <!--<div class="col-sm-6 col-sm-offset-3">-->
-    <h2> {{ title }}</h2>
+    <!--<h2> {{ title }}</h2>-->
+    <h2>Projects</h2>
     <!--<div class="row">-->
     {% for project in projects %}
        <!--<div class="col-sm-12">-->
@@ -96,13 +93,7 @@
 
 <!--TODO: alles hier drunter los werden damit man file_list.html einfach in der Base includen kann. Dafür eigene view bauen die dann (so wie es sein soll) eine leere url auf eine index view zeigen lässt, die content block hat
  -->
-{%endblock fileTree%}
 
-{% block content%}
-
-{% include "static_pages/index.html" %}
-
-{%endblock content%}
 
 
 
