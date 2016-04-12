@@ -6,7 +6,7 @@ import rxncon.input.excel_book.excel_book as rxncon_excel
 
 
 from .models import File
-#from .forms import FileForm
+from .forms import FileForm
 
 def file_list(request):  #moved to context processor
 #     # queryset_list = File.objects.all()
@@ -60,3 +60,15 @@ def file_detail(request, slug=None):
 #     return [dict["slug"] for  dict in dict_list]
 #     # slug_set = set(queryset_list.slug)
 #     # return list(slug_set)
+
+def file_upload(request):
+    form = FileForm(request.POST or None, request.FILES or None)
+    if form.is_valid():
+        instance = form.save(commit=False)
+        instance.save()
+        messages.success(request, "Successfully Created")
+        return HttpResponseRedirect(instance.get_absolute_url())
+    context={
+        "form": form,
+    }
+    return render(request, "file_form.html", context)
