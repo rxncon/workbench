@@ -44,15 +44,15 @@ def file_detail(request, slug=None):
     # instance = get_object_or_404(File, slug=slug)
     project_files = File.objects.filter(slug=slug)
     instance = project_files.latest("updated")
-    book= rxncon_excel.ExcelBook(instance.get_absolute_path())
+    #book= rxncon_excel.ExcelBook(instance.get_absolute_path())
     #rxncon_system = book.rxncon_system
 
     context_data = {
         "project_files":project_files,
         "title": instance.project_name,
         "instance":instance,
-        "book":book,
-        "nr_reactions":len(rxncon_system.reactions)
+        #"book":book,
+        #"nr_reactions":len(rxncon_system.reactions)
     }
     return render(request, "file_detail.html", context_data)
 
