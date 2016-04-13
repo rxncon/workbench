@@ -44,15 +44,15 @@ def file_detail(request, slug=None):
     # instance = get_object_or_404(File, slug=slug)
     project_files = File.objects.filter(slug=slug)
     instance = project_files.latest("updated")
-    #book= rxncon_excel.ExcelBook(instance.get_absolute_path())
-    #rxncon_system = book.rxncon_system
+    # book= rxncon_excel.ExcelBookWithReactionType(instance.get_absolute_path())
+    # rxncon_system = book.rxncon_system
 
     context_data = {
         "project_files":project_files,
         "title": instance.project_name,
         "instance":instance,
-        #"book":book,
-        #"nr_reactions":len(rxncon_system.reactions),
+        # "book":book,
+        # "nr_reactions":len(rxncon_system.reactions),
         "nr_reactions":"currently deactivated in fileTree/views.py",
     }
     return render(request, "file_detail.html", context_data)
@@ -62,33 +62,14 @@ def file_detail(request, slug=None):
 #     # slug_set = set(queryset_list.slug)
 #     # return list(slug_set)
 
-def file_upload(request):
-    form = FileForm(request.POST or None, request.FILES or None)
-    if request.method == 'POST':
-        try:
-            project_name = request.POST['add_file']
-            form = FileForm(initial={'project_name':project_name })
-        except KeyError:
-            print('Project name could not be transferred via POST')
-
-    if form.is_valid():
-        instance = form.save(commit=False)
-        instance.save()
-        messages.success(request, "Successfully Created")
-        return HttpResponseRedirect(instance.get_absolute_url())
-    context={
-        "form": form,
-    }
-    return render(request, "file_form.html", context)
-
-
-# def file_upload(request, project_name= None):
+# def file_upload(request):
 #     form = FileForm(request.POST or None, request.FILES or None)
-#     if project_name != None:
+#     if request.method == 'POST':
 #         try:
+#             project_name = request.POST['add_file']
 #             form = FileForm(initial={'project_name':project_name })
 #         except KeyError:
-#             pass
+#             print('Project name could not be transferred via POST')
 #
 #     if form.is_valid():
 #         instance = form.save(commit=False)
@@ -99,3 +80,24 @@ def file_upload(request):
 #         "form": form,
 #     }
 #     return render(request, "file_form.html", context)
+
+
+def file_upload(request, slug= None):
+    form = FileForm(request.POST or None, request.FILES or None)
+    if slug != None:
+        try:
+            file= File.objects.filter(slug=slug)[0]
+            project_name= file.project_name
+            form = FileForm(initial={'project_name':project_name })
+        except KeyError:
+            pass
+
+    if form.is_valid():
+        instance = form.save(commit=False)
+        instance.save()
+        messages.success(request, "Successfully Created")
+        return HttpResponseRedirect(instance.get_absolute_url())
+    context={
+        "form": form,
+    }
+    return render(request, "file_form.html", context)

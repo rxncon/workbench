@@ -4,16 +4,16 @@ from fileTree.models import File
 
 def file_list(request):
     # queryset_list = File.objects.all()
-    queryset_list = File.objects.all().order_by("-updated")
+    queryset_list = File.objects.all().order_by("-updated") # all files
 
-    slug_list = []
+    slug_list = []  # unique slugs in correct order
     for file in queryset_list:
         # get unique slug list in correct order
         current_slug= file.get_project_slug()
         if not current_slug in slug_list:
             slug_list.append(current_slug)
 
-    files= [queryset_list.filter(slug=slug).order_by("-updated") for slug in slug_list]
+    projects= [queryset_list.filter(slug=slug).order_by("-updated") for slug in slug_list] # list of lists of files
 
 
 
@@ -34,6 +34,6 @@ def file_list(request):
         "object_list":queryset_list,
         "title":"Projects",
         "slug_list": slug_list,
-        "files": files,
+        "projects": projects,
         # "page_request_var":page_request_var,
     }

@@ -2,6 +2,7 @@ from django.conf import settings
 from django.core.urlresolvers import reverse
 from django.db import models
 from django.db.models.signals import pre_save
+from django.shortcuts import render_to_response
 from django.utils.text import slugify
 
 
@@ -34,8 +35,9 @@ class File(models.Model):
     def get_absolute_url(self):
         return reverse("fileTree:detail", kwargs={"slug": self.slug, })
 
-    # def upload_new_version(self):
-    #     return reverse("fileTree:upload", kwargs={"project_name": self.project_name,})
+    def upload_new_version(self):
+        return reverse("fileTree:upload", kwargs={"slug": self.slug,})
+        # return render_to_response('file_form.html', {"project_name": self.project_name})
 
     def get_download_url(self):
         media_url= settings.MEDIA_URL

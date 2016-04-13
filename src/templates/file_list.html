@@ -4,10 +4,10 @@
     <hr>
     <h2>Projects</h2>
     <!--<div class="row">-->
-    {% for file in files %}
+    {% for project in projects %}
        <!--<div class="col-sm-12">-->
           <div class="caption">
-          {% with file|first as latest_file %}
+          {% with project|first as latest_file %}
             <h3 class="caption">
             <!--<a href="{{ project.get_absolute_url }}">-->
                 {{ latest_file.project_name }}
@@ -73,13 +73,20 @@
                      <!--title="Add file to project">-->
                         <!--<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>-->
                   <!--</a>-->
-                  <form id="myform" method="post" action="/files/upload/">
-                    {% csrf_token %}
-                    <input type="hidden" name="add_file" value="{{ latest_file.project_name }}" />
-                        <a href="/files/upload/" onclick="document.forms[0].submit();return false;">
-                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-                        </a>
-                  </form>
+                  <a href="{{ latest_file.upload_new_version }}" class="btn btn-sm" role="button"
+                     title="Add file to project">
+
+                  <!--<a href="/files/upload/{{ latest_file.get_project_slug }}" class="btn btn-sm" role="button"-->
+
+                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                  </a>
+                  <!--<form method="post" action="/files/upload/">-->
+                    <!--{% csrf_token %}-->
+                    <!--<input type="hidden" name="add_file" value="{{ latest_file.project_name }}" />-->
+                        <!--<a href="" onclick="document.forms[0].submit();return false;">-->
+                            <!--<span class="glyphicon glyphicon-plus" aria-hidden="true">{{ latest_file.project_name }}</span>-->
+                        <!--</a>-->
+                  <!--</form>-->
 
               </div>
           {% endwith %}
