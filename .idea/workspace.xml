@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< Updated upstream
     <list default="true" id="6d73f247-3698-4ce0-92a5-c35ad1cf3de3" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/myvenv/lib/python3.5/site-packages/easy-install.pth" afterPath="$PROJECT_DIR$/myvenv/lib/python3.5/site-packages/easy-install.pth" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/myvenv/lib/python3.5/site-packages/rxncon.egg-link" afterPath="$PROJECT_DIR$/myvenv/lib/python3.5/site-packages/rxncon.egg-link" />
     </list>
+=======
+    <list default="true" id="6d73f247-3698-4ce0-92a5-c35ad1cf3de3" name="Default" comment="" />
+>>>>>>> Stashed changes
     <ignored path="rxncon.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -56,10 +60,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="file_list.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="file_list.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/templates/file_list.html">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
             <state vertical-scroll-proportion="0.32798165">
+=======
+            <state vertical-scroll-proportion="-10.625">
+>>>>>>> Stashed changes
               <caret line="77" column="74" selection-start-line="77" selection-start-column="74" selection-end-line="77" selection-end-column="74" />
               <folding />
             </state>
@@ -100,10 +108,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/fileTree/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state vertical-scroll-proportion="0.9130435">
               <caret line="64" column="4" selection-start-line="64" selection-start-column="4" selection-end-line="80" selection-end-column="53" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
@@ -918,13 +926,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/fileTree/views.py">
+    <entry file="file://$PROJECT_DIR$/src/templates/file_list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="64" column="4" selection-start-line="64" selection-start-column="4" selection-end-line="80" selection-end-column="53" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="-10.625">
+          <caret line="77" column="74" selection-start-line="77" selection-start-column="74" selection-end-line="77" selection-end-column="74" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -956,11 +962,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/file_list.html">
+    <entry file="file://$PROJECT_DIR$/src/fileTree/views.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state vertical-scroll-proportion="0.32798165">
           <caret line="77" column="74" selection-start-line="77" selection-start-column="74" selection-end-line="77" selection-end-column="74" />
           <folding />
+=======
+        <state vertical-scroll-proportion="0.9130435">
+          <caret line="64" column="4" selection-start-line="64" selection-start-column="4" selection-end-line="80" selection-end-column="53" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
