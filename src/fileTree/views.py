@@ -57,30 +57,6 @@ def file_detail(request, slug=None):
     }
     return render(request, "file_detail.html", context_data)
 
-# def get_slug_dir_list(dict_list):
-#     return [dict["slug"] for  dict in dict_list]
-#     # slug_set = set(queryset_list.slug)
-#     # return list(slug_set)
-
-# def file_upload(request):
-#     form = FileForm(request.POST or None, request.FILES or None)
-#     if request.method == 'POST':
-#         try:
-#             project_name = request.POST['add_file']
-#             form = FileForm(initial={'project_name':project_name })
-#         except KeyError:
-#             print('Project name could not be transferred via POST')
-#
-#     if form.is_valid():
-#         instance = form.save(commit=False)
-#         instance.save()
-#         messages.success(request, "Successfully Created")
-#         return HttpResponseRedirect(instance.get_absolute_url())
-#     context={
-#         "form": form,
-#     }
-#     return render(request, "file_form.html", context)
-
 
 def file_upload(request, slug= None):
     form = FileForm(request.POST or None, request.FILES or None)

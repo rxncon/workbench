@@ -69,24 +69,10 @@
                      title="Delete Project">
                         <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
                   </a>
-                  <!--<a href="{{ latest_file.upload_new_version }}" class="btn btn-sm" role="button"-->
-                     <!--title="Add file to project">-->
-                        <!--<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>-->
-                  <!--</a>-->
                   <a href="{{ latest_file.upload_new_version }}" class="btn btn-sm" role="button"
                      title="Add file to project">
-
-                  <!--<a href="/files/upload/{{ latest_file.get_project_slug }}" class="btn btn-sm" role="button"-->
-
                         <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                   </a>
-                  <!--<form method="post" action="/files/upload/">-->
-                    <!--{% csrf_token %}-->
-                    <!--<input type="hidden" name="add_file" value="{{ latest_file.project_name }}" />-->
-                        <!--<a href="" onclick="document.forms[0].submit();return false;">-->
-                            <!--<span class="glyphicon glyphicon-plus" aria-hidden="true">{{ latest_file.project_name }}</span>-->
-                        <!--</a>-->
-                  <!--</form>-->
 
               </div>
           {% endwith %}

@@ -37,7 +37,6 @@ class File(models.Model):
 
     def upload_new_version(self):
         return reverse("fileTree:upload", kwargs={"slug": self.slug,})
-        # return render_to_response('file_form.html', {"project_name": self.project_name})
 
     def get_download_url(self):
         media_url= settings.MEDIA_URL

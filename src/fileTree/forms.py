@@ -9,6 +9,3 @@ class FileForm(forms.ModelForm):
             "comment",
             "file",
         ]
-        # widgets = {
-        #     'project_name': forms.ModelChoiceField(queryset=File.objects.all(), empty_label="(Nothing)"),
-        # }
