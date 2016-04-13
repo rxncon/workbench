@@ -1,6 +1,6 @@
 <!--<div class="col-sm-6 col-sm-offset-3">-->
     <!--<h2> {{ title }}</h2>-->
-    <a href="/files/upload">Upload new file</a>
+    <p><a href="/files/upload" class="btn btn-primary" role="button">Create new project</a></p>
     <hr>
     <h2>Projects</h2>
     <!--<div class="row">-->
@@ -51,8 +51,8 @@
                        <!--<span class="" >-->
                        <!--<span class="" >-->
                        </span>
-                </a>
-                <a href="{{ latest_file.get_download_url }}" class="btn btn-sm" role="button"
+                  </a>
+                  <a href="{{ latest_file.get_download_url }}" class="btn btn-sm" role="button"
                    title="Download">
                    <span class="glyphicon glyphicon-download-alt" aria-hidden="true" >
                    <!--Alternatives: -->
@@ -64,11 +64,23 @@
                    <!--<span class="" >-->
                    <!--<span class="" >-->
                     </span>
-                </a>
+                  </a>
                   <a href="{{ latest_file.delete_whole_project }}" class="btn btn-sm" role="button"
                      title="Delete Project">
                         <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-                    </a>
+                  </a>
+                  <!--<a href="{{ latest_file.upload_new_version }}" class="btn btn-sm" role="button"-->
+                     <!--title="Add file to project">-->
+                        <!--<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>-->
+                  <!--</a>-->
+                  <form id="myform" method="post" action="/files/upload/">
+                    {% csrf_token %}
+                    <input type="hidden" name="add_file" value="{{ latest_file.project_name }}" />
+                        <a href="/files/upload/" onclick="document.forms[0].submit();return false;">
+                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                        </a>
+                  </form>
+
               </div>
           {% endwith %}
           </div>

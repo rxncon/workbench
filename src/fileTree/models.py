@@ -34,6 +34,9 @@ class File(models.Model):
     def get_absolute_url(self):
         return reverse("fileTree:detail", kwargs={"slug": self.slug, })
 
+    # def upload_new_version(self):
+    #     return reverse("fileTree:upload", kwargs={"project_name": self.project_name,})
+
     def get_download_url(self):
         media_url= settings.MEDIA_URL
         return media_url+"%s" %(self.file)

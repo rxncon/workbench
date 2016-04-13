@@ -63,6 +63,13 @@ def file_detail(request, slug=None):
 
 def file_upload(request):
     form = FileForm(request.POST or None, request.FILES or None)
+    if request.method == 'POST':
+        try:
+            project_name = request.POST['add_file']
+            form = FileForm(initial={'project_name':project_name })
+        except KeyError:
+            print('Project name could not be transferred via POST')
+
     if form.is_valid():
         instance = form.save(commit=False)
         instance.save()
@@ -72,3 +79,22 @@ def file_upload(request):
         "form": form,
     }
     return render(request, "file_form.html", context)
+
+
+# def file_upload(request, project_name= None):
+#     form = FileForm(request.POST or None, request.FILES or None)
+#     if project_name != None:
+#         try:
+#             form = FileForm(initial={'project_name':project_name })
+#         except KeyError:
+#             pass
+#
+#     if form.is_valid():
+#         instance = form.save(commit=False)
+#         instance.save()
+#         messages.success(request, "Successfully Created")
+#         return HttpResponseRedirect(instance.get_absolute_url())
+#     context={
+#         "form": form,
+#     }
+#     return render(request, "file_form.html", context)
