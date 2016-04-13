@@ -45,7 +45,7 @@ def file_detail(request, slug=None):
     project_files = File.objects.filter(slug=slug)
     instance = project_files.latest("updated")
     book= rxncon_excel.ExcelBook(instance.get_absolute_path())
-    rxncon_system = book.rxncon_system
+    #rxncon_system = book.rxncon_system
 
     context_data = {
         "project_files":project_files,
