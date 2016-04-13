@@ -52,7 +52,8 @@ def file_detail(request, slug=None):
         "title": instance.project_name,
         "instance":instance,
         #"book":book,
-        #"nr_reactions":len(rxncon_system.reactions)
+        #"nr_reactions":len(rxncon_system.reactions),
+        "nr_reactions":"currently deactivated in fileTree/views.py",
     }
     return render(request, "file_detail.html", context_data)
 
