@@ -59,6 +59,7 @@ def file_detail(request, slug=None):
 
 
 def file_upload(request, slug= None):
+    # TODO: like this, it is not case sensitive. "Elefant" and "elefant" are the same project
     form = FileForm(request.POST or None, request.FILES or None)
     if slug != None:
         try:
