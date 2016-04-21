@@ -78,3 +78,19 @@ def file_upload(request, slug= None):
         "form": form,
     }
     return render(request, "file_form.html", context)
+
+def file_delete(request, pk):
+    f=File.objects.get(pk=pk)
+    project=f.project_name
+    updated= f.updated
+    filepath=f.file
+    ret= f.delete()
+
+    context={
+        "project_name" : project,
+        "updated" : updated,
+        "file" : filepath,
+        "return" : ret,
+    }
+
+    return render(request, "file_delete.html", context )

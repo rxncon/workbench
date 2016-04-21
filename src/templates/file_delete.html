@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block head_title %} {{ instance.title }} | {{ block.super }}  {% endblock %}
+
+
+{% block content %}
+<p>Succesfully deleted {{ file }}</p>
+<p>{{ project_name }}</p>
+<p>{{ updated }}</p>
+<p>{{ return }}</p>
+{% endblock content %}

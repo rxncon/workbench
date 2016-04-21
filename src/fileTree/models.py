@@ -36,7 +36,7 @@ class File(models.Model):
         return reverse("fileTree:detail", kwargs={"slug": self.slug, })
 
     def upload_new_version(self):
-        return reverse("fileTree:upload", kwargs={"slug": self.slug,})
+        return reverse("fileTree:upload", kwargs={"slug": self.slug, })
 
     def get_download_url(self):
         media_url= settings.MEDIA_URL
@@ -47,7 +47,7 @@ class File(models.Model):
         return media_root+"/%s" %(self.file)
 
     def delete(self):
-        pass
+        return reverse("fileTree:delete", kwargs={"pk": self.pk})
 
     def delete_whole_project(self):
         pass

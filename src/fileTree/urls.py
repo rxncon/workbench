@@ -7,4 +7,5 @@ urlpatterns = [
     url(r'^upload/$', views.file_upload, name ='upload'),
     url(r'^upload/(?P<slug>[\w-]+)/$', views.file_upload, name ='upload'),
     url(r'^(?P<slug>[\w-]+)/$', views.file_detail, name='detail'),
+    url(r'^delete/(?P<pk>\d+)/$', views.file_delete, name="delete"),
 ]
