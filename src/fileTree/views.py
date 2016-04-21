@@ -6,7 +6,7 @@ import rxncon.input.excel_book.excel_book as rxncon_excel
 
 
 from .models import File
-from .forms import FileForm
+from .forms import FileForm, DeleteFileForm
 
 def file_list(request):  #moved to context processor
 #     # queryset_list = File.objects.all()
@@ -78,3 +78,19 @@ def file_upload(request, slug= None):
         "form": form,
     }
     return render(request, "file_form.html", context)
+
+def file_delete(request, id):
+    f = get_object_or_404(File, id=id)
+
+    if request.method == 'POST':
+        form = DeleteFileForm(request.POST, instance=f)
+
+        if form.is_valid(): # checks CSRF
+            f.delete()
+            return HttpResponseRedirect("file_delete.html") # wherever to go after deleting
+
+    else:
+        form = DeleteFileForm(instance=f)
+
+    template_vars = {'form': form}
+    return render(request, 'file_delete.html', template_vars)
