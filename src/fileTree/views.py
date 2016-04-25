@@ -63,17 +63,18 @@ def file_upload(request, slug= None):
     form = FileForm(request.POST or None, request.FILES or None)
     if slug != None:
         try:
-            file= File.objects.filter(slug=slug)[0]
-            project_name= file.project_name
-            form = FileForm(initial={'project_name':project_name })
+            file = File.objects.filter(slug=slug)[0]
+            project_name = file.project_name
+            form = FileForm(initial={'project_name': project_name})
         except KeyError:
             pass
 
     if form.is_valid():
         instance = form.save(commit=False)
         instance.save()
-        messages.success(request, "Successfully Created")
+        messages.success(request, "Successfully created")
         return HttpResponseRedirect(instance.get_absolute_url())
+
     context={
         "form": form,
     }
@@ -91,6 +92,7 @@ def file_delete(request, id):
 
         if form.is_valid(): # checks CSRF
             f.delete()
+            messages.success(request, "Successfully deleted")
             return HttpResponseRedirect("/") # wherever to go after deleting
 
     else:
