@@ -81,16 +81,22 @@ def file_upload(request, slug= None):
 
 def file_delete(request, id):
     f = get_object_or_404(File, id=id)
+    project_name= f.project_name
+    updated= f.updated
+    timestamp= f.timestamp
 
     if request.method == 'POST':
         form = DeleteFileForm(request.POST, instance=f)
 
         if form.is_valid(): # checks CSRF
             f.delete()
-            return HttpResponseRedirect("file_delete.html") # wherever to go after deleting
+            return HttpResponseRedirect("/") # wherever to go after deleting
 
     else:
         form = DeleteFileForm(instance=f)
 
-    template_vars = {'form': form}
+    template_vars = {'form': form,
+                     'project_name': project_name,
+                     "updated": updated,
+                     "timestamp": timestamp,}
     return render(request, 'file_delete.html', template_vars)

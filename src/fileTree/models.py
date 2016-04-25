@@ -46,12 +46,6 @@ class File(models.Model):
         media_root=settings.MEDIA_ROOT
         return media_root+"/%s" %(self.file)
 
-    def delete(self):
-        pass
-
-    def delete_whole_project(self):
-        pass
-
     def load_file(self):
         self.loaded=True
         # hier muss ein return reverse an eine "successfully loaded" seite gemacht werden. in der enstprechnenden
