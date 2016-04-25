@@ -65,7 +65,7 @@ def file_upload(request, slug= None):
         try:
             file = File.objects.filter(slug=slug)[0]
             project_name = file.project_name
-            form = FileForm(initial={'project_name': project_name})
+            form = FileForm(request.POST or None, request.FILES or None, initial={'project_name': project_name})
         except KeyError:
             pass
 
