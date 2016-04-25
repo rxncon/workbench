@@ -28,6 +28,7 @@ urlpatterns = [
     url(r'^posts/', include("posts.urls", namespace= 'posts')),# string with path for function type views
     url(r'^files/', include("fileTree.urls", namespace= 'fileTree')),
     url(r'^$', views.rxncon_site_index, name='index'),
+    url(r'^delete/(?P<id>\d+)/$', fviews.file_delete, name="delete"),
     # url(r'^$', TemplateView.as_view(template_name='static_pages/index.html'),
     #     name='home'),
 ]

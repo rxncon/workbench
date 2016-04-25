@@ -23,7 +23,7 @@
                     <a href="{{ file.get_download_url }}" class="btn btn-sm" role="button" title="Download">
                         <span class="glyphicon glyphicon-download-alt" aria-hidden="true" ></span>
                     </a>
-                    <a href="{{ file.delete }}" class="btn btn-sm" role="button" title="Delete File">
+                    <a href="{% url 'delete' id=file.id %}" class="btn btn-sm" role="button" title="Delete File">
                         <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
                     </a>
                 </div>
