@@ -1,5 +1,6 @@
 from django.contrib import messages
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.core.urlresolvers import reverse
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404, redirect
 import rxncon.input.excel_book.excel_book as rxncon_excel
@@ -80,12 +81,13 @@ def file_upload(request, slug= None):
     }
     return render(request, "file_form.html", context)
 
-def file_delete(request, id):
-    f = get_object_or_404(File, id=id)
-    project_name= f.project_name
-    updated= f.updated
-    timestamp= f.timestamp
+def file_delete(request, pk):
+    f = get_object_or_404(File, pk=pk)
+    project_name = f.project_name
+    updated = f.updated
+    timestamp = f.timestamp
     filepath = f.file
+    slug = f.slug
 
     if request.method == 'POST':
         form = DeleteFileForm(request.POST, instance=f)
@@ -93,7 +95,8 @@ def file_delete(request, id):
         if form.is_valid(): # checks CSRF
             f.delete()
             messages.success(request, "Successfully deleted")
-            return HttpResponseRedirect("/") # wherever to go after deleting
+            return HttpResponseRedirect("/files/"+slug+"/") # wherever to go after deleting
+            #return reverse("fileTree:detail", kwargs={"slug": slug})
 
     else:
         form = DeleteFileForm(instance=f)
