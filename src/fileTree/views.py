@@ -42,7 +42,6 @@ def file_list(request):  #moved to context processor
     pass
 
 def file_detail(request, slug=None):
-    # instance = get_object_or_404(File, slug=slug)
     project_files = File.objects.filter(slug=slug).order_by("-updated")
     instance = project_files.latest("updated")
     # book= rxncon_excel.ExcelBookWithReactionType(instance.get_absolute_path())
@@ -87,7 +86,6 @@ def file_delete(request, pk):
     timestamp = f.timestamp
     filename = f.get_filename()
     slug = f.slug
-
     if request.method == 'POST':
         form = DeleteFileForm(request.POST, instance=f)
 
@@ -95,11 +93,8 @@ def file_delete(request, pk):
             f.delete()
             messages.success(request, "Successfully deleted")
             return HttpResponseRedirect("/files/"+slug+"/") # wherever to go after deleting
-            #return reverse("fileTree:detail", kwargs={"slug": slug})
-
     else:
         form = DeleteFileForm(instance=f)
-
     template_vars = {'form': form,
                      'project_name': project_name,
                      "timestamp": timestamp,
@@ -112,18 +107,14 @@ def file_delete_project(request, slug):
     f = project[0] # latest file
     project_name = f.project_name
     timestamp = f.timestamp
-
     if request.method == 'POST':
         form = DeleteFileForm(request.POST, instance=f)
-
         if form.is_valid(): # checks CSRF
             project.delete()
             messages.success(request, "Successfully deleted")
             return HttpResponseRedirect("/") # wherever to go after deleting
-
     else:
         form = DeleteFileForm(instance=f)
-
     template_vars = {'form': form,
                      'project': project_name,
                      "timestamp": timestamp,
