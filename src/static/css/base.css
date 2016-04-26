@@ -71,6 +71,12 @@ a:hover, a:active, a:focus { /* Durch diese Gruppe von Selektoren wird bei Verwe
 }
 
 
+a.btn {
+  text-decoration: none;
+}
+
+
+
 h4.caption {
 	display: inline-block;
 }
@@ -146,4 +152,4 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* Hiermit wird der Hintergrun
 .content { margin-right: -1px; } /* Dieser negative Rand mit 1 Pixel hat in jeder Spalte in diesem Layout die gleiche korrigierende Auswirkung. */
 ul.nav a { zoom: 1; }  /* Mit der zoom-Eigenschaft erhält IE den Auslöser hasLayout, der erforderlich ist, um den zusätzlichen Leerraum zwischen den Hyperlinks zu korrigieren. */
 
-<![endif]-->
+<! [endif]-->

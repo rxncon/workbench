@@ -65,7 +65,7 @@
                    <!--<span class="" >-->
                     </span>
                   </a>
-                  <a href="{{ latest_file.delete_whole_project }}" class="btn btn-sm" role="button"
+                  <a href="{% url 'fileTree:delete_project' slug=latest_file.slug %}" class="btn btn-sm" role="button"
                      title="Delete Project">
                         <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
                   </a>
