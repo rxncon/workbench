@@ -14,7 +14,7 @@ from .forms import QuickForm, DeleteQuickForm
 
 
 def quick_detail(request, id):
-    instance = Quick.objects.filer(id=id)
+    instance = Quick.objects.get(id=id)
     # book= rxncon_excel.ExcelBookWithReactionType(instance.get_absolute_path())
     # rxncon_system = book.rxncon_system
 
@@ -42,10 +42,9 @@ def quick_new(request):
     }
     return render(request, "quick_form.html", context)
 
+
 def quick_delete(request, id):
     q = get_object_or_404(Quick, id=id)
-    name = q.name
-    timestamp = q.timestamp
     if request.method == 'POST':
         form = DeleteQuickForm(request.POST, instance=q)
 
@@ -56,8 +55,9 @@ def quick_delete(request, id):
     else:
         form = DeleteQuickForm(instance=q)
     template_vars = {'form': form,
-                     'name': name,
-                     "timestamp": timestamp,
+                     'name': q.name,
+                     'timestamp': q.timestamp,
+                     'quick_input': q.quick_input,
                      }
     return render(request, 'quick_delete.html', template_vars)
 
