@@ -40,4 +40,8 @@ def file_list(request):
     }
 
 def quick_list(request):
-    pass
+    quick_definitions= Quick.objects.all().order_by("-updated")  # all quicks
+    return {
+        "quick_definitions": quick_definitions,
+        "title"      : "Quick definitions",
+    }
