@@ -1,4 +1,5 @@
 from fileTree.models import File
+from quick_format.models import Quick
 
 # http://stackoverflow.com/questions/28533854/provide-extra-context-to-all-views
 

@@ -1,16 +1,16 @@
 from django import forms
-from .models import File
+from .models import Quick
 
-class FileForm(forms.ModelForm):
+class QuickForm(forms.ModelForm):
     class Meta:
         model = Quick
         fields =[
-            "project_name",
+            "name",
+            "quick_input",
             "comment",
-            "file",
         ]
 
 class DeleteQuickForm(forms.ModelForm):
     class Meta:
-        model = File
+        model = Quick
         fields = []
