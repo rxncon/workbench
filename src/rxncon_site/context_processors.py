@@ -37,3 +37,6 @@ def file_list(request):
         "projects": projects,
         # "page_request_var":page_request_var,
     }
+
+def quick_list(request):
+    pass

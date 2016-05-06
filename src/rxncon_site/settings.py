@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'posts',
     'fileTree',
+    'quick_format',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -66,6 +67,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'rxncon_site.context_processors.file_list',
+                'rxncon_site.context_processors.quick_list',
             ],
         },
     },
