@@ -61,4 +61,20 @@ def quick_delete(request, id):
                      }
     return render(request, 'quick_delete.html', template_vars)
 
+def quick_update(request, id=None):
+    instance = get_object_or_404(Quick, id=id)
+    form = QuickForm(request.POST or None, instance=instance)
+    if form.is_valid():
+        instance = form.save(commit=False)
+        instance.save()
+        messages.success(request, "Item Saved", extra_tags='html_safe')
+        return HttpResponseRedirect(instance.get_absolute_url())
+
+    context_data = {
+        "title": instance.name,
+        "instance":instance,
+        "form": form,
+    }
+    return render(request, "quick_form.html", context_data)
+
 
