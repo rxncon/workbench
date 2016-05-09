@@ -1,5 +1,5 @@
-<h3>Quick Formats</h3>
-<p><a href="/quick/new" class="btn btn-primary" role="button">new quick definition</a></p>
+<h3>Quick definitions</h3>
+<p><a href="/quick/new" class="btn btn-primary btn-xs" id="new_button" role="button">New</a></p>
 {% for quick in quick_definitions|slice:":3" %}
   {% include "quick_list_items.html" %}
 {% endfor %}

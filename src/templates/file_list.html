@@ -1,5 +1,10 @@
-<h3>Projects</h3>
-<p><a href="/files/upload" class="btn btn-primary" role="button">Create new project</a></p>
+<div class="sidebar_header">
+    <h3>Projects</h3>
+    <a href="/files/upload" class="btn btn-primary btn-xs " title="Create new project">
+        New
+    </a>
+</div>
+<div style="clear: both;"></div>
 {% for project in projects|slice:":3" %}
     {% include "file_list_items.html" %}
 {% endfor %}
