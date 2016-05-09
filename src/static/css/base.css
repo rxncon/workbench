@@ -69,13 +69,21 @@ a:hover, a:active, a:focus { /* Durch diese Gruppe von Selektoren wird bei Verwe
 	background-color: #F4F4F4;
 	padding: 10px;
 }
-.sidebar_table{
-	width: auto;
-	display: inline-table;
+
+.sidebar1 h3 {
+    float: left;
+}
+.sidebar1 a {
+    float: right;
 }
 
+.list_row h1, h2, h3, h4{
+    float: left;
+}
 
-
+.list_row .btn-group {
+    float: right;
+}
 a.btn {
   text-decoration: none;
 }
@@ -85,12 +93,9 @@ a.btn {
 h4.caption {
 	display: inline-block;
 }
-.sidebar_header h3{
-    float: left;
+
 }
-.sidebar_header a {
-    float: right;
-}
+
 
 
 .content {

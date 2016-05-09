@@ -1,12 +1,15 @@
-<h3>Quick definitions</h3>
-<p><a href="/quick/new" class="btn btn-primary btn-xs" id="new_button" role="button">New</a></p>
-{% for quick in quick_definitions|slice:":3" %}
+<div class="sidebar_header">
+    <h3>Quick definitions</h3>
+    <a href="/quick/new" class="btn btn-primary btn-xs" id="new_button" role="button">New</a>
+</div>
+<div style="clear: both;"></div>
+    {% for quick in quick_definitions|slice:":3" %}
   {% include "quick_list_items.html" %}
 {% endfor %}
 
 {% if quick_definitions_length > 3 %}
     <div id="collapse_qList">
-        <a class="btn btn-link" role="button">
+        <a class="btn btn-link" role="button" style="float: none;">
             <span class="button-text">Show more</span>
         </a><br />
         <div style="display: none">
