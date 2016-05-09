@@ -36,6 +36,7 @@ def file_list(request):
         "title":"Projects",
         "slug_list": slug_list,
         "projects": projects,
+        "projects_length": len(projects),
         # "page_request_var":page_request_var,
     }
 

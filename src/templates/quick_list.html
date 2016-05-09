@@ -1,11 +1,11 @@
-<h2>Quick Formats</h2>
+<h3>Quick Formats</h3>
 <p><a href="/quick/new" class="btn btn-primary" role="button">new quick definition</a></p>
 {% for quick in quick_definitions|slice:":3" %}
   {% include "quick_list_items.html" %}
 {% endfor %}
 
 {% if quick_definitions_length > 3 %}
-    <div id="menu">
+    <div id="collapse_qList">
         <a class="btn btn-link" role="button">
             <span class="button-text">Show more</span>
         </a><br />
@@ -16,7 +16,7 @@
         </div>
     </div>
     <script type="text/javascript">
-        $('#menu > a').click(function(){
+        $('#collapse_qList > a').click(function(){
             var span = $(this).find('span');
             if(span.text() == "Show more"){
                 span.text("Show less");

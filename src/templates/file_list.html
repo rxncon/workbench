@@ -1,43 +1,33 @@
-    <h2>Projects</h2>
-    <p><a href="/files/upload" class="btn btn-primary" role="button">Create new project</a></p>
-    {% for project in projects %}
-          <div class="caption">
-          {% with project|first as latest_file %}
-            <h4 class="caption">
-            <!--<a href="{{ project.get_absolute_url }}">-->
-                {{ latest_file.project_name }}
-            <!--</a>-->
-            </h4>
-                <!--<small>{{ latest_project.timestamp|timesince}} ago</small> </h3>-->
+<h3>Projects</h3>
+<p><a href="/files/upload" class="btn btn-primary" role="button">Create new project</a></p>
+{% for project in projects|slice:":3" %}
+    {% include "file_list_items.html" %}
+{% endfor %}
 
-              <div class="btn-group btn-group-sm" role="group">
-                  <a href="{{ latest_file.get_absolute_url }}" class="btn btn-sm" role="button" title="View details">
-                       <span class="glyphicon glyphicon-eye-open" aria-hidden="true">
-                       </span>
-                  </a>
-                  <a href="{{ latest_file.load_file }}" class="btn btn-sm" title="Load file"
-                           role="button">
-                       <span class="glyphicon glyphicon-flash" aria-hidden="true">
-                       </span>
-                  </a>
-                  <a href="{{ latest_file.get_download_url }}" class="btn btn-sm" role="button"
-                   title="Download latest project File">
-                   <span class="glyphicon glyphicon-download-alt" aria-hidden="true" >
-                    </span>
-                  </a>
-                  <a href="{% url 'fileTree:delete_project' slug=latest_file.slug %}" class="btn btn-sm" role="button"
-                     title="Delete Project">
-                        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-                  </a>
-                  <a href="{{ latest_file.upload_new_version }}" class="btn btn-sm" role="button"
-                     title="Add file to project">
-                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-                  </a>
-
-              </div>
-          {% endwith %}
-          </div>
-    {% endfor %}
+{% if projects_length > 3 %}
+<div id="collapse_pList">
+    <a class="btn btn-link" role="button">
+        <span class="button-text">Show more</span>
+    </a><br />
+    <div style="display: none">
+        {% for project in projects|slice:"3:" %}
+          {% include "file_list_items.html" %}
+        {% endfor %}
+    </div>
+</div>
+<script type="text/javascript">
+    $('#collapse_pList > a').click(function(){
+        var span = $(this).find('span');
+        if(span.text() == "Show more"){
+            span.text("Show less");
+        } else {
+            span.text("Show more");
+        }
+        $(this).next().next().slideToggle();
+        return false;
+    });
+</script>
+{% endif %}
 
 
 
