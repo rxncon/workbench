@@ -3,11 +3,11 @@
     {% for project in projects %}
           <div class="caption">
           {% with project|first as latest_file %}
-            <h3 class="caption">
+            <h4 class="caption">
             <!--<a href="{{ project.get_absolute_url }}">-->
                 {{ latest_file.project_name }}
             <!--</a>-->
-            </h3>
+            </h4>
                 <!--<small>{{ latest_project.timestamp|timesince}} ago</small> </h3>-->
 
               <div class="btn-group btn-group-sm" role="group">
