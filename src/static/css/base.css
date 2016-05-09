@@ -122,25 +122,25 @@ h4.caption {
 }
 
 /* ~~ Stile für die Navigationslisten (können entfernt werden, wenn Sie ein vordefiniertes Ausklappmenü wie Spry verwenden) ~~ */
-ul.nav {
-	list-style: none; /* Hiermit wird die Listenmarkierung entfernt. */
-	border-top: 1px solid #666; /* Hiermit wird der obere Rand für die Hyperlinks erstellt. Alle anderen werden mit einem unteren Rand im LI-Element platziert. */
-	margin-bottom: 15px; /* Hiermit wird der Abstand zwischen den Navigationselementen und den Inhalten unten erstellt. */
-}
-ul.nav li {
-	border-bottom: 1px solid #666; /* Hiermit wird die Trennung der Schaltflächen erstellt. */
-}
-ul.nav a, ul.nav a:visited { /* Durch Gruppieren dieser Selektoren wird sichergestellt, dass die Hyperlinks auch nach dem Aufrufen die Form einer Schaltfläche beibehalten. */
-	padding: 5px 5px 5px 15px;
-	display: block; /* Hiermit werden die Blockeigenschaften für den Hyperlink angegeben, sodass das gesamte umschließende LI-Element aufgefüllt wird. Hiermit wird angegeben, dass der gesamte Bereich auf einen Mausklick reagiert. */
-	text-decoration: none;
-	background-color: #8090AB;
-	color: #000;
-}
-ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* Hiermit wird der Hintergrund und die Textfarbe bei der Navigation mit der Maus und der Tastatur geändert. */
-	background-color: #F4F4F4;
-	color: #FFF;
-}
+/*ul.nav {*/
+	/*list-style: none; !* Hiermit wird die Listenmarkierung entfernt. *!*/
+	/*border-top: 1px solid #666; !* Hiermit wird der obere Rand für die Hyperlinks erstellt. Alle anderen werden mit einem unteren Rand im LI-Element platziert. *!*/
+	/*margin-bottom: 15px; !* Hiermit wird der Abstand zwischen den Navigationselementen und den Inhalten unten erstellt. *!*/
+/*}*/
+/*ul.nav li {*/
+	/*border-bottom: 1px solid #666; !* Hiermit wird die Trennung der Schaltflächen erstellt. *!*/
+/*}*/
+/*ul.nav a, ul.nav a:visited { !* Durch Gruppieren dieser Selektoren wird sichergestellt, dass die Hyperlinks auch nach dem Aufrufen die Form einer Schaltfläche beibehalten. *!*/
+	/*padding: 5px 5px 5px 15px;*/
+	/*display: block; !* Hiermit werden die Blockeigenschaften für den Hyperlink angegeben, sodass das gesamte umschließende LI-Element aufgefüllt wird. Hiermit wird angegeben, dass der gesamte Bereich auf einen Mausklick reagiert. *!*/
+	/*text-decoration: none;*/
+	/*background-color: #8090AB;*/
+	/*color: #000;*/
+/*}*/
+/*ul.nav a:hover, ul.nav a:active, ul.nav a:focus { !* Hiermit wird der Hintergrund und die Textfarbe bei der Navigation mit der Maus und der Tastatur geändert. *!*/
+	/*background-color: #F4F4F4;*/
+	/*color: #FFF;*/
+/*}*/
 
 /* ~~ Fußzeile ~~ */
 

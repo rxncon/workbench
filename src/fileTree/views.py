@@ -44,16 +44,19 @@ def file_list(request):  #moved to context processor
 def file_detail(request, slug=None):
     project_files = File.objects.filter(slug=slug).order_by("-updated")
     instance = project_files.latest("updated")
-    # book= rxncon_excel.ExcelBookWithReactionType(instance.get_absolute_path())
-    # rxncon_system = book.rxncon_system
+    try:
+        book= rxncon_excel.ExcelBookWithReactionType(instance.get_absolute_path())
+    except:
+        book= rxncon_excel.ExcelBookWithoutReactionType(instance.get_absolute_path())
+    rxncon_system = book.rxncon_system
 
     context_data = {
         "project_files":project_files,
         "title": instance.project_name,
         "instance":instance,
-        # "book":book,
-        # "nr_reactions":len(rxncon_system.reactions),
-        "nr_reactions":"currently deactivated in fileTree/views.py",
+        "book":book,
+        "nr_reactions":len(rxncon_system.reactions),
+        # "nr_reactions":"currently deactivated in fileTree/views.py",
     }
     return render(request, "file_detail.html", context_data)
 
