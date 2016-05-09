@@ -68,6 +68,9 @@ a:hover, a:active, a:focus { /* Durch diese Gruppe von Selektoren wird bei Verwe
 	width: 30%;
 	background-color: #F4F4F4;
 	padding: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .sidebar1 h3 {
@@ -77,7 +80,7 @@ a:hover, a:active, a:focus { /* Durch diese Gruppe von Selektoren wird bei Verwe
     float: right;
 }
 
-.list_row h1, h2, h3, h4{
+.list_row h4 {
     float: left;
 }
 
