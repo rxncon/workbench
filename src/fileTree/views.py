@@ -139,7 +139,7 @@ def file_load(request, id):
     target = File.objects.filter(id=id)
     target.update(loaded=True)
     if target[0].loaded:
-        messages.success(request, "File '" + target[0].get_filename() + "' successfully loaded")
+        messages.info(request, "File '" + target[0].get_filename() + "' successfully loaded")
     return file_detail(request, id)
 
 

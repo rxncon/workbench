@@ -84,7 +84,7 @@ def quick_load(request, id):
     target = Quick.objects.filter(id=id)
     target.update(loaded=True)
     if target[0].loaded:
-        messages.success(request, "Quick definition '" + target[0].name + "' successfully loaded")
+        messages.info(request, "Quick definition '" + target[0].name + "' successfully loaded")
     return quick_detail(request, id)
 
 
