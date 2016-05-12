@@ -47,3 +47,38 @@ def quick_list(request):
         "quick_definitions_length": len(quick_definitions),
         "title"      : "Quick definitions",
     }
+
+def get_loaded_system(request):
+    context ={} #initialise output
+
+    loaded_system_list = File.objects.filter(loaded=True)
+    if len(loaded_system_list) == 0: # must be quick format
+        loaded_system_list = Quick.objects.filter(loaded=True)
+
+        if len(loaded_system_list) == 1:
+            system_type = "Quick"
+            instance = loaded_system_list[0]
+            name = instance.name
+            filename="" # there is no corresponding file
+
+    else: #must be file format
+        system_type = "File"
+        instance = loaded_system_list[0]
+        name = instance.project_name
+        filename = instance.get_filename()
+
+    if len(loaded_system_list) > 1:
+        raise LookupError("Corrupted database, multiple systems had loaded flag set to true.")
+
+    if len(loaded_system_list) != 0:
+
+        context = {
+            "loaded_system": instance,
+            "loaded_type": system_type,
+            "loaded_project_name": name,
+        }
+        if filename:
+            context["loaded_file"] = filename
+    return context
+
+

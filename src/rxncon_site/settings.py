@@ -68,6 +68,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'rxncon_site.context_processors.file_list',
                 'rxncon_site.context_processors.quick_list',
+                'rxncon_site.context_processors.get_loaded_system',
             ],
         },
     },
