@@ -10,6 +10,7 @@ import rxncon.input.excel_book.excel_book as rxncon_excel
 
 
 from .models import Quick
+from fileTree.models import File
 from .forms import QuickForm, DeleteQuickForm
 
 
@@ -76,5 +77,14 @@ def quick_update(request, id=None):
         "form": form,
     }
     return render(request, "quick_form.html", context_data)
+
+def quick_load(request, id):
+    File.objects.all().update(loaded=False)
+    Quick.objects.all().update(loaded=False)
+    target = Quick.objects.filter(id=id)
+    target.update(loaded=True)
+    if target[0].loaded:
+        messages.success(request, "Quick definition '" + target[0].name + "' successfully loaded")
+    return quick_detail(request, id)
 
 

@@ -8,6 +8,7 @@ import rxncon.simulation.rule_graph.regulatory_graph as regulatory_graph
 import rxncon.simulation.rule_graph.graphML as graphML
 
 from .models import File
+from quick_format.models import Quick
 from .forms import FileForm, DeleteFileForm
 
 def file_list(request):  #moved to context processor
@@ -134,38 +135,12 @@ def file_delete_project(request, slug):
 
 def file_load(request, id):
     File.objects.all().update(loaded=False)
+    Quick.objects.all().update(loaded=False)
     target = File.objects.filter(id=id)
     target.update(loaded=True)
     if target[0].loaded:
         messages.success(request, "File '" + target[0].get_filename() + "' successfully loaded")
     return file_detail(request, id)
 
-    # slug = File.objects.filter(id=id).values('slug')
-    # # from here on copid from details
-    # project_files = File.objects.filter(slug=slug).order_by("-updated")
-    # instance = project_files.latest("updated")
-    # try:
-    #     book = rxncon_excel.ExcelBookWithReactionType(instance.get_absolute_path())
-    # except:
-    #     book = rxncon_excel.ExcelBookWithoutReactionType(instance.get_absolute_path())
-    # rxncon_system = book.rxncon_system
-    # # graph = regulatory_graph.RegulatoryGraph(rxncon_system).to_graph()
-    # # xgmml_graph = graphML.XGMML(graph, "graphen name")
-    # # graph_file = xgmml_graph.to_file("filepath")
-    # # graph_string = xgmml_graph.to_string()
-    #
-    # context_data = {
-    #     "project_files": project_files,
-    #     "title"        : instance.project_name,
-    #     "instance"     : instance,
-    #     "book"         : book,
-    #     "nr_reactions" : len(rxncon_system.reactions),
-    #     "loaded"       : instance.loaded,
-    #     # "nr_reactions":"currently deactivated in fileTree/views.py",
-    # }
-    #
-
-    #
-    # return render(request, "file_detail.html", context_data)
 
 

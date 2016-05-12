@@ -3,6 +3,7 @@ from django.db import models
 
 class Quick(models.Model):
     name = models.CharField(max_length=120)
+    loaded = models.BooleanField(default=False)
     quick_input = models.TextField(null=False)
     comment = models.TextField(null=True, blank=True)
     timestamp = models.DateTimeField(auto_now=False, auto_now_add=True)  # initial timestamp will be saved one time

@@ -5,7 +5,8 @@
             <a href="{{ quick.get_absolute_url }}" class="btn btn-sm" role="button" title="View details">
                <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
             </a>
-          <a href="{{ quick.load }}" class="btn btn-sm" title="Load definition" role="button">
+          <a href="{% url 'quick_format:quick_load' id=quick.id %}" class="btn btn-sm" title="Load definition"
+             role="button">
                <span class="glyphicon glyphicon-flash" aria-hidden="true"></span>
           </a>
           <a href="{% url 'quick_format:quick_delete' id=quick.id %}" class="btn btn-sm" role="button"
