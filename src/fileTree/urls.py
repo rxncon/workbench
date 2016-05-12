@@ -9,4 +9,6 @@ urlpatterns = [
     url(r'^(?P<slug>[\w-]+)/$', views.file_detail, name='detail'),
     url(r'^delete/(?P<pk>\d+)/$', views.file_delete, name="delete"),
     url(r'^delete/(?P<slug>[\w-]+)/$', views.file_delete_project, name="delete_project"),
+    url(r'^load/(?P<id>\d+)/$', views.file_load, name="load"),
+
 ]

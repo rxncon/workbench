@@ -50,10 +50,10 @@ def file_detail(request, slug=None):
     except:
         book= rxncon_excel.ExcelBookWithoutReactionType(instance.get_absolute_path())
     rxncon_system = book.rxncon_system
-    graph = regulatory_graph.RegulatoryGraph(rxncon_system).to_graph()
-    xgmml_graph = graphML.XGMML(graph, "graphen name")
-    graph_file = xgmml_graph.to_file("filepath")
-    graph_string = xgmml_graph.to_string()
+    #graph = regulatory_graph.RegulatoryGraph(rxncon_system).to_graph()
+    #xgmml_graph = graphML.XGMML(graph, "graphen name")
+    #graph_file = xgmml_graph.to_file("filepath")
+    #graph_string = xgmml_graph.to_string()
 
     context_data = {
         "project_files":project_files,
@@ -61,8 +61,10 @@ def file_detail(request, slug=None):
         "instance":instance,
         "book":book,
         "nr_reactions":len(rxncon_system.reactions),
+        "loaded": instance.loaded,
         # "nr_reactions":"currently deactivated in fileTree/views.py",
     }
+
     return render(request, "file_detail.html", context_data)
 
 
@@ -128,4 +130,39 @@ def file_delete_project(request, slug):
                      "timestamp": timestamp,
                         }
     return render(request, 'file_delete.html', template_vars)
+
+def file_load(request, id):
+    File.objects.all().update(loaded=False)
+    #File.objects.all().save()
+    File.objects.filter(id=id).update(loaded=True)
+    #File.objects.filter(id=id).save()
+    slug = File.objects.filter(id=id).values('slug')
+    # from here on copid from details
+    project_files = File.objects.filter(slug=slug).order_by("-updated")
+    instance = project_files.latest("updated")
+    try:
+        book = rxncon_excel.ExcelBookWithReactionType(instance.get_absolute_path())
+    except:
+        book = rxncon_excel.ExcelBookWithoutReactionType(instance.get_absolute_path())
+    rxncon_system = book.rxncon_system
+    # graph = regulatory_graph.RegulatoryGraph(rxncon_system).to_graph()
+    # xgmml_graph = graphML.XGMML(graph, "graphen name")
+    # graph_file = xgmml_graph.to_file("filepath")
+    # graph_string = xgmml_graph.to_string()
+
+    context_data = {
+        "project_files": project_files,
+        "title"        : instance.project_name,
+        "instance"     : instance,
+        "book"         : book,
+        "nr_reactions" : len(rxncon_system.reactions),
+        "loaded"       : instance.loaded,
+        # "nr_reactions":"currently deactivated in fileTree/views.py",
+    }
+
+    if instance.loaded:
+        messages.success(request, "File '" + instance.get_filename() + "' successfully loaded")
+
+    return render(request, "file_detail.html", context_data)
+
 

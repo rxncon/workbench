@@ -16,8 +16,9 @@
                 <div class="btn-group btn-group-sm" role="group">
                     <a href="{{ file.get_absolute_url }}" class="btn btn-sm" role="button" title="View details">
                         <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+                        <!--TODO: details of older versions as well -->
                     </a>
-                    <a href="{{ file.load_file }}" class="btn btn-sm" title="Load file" role="button">
+                    <a href="{% url 'fileTree:load' id=file.id %}" class="btn btn-sm" title="Load file" role="button">
                         <span class="glyphicon glyphicon-flash" aria-hidden="true"></span>
                     </a>
                     <a href="{{ file.get_download_url }}" class="btn btn-sm" role="button" title="Download">
@@ -39,6 +40,7 @@
     <h5>Infos:</h5>
     <ul>
         <li>Number of Reactions: {{ nr_reactions }}</li>
+        <li>Loaded: {{ loaded }}</li>
 
 
     </ul>
