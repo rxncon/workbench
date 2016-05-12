@@ -42,9 +42,10 @@ def file_list(request):  #moved to context processor
 #     return render(request, "file_list.html", context_data)
     pass
 
-def file_detail(request, slug=None):
+def file_detail(request, id=None):
+    instance = File.objects.get(id=id)
+    slug = File.objects.filter(id=id).values("slug")
     project_files = File.objects.filter(slug=slug).order_by("-updated")
-    instance = project_files.latest("updated")
     try:
         book= rxncon_excel.ExcelBookWithReactionType(instance.get_absolute_path())
     except:
@@ -133,36 +134,38 @@ def file_delete_project(request, slug):
 
 def file_load(request, id):
     File.objects.all().update(loaded=False)
-    #File.objects.all().save()
-    File.objects.filter(id=id).update(loaded=True)
-    #File.objects.filter(id=id).save()
-    slug = File.objects.filter(id=id).values('slug')
-    # from here on copid from details
-    project_files = File.objects.filter(slug=slug).order_by("-updated")
-    instance = project_files.latest("updated")
-    try:
-        book = rxncon_excel.ExcelBookWithReactionType(instance.get_absolute_path())
-    except:
-        book = rxncon_excel.ExcelBookWithoutReactionType(instance.get_absolute_path())
-    rxncon_system = book.rxncon_system
-    # graph = regulatory_graph.RegulatoryGraph(rxncon_system).to_graph()
-    # xgmml_graph = graphML.XGMML(graph, "graphen name")
-    # graph_file = xgmml_graph.to_file("filepath")
-    # graph_string = xgmml_graph.to_string()
+    target = File.objects.filter(id=id)
+    target.update(loaded=True)
+    if target[0].loaded:
+        messages.success(request, "File '" + target[0].get_filename() + "' successfully loaded")
+    return file_detail(request, id)
 
-    context_data = {
-        "project_files": project_files,
-        "title"        : instance.project_name,
-        "instance"     : instance,
-        "book"         : book,
-        "nr_reactions" : len(rxncon_system.reactions),
-        "loaded"       : instance.loaded,
-        # "nr_reactions":"currently deactivated in fileTree/views.py",
-    }
+    # slug = File.objects.filter(id=id).values('slug')
+    # # from here on copid from details
+    # project_files = File.objects.filter(slug=slug).order_by("-updated")
+    # instance = project_files.latest("updated")
+    # try:
+    #     book = rxncon_excel.ExcelBookWithReactionType(instance.get_absolute_path())
+    # except:
+    #     book = rxncon_excel.ExcelBookWithoutReactionType(instance.get_absolute_path())
+    # rxncon_system = book.rxncon_system
+    # # graph = regulatory_graph.RegulatoryGraph(rxncon_system).to_graph()
+    # # xgmml_graph = graphML.XGMML(graph, "graphen name")
+    # # graph_file = xgmml_graph.to_file("filepath")
+    # # graph_string = xgmml_graph.to_string()
+    #
+    # context_data = {
+    #     "project_files": project_files,
+    #     "title"        : instance.project_name,
+    #     "instance"     : instance,
+    #     "book"         : book,
+    #     "nr_reactions" : len(rxncon_system.reactions),
+    #     "loaded"       : instance.loaded,
+    #     # "nr_reactions":"currently deactivated in fileTree/views.py",
+    # }
+    #
 
-    if instance.loaded:
-        messages.success(request, "File '" + instance.get_filename() + "' successfully loaded")
-
-    return render(request, "file_detail.html", context_data)
+    #
+    # return render(request, "file_detail.html", context_data)
 
 

@@ -6,7 +6,8 @@
                 <a href="{{ latest_file.get_absolute_url }}" class="btn btn-sm" role="button" title="View details">
                     <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
                 </a>
-                <a href="{{ latest_file.load_file }}" class="btn btn-sm" title="Load file" role="button">
+                <a href="{% url 'fileTree:load' id=latest_file.id %}" class="btn btn-sm" title="Load file"
+                   role="button">
                     <span class="glyphicon glyphicon-flash" aria-hidden="true"></span>
                 </a>
                 <a href="{{ latest_file.get_download_url }}" class="btn btn-sm" role="button"

@@ -33,7 +33,7 @@ class File(models.Model):
         return self.slug
 
     def get_absolute_url(self):
-        return reverse("fileTree:detail", kwargs={"slug": self.slug, })
+        return reverse("fileTree:detail", kwargs={"id": self.id})
 
     def upload_new_version(self):
         return reverse("fileTree:upload", kwargs={"slug": self.slug, })
@@ -46,15 +46,6 @@ class File(models.Model):
         media_root=settings.MEDIA_ROOT
         return media_root+"/%s" %(self.file)
 
-    def load_file(self):
-        #self.loaded = True
-        return reverse("fileTree:load", kwargs={"id": self.id})
-
-        #return reverse("fileTree:detail", args={"loaded": self.loaded, "slug": self.slug})
-        # hier muss ein return reverse an eine "successfully loaded" seite gemacht werden. in der enstprechnenden
-        # view dann sowas wie:
-        # File.objects.all().update(loaded=False)
-        # File.objects.filter(id=load_id).update(loaded=True) oder so
 
     class Meta:
         ordering = ["-timestamp", "-updated"]
