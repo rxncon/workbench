@@ -4,7 +4,8 @@ from django.core.urlresolvers import reverse
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404, redirect
 import rxncon.input.excel_book.excel_book as rxncon_excel
-
+import rxncon.simulation.rule_graph.regulatory_graph as regulatory_graph
+import rxncon.simulation.rule_graph.graphML as graphML
 
 from .models import File
 from .forms import FileForm, DeleteFileForm
@@ -49,6 +50,10 @@ def file_detail(request, slug=None):
     except:
         book= rxncon_excel.ExcelBookWithoutReactionType(instance.get_absolute_path())
     rxncon_system = book.rxncon_system
+    graph = regulatory_graph.RegulatoryGraph(rxncon_system).to_graph()
+    xgmml_graph = graphML.XGMML(graph, "graphen name")
+    graph_file = xgmml_graph.to_file("filepath")
+    graph_string = xgmml_graph.to_string()
 
     context_data = {
         "project_files":project_files,
