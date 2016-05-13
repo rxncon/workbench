@@ -12,7 +12,9 @@
     <h5>All versions:</h5>
         <ul>
         {% for file in project_files %}
-            <li> {{file.timestamp}}
+            <li {% if file.get_filename == loaded_file %}
+            style="color: green;"
+            {% endif %}> {{file.timestamp}}
                 <div class="btn-group btn-group-sm" role="group">
                     <a href="{{ file.get_absolute_url }}" class="btn btn-sm" role="button" title="View details">
                         <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
