@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'posts',
     'fileTree',
     'quick_format',
+    'graphs',
 ]
 
 MIDDLEWARE_CLASSES = [

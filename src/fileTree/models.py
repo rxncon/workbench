@@ -14,7 +14,6 @@ def upload_location(instance, filename):
 class File(models.Model):
     project_name = models.CharField(max_length=120)
     loaded = models.BooleanField(default=False)
-    older_version_ids=[]
     slug = models.SlugField(blank=True) # TODO: take blank out when file_upload with automated slug creation is done
     file = models.FileField(upload_to=upload_location, null=False, blank=False)
     comment= models.TextField(null=True, blank=True)
@@ -48,7 +47,7 @@ class File(models.Model):
 
 
     class Meta:
-        ordering = ["-timestamp", "-updated"]
+        ordering = ["-updated", "-timestamp"]
 
 def create_slug(instance, new_slug=None):
     slug = slugify(instance.project_name)
