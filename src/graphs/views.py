@@ -1,10 +1,12 @@
 from django.shortcuts import render
+from django.conf import settings
 from .forms import regGraphFileForm
 from django.contrib import messages
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.core.urlresolvers import reverse
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404, redirect
+import os
 import rxncon.input.excel_book.excel_book as rxncon_excel
 import rxncon.simulation.rule_graph.regulatory_graph as regulatory_graph
 import rxncon.simulation.rule_graph.graphML as graphML
@@ -27,15 +29,18 @@ def regGraph(request, id=None):
     # }
     # return render(request, "regGraphFile_form.html", context)
     if id:
+        media_url = settings.MEDIA_URL
         file = File.objects.get(id=id)
         try:
             book = rxncon_excel.ExcelBookWithReactionType(file.get_absolute_path())
         except:
             book = rxncon_excel.ExcelBookWithoutReactionType(file.get_absolute_path())
         rxncon_system = book.rxncon_system
-        graph = regulatory_graph.RegulatoryGraph(rxncon_system).to_graph()
+        graph = regulatory_graph.RegulatoryGraph(rxncon_system).to_graph() # throws not implemented errorim
         xgmml_graph = graphML.XGMML(graph, file.slug)
-        graph_file = xgmml_graph.to_file("%s/%s" %(file.slug,"graphs"))
+        if not os.path.exists("%s%s/%s" %(media_url,file.slug,"graphs")):
+            os.makedirs("%s%s/%s" %(media_url,file.slug,"graphs"))
+        graph_file = xgmml_graph.to_file("%s%s/%s/%s" %(media_url,file.slug,"graphs",str(file.id)+".txt"))
         graph_string = xgmml_graph.to_string()
         g = Graph_from_File(connected_system=file, project_name=file.project_name, graph_file=graph_file)
         g.save()
