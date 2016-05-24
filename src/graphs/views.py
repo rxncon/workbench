@@ -30,6 +30,7 @@ def regGraph(request, id=None):
     # return render(request, "regGraphFile_form.html", context)
     if id:
         media_url = settings.MEDIA_URL
+        media_root= settings.MEDIA_ROOT
         file = File.objects.get(id=id)
         try:
             book = rxncon_excel.ExcelBookWithReactionType(file.get_absolute_path())
@@ -38,9 +39,9 @@ def regGraph(request, id=None):
         rxncon_system = book.rxncon_system
         graph = regulatory_graph.RegulatoryGraph(rxncon_system).to_graph() # throws not implemented errorim
         xgmml_graph = graphML.XGMML(graph, file.slug)
-        if not os.path.exists("%s%s/%s" %(media_url,file.slug,"graphs")):
-            os.makedirs("%s%s/%s" %(media_url,file.slug,"graphs"))
-        graph_file = xgmml_graph.to_file("%s%s/%s/%s" %(media_url,file.slug,"graphs",str(file.id)+".txt"))
+        if not os.path.exists("%s/%s/%s" %(media_root,file.slug,"graphs")):
+            os.makedirs("%s/%s/%s" %(media_root,file.slug,"graphs"))
+        graph_file = xgmml_graph.to_file("%s/%s/%s/%s" %(media_root,file.slug,"graphs",str(file.id)+".txt"))
         graph_string = xgmml_graph.to_string()
         g = Graph_from_File(connected_system=file, project_name=file.project_name, graph_file=graph_file)
         g.save()
