@@ -41,9 +41,10 @@ def regGraph(request, id=None):
         xgmml_graph = graphML.XGMML(graph, file.slug)
         if not os.path.exists("%s/%s/%s" %(media_root,file.slug,"graphs")):
             os.makedirs("%s/%s/%s" %(media_root,file.slug,"graphs"))
-        graph_file = xgmml_graph.to_file("%s/%s/%s/%s" %(media_root,file.slug,"graphs",str(file.id)+".txt"))
+        graph_file_path =  "%s/%s/%s/%s" %(media_root,file.slug,"graphs",str(file.id)+".txt")
+        graph_file = xgmml_graph.to_file(graph_file_path)
         graph_string = xgmml_graph.to_string()
-        g = Graph_from_File(connected_system=file, project_name=file.project_name, graph_file=graph_file)
+        g = Graph_from_File(connected_system=file, project_name=file.project_name, graph_file=graph_file_path)
         g.save()
         messages.info(request, "regulatory graph for project '" + g.project_name + "' successfully created.")
         return file_detail(request, id)
