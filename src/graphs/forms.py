@@ -7,3 +7,8 @@ class regGraphFileForm(forms.ModelForm):
         fields =[
             "comment"
         ]
+
+class DeleteGraphForm(forms.ModelForm):
+    class Meta:
+        model = Graph_from_File
+        fields = []

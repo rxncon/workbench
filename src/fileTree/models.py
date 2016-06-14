@@ -21,7 +21,7 @@ class File(models.Model):
     comment= models.TextField(null=True, blank=True)
     timestamp = models.DateTimeField(auto_now=False, auto_now_add=True) #initial timestamp will be saved one time
     updated = models.DateTimeField(auto_now=True, auto_now_add=False)  # auto_now refers to every modification, updated gets reset when Post is updated -duh
-    reg_graph = models.ForeignKey(Graph_from_File, null=True)
+    reg_graph = models.ForeignKey(Graph_from_File, null=True, on_delete=models.SET_NULL)
 
     def __str__(self):
         return self.file.name

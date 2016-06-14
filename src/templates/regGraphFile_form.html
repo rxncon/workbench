@@ -1,19 +1,11 @@
 {% extends "base.html" %}
 {% block head_title %} {{ instance.title }} | {{ block.super }}  {% endblock %}
 {% block content %}
-<!--<div class="col-sm-6 col-sm-offset-3">-->
 <h1> Create regulatory graph</h1>
-
-<!--<form method="post" action='' enctype="multipart/form-data">-->
-    <!--{% csrf_token %}-->
-    <!--{{ form.as_p }}-->
-    <!--<input type ="submit" class="btn btn-default" value="Create Graph">-->
-<!--</form>-->
-<!--</div>-->
-
+<h2> Project: {{ loaded_system.project_name }}</h2>
 <a href="{% url 'graphs:regGraphCreate' id=loaded_system.id %}" class="btn btn-sm" title="Create Graph"
                    role="button">
-                    <span class="btn btn-default" aria-hidden="true">Create</span>
-                </a>
+    <span class="btn btn-default" aria-hidden="true">Create</span>
+</a>
 
 {% endblock content %}file_form.html
