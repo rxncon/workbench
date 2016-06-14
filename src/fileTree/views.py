@@ -52,10 +52,6 @@ def file_detail(request, id=None):
     except:
         book= rxncon_excel.ExcelBookWithoutReactionType(instance.get_absolute_path())
     rxncon_system = book.rxncon_system
-    #graph = regulatory_graph.RegulatoryGraph(rxncon_system).to_graph()
-    #xgmml_graph = graphML.XGMML(graph, "graphen name")
-    #graph_file = xgmml_graph.to_file("filepath")
-    #graph_string = xgmml_graph.to_string()
 
     context_data = {
         "project_files":project_files,

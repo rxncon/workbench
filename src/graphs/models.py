@@ -4,7 +4,7 @@ from django.db import models
 from django.db.models.signals import pre_save
 from django.shortcuts import render_to_response
 from django.utils.text import slugify
-from fileTree.models import File
+# from fileTree.models import File
 from quick_format.models import Quick
 
 
@@ -13,7 +13,7 @@ def upload_location(instance, filename):
     return "%s/%s/%s" %(instance.slug,"graphs",filename)
 
 class Graph_from_File(models.Model):
-    connected_system = models.ForeignKey(File, on_delete=models.CASCADE, null=True)
+    # connected_system = models.ForeignKey(File, on_delete=models.CASCADE, null=True)
     project_name = models.CharField(max_length=120)
     slug = models.SlugField(blank=True) # TODO: take blank out when file_upload with automated slug creation is done
     comment= models.TextField(null=True, blank=True)

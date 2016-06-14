@@ -4,12 +4,14 @@ from django.db import models
 from django.db.models.signals import pre_save
 from django.shortcuts import render_to_response
 from django.utils.text import slugify
+from graphs.models import Graph_from_File
 
 
 
 def upload_location(instance, filename):
-    #return "%s/%s" %(os.path.splitext(filename)[0],filename)
+    # return "%s/%s" %(os.path.splitext(filename)[0],filename)
     return "%s/%s" %(instance.slug,filename)
+
 
 class File(models.Model):
     project_name = models.CharField(max_length=120)
@@ -19,6 +21,7 @@ class File(models.Model):
     comment= models.TextField(null=True, blank=True)
     timestamp = models.DateTimeField(auto_now=False, auto_now_add=True) #initial timestamp will be saved one time
     updated = models.DateTimeField(auto_now=True, auto_now_add=False)  # auto_now refers to every modification, updated gets reset when Post is updated -duh
+    reg_graph = models.ForeignKey(Graph_from_File, null=True)
 
     def __str__(self):
         return self.file.name
@@ -44,7 +47,6 @@ class File(models.Model):
     def get_absolute_path(self):
         media_root=settings.MEDIA_ROOT
         return media_root+"/%s" %(self.file)
-
 
     class Meta:
         ordering = ["-updated", "-timestamp"]
