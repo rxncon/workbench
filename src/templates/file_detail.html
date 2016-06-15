@@ -47,13 +47,11 @@
     <ul>
         <li>Number of Reactions: {{ nr_reactions }}</li>
         <li>Loaded: {{ loaded }}</li>
-
-
     </ul>
 
     {% if instance.reg_graph%}
         <h5>Regulatory Graph:</h5>
-        <p>Created: {{ instance.reg_graph.timestamp }}
+        <p style="display: inline-block">Created: {{ instance.reg_graph.timestamp }}
             <div class="btn-group btn-group-sm" role="group">
                 <a href="{{ instance.reg_graph.get_download_url }}" class="btn btn-sm" role="button" title="Show">
                     <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>

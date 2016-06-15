@@ -41,7 +41,8 @@ def regGraph(request, id=None):
         rxncon_system = book.rxncon_system
         graph = regulatory_graph.RegulatoryGraph(rxncon_system).to_graph() # throws not implemented errorim
         xgmml_graph = graphML.XGMML(graph, file.slug)
-        graph_file_path =  "%s/%s/%s/%s" %(media_root,file.slug,"graphs",str(file.id)+".txt")
+        graph_file_path =  "%s/%s/%s/%s" %(media_root,file.slug,"graphs",
+                                           file.slug+"_"+file.get_filename()+"_regGraph"+".txt")
         if os.path.exists(graph_file_path):
             messages.warning(request, "Graph File already exists.")
             return file_detail(request, id)
