@@ -43,7 +43,7 @@ def file_list(request):  #moved to context processor
 #     return render(request, "file_list.html", context_data)
     pass
 
-def file_detail(request, id=None):
+def file_detail(request, id):
     instance = File.objects.get(id=id)
     slug = File.objects.filter(id=id).values("slug")
     project_files = File.objects.filter(slug=slug).order_by("-updated")

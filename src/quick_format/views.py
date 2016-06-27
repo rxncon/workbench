@@ -16,15 +16,16 @@ from .forms import QuickForm, DeleteQuickForm
 
 def quick_detail(request, id):
     instance = Quick.objects.get(id=id)
-    # book= rxncon_excel.ExcelBookWithReactionType(instance.get_absolute_path())
-    # rxncon_system = book.rxncon_system
+    try:
+        book = rxncon_excel.ExcelBookWithReactionType(instance.get_absolute_path())
+    except:
+        book = rxncon_excel.ExcelBookWithoutReactionType(instance.get_absolute_path())
+    rxncon_system = book.rxncon_system
 
     context_data = {
         "title": instance.name,
-        "instance":instance,
-        # "book":book,
-        # "nr_reactions":len(rxncon_system.reactions),
-        "nr_reactions":"currently deactivated in fileTree/views.py",
+        "instance": instance,
+        "nr_reactions": len(rxncon_system.reactions),
     }
     return render(request, "quick_detail.html", context_data)
 
