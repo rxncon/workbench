@@ -18,47 +18,52 @@ from .forms import DeleteGraphForm
 
 
 def regGraph(request, id=None):
-    # form = regGraphFileForm(request.POST or None)
-    #
-    # if form.is_valid():
-    #     instance = form.save(commit=False)
-    #     instance.save()
-    #     messages.success(request, "Successfully created")
-    #     return HttpResponseRedirect(instance.get_absolute_url())
-    #
-    # context = {
-    #     "form": form,
-    # }
-    # return render(request, "regGraphFile_form.html", context)
-    if id:
-        media_url = settings.MEDIA_URL
-        media_root= settings.MEDIA_ROOT
-        file = File.objects.get(id=id)
-        try:
-            book = rxncon_excel.ExcelBookWithReactionType(file.get_absolute_path())
-        except:
-            book = rxncon_excel.ExcelBookWithoutReactionType(file.get_absolute_path())
-        rxncon_system = book.rxncon_system
-        graph = regulatory_graph.RegulatoryGraph(rxncon_system).to_graph() # throws not implemented errorim
-        xgmml_graph = graphML.XGMML(graph, file.slug)
-        graph_file_path =  "%s/%s/%s/%s" %(media_root,file.slug,"graphs",
-                                           file.slug+"_"+file.get_filename()+"_regGraph"+".xgmml")
-        if os.path.exists(graph_file_path):
-            messages.warning(request, "Graph File already exists.")
+    form = regGraphFileForm(request.POST or None)
+    media_url = settings.MEDIA_URL
+    media_root = settings.MEDIA_ROOT
+
+    if form.is_valid():
+        if id:
+            file = File.objects.get(id=id)
+            try:
+                book = rxncon_excel.ExcelBookWithReactionType(file.get_absolute_path())
+            except:
+                book = rxncon_excel.ExcelBookWithoutReactionType(file.get_absolute_path())
+            rxncon_system = book.rxncon_system
+
+            graph = regulatory_graph.RegulatoryGraph(rxncon_system).to_graph() # throws not implemented errorim
+            xgmml_graph = graphML.XGMML(graph, file.slug)
+            if request.POST.get("template"):
+                graph_file_name = file.slug + "_" + file.get_filename().split(".")[0] + "_template_"+ "_regGraph.xgmml"
+            else:
+                graph_file_name= file.slug + "_" + file.get_filename().split(".")[0] + "_regGraph.xgmml"
+
+            graph_file_path =  "%s/%s/%s/%s" %(media_root,file.slug,"graphs", graph_file_name)
+            if os.path.exists(graph_file_path):
+                messages.warning(request, "Graph File already exists.")
+                return file_detail(request, id)
+            if not os.path.exists("%s/%s/%s" %(media_root,file.slug,"graphs")):
+                os.makedirs("%s/%s/%s" %(media_root,file.slug,"graphs"))
+
+            graph_file = xgmml_graph.to_file(graph_file_path)
+            graph_string = xgmml_graph.to_string()
+
+            g = Graph_from_File(project_name=file.project_name, graph_file=graph_file_path, graph_string=graph_string)
+            g.save()
+
+            File.objects.filter(id=id).update(reg_graph=g)
+            messages.info(request, "regulatory graph for project '" + g.project_name + "' successfully created.")
             return file_detail(request, id)
-        if not os.path.exists("%s/%s/%s" %(media_root,file.slug,"graphs")):
-            os.makedirs("%s/%s/%s" %(media_root,file.slug,"graphs"))
-        graph_file = xgmml_graph.to_file(graph_file_path)
-        graph_string = xgmml_graph.to_string()
-        g = Graph_from_File(project_name=file.project_name, graph_file=graph_file_path, graph_string=graph_string)
-        g.save()
-        File.objects.filter(id=id).update(reg_graph=g)
-        messages.info(request, "regulatory graph for project '" + g.project_name + "' successfully created.")
-        return file_detail(request, id)
 
-    else:
+        else:
 
-        return render(request, "regGraphFile_form.html")
+            return render(request, "regGraphFile_form.html")
+
+    context = {
+        "form": form,
+    }
+    return render(request, "regGraphFile_form.html", context)
+
 
 def graph_delete(request, pk):
     f = get_object_or_404(Graph_from_File, pk=pk)

@@ -59,6 +59,7 @@ def get_loaded_system(request):
             system_type = "Quick"
             instance = loaded_system_list[0]
             name = instance.name
+            slug= instance.slug
             filename="" # there is no corresponding file
 
     else: #must be file format
@@ -66,6 +67,7 @@ def get_loaded_system(request):
         instance = loaded_system_list[0]
         name = instance.project_name
         filename = instance.get_filename()
+        slug = instance.slug
 
     if len(loaded_system_list) > 1:
         raise LookupError("Corrupted database, multiple systems had loaded flag set to true.")
@@ -76,6 +78,7 @@ def get_loaded_system(request):
             "loaded_system": instance,
             "loaded_type": system_type,
             "loaded_project_name": name,
+            "loaded_project_slug": slug,
         }
         if filename:
             context["loaded_file"] = filename

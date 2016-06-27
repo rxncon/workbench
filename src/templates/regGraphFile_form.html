@@ -3,9 +3,21 @@
 {% block content %}
 <h1> Create regulatory graph</h1>
 <h2> Project: {{ loaded_system.project_name }}</h2>
+
+{% comment %}
 <a href="{% url 'graphs:regGraphCreate' id=loaded_system.id %}" class="btn btn-sm" title="Create Graph"
                    role="button">
     <span class="btn btn-default" aria-hidden="true">Create</span>
 </a>
+{% endcomment %}
+
+<form method="post" action="{% url 'graphs:regGraphCreate' id=loaded_system.id %}">
+    {% csrf_token %}
+    {{ form.as_p}}
+    <p>Use layout template:<input type="file" name="template"></p>
+    <input type="submit" value="Create graph" />
+</form>
+
+
 
 {% endblock content %}file_form.html
