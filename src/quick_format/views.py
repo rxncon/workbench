@@ -6,7 +6,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.core.urlresolvers import reverse
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404, redirect
-import rxncon.input.excel_book.excel_book as rxncon_excel
+import rxncon.input.quick.quick as rxncon_quick
 
 
 from .models import Quick
@@ -16,16 +16,12 @@ from .forms import QuickForm, DeleteQuickForm
 
 def quick_detail(request, id):
     instance = Quick.objects.get(id=id)
-    try:
-        book = rxncon_excel.ExcelBookWithReactionType(instance.get_absolute_path())
-    except:
-        book = rxncon_excel.ExcelBookWithoutReactionType(instance.get_absolute_path())
-    rxncon_system = book.rxncon_system
+    rxncon_system = rxncon_quick.Quick(instance.quick_input)
 
     context_data = {
         "title": instance.name,
         "instance": instance,
-        "nr_reactions": len(rxncon_system.reactions),
+        "nr_reactions": len(rxncon_system.rxncon_system.reactions),
     }
     return render(request, "quick_detail.html", context_data)
 
