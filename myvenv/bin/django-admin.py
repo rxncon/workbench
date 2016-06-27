@@ -1,4 +1,4 @@
-#!/home/mathias/TBP/django_stuff/rxncon/myvenv/bin/python3.5
+#!/home/mathias/tbp/django_rxncon_site/myvenv/bin/python3
 from django.core import management
 
 if __name__ == "__main__":

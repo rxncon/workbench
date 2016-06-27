@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelavent variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/home/mathias/TBP/django_stuff/rxncon/myvenv"
+VIRTUAL_ENV="/home/mathias/tbp/django_rxncon_site/myvenv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
