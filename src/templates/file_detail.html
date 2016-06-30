@@ -49,7 +49,7 @@
         <li>Loaded: {{ loaded }}</li>
     </ul>
 
-    {% if instance.reg_graph%}
+    {% if instance.reg_graph %}
         <h5>Regulatory Graph:</h5>
         <p style="display: inline-block">Created: {{ instance.reg_graph.timestamp }}
             <div class="btn-group btn-group-sm" role="group">
@@ -62,7 +62,11 @@
                     <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
                 </a>
             </div>
-        </p>
+        {% if instance.reg_graph.comment %}
+            <h6>Comment: </h6>
+                {{ instance.reg_graph.comment | linebreaks}}
+            </p>
+        {% endif %}
 
     {% endif %}
 

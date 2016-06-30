@@ -11,7 +11,7 @@
 </a>
 {% endcomment %}
 
-<form method="post" action="{% url 'graphs:regGraphCreate' id=loaded_system.id %}">
+<form method="post" action="{% url 'graphs:regGraphCreate' id=loaded_system.id %}" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form.as_p}}
     <p>Use layout template:<input type="file" name="template"></p>

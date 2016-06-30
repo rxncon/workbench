@@ -14,6 +14,7 @@ import rxncon.input.excel_book.excel_book as rxncon_excel
 import rxncon.simulation.rule_graph.regulatory_graph as regulatory_graph
 import rxncon.simulation.rule_graph.graphML as graphML
 from .forms import DeleteGraphForm
+from xml.dom import minidom
 
 
 
@@ -31,24 +32,50 @@ def regGraph(request, id=None):
                 book = rxncon_excel.ExcelBookWithoutReactionType(file.get_absolute_path())
             rxncon_system = book.rxncon_system
 
-            graph = regulatory_graph.RegulatoryGraph(rxncon_system).to_graph() # throws not implemented errorim
+            graph_file_name = file.slug + "_" + file.get_filename().split(".")[0] + "_regGraph.xgmml"
+            graph_file_path = "%s/%s/%s/%s" % (media_root, file.slug, "graphs", graph_file_name)
+            graph = regulatory_graph.RegulatoryGraph(rxncon_system).to_graph()
             xgmml_graph = graphML.XGMML(graph, file.slug)
-            if request.POST.get("template"):
-                graph_file_name = file.slug + "_" + file.get_filename().split(".")[0] + "_template_"+ "_regGraph.xgmml"
-            else:
-                graph_file_name= file.slug + "_" + file.get_filename().split(".")[0] + "_regGraph.xgmml"
 
-            graph_file_path =  "%s/%s/%s/%s" %(media_root,file.slug,"graphs", graph_file_name)
             if os.path.exists(graph_file_path):
                 messages.warning(request, "Graph File already exists.")
                 return file_detail(request, id)
-            if not os.path.exists("%s/%s/%s" %(media_root,file.slug,"graphs")):
-                os.makedirs("%s/%s/%s" %(media_root,file.slug,"graphs"))
+            if not os.path.exists("%s/%s/%s" % (media_root, file.slug, "graphs")):
+                os.makedirs("%s/%s/%s" % (media_root, file.slug, "graphs"))
 
             graph_file = xgmml_graph.to_file(graph_file_path)
             graph_string = xgmml_graph.to_string()
 
-            g = Graph_from_File(project_name=file.project_name, graph_file=graph_file_path, graph_string=graph_string)
+            if request.FILES.get('template'):
+                xmldoc_layouted = minidom.parse(request.FILES.get('template'))
+                node_list_layouted = xmldoc_layouted.getElementsByTagName('node')
+                node_names_layouted = [item._attrs['label'].value for item in node_list_layouted]
+
+                xmldoc_raw = minidom.parse(graph_file_path)
+                node_list_raw = xmldoc_raw.getElementsByTagName('node')
+                node_names_raw = [{"name": item._attrs['label'].value,
+                                   "index": _get_node_index(item._attrs['label'].value, node_list_raw)} for item in
+                                  node_list_raw]
+
+                coordinates_dict = _get_labels_and_coordinates_dict(xmldoc_layouted)
+
+                for node in node_names_raw:
+                    if node["name"] in node_names_layouted:
+                        element = xmldoc_raw.createElement("graphics")
+                        element.setAttribute("x", coordinates_dict[node["name"]]["x"])
+                        element.setAttribute("y", coordinates_dict[node["name"]]["y"])
+                        element.setAttribute("z", coordinates_dict[node["name"]]["z"])
+                        element.appendChild(xmldoc_raw.createTextNode(''))
+                        target_node = node_list_raw.item(node["index"])
+                        target_node.appendChild(element)
+
+                graph_file = open(graph_file_path, "w")
+                xmldoc_raw.writexml(graph_file)
+                graph_string = xmldoc_raw.toprettyxml()
+                graph_file.close()
+
+            g = Graph_from_File(project_name=file.project_name, graph_file=graph_file_path, graph_string=graph_string,
+                                comment=request.POST.get('comment'))
             g.save()
 
             File.objects.filter(id=id).update(reg_graph=g)
@@ -88,3 +115,24 @@ def graph_delete(request, pk):
                      "file": filename,
                      }
     return render(request, 'graph_delete.html', template_vars)
+
+def _get_labels_and_coordinates_dict(xmldoc):
+    graphics_list = xmldoc.getElementsByTagName('graphics')
+
+    coordinates_dict={}
+    for graphic in graphics_list:
+        if graphic._attrs and not graphic.parentNode.tagName=="edge":
+            coordinates={
+                "x": graphic._attrs['x'].value,
+                "y": graphic._attrs['y'].value,
+                "z": graphic._attrs['z'].value,
+            }
+            coordinates_dict[graphic.parentNode._attrs['label'].value] = coordinates
+
+    return coordinates_dict
+
+def _get_node_index(nodename, node_list):
+    lenght = node_list.length
+    for i in range(0,lenght):
+        if nodename == node_list[i]._attrs['label'].value:
+            return i
