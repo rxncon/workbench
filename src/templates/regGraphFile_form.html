@@ -14,7 +14,7 @@
 <form method="post" action="{% url 'graphs:regGraphCreate' id=loaded_system.id %}" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form.as_p}}
-    <p>Use layout template:<input type="file" name="template"></p>
+    <p>Use layout template:<input type="file" name="template"> Note: Show media roo tinfo here. does not work{{ MEDIA_ROOT }}</p>
     <input type="submit" value="Create graph" />
 </form>
 

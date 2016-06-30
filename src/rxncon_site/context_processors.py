@@ -1,6 +1,6 @@
 from fileTree.models import File
 from quick_format.models import Quick
-
+from django.conf import settings
 # http://stackoverflow.com/questions/28533854/provide-extra-context-to-all-views
 
 def file_list(request):
@@ -84,4 +84,6 @@ def get_loaded_system(request):
             context["loaded_file"] = filename
     return context
 
+def admin_media(request):
 
+    return {'MEDIA_ROOT': settings.MEDIA_ROOT}
