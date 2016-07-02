@@ -1,0 +1,54 @@
+<?xml version="1.0" ?><graph directed="1" xmlns="http://www.cs.rpi.edu/XGMML" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <att name="selected" type="boolean" value="1"/>
+    <att name="name" type="string" value="layouter-test"/>
+    <att name="shared name" type="string" value="layouter-test"/>
+    
+<node id="Yfg1_[DomainA]_pt_Yfg2_[DomainB]" label="Yfg1_[DomainA]_pt_Yfg2_[DomainB]"><att name="type" value="reaction"/><graphics x="4.0" y="413.0" z="0.0"></graphics></node>
+<node id="Yfg1_[DomainA]_ub+_Yfg2_[DomainB]" label="Yfg1_[DomainA]_ub+_Yfg2_[DomainB]"><att name="type" value="reaction"/><graphics x="542.0" y="579.0" z="0.0"></graphics></node>
+<node id="Yfg1_[DomainA]_p+_Yfg2_[DomainB]" label="Yfg1_[DomainA]_p+_Yfg2_[DomainB]"><att name="type" value="reaction"/><graphics x="214.0" y="534.0" z="0.0"></graphics></node>
+<node id="Yfg2_[DomainA]_ipi_Yfg2_[DomainB]" label="Yfg2_[DomainA]_ipi_Yfg2_[DomainB]"><att name="type" value="reaction"/><graphics x="630.0" y="245.0" z="0.0"></graphics></node>
+<node id="Yfg1_[DomainA]_trsc_Yfg2_[DomainB]" label="Yfg1_[DomainA]_trsc_Yfg2_[DomainB]"><att name="type" value="reaction"/><graphics x="73.0" y="90.0" z="0.0"></graphics></node>
+<node id="Yfg2" label="Yfg2"><att name="type" value="state"/><graphics x="181.0" y="194.0" z="0.0"></graphics></node>
+<node id="Yfg1_[DomainA]_ipi_Yfg1_[DomainB]" label="Yfg1_[DomainA]_ipi_Yfg1_[DomainB]"><att name="type" value="reaction"/></node>
+<node id="Yfg2_[DomainB]-{gtp}" label="Yfg2_[DomainB]-{gtp}"><att name="type" value="state"/><graphics x="314.0" y="527.0" z="0.0"></graphics></node>
+<node id="Yfg1_[DomainA]--[DomainB]" label="Yfg1_[DomainA]--[DomainB]"><att name="type" value="state"/></node>
+<node id="Yfg2_[DomainB]-{p}" label="Yfg2_[DomainB]-{p}"><att name="type" value="state"/><graphics x="142.0" y="449.0" z="0.0"></graphics></node>
+<node id="Yfg1_[DomainA]_p-_Yfg2_[DomainB]" label="Yfg1_[DomainA]_p-_Yfg2_[DomainB]"><att name="type" value="reaction"/><graphics x="0.0" y="502.0" z="0.0"></graphics></node>
+<node id="Yfg1_[DomainA]_gap_Yfg2_[DomainB]" label="Yfg1_[DomainA]_gap_Yfg2_[DomainB]"><att name="type" value="reaction"/><graphics x="348.0" y="673.0" z="0.0"></graphics></node>
+<node id="A_[dA]_ub+_Yfg2_[DomainB]" label="A_[dA]_ub+_Yfg2_[DomainB]"><att name="type" value="reaction"/></node>
+<node id="Yfg1_[DomainA]--Yfg2_[DomainB]" label="Yfg1_[DomainA]--Yfg2_[DomainB]"><att name="type" value="state"/><graphics x="409.0" y="140.0" z="0.0"></graphics></node>
+<node id="Yfg1_[DomainA]_ppi_Yfg2_[DomainB]" label="Yfg1_[DomainA]_ppi_Yfg2_[DomainB]"><att name="type" value="reaction"/><graphics x="470.0" y="7.0" z="0.0"></graphics></node>
+<node id="Yfg2_[DomainB]-{ub}" label="Yfg2_[DomainB]-{ub}"><att name="type" value="state"/><graphics x="441.0" y="472.0" z="0.0"></graphics></node>
+<node id="Yfg2_[DomainA]--[DomainB]" label="Yfg2_[DomainA]--[DomainB]"><att name="type" value="state"/><graphics x="489.0" y="279.0" z="0.0"></graphics></node>
+<node id="Yfg1_[DomainA]_syn_Yfg2_[DomainB]" label="Yfg1_[DomainA]_syn_Yfg2_[DomainB]"><att name="type" value="reaction"/><graphics x="43.0" y="172.0" z="0.0"></graphics></node>
+<node id="Yfg1_[DomainA]_deg_Yfg2_[DomainB]" label="Yfg1_[DomainA]_deg_Yfg2_[DomainB]"><att name="type" value="reaction"/><graphics x="296.847375787111" y="263.09832763671875" z="0.0"></graphics></node>
+<node id="Yfg1_[DomainA]_gef_Yfg2_[DomainB]" label="Yfg1_[DomainA]_gef_Yfg2_[DomainB]"><att name="type" value="reaction"/><graphics x="193.0" y="585.0" z="0.0"></graphics></node>
+<node id="Yfg1_[DomainA]_i_Yfg2_[DomainB]" label="Yfg1_[DomainA]_i_Yfg2_[DomainB]"><att name="type" value="reaction"/><graphics x="533.0" y="66.0" z="0.0"></graphics></node>
+<node id="Yfg1_[DomainA]_bind_Yfg2_[DomainB]" label="Yfg1_[DomainA]_bind_Yfg2_[DomainB]"><att name="type" value="reaction"/><graphics x="381.0" y="0.0" z="0.0"></graphics></node>
+<node id="Yfg1_[DomainA]_trsl_Yfg2_[DomainB]" label="Yfg1_[DomainA]_trsl_Yfg2_[DomainB]"><att name="type" value="reaction"/><graphics x="156.0" y="56.0" z="0.0"></graphics></node>
+<node id="Yfg1_[DomainA]_ap_Yfg2_[DomainB]" label="Yfg1_[DomainA]_ap_Yfg2_[DomainB]"><att name="type" value="reaction"/><graphics x="52.0" y="569.0" z="0.0"></graphics></node>
+<edge source="Yfg1_[DomainA]_pt_Yfg2_[DomainB]" target="Yfg2_[DomainB]-{p}"><att name="interaction" value="produce"/></edge>
+<edge source="Yfg1_[DomainA]_ub+_Yfg2_[DomainB]" target="Yfg2_[DomainB]-{ub}"><att name="interaction" value="produce"/></edge>
+<edge source="Yfg1_[DomainA]_p+_Yfg2_[DomainB]" target="Yfg2_[DomainB]-{p}"><att name="interaction" value="produce"/></edge>
+<edge source="Yfg2_[DomainA]_ipi_Yfg2_[DomainB]" target="Yfg2_[DomainA]--[DomainB]"><att name="interaction" value="produce"/></edge>
+<edge source="Yfg1_[DomainA]_trsc_Yfg2_[DomainB]" target="Yfg2"><att name="interaction" value="produce"/></edge>
+<edge source="Yfg1_[DomainA]_ipi_Yfg1_[DomainB]" target="Yfg1_[DomainA]--[DomainB]"><att name="interaction" value="produce"/></edge>
+<edge source="Yfg2_[DomainB]-{gtp}" target="Yfg1_[DomainA]_p+_Yfg2_[DomainB]"><att name="interaction" value="k-"/></edge>
+<edge source="Yfg2_[DomainB]-{p}" target="Yfg1_[DomainA]_gef_Yfg2_[DomainB]"><att name="interaction" value="!"/></edge>
+<edge source="Yfg1_[DomainA]_p-_Yfg2_[DomainB]" target="Yfg2_[DomainB]-{p}"><att name="interaction" value="consume"/></edge>
+<edge source="Yfg1_[DomainA]_gap_Yfg2_[DomainB]" target="Yfg2_[DomainB]-{gtp}"><att name="interaction" value="consume"/></edge>
+<edge source="A_[dA]_ub+_Yfg2_[DomainB]" target="Yfg2_[DomainB]-{ub}"><att name="interaction" value="produce"/></edge>
+<edge source="Yfg1_[DomainA]_ppi_Yfg2_[DomainB]" target="Yfg1_[DomainA]--Yfg2_[DomainB]"><att name="interaction" value="produce"/></edge>
+<edge source="Yfg1_[DomainA]_syn_Yfg2_[DomainB]" target="Yfg2"><att name="interaction" value="produce"/></edge>
+<edge source="Yfg1_[DomainA]_deg_Yfg2_[DomainB]" target="Yfg2"><att name="interaction" value="consume"/></edge>
+<edge source="Yfg1_[DomainA]_deg_Yfg2_[DomainB]" target="Yfg2_[DomainB]-{p}"><att name="interaction" value="consume"/></edge>
+<edge source="Yfg1_[DomainA]_deg_Yfg2_[DomainB]" target="Yfg2_[DomainB]-{gtp}"><att name="interaction" value="consume"/></edge>
+<edge source="Yfg1_[DomainA]_deg_Yfg2_[DomainB]" target="Yfg1_[DomainA]--Yfg2_[DomainB]"><att name="interaction" value="consume"/></edge>
+<edge source="Yfg1_[DomainA]_deg_Yfg2_[DomainB]" target="Yfg2_[DomainB]-{ub}"><att name="interaction" value="consume"/></edge>
+<edge source="Yfg1_[DomainA]_deg_Yfg2_[DomainB]" target="Yfg2_[DomainA]--[DomainB]"><att name="interaction" value="consume"/></edge>
+<edge source="Yfg1_[DomainA]_gef_Yfg2_[DomainB]" target="Yfg2_[DomainB]-{gtp}"><att name="interaction" value="produce"/></edge>
+<edge source="Yfg1_[DomainA]_i_Yfg2_[DomainB]" target="Yfg1_[DomainA]--Yfg2_[DomainB]"><att name="interaction" value="produce"/></edge>
+<edge source="Yfg1_[DomainA]_bind_Yfg2_[DomainB]" target="Yfg1_[DomainA]--Yfg2_[DomainB]"><att name="interaction" value="produce"/></edge>
+<edge source="Yfg1_[DomainA]_trsl_Yfg2_[DomainB]" target="Yfg2"><att name="interaction" value="produce"/></edge>
+<edge source="Yfg1_[DomainA]_ap_Yfg2_[DomainB]" target="Yfg2_[DomainB]-{p}"><att name="interaction" value="produce"/></edge>
+</graph>

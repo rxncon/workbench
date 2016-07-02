@@ -58,9 +58,11 @@ def regGraph(request, id=None):
                                   node_list_raw]
 
                 coordinates_dict = _get_labels_and_coordinates_dict(xmldoc_layouted)
-
+                print("node names raw: ", node_names_raw)
+                print("node_names_layouted: ", node_names_layouted)
                 for node in node_names_raw:
-                    if node["name"] in node_names_layouted:
+                    if node["name"] in node_names_layouted and node["name"] in coordinates_dict:
+                        print ("node [\"name\"]: ", node["name"])
                         element = xmldoc_raw.createElement("graphics")
                         element.setAttribute("x", coordinates_dict[node["name"]]["x"])
                         element.setAttribute("y", coordinates_dict[node["name"]]["y"])
