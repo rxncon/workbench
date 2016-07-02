@@ -4,14 +4,7 @@
 <h1> Create regulatory graph</h1>
 <h2> Project: {{ loaded_system.project_name }}</h2>
 
-{% comment %}
-<a href="{% url 'graphs:regGraphCreate' id=loaded_system.id %}" class="btn btn-sm" title="Create Graph"
-                   role="button">
-    <span class="btn btn-default" aria-hidden="true">Create</span>
-</a>
-{% endcomment %}
-
-<form method="post" action="{% url 'graphs:regGraphCreate' id=loaded_system.id %}" enctype="multipart/form-data">
+<form method="post" action="{% url 'graphs:regGraphCreate' file_id=loaded_system.id %}" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form.as_p}}
     <p>Use layout template:<input type="file" name="template"> Note: Show media roo tinfo here. does not work{{ MEDIA_ROOT }}</p>
