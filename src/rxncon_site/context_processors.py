@@ -73,7 +73,7 @@ def get_loaded_system(request):
         raise LookupError("Corrupted database, multiple systems had loaded flag set to true.")
 
     if len(loaded_system_list) != 0:
-
+        request.loaded = system_type
         context = {
             "loaded_system": instance,
             "loaded_type": system_type,
@@ -87,3 +87,4 @@ def get_loaded_system(request):
 def admin_media(request):
 
     return {'MEDIA_ROOT': settings.MEDIA_ROOT}
+

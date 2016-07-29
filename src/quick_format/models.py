@@ -1,8 +1,12 @@
 from django.core.urlresolvers import reverse
 from django.db import models
+from django.db.models.signals import pre_save
+from django.utils.text import slugify
+
 
 class Quick(models.Model):
     name = models.CharField(max_length=120)
+    slug = models.SlugField(blank=True)
     loaded = models.BooleanField(default=False)
     quick_input = models.TextField(null=False)
     comment = models.TextField(null=True, blank=True)
@@ -21,3 +25,12 @@ class Quick(models.Model):
 
     def load(self):
         pass
+
+def pre_save_post_receiver(sender, instance, *args, **kwargs):
+    if not instance.slug:
+        # instance.slug = create_slug(instance)
+        instance.slug=slugify(instance.project_name)
+
+
+
+pre_save.connect(pre_save_post_receiver, sender=Quick)
