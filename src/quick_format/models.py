@@ -29,7 +29,7 @@ class Quick(models.Model):
 def pre_save_post_receiver(sender, instance, *args, **kwargs):
     if not instance.slug:
         # instance.slug = create_slug(instance)
-        instance.slug=slugify(instance.project_name)
+        instance.slug=slugify(instance.name)
 
 
 
