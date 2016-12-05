@@ -48,9 +48,9 @@ def file_detail(request, id):
     slug = File.objects.filter(id=id).values("slug")
     project_files = File.objects.filter(slug=slug).order_by("-updated")
     try:
-        book= rxncon_excel.ExcelBookWithReactionType(instance.get_absolute_path())
+        book = rxncon_excel.ExcelBook(instance.get_absolute_path())
     except:
-        book= rxncon_excel.ExcelBookWithoutReactionType(instance.get_absolute_path())
+        raise ImportError("Could not import file")
     rxncon_system = book.rxncon_system
 
     context_data = {

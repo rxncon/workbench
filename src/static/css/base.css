@@ -65,7 +65,7 @@ a:hover, a:active, a:focus { /* Durch diese Gruppe von Selektoren wird bei Verwe
 */
 .sidebar1 {
 	float: left;
-	width: 30%;
+	width: 20%;
 	background-color: #F4F4F4;
 	padding: 10px;
     margin-right: 10px;
@@ -73,11 +73,33 @@ a:hover, a:active, a:focus { /* Durch diese Gruppe von Selektoren wird bei Verwe
     margin-bottom: 10px;
 }
 
+.sidebar1 h3, h4, b {
+	padding-left: 0px;
+}
+
 .sidebar1 h3 {
     float: left;
 }
 .sidebar1 a {
     float: right;
+}
+
+.sidebar1 .btn-link{
+	font-size: smaller;
+}
+
+.sidebar_header{
+
+}
+
+.sidebar1 .btn-sm {
+	font-size: 11px;
+	padding: 5px;
+}
+
+.sidebar1 .b{
+		margin: auto;
+	display: block;
 }
 
 .list_row h4 {
@@ -97,7 +119,11 @@ h4.caption {
 	display: inline-block;
 }
 
-}
+.navbar-header {
+	width: 20%;
+	}
+
+
 
 
 
