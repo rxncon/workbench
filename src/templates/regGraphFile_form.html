@@ -2,9 +2,9 @@
 {% block head_title %} {{ instance.title }} | {{ block.super }}  {% endblock %}
 {% block content %}
 <h1> Create regulatory graph</h1>
-<h2> Project: {{ loaded_project_name }}</h2>
+<h3> Project: {{ loaded_project_name }}</h3>
 
-<form method="post" enctype="multipart/form-data" action="
+<form class = "form" method="post" enctype="multipart/form-data" action="
     {% if loaded_type == 'File' %}
         {% url 'graphs:regGraphCreateFromFile' system_id=loaded_system.id %}" >
     {% else %}

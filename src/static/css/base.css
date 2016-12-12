@@ -1,4 +1,40 @@
-h1 {
+.navbar a {
+	font-size: 11px;
+}
+
+.navbar-header {
+	width: 20%;
+	}
+
+.navbar-brand {
+	padding-top: 6px;
+	padding-bottom: 1px;
+	padding-left: 10px;
+	padding-right: 0;
+}
+
+.navbar a:link{
+	text-decoration: none;
+}
+
+.navbar-right {
+	margin: 16px -10px 16px 0px;
+	align-self: right;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	width: 20em;
+	/*margin-right: -10px;*/
+
+}
+
+.container-fluid{
+	margin-top: 5px;
+	margin-bottom: 5px;
+
+}
+
+h1, h2 {
     color: #777777;
 }
 
@@ -9,17 +45,20 @@ body {
 	padding: 0;
 	color: #000;
 }
+body p {
+	font-size: 11px;
+}
 
 /* ~~ Element-/Tag-Selektoren ~~ */
 ul, ol, dl { /* Aufgrund von Abweichungen zwischen verschiedenen Browsern empfiehlt es sich, die Auffüllung und den Rand in Listen auf 0 einzustellen. Zu Konsistenzzwecken können Sie die gewünschten Werte entweder hier oder in den enthaltenen Listenelementen (LI, DT, DD) eingeben. Beachten Sie, dass die hier eingegebenen Werte hierarchisch auf die .nav-Liste angewendet werden, sofern Sie keinen spezifischeren Selektor festlegen. */
 	padding: 0;
 	margin: 0;
 }
-h1, h2, h3, h4, h5, h6, p {
-	margin-top: 0;	 /* Durch Verschieben des oberen Rands wird das Problem behoben, dass Ränder aus dem zugehörigen div-Tag geraten können. Der übrig gebliebene untere Rand hält ihn getrennt von allen folgenden Elementen. */
-	padding-right: 15px;
-	padding-left: 15px; /* Durch Hinzufügen der Auffüllung zu den Seiten der Elemente innerhalb der div-Tags anstelle der div-Tags selbst entfallen jegliche Box-Modell-Berechnungen. Alternativ kann auch ein verschachteltes div-Tag mit seitlicher Auffüllung verwendet werden. */
-}
+/*h1, h2, h3, h4, h5, h6, p {*/
+	/*margin-top: 0;	 !* Durch Verschieben des oberen Rands wird das Problem behoben, dass Ränder aus dem zugehörigen div-Tag geraten können. Der übrig gebliebene untere Rand hält ihn getrennt von allen folgenden Elementen. *!*/
+	/*padding-right: 15px;*/
+	/*padding-left: 15px; !* Durch Hinzufügen der Auffüllung zu den Seiten der Elemente innerhalb der div-Tags anstelle der div-Tags selbst entfallen jegliche Box-Modell-Berechnungen. Alternativ kann auch ein verschachteltes div-Tag mit seitlicher Auffüllung verwendet werden. *!*/
+/*}*/
 a img { /* Dieser Selektor entfernt den standardmäßigen blauen Rahmen, der in einigen Browsern um ein Bild angezeigt wird, wenn es von einem Hyperlink umschlossen ist. */
 	border: none;
 }
@@ -54,13 +93,27 @@ a:hover, a:active, a:focus { /* Durch diese Gruppe von Selektoren wird bei Verwe
 
 /* ~~ Dies sind die Spalten für das Layout. ~~
 
-1) Eine Auffüllung wird nur oben und/oder unten in den div-Tags positioniert. Die Elemente innerhalb dieser div-Tags verfügen über eine seitliche Auffüllung. Dadurch müssen Sie keine Box-Modell-Berechnungen durchführen. Zu beachten: Wenn Sie dem div-Tag eine seitliche Auffüllung oder einen Rahmen hinzufügen, werden diese zu der festgelegten Breite addiert und ergeben die *gesamte* Breite. Sie können auch die Auffüllung für das Element im div-Tag entfernen und ein zweites div-Tag ohne Breite und mit der gewünschten Auffüllung im ersten div-Tag einfügen.
+1) Eine Auffüllung wird nur oben und/oder unten in den div-Tags positioniert. Die Elemente innerhalb dieser div-Tags
+verfügen über eine seitliche Auffüllung. Dadurch müssen Sie keine Box-Modell-Berechnungen durchführen.
+Zu beachten: Wenn Sie dem div-Tag eine seitliche Auffüllung oder einen Rahmen hinzufügen, werden diese zu der f
+estgelegten Breite addiert und ergeben die *gesamte* Breite. Sie können auch die Auffüllung für das Element im div-Tag
+entfernen und ein zweites div-Tag ohne Breite und mit der gewünschten Auffüllung im ersten div-Tag einfügen.
 
-2) Für die Spalten wurde kein Rand angegeben, da es sich um fließende Spalten handelt. Wenn Sie unbedingt einen Rand hinzufügen möchten, platzieren Sie ihn nicht auf der Seite in Flussrichtung (z. B. ein rechter Rand in einem div-Tag, das so festgelegt ist, dass das Element nach rechts fließt). In vielen Fällen kann stattdessen eine Auffüllung verwendet werden. Bei div-Tags, bei denen diese Regel gebrochen werden muss, sollten Sie der Regel des div-Tags eine display:inline-Deklaration hinzufügen, um das Problem zu umgehen, dass in einigen Versionen von Internet Explorer der Rand doppelt angezeigt wird.
+2) Für die Spalten wurde kein Rand angegeben, da es sich um fließende Spalten handelt. Wenn Sie unbedingt einen Rand
+hinzufügen möchten, platzieren Sie ihn nicht auf der Seite in Flussrichtung (z. B. ein rechter Rand in einem div-Tag,
+das so festgelegt ist, dass das Element nach rechts fließt). In vielen Fällen kann stattdessen eine Auffüllung verwendet
+werden. Bei div-Tags, bei denen diese Regel gebrochen werden muss, sollten Sie der Regel des div-Tags eine
+display:inline-Deklaration hinzufügen, um das Problem zu umgehen, dass in einigen Versionen von Internet Explorer der
+Rand doppelt angezeigt wird.
 
-3) Da Klassen in einem Dokument mehrmals verwendet werden können (und zudem auf ein Element mehrere Klassen angewendet werden können), wurden den Spalten Klassennamen statt IDs zugewiesen. Beispielsweise können zwei div-Tags für eine Seitenleiste bei Bedarf gestapelt werden. Diese div-Tags können problemlos in IDs geändert werden, solange Sie sie nur einmal pro Dokument verwenden.
+3) Da Klassen in einem Dokument mehrmals verwendet werden können (und zudem auf ein Element mehrere Klassen angewendet
+werden können), wurden den Spalten Klassennamen statt IDs zugewiesen. Beispielsweise können zwei div-Tags für eine
+Seitenleiste bei Bedarf gestapelt werden. Diese div-Tags können problemlos in IDs geändert werden, solange Sie sie nur
+einmal pro Dokument verwenden.
 
-4) Wenn Sie die Navigation auf der rechten statt auf der linken Seite platzieren möchten, lassen Sie diese Spalten einfach in die andere Richtung fließen (alle nach rechts anstatt alle nach links). Die Spalten werden dann in umgekehrter Reihenfolge dargestellt. Die div-Tags in der HTML-Quelle müssen nicht verschoben werden.
+4) Wenn Sie die Navigation auf der rechten statt auf der linken Seite platzieren möchten, lassen Sie diese Spalten e
+infach in die andere Richtung fließen (alle nach rechts anstatt alle nach links). Die Spalten werden dann in umgekehrter
+Reihenfolge dargestellt. Die div-Tags in der HTML-Quelle müssen nicht verschoben werden.
 
 */
 .sidebar1 {
@@ -75,6 +128,7 @@ a:hover, a:active, a:focus { /* Durch diese Gruppe von Selektoren wird bei Verwe
 
 .sidebar1 h3, h4, b {
 	padding-left: 0px;
+	display:inline
 }
 
 .sidebar1 h3 {
@@ -85,11 +139,11 @@ a:hover, a:active, a:focus { /* Durch diese Gruppe von Selektoren wird bei Verwe
 }
 
 .sidebar1 .btn-link{
-	font-size: smaller;
+	font-size: 11px;
 }
 
 .sidebar_header{
-
+margin-bottom: 18px;
 }
 
 .sidebar1 .btn-sm {
@@ -97,9 +151,22 @@ a:hover, a:active, a:focus { /* Durch diese Gruppe von Selektoren wird bei Verwe
 	padding: 5px;
 }
 
-.sidebar1 .b{
-		margin: auto;
+.sidebar1 b{
+	margin: auto;
 	display: block;
+}
+
+.caption{
+	padding-top: 5px;
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-top-color: #a4a4a4;
+}
+
+
+.list_row {
+		padding-left: 15px;
+
 }
 
 .list_row h4 {
@@ -107,7 +174,8 @@ a:hover, a:active, a:focus { /* Durch diese Gruppe von Selektoren wird bei Verwe
 }
 
 .list_row .btn-group {
-    float: right;
+    float: left;
+	padding: auto;
 }
 a.btn {
   text-decoration: none;
@@ -119,14 +187,6 @@ h4.caption {
 	display: inline-block;
 }
 
-.navbar-header {
-	width: 20%;
-	}
-
-
-.navbar a{
-	text-decoration: none;
-}
 
 
 .content {
@@ -135,39 +195,34 @@ h4.caption {
 	float: left;
 }
 
-.detail ul {
-	/*text-indent: 20px;*/
-	list-style-type: none;
+.detail_header{
+	padding-left: 15px;
+	padding-right: 15px;
 }
 
-.detail p {
+.detail_content{
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+
+.detail_content tr{
 	text-indent: 25px;
 }
 
-/* ~~ Dieser gruppierte Selektor gibt die Listen im .content-Bereich an. ~~ */
-.content ul, .content ol {
-	padding: 0 15px 15px 40px; /* Diese Auffüllung setzt die rechte Auffüllung in der obigen Regel für Überschriften und Absätze fort. Die Auffüllung wurde unten für den Abstand zwischen anderen Elementen in den Listen und links für den Einzug platziert. Sie können die Werte nach Bedarf ändern. */
+.detail_content ul {
+	text-indent: 20px;
+	list-style-type: none;
 }
 
-/* ~~ Stile für die Navigationslisten (können entfernt werden, wenn Sie ein vordefiniertes Ausklappmenü wie Spry verwenden) ~~ */
-/*ul.nav {*/
-	/*list-style: none; !* Hiermit wird die Listenmarkierung entfernt. *!*/
-	/*border-top: 1px solid #666; !* Hiermit wird der obere Rand für die Hyperlinks erstellt. Alle anderen werden mit einem unteren Rand im LI-Element platziert. *!*/
-	/*margin-bottom: 15px; !* Hiermit wird der Abstand zwischen den Navigationselementen und den Inhalten unten erstellt. *!*/
-/*}*/
-/*ul.nav li {*/
-	/*border-bottom: 1px solid #666; !* Hiermit wird die Trennung der Schaltflächen erstellt. *!*/
-/*}*/
-/*ul.nav a, ul.nav a:visited { !* Durch Gruppieren dieser Selektoren wird sichergestellt, dass die Hyperlinks auch nach dem Aufrufen die Form einer Schaltfläche beibehalten. *!*/
-	/*padding: 5px 5px 5px 15px;*/
-	/*display: block; !* Hiermit werden die Blockeigenschaften für den Hyperlink angegeben, sodass das gesamte umschließende LI-Element aufgefüllt wird. Hiermit wird angegeben, dass der gesamte Bereich auf einen Mausklick reagiert. *!*/
-	/*text-decoration: none;*/
-	/*background-color: #8090AB;*/
-	/*color: #000;*/
-/*}*/
-/*ul.nav a:hover, ul.nav a:active, ul.nav a:focus { !* Hiermit wird der Hintergrund und die Textfarbe bei der Navigation mit der Maus und der Tastatur geändert. *!*/
-	/*background-color: #F4F4F4;*/
-	/*color: #FFF;*/
+.detail_content p {
+	margin-left: 20px;
+	text-align: justify;
+}
+
+/* ~~ Dieser gruppierte Selektor gibt die Listen im .content-Bereich an. ~~ */
+/*.content ul, .content ol {*/
+	/*padding: 0 15px 15px 40px; !* Diese Auffüllung setzt die rechte Auffüllung in der obigen Regel für Überschriften und Absätze fort. Die Auffüllung wurde unten für den Abstand zwischen anderen Elementen in den Listen und links für den Einzug platziert. Sie können die Werte nach Bedarf ändern. *!*/
 /*}*/
 
 /* ~~ Fußzeile ~~ */
@@ -194,10 +249,8 @@ h4.caption {
 	font-size: 1px;
 	line-height: 0px;
 }
--->
-<!--[if lte IE 7]>
 
-.content { margin-right: -1px; } /* Dieser negative Rand mit 1 Pixel hat in jeder Spalte in diesem Layout die gleiche korrigierende Auswirkung. */
-ul.nav a { zoom: 1; }  /* Mit der zoom-Eigenschaft erhält IE den Auslöser hasLayout, der erforderlich ist, um den zusätzlichen Leerraum zwischen den Hyperlinks zu korrigieren. */
 
-<! [endif]-->
+.form {
+	padding-left: 15px;
+}

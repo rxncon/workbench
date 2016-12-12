@@ -5,70 +5,78 @@
 {% block content %}
 <!--<div class="col-sm-6 col-sm-offset-3">-->
 <div class="detail">
-    <h2> {{ title }} </br> <small>{{instance.updated}}</small></h2>
-    <h5>Filename: </h5>
-    <p>{{ instance.get_filename }}</p>
+    <div class = "detail_header">
+        <h2> {{ title }} </h2>
+        <h4>{{instance.updated}}</h4>
+    </div>
 
-    <h5>All versions:</h5>
-        <table>
-            {% for file in project_files %}
-            <tr>
-                <td {% if file.get_filename == loaded_file %}
-                style="color: green;"
-                {% endif %}> {{file.timestamp}}
-                    <div class="btn-group btn-group-sm" role="group">
-                        <a href="{{ file.get_absolute_url }}" class="btn btn-sm" role="button" title="View details">
-                            <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
-                        </a>
-                        <a href="{% url 'fileTree:load' id=file.id %}" class="btn btn-sm" title="Load file" role="button">
-                            <span class="glyphicon glyphicon-flash" aria-hidden="true"></span>
-                        </a>
-                        <a href="{{ file.get_download_url }}" class="btn btn-sm" role="button" title="Download">
-                            <span class="glyphicon glyphicon-download-alt" aria-hidden="true" ></span>
-                        </a>
-                        <a href="{% url 'fileTree:delete' pk=file.pk %}" class="btn btn-sm" role="button"
-                           title="Delete File">
-                            <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-                        </a>
-                    </div>
-                </td>
-               {% if instance.reg_graph %}
-                <td></td>
-                {% endif %}
-            </tr>
-            {% endfor %}
-        </table>
+    <div class="detail_content">
+        <h5>Filename: </h5>
+        <p>{{ instance.get_filename }}</p>
+
+        <h5>All versions:</h5>
+            <table>
+                {% for file in project_files %}
+                <tr>
+                    <td {% if file.get_filename == loaded_file %}
+                    style="color: green;"
+                    {% endif %}>
+                        {{file.timestamp}}
+                        <div class="btn-group btn-group-sm" role="group">
+                            <a href="{{ file.get_absolute_url }}" class="btn btn-sm" role="button" title="View details">
+                                <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+                            </a>
+                            <a href="{% url 'fileTree:load' id=file.id %}" class="btn btn-sm" title="Load file" role="button">
+                                <span class="glyphicon glyphicon-flash" aria-hidden="true"></span>
+                            </a>
+                            <a href="{{ file.get_download_url }}" class="btn btn-sm" role="button" title="Download">
+                                <span class="glyphicon glyphicon-download-alt" aria-hidden="true" ></span>
+                            </a>
+                            <a href="{% url 'fileTree:delete' pk=file.pk %}" class="btn btn-sm" role="button"
+                               title="Delete File">
+                                <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                            </a>
+                        </div>
+
+                    </td>
+                   {% if instance.reg_graph %}
+                    <td></td>
+                    {% endif %}
+                </tr>
+                {% endfor %}
+            </table>
 
 
-    <h5>Comment:</h5>
-    <p>{{instance.comment|linebreaks}}</p>
+        <h5>Comment:</h5>
+        <p>{{instance.comment|linebreaks}}</p>
 
-    <h5>Infos:</h5>
-    <ul>
-        <li>Number of Reactions: {{ nr_reactions }}</li>
-        <li>Loaded: {{ loaded }}</li>
-    </ul>
+        <h5>Infos:</h5>
+        <ul>
+            <li>Number of Reactions: {{ nr_reactions }}</li>
+            <li>Loaded: {{ loaded }}</li>
+        </ul>
 
-    {% if instance.reg_graph %}
-        <h5>Regulatory Graph:</h5>
-        <p style="display: inline-block">Created: {{ instance.reg_graph.timestamp }}
-            <div class="btn-group btn-group-sm" role="group">
-                <a href="{{ instance.reg_graph.get_download_url }}" class="btn btn-sm" role="button" title="Show">
-                    <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
-                    <!--TODO: details of older versions as well -->
-                </a>
-                <a href="{% url 'graphs:delete' pk=instance.reg_graph.pk %}" class="btn btn-sm" role="button"
-                   title="Delete File">
-                    <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-                </a>
-            </div>
-        {% if instance.reg_graph.comment %}
-            <h6>Comment: </h6>
-                {{ instance.reg_graph.comment | linebreaks}}
-            </p>
+        {% if instance.reg_graph %}
+            <h5>Regulatory Graph:</h5>
+            <p style="display: inline-block">Created: {{ instance.reg_graph.timestamp }}
+                <div class="btn-group btn-group-sm" role="group">
+                    <a href="{{ instance.reg_graph.get_download_url }}" class="btn btn-sm" role="button" title="Show">
+                        <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+                    </a>
+                    <a href="{% url 'graphs:delete' pk=instance.reg_graph.pk %}" class="btn btn-sm" role="button"
+                       title="Delete File">
+                        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                    </a>
+                </div>
+            {% if instance.reg_graph.comment %}
+                <h6>Comment: </h6>
+                    {{ instance.reg_graph.comment | linebreaks}}
+                </p>
+            {% endif %}
+
         {% endif %}
 
-    {% endif %}
+    </div>
 
 
 </div>

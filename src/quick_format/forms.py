@@ -1,6 +1,7 @@
 from django import forms
 from .models import Quick
 
+
 class QuickForm(forms.ModelForm):
     class Meta:
         model = Quick
