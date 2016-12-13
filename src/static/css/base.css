@@ -190,20 +190,20 @@ h4.caption {
 
 
 .content {
-	padding: 10px 0;
+	padding: 10px 15px;
 	width: 70%;
 	float: left;
 }
 
-.detail_header{
-	padding-left: 15px;
-	padding-right: 15px;
-}
+/*.detail_header{*/
+	/*padding-left: 15px;*/
+	/*padding-right: 15px;*/
+/*}*/
 
-.detail_content{
-	padding-left: 15px;
-	padding-right: 15px;
-}
+/*.detail_content{*/
+	/*padding-left: 15px;*/
+	/*padding-right: 15px;*/
+/*}*/
 
 
 .detail_content tr{
@@ -272,9 +272,9 @@ h4.caption {
 }
 
 
-.form-text {
-	padding-left: 15px;
-}
+/*.form-text {*/
+	/*padding-left: 15px;*/
+/*}*/
 
 .form{
 	text-align: left;

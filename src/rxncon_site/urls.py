@@ -28,6 +28,7 @@ urlpatterns = [
     url(r'^quick/', include("quick_format.urls", namespace='quick_format')),
     url(r'^graphs/', include("graphs.urls", namespace='graphs')),
     url(r'^$', views.rxncon_site_index, name='index'),
+    url(r'^publications$', views.publications, name='publications'),
     #url(r'^delete/(?P<id>\d+)/$', fviews.file_delete, name="delete"),
     # url(r'^$', TemplateView.as_view(template_name='static_pages/index.html'),
     #     name='home'),

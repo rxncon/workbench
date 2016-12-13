@@ -9,3 +9,6 @@ from django.contrib import messages
 
 def rxncon_site_index(request):
     return render(request, "static_pages/index.html")
+
+def publications(request):
+    return render(request, "static_pages/publications.html")
