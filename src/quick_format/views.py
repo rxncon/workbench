@@ -22,6 +22,7 @@ def quick_detail(request, id):
         "title": instance.name,
         "instance": instance,
         "nr_reactions": len(rxncon_system.rxncon_system.reactions),
+        "loaded": instance.loaded,
     }
     return render(request, "quick_detail.html", context_data)
 

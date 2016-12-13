@@ -33,7 +33,29 @@
         <h5>Infos:</h5>
         <ul>
             <li>Number of Reactions: {{ nr_reactions }}</li>
+            <li>Loaded: {{ loaded }}</li>
+            <!--TODO add loaded to quick-->
         </ul>
+
+        {% if instance.reg_graph %}
+            <h5>Regulatory Graph:</h5>
+            <p style="display: inline-block">Created: {{ instance.reg_graph.timestamp }}
+                <div class="btn-group btn-group-sm" role="group">
+                    <a href="{{ instance.reg_graph.get_download_url }}" class="btn btn-sm" role="button" title="Show">
+                        <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+                    </a>
+                    <a href="{% url 'graphs:delete' pk=instance.reg_graph.pk %}" class="btn btn-sm" role="button"
+                       title="Delete File">
+                        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                    </a>
+                </div>
+            {% if instance.reg_graph.comment %}
+                <h6>Comment: </h6>
+                    {{ instance.reg_graph.comment | linebreaks}}
+                </p>
+            {% endif %}
+
+        {% endif %}
     </div>
 </div>
 
