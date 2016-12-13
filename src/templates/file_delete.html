@@ -1,11 +1,10 @@
 {% extends "base.html" %}
 {% block head_title %}
-<!--TODO: create this for every page (especially forms)-->
     Del:
     {% if file %}
-        {{ project_name}}
+        {{ project_name | truncatechars:20}}
     {% elif project %}
-        {{project}}
+        {{project | truncatechars:20}}
     {% endif %}
     |
     {{ block.super }}
