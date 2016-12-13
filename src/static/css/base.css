@@ -279,3 +279,11 @@ h4.caption {
 .form{
 	text-align: left;
 }
+
+.index p{
+	text-align: justify
+}
+
+.index img{
+	float: right;
+}
