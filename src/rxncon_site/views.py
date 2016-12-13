@@ -12,3 +12,9 @@ def rxncon_site_index(request):
 
 def publications(request):
     return render(request, "static_pages/publications.html")
+
+def funding(request):
+    return render(request, "static_pages/funding.html")
+
+def support(request):
+    return render(request, "static_pages/support.html")
