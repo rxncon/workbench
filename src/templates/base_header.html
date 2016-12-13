@@ -2,23 +2,28 @@
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="/">
-        <img src="http://rumo.biologie.hu-berlin.de/rxncon_static/images/rxncon_logo_stretch.png" alt="rxncon"/>
+        <img src="static/img/rxncon_logo_stretch.png" alt="rxncon"/>
     </a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="/">Home</a></li>
-      <!--<li class="dropdown">-->
-        <!--<a class="dropdown-toggle" data-toggle="dropdown">Help-->
-        <!--<span class="caret"></span></a>-->
-        <!--<ul class="dropdown-menu">-->
-          <!--<li><a href="#">Page 1-1</a></li>-->
-          <!--<li><a href="#">Page 1-2</a></li>-->
-          <!--<li><a href="#">Page 1-3</a></li>-->
-        <!--</ul>-->
+      <li><a href="/">Home</a></li>
+
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" >Help
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Tutorial</a></li>
+          <li><a href="#">How to cite</a></li>
+        </ul>
       </li>
-      <li><a href="#">Help</a></li>
-      <li><a href="#">Funding</a></li>
-      <li><a href="#">Contact</a></li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" >Downloads
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Cytoscape styles</a></li>
+          <li><a href="#">Example files</a></li>
+        </ul>
+      </li>
     {% if loaded_system %}
       <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" >Visualtisation
