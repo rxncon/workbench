@@ -200,10 +200,13 @@ h4.caption {
 	/*padding-right: 15px;*/
 /*}*/
 
-/*.detail_content{*/
-	/*padding-left: 15px;*/
-	/*padding-right: 15px;*/
-/*}*/
+.detail_content .project_name{
+	font-size: 11px;
+	text-decoration: underline;
+	/*text-decoration: none;*/
+	/*color: #555;*/
+	color: #333;
+}
 
 
 .detail_content tr{

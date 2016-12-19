@@ -54,11 +54,12 @@ def file_detail(request, id):
     rxncon_system = book.rxncon_system
 
     context_data = {
-        "project_files":project_files,
+        "project_files": project_files,
         "title": instance.project_name,
-        "instance":instance,
-        "book":book,
-        "nr_reactions":len(rxncon_system.reactions),
+        "instance": instance,
+        # "book": book,
+        "nr_reactions": len(rxncon_system.reactions),
+        "nr_contingencies": len(rxncon_system.contingencies),
         "loaded": instance.loaded,
         # "nr_reactions":"currently deactivated in fileTree/views.py",
     }
