@@ -11,38 +11,8 @@ import rxncon.simulation.rule_graph.graphML as graphML
 from .models import File
 from quick_format.models import Quick
 from .forms import FileForm, DeleteFileForm
+import django.forms as forms
 
-def file_list(request):  #moved to context processor
-#     # queryset_list = File.objects.all()
-#     queryset_list = File.objects.all().order_by("slug")
-#     slug_list = list(set([File.get_project_slug() for File in queryset_list])) # list(set()) to get unique values
-#     projects= [queryset_list.filter(slug=slug).order_by("-timestamp") for slug in slug_list]
-#
-#
-#
-#     # paginator = Paginator(queryset_list, 10)
-#     # page_request_var= "page"
-#     # page = request.GET.get('page_request_var')
-#     # try:
-#     #     queryset = paginator.page(page)
-#     # except PageNotAnInteger:
-#     #     # If page is not an integer, deliver first page.
-#     #     queryset = paginator.page(1)
-#     # except EmptyPage:
-#     #     # If page is out of range (e.g. 9999), deliver last page of results.
-#     #     queryset = paginator.page(paginator.num_pages)
-#
-#     context_data = {
-#         # "object_list":queryset,
-#         "object_list":queryset_list,
-#         "title":"Projects",
-#         "slug_list": slug_list,
-#         "projects": projects,
-#         # "page_request_var":page_request_var,
-#     }
-#
-#     return render(request, "file_list.html", context_data)
-    pass
 
 def file_detail(request, id, compare_dict = None):
     instance = File.objects.get(id=id)
@@ -67,6 +37,7 @@ def file_detail(request, id, compare_dict = None):
         context_data.update(compare_dict)
 
     return render(request, "file_detail.html", context_data)
+
 
 def file_compare(request, id):
     loaded = File.objects.filter(loaded=True)
@@ -98,11 +69,19 @@ def file_compare(request, id):
 def file_upload(request, slug= None):
     # TODO: like this, it is not case sensitive. "Elefant" and "elefant" are the same project
     form = FileForm(request.POST or None, request.FILES or None)
+    context = {}
     if slug != None: # add file to existing project
         try:
             file = File.objects.filter(slug=slug)[0]
             project_name = file.project_name
             form = FileForm(request.POST or None, request.FILES or None, initial={'project_name': project_name})
+            form.fields['project_name'].widget = forms.HiddenInput()
+
+            context.update({
+                'add_to_project': True,
+                'project_name': project_name,
+            })
+
         except KeyError:
             pass
 
@@ -112,9 +91,9 @@ def file_upload(request, slug= None):
         messages.success(request, "Successfully created")
         return HttpResponseRedirect(instance.get_absolute_url())
 
-    context = {
+    context.update({
         "form": form,
-    }
+    })
     return render(request, "file_form.html", context)
 
 def file_delete(request, pk):
