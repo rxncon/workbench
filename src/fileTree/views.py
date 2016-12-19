@@ -4,6 +4,7 @@ from django.core.urlresolvers import reverse
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404, redirect
 import rxncon.input.excel_book.excel_book as rxncon_excel
+import rxncon.input.quick.quick as rxncon_quick
 import rxncon.simulation.rule_graph.regulatory_graph as regulatory_graph
 import rxncon.simulation.rule_graph.graphML as graphML
 
@@ -66,6 +67,32 @@ def file_detail(request, id, compare_dict = None):
         context_data.update(compare_dict)
 
     return render(request, "file_detail.html", context_data)
+
+def file_compare(request, id):
+    loaded = File.objects.filter(loaded=True)
+    if loaded:
+        try:
+            loaded_rxncon = rxncon_excel.ExcelBook(loaded[0].get_absolute_path())
+        except:
+            raise ImportError("Could not import file")
+
+    else:
+        loaded = Quick.objects.get(loaded=True)
+        try:
+            loaded_rxncon = rxncon_quick.Quick(loaded.quick_input)
+        except:
+            raise ImportError("Could not import quick")
+
+
+    loaded_rxncon_system = loaded_rxncon.rxncon_system
+
+    compare_dict = {
+        "compare_nr_reactions": len(loaded_rxncon_system.reactions),
+        "compare_nr_contingencies": len(loaded_rxncon_system.contingencies),
+    }
+
+
+    return file_detail(request, id, compare_dict)
 
 
 def file_upload(request, slug= None):
@@ -141,29 +168,4 @@ def file_load(request, id):
         messages.info(request, "File '" + target[0].get_filename() + "' successfully loaded")
     return file_detail(request, id)
 
-def file_compare(request, id):
-    # TODO: should work also for quick
-    # instance = File.objects.get(id=id)
-    # loaded = File.objects.filter(loaded=True)
-    loaded = File.objects.get(loaded=True)
 
-
-    # try:
-    #     instance_book = rxncon_excel.ExcelBook(instance.get_absolute_path())
-    # except:
-    #     raise ImportError("Could not import file")
-    # instance_rxncon_system = instance_book.rxncon_system
-
-    try:
-        loaded_book = rxncon_excel.ExcelBook(loaded.get_absolute_path())
-    except:
-        raise ImportError("Could not import file")
-    loaded_rxncon_system = loaded_book.rxncon_system
-
-    compare_dict = {
-        "compare_nr_reactions": len(loaded_rxncon_system.reactions),
-        "compare_nr_contingencies": len(loaded_rxncon_system.contingencies),
-    }
-
-
-    return file_detail(request, id, compare_dict)

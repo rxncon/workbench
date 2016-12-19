@@ -7,6 +7,8 @@ from django.core.urlresolvers import reverse
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404, redirect
 import rxncon.input.quick.quick as rxncon_quick
+import rxncon.input.excel_book.excel_book as rxncon_excel
+
 
 
 from .models import Quick
@@ -14,7 +16,7 @@ from fileTree.models import File
 from .forms import QuickForm, DeleteQuickForm
 
 
-def quick_detail(request, id):
+def quick_detail(request, id, compare_dict=None):
     instance = Quick.objects.get(id=id)
     rxncon_system = rxncon_quick.Quick(instance.quick_input)
 
@@ -22,9 +24,41 @@ def quick_detail(request, id):
         "title": instance.name,
         "instance": instance,
         "nr_reactions": len(rxncon_system.rxncon_system.reactions),
+        "nr_contingencies": len(rxncon_system.rxncon_system.contingencies),
         "loaded": instance.loaded,
     }
+
+    if compare_dict:
+        context_data.update(compare_dict)
+
     return render(request, "quick_detail.html", context_data)
+
+
+def quick_compare(request, id):
+    loaded = File.objects.filter(loaded=True)
+    if loaded:
+        try:
+            loaded_rxncon = rxncon_excel.ExcelBook(loaded[0].get_absolute_path())
+        except:
+            raise ImportError("Could not import file")
+
+    else:
+        loaded = Quick.objects.get(loaded=True)
+        try:
+            loaded_rxncon = rxncon_quick.Quick(loaded.quick_input)
+        except:
+            raise ImportError("Could not import quick")
+
+
+    loaded_rxncon_system = loaded_rxncon.rxncon_system
+
+    compare_dict = {
+        "compare_nr_reactions": len(loaded_rxncon_system.reactions),
+        "compare_nr_contingencies": len(loaded_rxncon_system.contingencies),
+    }
+
+
+    return quick_detail(request, id, compare_dict)
 
 
 def quick_new(request):
