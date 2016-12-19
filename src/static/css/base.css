@@ -286,6 +286,19 @@ h4.caption {
 	text-align: left;
 }
 
+.form label{
+	display: block;
+}
+
+.form textarea, .form input{
+	margin-left: 20px;
+}
+
+.form .btn{
+	margin: 0;
+}
+
+
 .index p{
 	text-align: justify
 }
