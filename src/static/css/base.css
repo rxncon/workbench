@@ -208,6 +208,9 @@ h4.caption {
 	color: #333;
 }
 
+.detail_content .compare_button{
+		margin-left: 20px;
+}
 
 .detail_content tr{
 	text-indent: 25px;

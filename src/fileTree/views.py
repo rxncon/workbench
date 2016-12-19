@@ -43,7 +43,7 @@ def file_list(request):  #moved to context processor
 #     return render(request, "file_list.html", context_data)
     pass
 
-def file_detail(request, id):
+def file_detail(request, id, compare_dict = None):
     instance = File.objects.get(id=id)
     slug = File.objects.filter(id=id).values("slug")
     project_files = File.objects.filter(slug=slug).order_by("-updated")
@@ -57,12 +57,13 @@ def file_detail(request, id):
         "project_files": project_files,
         "title": instance.project_name,
         "instance": instance,
-        # "book": book,
         "nr_reactions": len(rxncon_system.reactions),
         "nr_contingencies": len(rxncon_system.contingencies),
         "loaded": instance.loaded,
-        # "nr_reactions":"currently deactivated in fileTree/views.py",
     }
+
+    if compare_dict:
+        context_data.update(compare_dict)
 
     return render(request, "file_detail.html", context_data)
 
@@ -84,7 +85,7 @@ def file_upload(request, slug= None):
         messages.success(request, "Successfully created")
         return HttpResponseRedirect(instance.get_absolute_url())
 
-    context={
+    context = {
         "form": form,
     }
     return render(request, "file_form.html", context)
@@ -140,5 +141,29 @@ def file_load(request, id):
         messages.info(request, "File '" + target[0].get_filename() + "' successfully loaded")
     return file_detail(request, id)
 
+def file_compare(request, id):
+    # TODO: should work also for quick
+    # instance = File.objects.get(id=id)
+    # loaded = File.objects.filter(loaded=True)
+    loaded = File.objects.get(loaded=True)
 
 
+    # try:
+    #     instance_book = rxncon_excel.ExcelBook(instance.get_absolute_path())
+    # except:
+    #     raise ImportError("Could not import file")
+    # instance_rxncon_system = instance_book.rxncon_system
+
+    try:
+        loaded_book = rxncon_excel.ExcelBook(loaded.get_absolute_path())
+    except:
+        raise ImportError("Could not import file")
+    loaded_rxncon_system = loaded_book.rxncon_system
+
+    compare_dict = {
+        "compare_nr_reactions": len(loaded_rxncon_system.reactions),
+        "compare_nr_contingencies": len(loaded_rxncon_system.contingencies),
+    }
+
+
+    return file_detail(request, id, compare_dict)
