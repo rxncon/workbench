@@ -82,7 +82,7 @@ def regGraphQuick(request, system_id=None):
         graph_file_path = "%s/%s/%s/%s" % (media_root, system.slug, "graphs", graph_file_name)
 
         if not check_filepath(request, graph_file_path, system, media_root):
-            return file_detail(request, system_id)
+            return quick_detail(request, system_id)
 
         rxncon_system = create_rxncon_system(system, "Quick")
         graph_file, graph_string = create_graph_without_template(request, media_root, system, rxncon_system,
@@ -91,7 +91,7 @@ def regGraphQuick(request, system_id=None):
         if request.FILES.get('template'):
             graph_file, graph_string = apply_template_layout(request, graph_file_path)
 
-        g = Graph_from_File(project_name=system.project_name, graph_file=graph_file_path, graph_string=graph_string,
+        g = Graph_from_File(project_name=system.name, graph_file=graph_file_path, graph_string=graph_string,
                             comment=request.POST.get('comment'))
         g.save()
 

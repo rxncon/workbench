@@ -56,3 +56,6 @@ def pre_save_post_receiver(sender, instance, *args, **kwargs):
         instance.slug = slugify(instance.project_name)
 
 pre_save.connect(pre_save_post_receiver, sender=Graph_from_File)
+
+class Graph_from_Quick(Graph_from_File):
+    pass
