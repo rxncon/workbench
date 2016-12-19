@@ -5,7 +5,8 @@ from django.db.models.signals import pre_save
 from django.shortcuts import render_to_response
 from django.utils.text import slugify
 from graphs.models import Graph_from_File
-
+import os
+import shutil
 
 
 def upload_location(instance, filename):
@@ -45,8 +46,17 @@ class File(models.Model):
         return media_url+"%s" %(self.file)
 
     def get_absolute_path(self):
-        media_root=settings.MEDIA_ROOT
+        media_root = settings.MEDIA_ROOT
         return media_root+"/%s" %(self.file)
+
+    def delete_file_from_harddisk(self):
+        path = self.get_absolute_path()
+        os.remove(path)
+
+    def delete_project_from_harddisk(self):
+        path = self.get_absolute_path()
+        path = os.path.dirname(path)
+        shutil.rmtree(path)
 
     class Meta:
         ordering = ["-updated", "-timestamp"]

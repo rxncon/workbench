@@ -99,7 +99,6 @@ def file_upload(request, slug= None):
 def file_delete(request, pk):
     f = get_object_or_404(File, pk=pk)
     project_name = f.project_name
-    other_file_id = str(File.objects.filter(project_name=project_name).latest("updated").id)
     timestamp = f.timestamp
     filename = f.get_filename()
     slug = f.slug
@@ -107,11 +106,14 @@ def file_delete(request, pk):
         form = DeleteFileForm(request.POST, instance=f)
 
         if form.is_valid(): # checks CSRF
+            f.delete_file_from_harddisk()
             f.delete()
+            other_file_id = str(File.objects.filter(project_name=project_name).latest("updated").id)
             messages.success(request, "Successfully deleted")
             return HttpResponseRedirect("/files/"+other_file_id+"/") # wherever to go after deleting
     else:
         form = DeleteFileForm(instance=f)
+
     template_vars = {'form': form,
                      'project_name': project_name,
                      "timestamp": timestamp,
@@ -127,6 +129,7 @@ def file_delete_project(request, slug):
     if request.method == 'POST':
         form = DeleteFileForm(request.POST, instance=f)
         if form.is_valid(): # checks CSRF
+            f.delete_project_from_harddisk()
             project.delete()
             messages.success(request, "Successfully deleted")
             return HttpResponseRedirect("/") # wherever to go after deleting
