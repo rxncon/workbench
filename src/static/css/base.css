@@ -233,6 +233,10 @@ h4.caption {
 	text-align: justify;
 }
 
+.reg_graph_comment{
+	text-indent: 20px;
+}
+
 .compare_button{
 	margin: 5px;
 }
