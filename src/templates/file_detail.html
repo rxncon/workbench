@@ -63,22 +63,6 @@
                 {% if loaded == False %}
                 <!--Compare with loaded system button group-->
                     <div class="compare_button">
-                        <!--TODO: choose one of these-->
-                        <!--<div class="btn-group btn-group-sm" role="group">-->
-                            <!--<a href="{% url 'fileTree:compare' id=instance.id %}" class="btn btn-sm" role="button" title="Compare with loaded">-->
-                                <!--<span class="glyphicon glyphicon-search" aria-hidden="true"></span>-->
-                            <!--</a>-->
-                            <!--<a href="{% url 'fileTree:compare' id=instance.id %}" class="btn btn-sm" role="button" title="Compare with loaded">-->
-                                <!--<span class="glyphicon glyphicon-random" aria-hidden="true"></span>-->
-                            <!--</a>-->
-                            <!--<a href="{% url 'fileTree:compare' id=instance.id %}" class="btn btn-sm" role="button" title="Compare with loaded">-->
-                                <!--<span class="glyphicon glyphicon-resize-horizontal" aria-hidden="true"></span>-->
-                            <!--</a>-->
-                            <!--<a href="{% url 'fileTree:compare' id=instance.id %}" class="btn btn-sm" role="button" title="Compare with loaded">-->
-                                <!--<span class="glyphicon glyphicon-transfer" aria-hidden="true"></span>-->
-                            <!--</a>-->
-                        <!--</div>-->
-                        <!--<br>-->
                         <a href="{% url 'fileTree:compare' id=instance.id %}" class="btn btn-primary btn-xs " title="Compare with loaded">Compare</a>
                     </div>
                 {% endif %}

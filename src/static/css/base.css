@@ -165,7 +165,7 @@ margin-bottom: 18px;
 
 
 .list_row {
-		padding-left: 15px;
+		/*padding-left: 15px;*/
 
 }
 
@@ -200,6 +200,10 @@ h4.caption {
 	/*padding-right: 15px;*/
 /*}*/
 
+.detail_header h2{
+	margin-top: 0;
+}
+
 .detail_content .project_name{
 	font-size: 11px;
 	text-decoration: underline;
@@ -214,6 +218,9 @@ h4.caption {
 
 .detail_content tr{
 	text-indent: 25px;
+
+}.detail_content .btn-group{
+	text-indent: 0;
 }
 
 .detail_content ul {
@@ -226,6 +233,9 @@ h4.caption {
 	text-align: justify;
 }
 
+.compare_button{
+	margin: 5px;
+}
 /* ~~ Dieser gruppierte Selektor gibt die Listen im .content-Bereich an. ~~ */
 /*.content ul, .content ol {*/
 	/*padding: 0 15px 15px 40px; !* Diese Auffüllung setzt die rechte Auffüllung in der obigen Regel für Überschriften und Absätze fort. Die Auffüllung wurde unten für den Abstand zwischen anderen Elementen in den Listen und links für den Einzug platziert. Sie können die Werte nach Bedarf ändern. *!*/
@@ -310,4 +320,8 @@ h4.caption {
 
 .index img{
 	float: right;
+}
+
+.index h1{
+	margin-top: 0;
 }
