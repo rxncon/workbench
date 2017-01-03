@@ -121,7 +121,8 @@ Reihenfolge dargestellt. Die div-Tags in der HTML-Quelle müssen nicht verschobe
 	width: 20%;
 	background-color: #F4F4F4;
 	padding: 10px;
-    margin-right: 10px;
+	padding-right: 0;
+    margin-right: 0;
     margin-top: 10px;
     margin-bottom: 10px;
 }
@@ -329,3 +330,43 @@ h4.caption {
 .index h1{
 	margin-top: 0;
 }
+
+/*TOUR*/
+.joyride-tip-guide[data-index="2"] {
+	margin-left: 16px;
+}
+
+.joyride-tip-guide[data-index="4"] {
+	margin-left: 16px;
+}
+
+.joyride-tip-guide[data-index="5"] {
+	margin-left: -15px;
+	margin-top: 16px;
+}
+
+.joyride-tip-guide[data-index="5"] span.joyride-nub.top{
+	margin-left: -9px;
+	/*margin-top: 16px;*/
+}
+
+.joyride-tip-guide[data-index="7"] {
+	margin-top: 15px;
+	margin-right: 16px;
+}
+
+/*.joyride-tip-guide[data-index="7"] p {*/
+	/*margin-right: 5px;*/
+/*}*/
+
+.joyride-tip-guide[data-index="8"] {
+	margin-top: 15px;
+	margin-right: 16px;
+}
+.joyride-tip-guide p {
+	margin-right: 3px;
+}
+/*!*.joyride-expose-wrapper div.joyride-expose-wrapper.expose-2509 {*!*/
+/*.joyride-expose-wrapper {*/
+	/*height: 20px;*/
+/*}*/

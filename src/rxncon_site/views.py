@@ -18,3 +18,6 @@ def funding(request):
 
 def support(request):
     return render(request, "static_pages/support.html")
+
+def guided_tour(request):
+    return render(request, "guided_tour.html")

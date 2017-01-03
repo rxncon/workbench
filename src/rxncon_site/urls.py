@@ -31,6 +31,7 @@ urlpatterns = [
     url(r'^publications$', views.publications, name='publications'),
     url(r'^funding', views.funding, name='funding'),
     url(r'^support', views.support, name='support'),
+    url(r'^guided_tour', views.guided_tour, name='guided_tour'),
     #url(r'^delete/(?P<id>\d+)/$', fviews.file_delete, name="delete"),
     # url(r'^$', TemplateView.as_view(template_name='static_pages/index.html'),
     #     name='home'),
