@@ -40,24 +40,7 @@
                 </ul>
 
                 {% if loaded == False %}
-                <!--Compare with loaded system button group-->
                     <div class="compare_button">
-                        <!--TODO: choose one of these-->
-                        <!--<div class="btn-group btn-group-sm" role="group">-->
-                            <!--<a href="{% url 'quick_format:quick_compare'  id=instance.id %}" class="btn btn-sm" role="button" title="Compare with loaded">-->
-                                <!--<span class="glyphicon glyphicon-search" aria-hidden="true"></span>-->
-                            <!--</a>-->
-                            <!--<a href="{% url 'quick_format:quick_compare'  id=instance.id %}" class="btn btn-sm" role="button" title="Compare with loaded">-->
-                                <!--<span class="glyphicon glyphicon-random" aria-hidden="true"></span>-->
-                            <!--</a>-->
-                            <!--<a href="{% url 'quick_format:quick_compare'  id=instance.id %}" class="btn btn-sm" role="button" title="Compare with loaded">-->
-                                <!--<span class="glyphicon glyphicon-resize-horizontal" aria-hidden="true"></span>-->
-                            <!--</a>-->
-                            <!--<a href="{% url 'quick_format:quick_compare'  id=instance.id %}" class="btn btn-sm" role="button" title="Compare with loaded">-->
-                                <!--<span class="glyphicon glyphicon-transfer" aria-hidden="true"></span>-->
-                            <!--</a>-->
-                        <!--</div>-->
-                        <!--<br>-->
                         <a href="{% url 'quick_format:quick_compare' id=instance.id %}" class="btn btn-primary btn-xs " title="Compare with loaded">Compare</a>
                     </div>
                 {% endif %}
@@ -70,17 +53,21 @@
                     <th></th>
                     <th>This system<br></th>
                     <th>Loaded system<br></th>
+                      <th title="Number of entries, that do not occur in the loaded system."># different <br></th>
                   </tr>
                   <tr>
                     <td># Reactions<br></td>
                     <td>{{ nr_reactions }}</td>
                     <td>{{ compare_nr_reactions }}</td>
+                    <td>{{ nr_different_reactions}}</td>
                   </tr>
                   <tr>
                     <td># Contingencies</td>
                     <td>{{ nr_contingencies }}</td>
                     <td>{{ compare_nr_contingencies }}</td>
+                    <td>{{ nr_different_contingencies}}</td>
                   </tr>
+
                 </table></div>
             </div>
         {% endif %}

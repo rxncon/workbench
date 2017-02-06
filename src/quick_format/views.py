@@ -8,6 +8,8 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404, redirect
 import rxncon.input.quick.quick as rxncon_quick
 import rxncon.input.excel_book.excel_book as rxncon_excel
+from rxncon_site.views import *
+
 
 
 
@@ -49,12 +51,15 @@ def quick_compare(request, id):
         except:
             raise ImportError("Could not import quick")
 
-
     loaded_rxncon_system = loaded_rxncon.rxncon_system
+
+    differences = compare_systems(request, id, loaded_rxncon_system, called_from="Quick")
 
     compare_dict = {
         "compare_nr_reactions": len(loaded_rxncon_system.reactions),
         "compare_nr_contingencies": len(loaded_rxncon_system.contingencies),
+        "nr_different_reactions": differences["rxns"],
+        "nr_different_contingencies": differences["cnts"],
     }
 
 
