@@ -13,6 +13,7 @@ from .models import Graph_from_File
 import os
 import rxncon.input.excel_book.excel_book as rxncon_excel
 import rxncon.simulation.rule_graph.regulatory_graph as regulatory_graph
+from rxncon.simulation.rule_graph.graphML import map_layout2xgmml
 import rxncon.simulation.rule_graph.graphML as graphML
 import rxncon.input.quick.quick as rxncon_quick
 from quick_format.models import Quick
@@ -44,10 +45,15 @@ def regGraphFile(request, system_id=None):
             return file_detail(request, system_id)
 
         rxncon_system = create_rxncon_system(system, "File")
-        graph_file, graph_string = create_graph_without_template(request, media_root, system, rxncon_system, graph_file_path)
+        # graph_file, graph_string = create_graph_without_template(request, media_root, system, rxncon_system, graph_file_path)
+
+        graph = regulatory_graph.RegulatoryGraph(rxncon_system).to_graph()
+        xgmml_graph = graphML.XGMML(graph, system.slug)
+        graph_file = xgmml_graph.to_file(graph_file_path)
+        graph_string = xgmml_graph.to_string()
 
         if request.FILES.get('template'):
-            graph_file, graph_string = apply_template_layout(request, graph_file_path)
+            graph_string = apply_template_layout(request, graph_file_path, graph_string)
 
         g = Graph_from_File(project_name=system.project_name, graph_file=graph_file_path, graph_string=graph_string,
                             comment=request.POST.get('comment'))
@@ -57,6 +63,13 @@ def regGraphFile(request, system_id=None):
         messages.info(request, "regulatory graph for project '" + g.project_name + "' successfully created.")
         return file_detail(request, system_id)
 
+def apply_template_layout(request, graph_file_path, graph_string):
+    template_file = request.FILES.get('template')
+    mapped_layout = map_layout2xgmml(graph_string, template_file, str_template=True)
+    with open(graph_file_path, "w") as graph_handle:
+        graph_handle.write(mapped_layout)
+
+    return graph_string
 
 def regGraphQuick(request, system_id=None):
     form = regGraphFileForm(request.POST or None)
@@ -73,8 +86,12 @@ def regGraphQuick(request, system_id=None):
             return quick_detail(request, system_id)
 
         rxncon_system = create_rxncon_system(system, "Quick")
-        graph_file, graph_string = create_graph_without_template(request, media_root, system, rxncon_system,
-                                                                 graph_file_path)
+        # graph_file, graph_string = create_graph_without_template(request, media_root, system, rxncon_system,
+        #                                                          graph_file_path)
+        graph = regulatory_graph.RegulatoryGraph(rxncon_system).to_graph()
+        xgmml_graph = graphML.XGMML(graph, system.slug)
+        graph_file = xgmml_graph.to_file(graph_file_path)
+        graph_string = xgmml_graph.to_string()
 
         if request.FILES.get('template'):
             graph_file, graph_string = apply_template_layout(request, graph_file_path)
@@ -122,17 +139,9 @@ def create_rxncon_system(system, system_type):
     return book.rxncon_system
 
 
-def create_graph_without_template(request, media_root, file, rxncon_system, graph_file_path):
-    graph = regulatory_graph.RegulatoryGraph(rxncon_system).to_graph()
-    xgmml_graph = graphML.XGMML(graph, file.slug)
-    graph_file = xgmml_graph.to_file(graph_file_path)
-    graph_string = xgmml_graph.to_string()
-
-    return graph_file, graph_string
-
 def check_filepath(request, graph_file_path, file, media_root):
     if os.path.exists(graph_file_path):
-        messages.warning(request, "Graph File already exists. Delete it first in systems detail view.")
+        messages.warning(request, "Graph File already exists. Delete it first in the systems detail view.")
         return False
     elif not os.path.exists("%s/%s/%s" % (media_root, file.slug, "graphs")):
         os.makedirs("%s/%s/%s" % (media_root, file.slug, "graphs"))
@@ -140,18 +149,6 @@ def check_filepath(request, graph_file_path, file, media_root):
     else:
         return True
 
-def apply_template_layout(request, graph_file_path):
-    template_file = request.FILES.get('template')
-    graph_data_unlayouted = get_graph_nodes_and_lables_from_file(graph_file_path)
-    graph_data_layouted = get_graph_nodes_and_lables_from_file(template_file)
-    node_names_layouted = [d["name"] for d in graph_data_layouted["node_names_dicts"]]
-    graph_data_now_layouted = insert_graphics_elements_into_graph(graph_data_unlayouted, graph_data_layouted, node_names_layouted)
-    graph_file = open(graph_file_path, "w")
-    graph_data_now_layouted["xmldoc"].writexml(graph_file)
-    graph_string = graph_data_now_layouted["xmldoc"].toprettyxml()
-    graph_file.close()
-
-    return graph_file, graph_string
 
 def insert_graphics_elements_into_graph(graph_data_unlayouted, graph_data_layouted, node_names_layouted):
     coordinates_dict = _get_labels_and_coordinates_dict(graph_data_layouted["xmldoc"])
