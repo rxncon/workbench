@@ -41,9 +41,6 @@ def regGraphFile(request, system_id=None):
         graph_file_name = system.slug + "_" + system.get_filename().split(".")[0] + "_regGraph.xgmml"
         graph_file_path = "%s/%s/%s/%s" % (media_root, system.slug, "graphs", graph_file_name)
 
-        if not check_filepath(request, graph_file_path, system, media_root):
-            return file_detail(request, system_id)
-
         rxncon_system = create_rxncon_system(system, "File")
         # graph_file, graph_string = create_graph_without_template(request, media_root, system, rxncon_system, graph_file_path)
 
@@ -54,6 +51,8 @@ def regGraphFile(request, system_id=None):
 
         if request.FILES.get('template'):
             graph_string = apply_template_layout(request, graph_file_path, graph_string)
+        elif check_previous_template(request, graph_file_path, system, media_root):
+            graph_string = apply_template_layout(graph_file_path, graph_file_path, graph_string, origin ="request")
 
         g = Graph_from_File(project_name=system.project_name, graph_file=graph_file_path, graph_string=graph_string,
                             comment=request.POST.get('comment'))
@@ -63,8 +62,11 @@ def regGraphFile(request, system_id=None):
         messages.info(request, "regulatory graph for project '" + g.project_name + "' successfully created.")
         return file_detail(request, system_id)
 
-def apply_template_layout(request, graph_file_path, graph_string):
-    template_file = request.FILES.get('template')
+def apply_template_layout(source, graph_file_path, graph_string, origin ="request"):
+    if origin == "request":
+        template_file = source.FILES.get('template')
+    else:
+        template_file = source
     mapped_layout = map_layout2xgmml(graph_string, template_file, str_template=True)
     with open(graph_file_path, "w") as graph_handle:
         graph_handle.write(mapped_layout)
@@ -82,7 +84,7 @@ def regGraphQuick(request, system_id=None):
         graph_file_name = system.slug + "_regGraph.xgmml"
         graph_file_path = "%s/%s/%s/%s" % (media_root, system.slug, "graphs", graph_file_name)
 
-        if not check_filepath(request, graph_file_path, system, media_root):
+        if not check_previous_template(request, graph_file_path, system, media_root):
             return quick_detail(request, system_id)
 
         rxncon_system = create_rxncon_system(system, "Quick")
@@ -139,15 +141,22 @@ def create_rxncon_system(system, system_type):
     return book.rxncon_system
 
 
-def check_filepath(request, graph_file_path, file, media_root):
+def create_graph_without_template(request, media_root, file, rxncon_system, graph_file_path):
+    graph = regulatory_graph.RegulatoryGraph(rxncon_system).to_graph()
+    xgmml_graph = graphML.XGMML(graph, file.slug)
+    graph_file = xgmml_graph.to_file(graph_file_path)
+    graph_string = xgmml_graph.to_string()
+
+    return graph_file, graph_string
+
+def check_previous_template(request, graph_file_path, file, media_root):
     if os.path.exists(graph_file_path):
-        messages.warning(request, "Graph File already exists. Delete it first in the systems detail view.")
-        return False
+        return True
     elif not os.path.exists("%s/%s/%s" % (media_root, file.slug, "graphs")):
         os.makedirs("%s/%s/%s" % (media_root, file.slug, "graphs"))
-        return True
+        return None
     else:
-        return True
+        return None
 
 
 def insert_graphics_elements_into_graph(graph_data_unlayouted, graph_data_layouted, node_names_layouted):
