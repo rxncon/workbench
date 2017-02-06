@@ -60,15 +60,7 @@ def regGraphFile(request, system_id=None):
         graph_string = xgmml_graph.to_string()
 
         if request.FILES.get('template'):
-            graph_file, graph_string = apply_template_layout(request, graph_file_path, graph_string)
-
-            # template_file = request.FILES.get('template')
-            # mapped_layout = map_layout2xgmml(graph_string, template_file)
-            # graph_file = open(graph_file_path, "w")
-            # xmldoc = minidom.parseString((mapped_layout))
-            # xmldoc["xmldoc"].writexml(graph_file)
-            # graph_string = mapped_layout
-            # graph_file.close()
+            graph_string = apply_template_layout(request, graph_file_path, graph_string)
 
         g = Graph_from_File(project_name=system.project_name, graph_file=graph_file_path, graph_string=graph_string,
                             comment=request.POST.get('comment'))
@@ -80,27 +72,15 @@ def regGraphFile(request, system_id=None):
 
 def apply_template_layout(request, graph_file_path, graph_string):
     template_file = request.FILES.get('template')
-    # template_graph = graphML.XGMML(template_file, 'template')
-    # template_string = template_graph.to_string()
-    mapped_layout = map_layout2xgmml(graph_string, template_file.temporary_file_path()) # I need to call this on the template string, as I don't have a filepath
-    graph_file = open(graph_file_path, "w")
-    xmldoc = minidom.parseString(mapped_layout)
-    xmldoc["xmldoc"].writexml(graph_file)
-    graph_string = mapped_layout
-    graph_file.close()
+    mapped_layout = map_layout2xgmml(graph_string, template_file, str_template=True)
+    with open(graph_file_path, "w") as graph_handle:
+        graph_handle.write(mapped_layout)
 
-    return graph_file, graph_string
+    return graph_string
 
 def regGraphQuick(request, system_id=None):
     form = regGraphFileForm(request.POST or None)
 
-    # if not form.is_valid() and not system_id:
-    #     context = {
-    #         "form": form,
-    #     }
-    #     return render(request, "regGraphFile_form.html", context)
-    #
-    # else:
     if form.is_valid():
         media_url = settings.MEDIA_URL
         media_root = settings.MEDIA_ROOT
@@ -165,14 +145,6 @@ def create_rxncon_system(system, system_type):
         book = rxncon_quick.Quick(system.quick_input)
     return book.rxncon_system
 
-
-# def create_graph_without_template(request, media_root, file, rxncon_system, graph_file_path):
-#     graph = regulatory_graph.RegulatoryGraph(rxncon_system).to_graph()
-#     xgmml_graph = graphML.XGMML(graph, file.slug)
-#     graph_file = xgmml_graph.to_file(graph_file_path)
-#     graph_string = xgmml_graph.to_string()
-#
-#     return graph_file, graph_string
 
 def check_filepath(request, graph_file_path, file, media_root):
     if os.path.exists(graph_file_path):
