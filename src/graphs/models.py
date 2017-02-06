@@ -4,7 +4,7 @@ from django.db import models
 from django.db.models.signals import pre_save
 from django.shortcuts import render_to_response
 from django.utils.text import slugify
-from quick_format.models import Quick
+# from quick_format.models import Quick
 
 
 def upload_location(instance, filename):
