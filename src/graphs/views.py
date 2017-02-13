@@ -32,13 +32,7 @@ def regGraph(request, system_id=None):
 def regGraphFile(request, system_id=None):
     form = regGraphFileForm(request.POST or None)
 
-    if not form.is_valid() and not system_id:
-        context = {
-            "form": form,
-        }
-        return render(request, "regGraphFile_form.html", context)
-
-    else:
+    if form.is_valid():
         media_url = settings.MEDIA_URL
         media_root = settings.MEDIA_ROOT
 
@@ -67,13 +61,7 @@ def regGraphFile(request, system_id=None):
 def regGraphQuick(request, system_id=None):
     form = regGraphFileForm(request.POST or None)
 
-    if not form.is_valid() and not system_id:
-        context = {
-            "form": form,
-        }
-        return render(request, "regGraphFile_form.html", context)
-
-    else:
+    if form.is_valid():
         media_url = settings.MEDIA_URL
         media_root = settings.MEDIA_ROOT
 
@@ -126,9 +114,9 @@ def graph_delete(request, pk):
 def create_rxncon_system(system, system_type):
     if system_type == "File":
         try:
-            book = rxncon_excel.ExcelBookWithReactionType(system.get_absolute_path())
+            book = rxncon_excel.ExcelBook(system.get_absolute_path())
         except:
-            book = rxncon_excel.ExcelBookWithoutReactionType(system.get_absolute_path())
+            book = rxncon_excel.ExcelBook(system.get_absolute_path())
     else:
         book = rxncon_quick.Quick(system.quick_input)
     return book.rxncon_system
@@ -144,10 +132,11 @@ def create_graph_without_template(request, media_root, file, rxncon_system, grap
 
 def check_filepath(request, graph_file_path, file, media_root):
     if os.path.exists(graph_file_path):
-        messages.warning(request, "Graph File already exists.")
+        messages.warning(request, "Graph File already exists. Delete it first in systems detail view.")
         return False
     elif not os.path.exists("%s/%s/%s" % (media_root, file.slug, "graphs")):
         os.makedirs("%s/%s/%s" % (media_root, file.slug, "graphs"))
+        return True
     else:
         return True
 

@@ -50,10 +50,12 @@ class File(models.Model):
         return media_root+"/%s" %(self.file)
 
     def delete_file_from_harddisk(self):
+        # TODO: test if works in dockers
         path = self.get_absolute_path()
         os.remove(path)
 
     def delete_project_from_harddisk(self):
+        # TODO: test if works in dockers
         path = self.get_absolute_path()
         path = os.path.dirname(path)
         shutil.rmtree(path)

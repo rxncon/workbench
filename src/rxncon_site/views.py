@@ -51,3 +51,6 @@ def compare_systems(request, id, system, called_from="File"):
 
     return {"rxns": rxns,
             "cnts": cnts}
+
+def guided_tour(request):
+    return render(request, "guided_tour.html")

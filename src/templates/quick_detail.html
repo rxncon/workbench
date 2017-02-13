@@ -85,8 +85,10 @@
                     </a>
                 </div>
             {% if instance.reg_graph.comment %}
+                <div class="reg_graph_comment">
                 <h6>Comment: </h6>
                     {{ instance.reg_graph.comment | linebreaks}}
+                </div>
                 </p>
             {% endif %}
 

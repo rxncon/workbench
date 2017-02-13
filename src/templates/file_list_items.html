@@ -6,10 +6,10 @@
         {% endif %}
         >{{ latest_file.project_name }}</b>
         <div class="btn-group btn-group-sm" role="group" >
-            <a href="{{ latest_file.get_absolute_url }}" class="btn btn-sm" role="button" title="View details">
+            <a id="detail_button" href="{{ latest_file.get_absolute_url }}" class="btn btn-sm" role="button" title="View details">
                 <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
             </a>
-            <a href="{% url 'fileTree:load' id=latest_file.id %}" class="btn btn-sm" title="Load file"
+            <a id ="load_system" href="{% url 'fileTree:load' id=latest_file.id %}" class="btn btn-sm" title="Load file"
                role="button">
                 <span class="glyphicon glyphicon-flash" aria-hidden="true"></span>
             </a>

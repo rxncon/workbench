@@ -7,13 +7,17 @@
     </div>
     <ul class="nav navbar-nav">
       <li><a href="/">Home</a></li>
-
       <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" >Help
+        <a class="dropdown-toggle" data-toggle="dropdown" id="help">Help
         <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="#">Tutorial</a></li>
-          <li><a href="#">How to cite</a></li>
+          <li><a href="{% url 'guided_tour' %} ">Quick tour</a></li>
+          <li><a href="#" style="color: red"> How to create a rxncon system(Does this exist allready?)</a></li>
+          <li><a href="#" style="color: red"> Create project from file</a></li>
+          <li><a href="#" style="color: red"> Create project from text input</a></li>
+          <li><a href="#" style="color: red"> A projects detailview</a></li>
+          <li role="separator" class="divider"></li>
+          <li><a href="#" style="color: red">How to cite</a></li>
         </ul>
       </li>
       <li class="dropdown">
@@ -24,30 +28,31 @@
           <li><a href="#">Example system files</a></li>
         </ul>
       </li>
-
+    </ul>
 
     {% if loaded_system %}
+    <ul class="nav navbar-nav" id="tools">
       <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" >Visualtisation
         <span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="/graphs/regGraph">Regulatory Graph</a></li>
-          <li><a href="#">Reaction Graph</a></li>
+          <li><a href="#" style="color: red">Reaction Graph</a></li>
         </ul>
       </li>
       <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" >Model Export
         <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="#">Boolean model</a></li>
-          <li><a href="#">Rule based model</a></li>
+          <li><a href="#" style="color: red">Boolean model</a></li>
+          <li><a href="#" style="color: red">Rule based model</a></li>
         </ul>
       </li>
     </ul>
 
     <ul>
       <p class="navbar-text navbar-right"> Loaded:
-          <a href="{{ loaded_system.get_absolute_url }}" >'{{loaded_project_name}}'</a></p>
+          <a id="loaded_project" href="{{ loaded_system.get_absolute_url }}" >'{{loaded_project_name}}'</a></p>
       {% else %}
       </ul>
     {% endif %}
