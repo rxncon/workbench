@@ -21,3 +21,6 @@ def support(request):
 
 def guided_tour(request):
     return render(request, "guided_tour.html")
+
+def create_project(request):
+    return render(request, "create_project.html")
