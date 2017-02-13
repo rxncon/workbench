@@ -61,7 +61,6 @@
                 </ul>
 
                 {% if loaded == False %}
-                <!--Compare with loaded system button group-->
                     <div class="compare_button">
                         <a href="{% url 'fileTree:compare' id=instance.id %}" class="btn btn-primary btn-xs " title="Compare with loaded">Compare</a>
                     </div>
@@ -75,17 +74,21 @@
                     <th></th>
                     <th>This system<br></th>
                     <th>Loaded system<br></th>
+                      <th title="Number of entries, that do not occur in the loaded system."># different <br></th>
                   </tr>
                   <tr>
                     <td># Reactions<br></td>
                     <td>{{ nr_reactions }}</td>
                     <td>{{ compare_nr_reactions }}</td>
+                    <td>{{ nr_different_reactions}}</td>
                   </tr>
                   <tr>
                     <td># Contingencies</td>
                     <td>{{ nr_contingencies }}</td>
                     <td>{{ compare_nr_contingencies }}</td>
+                    <td>{{ nr_different_contingencies}}</td>
                   </tr>
+
                 </table></div>
             </div>
         {% endif %}
