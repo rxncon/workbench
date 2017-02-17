@@ -50,6 +50,7 @@ body {
 	color: #000;
 
 }
+
 body p {
 	font-size: 11px;
 }
@@ -193,11 +194,13 @@ h4.caption {
 	display: inline-block;
 }
 
-
+#tbp_logo{
+	margin: 5 10 5 10px;
+}
 
 .content {
 	padding: 10px 15px;
-	/*width: 70%;*/
+	width: 100%;
 	float: left;
 	background-color: #f8f8f8;
 }
@@ -376,3 +379,18 @@ h4.caption {
 /*.joyride-expose-wrapper {*/
 	/*height: 20px;*/
 /*}*/
+
+
+.support_list li{
+	margin-left: 30px;
+	padding-left: 30px;
+}
+
+.support_list img{
+	height: 80px;
+	width: auto;
+}
+
+.support_list a {
+	text-decoration: none;
+}
