@@ -38,12 +38,17 @@ h1, h2 {
     color: #777777;
 }
 
+html {
+	margin-left: 25%;
+	margin-right: 25%;
+}
 body {
 	font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
 	background-color: #F4F4F4;
 	margin: 0;
 	padding: 0;
 	color: #000;
+
 }
 body p {
 	font-size: 11px;
@@ -192,8 +197,9 @@ h4.caption {
 
 .content {
 	padding: 10px 15px;
-	width: 70%;
+	/*width: 70%;*/
 	float: left;
+	background-color: #f8f8f8;
 }
 
 /*.detail_header{*/
@@ -250,7 +256,7 @@ h4.caption {
 
 .footer {
 	padding: 10px 0;
-	background-color: #FBFBFB;
+	background-color: #f8f8f8;
 	position: relative;/* Hiermit erhält IE6 die Eigenschaft hasLayout, damit die clear-Anweisung korrekt ausgeführt wird. */
 	clear: both; /* Diese clear-Eigenschaft bewirkt, dass .container das Ende der fließenden Spalten erkennt und ihren Inhalt aufnimmt. */
 	text-align: center;
