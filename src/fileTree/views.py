@@ -22,7 +22,7 @@ def file_detail(request, id, compare_dict = None):
     project_files = File.objects.filter(slug=slug).order_by("-updated")
     try:
         book = rxncon_excel.ExcelBook(instance.get_absolute_path())
-    except:
+    except Exception as e:
         raise ImportError("Could not import file")
     rxncon_system = book.rxncon_system
 
