@@ -100,7 +100,7 @@ def regGraphQuick(request, system_id=None):
                             comment=request.POST.get('comment'))
         g.save()
 
-        File.objects.filter(id=system_id).update(reg_graph=g)
+        Quick.objects.filter(id=system_id).update(reg_graph=g)
         messages.info(request, "regulatory graph for project '" + g.project_name + "' successfully created.")
         return quick_detail(request, system_id)
 
