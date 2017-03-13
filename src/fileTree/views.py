@@ -5,8 +5,9 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404, redirect
 import rxncon.input.excel_book.excel_book as rxncon_excel
 import rxncon.input.quick.quick as rxncon_quick
-import rxncon.simulation.rule_graph.regulatory_graph as regulatory_graph
-import rxncon.simulation.rule_graph.graphML as graphML
+import rxncon.visualization.regulatory_graph as regulatory_graph
+import rxncon.visualization.graphML as graphML
+
 
 from .models import File
 from quick_format.models import Quick

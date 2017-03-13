@@ -9,6 +9,14 @@ class regGraphFileForm(forms.ModelForm):
             "option1"
         ]
 
+class reaGraphFileForm(forms.ModelForm):
+    class Meta:
+        model = Graph_from_File
+        fields =[
+            "comment",
+            "option1"
+        ]
+
 
 class DeleteGraphForm(forms.ModelForm):
     class Meta:

@@ -20,8 +20,8 @@ class Quick(models.Model):
     timestamp = models.DateTimeField(auto_now=False, auto_now_add=True)  # initial timestamp will be saved one time
     updated = models.DateTimeField(auto_now=True, auto_now_add=False)  # auto_now refers to every modification,
     # updated gets reset when Post is updated -duh
-    reg_graph = models.ForeignKey(Graph_from_File, null=True, on_delete=models.SET_NULL, blank=True)
-    # reg_graph = models.ForeignKey(Graph_from_Quick, null=True, on_delete=models.SET_NULL, blank=True)
+    reg_graph = models.ForeignKey(Graph_from_File, null=True, on_delete=models.SET_NULL, blank=True, related_name="regulatory_graph_quick")
+    rea_graph = models.ForeignKey(Graph_from_File, null=True, on_delete=models.SET_NULL, blank=True, related_name="reaction_graph_quick")
 
     def __str__(self):
         return self.name

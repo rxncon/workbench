@@ -79,7 +79,7 @@
         {% endif %}
 
         {% if instance.reg_graph %}
-            <h5>Regulatory Graph:</h5>
+            <h5>Species reaction graph:</h5>
             <p style="display: inline-block">Created: {{ instance.reg_graph.timestamp }}
                 <div class="btn-group btn-group-sm" role="group">
                     <a href="{{ instance.reg_graph.get_download_url }}" class="btn btn-sm" role="button" title="Show">
@@ -94,6 +94,28 @@
                 <div class="reg_graph_comment">
                 <h6>Comment: </h6>
                     {{ instance.reg_graph.comment | linebreaks}}
+                </div>
+                </p>
+            {% endif %}
+
+        {% endif %}
+
+        {% if instance.rea_graph %}
+            <h5>Reaction Graph:</h5>
+            <p style="display: inline-block">Created: {{ instance.rea_graph.timestamp }}
+                <div class="btn-group btn-group-sm" role="group">
+                    <a href="{{ instance.rea_graph.get_download_url }}" class="btn btn-sm" role="button" title="Show">
+                        <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+                    </a>
+                    <a href="{% url 'graphs:delete' pk=instance.rea_graph.pk %}" class="btn btn-sm" role="button"
+                       title="Delete File">
+                        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                    </a>
+                </div>
+            {% if instance.rea_graph.comment %}
+                <div class="rea_graph_comment">
+                <h6>Comment: </h6>
+                    {{ instance.rea_graph.comment | linebreaks}}
                 </div>
                 </p>
             {% endif %}
