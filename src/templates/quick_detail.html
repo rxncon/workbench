@@ -24,11 +24,17 @@
         <h4>{{instance.updated}}</h4>
     </div>
     <div class="detail_content">
-        <h5>System: </h5>
-        <p>{{instance.quick_input|linebreaks}}</p>
 
         <h5>Comment:</h5>
-        <p>{{instance.comment|linebreaks}}</p>
+        <p>{{instance.comment|linebreaks|slice:":300"}}</p>
+        <div id="collapse_quick_comment">
+            <a class="btn btn-link" role="button" style="float: none;margin-top: -15px;">
+                <span class="button-text">Show all</span>
+            </a><br />
+            <div style="display: none">
+                <p>{{instance.comment|linebreaks}}</p>
+            </div>
+        </div>
 
         {% if compare_nr_reactions is None %}
             <div class = "infos">
@@ -93,8 +99,47 @@
             {% endif %}
 
         {% endif %}
+        <h5>System: </h5>
+        <p>{{instance.quick_input|linebreaks|slice:":100"}}...</p>
+
+        <div id="collapse_quick_input">
+            <a class="btn btn-link" role="button" style="float: none;margin-top: -15px;">
+                <span class="button-text">Show all</span>
+            </a><br />
+         <div style="display: none">
+            {{instance.quick_input|linebreaks}}
+         </div>
+        </div>
+
     </div>
 </div>
 
 <!--</div>-->
+
+<script type="text/javascript">
+    $('#collapse_quick_comment > a').click(function(){
+        var span = $(this).find('span');
+        if(span.text() == "Show all"){
+            span.text("Show less");
+        } else {
+            span.text("Show all");
+        }
+        $(this).next().next().slideToggle();
+        return false;
+    });
+</script>
+
+<script type="text/javascript">
+    $('#collapse_quick_input > a').click(function(){
+        var span = $(this).find('span');
+        if(span.text() == "Show all"){
+            span.text("Show less");
+        } else {
+            span.text("Show all");
+        }
+        $(this).next().next().slideToggle();
+        return false;
+    });
+</script>
+
 {% endblock content %}

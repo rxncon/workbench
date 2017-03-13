@@ -12,7 +12,7 @@
 
     <div class="detail_content">
         <h5>Filename: </h5>
-        <a class="project_name" href="{{ file.get_download_url }}"><p>{{ instance.get_filename }}</p></a>
+        <a class="project_name" href="{{ instance.get_download_url }}"><p>{{ instance.get_filename }}</p></a>
 
         <h5>All versions:</h5>
             <table>
@@ -48,7 +48,15 @@
 
         {% if instance.comment %}
             <h5>Comment:</h5>
-            <p>{{instance.comment|linebreaks}}</p>
+            <p>{{instance.comment|linebreaks|slice:":300"}}</p>
+            <div id="collapse_file_comment">
+                <a class="btn btn-link" role="button" style="float: none;margin-top: -15px;">
+                    <span class="button-text">Show all</span>
+                </a><br />
+                <div style="display: none">
+                    <p>{{instance.comment|linebreaks}}</p>
+                </div>
+            </div>
         {% endif %}
 
         {% if compare_nr_reactions is None %}
@@ -119,6 +127,19 @@
 
 
 </div>
+
+<script type="text/javascript">
+    $('#collapse_file_comment > a').click(function(){
+        var span = $(this).find('span');
+        if(span.text() == "Show all"){
+            span.text("Show less");
+        } else {
+            span.text("Show all");
+        }
+        $(this).next().next().slideToggle();
+        return false;
+    });
+</script>
 
 <!--</div>-->
 {% endblock content %}
