@@ -48,7 +48,15 @@
 
         {% if instance.comment %}
             <h5>Comment:</h5>
-            <p>{{instance.comment|linebreaks}}</p>
+            <p>{{instance.comment|linebreaks|slice:":300"}}</p>
+            <div id="collapse_file_comment">
+                <a class="btn btn-link" role="button" style="float: none;margin-top: -15px;">
+                    <span class="button-text">Show all</span>
+                </a><br />
+                <div style="display: none">
+                    <p>{{instance.comment|linebreaks}}</p>
+                </div>
+            </div>
         {% endif %}
 
         {% if compare_nr_reactions is None %}
@@ -63,22 +71,6 @@
                 {% if loaded == False %}
                 <!--Compare with loaded system button group-->
                     <div class="compare_button">
-                        <!--TODO: choose one of these-->
-                        <!--<div class="btn-group btn-group-sm" role="group">-->
-                            <!--<a href="{% url 'fileTree:compare' id=instance.id %}" class="btn btn-sm" role="button" title="Compare with loaded">-->
-                                <!--<span class="glyphicon glyphicon-search" aria-hidden="true"></span>-->
-                            <!--</a>-->
-                            <!--<a href="{% url 'fileTree:compare' id=instance.id %}" class="btn btn-sm" role="button" title="Compare with loaded">-->
-                                <!--<span class="glyphicon glyphicon-random" aria-hidden="true"></span>-->
-                            <!--</a>-->
-                            <!--<a href="{% url 'fileTree:compare' id=instance.id %}" class="btn btn-sm" role="button" title="Compare with loaded">-->
-                                <!--<span class="glyphicon glyphicon-resize-horizontal" aria-hidden="true"></span>-->
-                            <!--</a>-->
-                            <!--<a href="{% url 'fileTree:compare' id=instance.id %}" class="btn btn-sm" role="button" title="Compare with loaded">-->
-                                <!--<span class="glyphicon glyphicon-transfer" aria-hidden="true"></span>-->
-                            <!--</a>-->
-                        <!--</div>-->
-                        <!--<br>-->
                         <a href="{% url 'fileTree:compare' id=instance.id %}" class="btn btn-primary btn-xs " title="Compare with loaded">Compare</a>
                     </div>
                 {% endif %}
@@ -130,6 +122,19 @@
 
 
 </div>
+
+<script type="text/javascript">
+    $('#collapse_file_comment > a').click(function(){
+        var span = $(this).find('span');
+        if(span.text() == "Show all"){
+            span.text("Show less");
+        } else {
+            span.text("Show all");
+        }
+        $(this).next().next().slideToggle();
+        return false;
+    });
+</script>
 
 <!--</div>-->
 {% endblock content %}
