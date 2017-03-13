@@ -13,6 +13,8 @@ from quick_format.models import Quick
 from .forms import FileForm, DeleteFileForm
 import django.forms as forms
 
+from rxncon_site.views import *
+
 
 def file_detail(request, id, compare_dict = None):
     instance = File.objects.get(id=id)
@@ -20,7 +22,7 @@ def file_detail(request, id, compare_dict = None):
     project_files = File.objects.filter(slug=slug).order_by("-updated")
     try:
         book = rxncon_excel.ExcelBook(instance.get_absolute_path())
-    except:
+    except Exception as e:
         raise ImportError("Could not import file")
     rxncon_system = book.rxncon_system
 
@@ -57,9 +59,13 @@ def file_compare(request, id):
 
     loaded_rxncon_system = loaded_rxncon.rxncon_system
 
+    differences = compare_systems(request, id, loaded_rxncon_system)
+
     compare_dict = {
         "compare_nr_reactions": len(loaded_rxncon_system.reactions),
         "compare_nr_contingencies": len(loaded_rxncon_system.contingencies),
+        "nr_different_reactions": differences["rxns"],
+        "nr_different_contingencies": differences["cnts"],
     }
 
 
