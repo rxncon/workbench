@@ -109,7 +109,14 @@ def graph_delete(request, pk):
     project_name = f.project_name
     timestamp = f.timestamp
     filename = f.get_filename()
-    file_id = File.objects.get(reg_graph=f).id
+    system_type = None
+    try:
+        id = File.objects.filter(reg_graph=f)[0].id
+        pass
+    except:
+        id = Quick.objects.filter(reg_graph=f)[0].id
+        system_type = "Quick"
+
     slug = f.slug
     if request.method == 'POST':
         form = DeleteGraphForm(request.POST, instance=f)
@@ -118,7 +125,11 @@ def graph_delete(request, pk):
             f.delete()
             os.remove(f.graph_file.name)
             messages.success(request, "Successfully deleted")
-            return HttpResponseRedirect("/files/"+str(file_id)+"/") # wherever to go after deleting
+            if system_type == "Quick":
+                return HttpResponseRedirect("/quick/"+str(id)+"/") # wherever to go after deleting
+
+            else:
+                return HttpResponseRedirect("/files/" + str(id) + "/")  # wherever to go after deleting
     else:
         form = DeleteGraphForm(instance=f)
     template_vars = {'form': form,
