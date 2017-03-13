@@ -212,10 +212,16 @@ def graph_delete(request, pk):
     filename = f.get_filename()
     system_type = None
     try:
-        id = File.objects.filter(reg_graph=f)[0].id
-        pass
+        if File.objects.filter(reg_graph=f):
+            id = File.objects.filter(reg_graph=f)[0].id
+        else:
+            id = File.objects.filter(rea_graph=f)[0].id
+
     except:
-        id = Quick.objects.filter(reg_graph=f)[0].id
+        if Quick.objects.filter(reg_graph=f):
+            id = Quick.objects.filter(reg_graph=f)[0].id
+        else:
+            id = Quick.objects.filter(rea_graph=f)[0].id
         system_type = "Quick"
 
     slug = f.slug
