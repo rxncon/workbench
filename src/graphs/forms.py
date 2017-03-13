@@ -5,8 +5,10 @@ class regGraphFileForm(forms.ModelForm):
     class Meta:
         model = Graph_from_File
         fields =[
-            "comment"
+            "comment",
+            "option1"
         ]
+
 
 class DeleteGraphForm(forms.ModelForm):
     class Meta:
