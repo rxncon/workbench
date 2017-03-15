@@ -145,6 +145,52 @@
 
         {% endif %}
 
+        {% if instance.boolean_model %}
+            <h5>Boolean Model:
+                <a href="{% url 'bool:boolnetDelete' pk=instance.boolean_model.pk %}" class="btn btn-sm" role="button"
+                       title="Delete File">
+                    <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                </a>
+                <!--# TODO: download zip/tar would be nice here -->
+            </h5>
+            <h6>Created: {{ instance.boolean_model.timestamp }}</h6>
+            {% if instance.boolean_model.comment %}
+            <div class="boolnet_comment">
+                <h6>Comment: </h6>
+                    {{ instance.boolean_model.comment | linebreaks}}
+            </div>
+
+            {% endif %}
+            <p style="display: inline-block">BoolNet model
+                <div class="btn-group btn-group-sm" role="group">
+                    <a href="{{ instance.boolean_model.get_model_download_url }}" class="btn btn-sm" role="button"
+                       title="Show">
+                        <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+                    </a>
+                </div>
+            </p>
+
+            <p style="display: inline-block">Symbols
+                <div class="btn-group btn-group-sm" role="group">
+                    <a href="{{ instance.boolean_model.get_symbol_download_url }}" class="btn btn-sm" role="button"
+                       title="Show">
+                        <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+                    </a>
+                </div>
+            </p>
+
+            <p style="display: inline-block">Initial values
+                <div class="btn-group btn-group-sm" role="group">
+                    <a href="{{ instance.boolean_model.get_init_download_url }}" class="btn btn-sm" role="button"
+                       title="Show">
+                        <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+                    </a>
+                </div>
+            </p>
+
+
+        {% endif %}
+
     </div>
 
 
