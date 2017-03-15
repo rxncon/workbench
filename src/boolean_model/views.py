@@ -29,8 +29,8 @@ def create_rxncon_system(system, system_type):
     return book.rxncon_system
 
 
-def check_filepath(request, graph_file_path, file, media_root):
-    if os.path.exists(graph_file_path):
+def check_filepath(request, file_path, file, media_root):
+    if os.path.exists(file_path):
         messages.warning(request, "Boolean model files already exist. Delete first in the system's detail view.")
         return False
     elif not os.path.exists("%s/%s/%s" % (media_root, file.slug, "graphs")):

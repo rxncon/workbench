@@ -47,7 +47,7 @@ class Bool_from_rxnconsys(models.Model):
     )
     k_minus = models.CharField(max_length= len("strict"), choices=k_minus_choices, default="strict", help_text="Strategy for handling k- contingencies.")
 
-    # rxncon2bngl
+    # rxncon2boolnet
     model_path = models.FileField(null=True)
     symbol_path = models.FileField(null=True)
     init_path = models.FileField(null=True)
