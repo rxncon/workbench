@@ -13,8 +13,6 @@ from quick_format.models import Quick
 from quick_format.views import quick_detail
 import rxncon.input.excel_book.excel_book as rxncon_excel
 import rxncon.input.quick.quick as rxncon_quick
-import rxncon.simulation.boolean.boolean_model as rxncon_boolean_model
-import rxncon.simulation.boolean.boolnet_from_boolean_model as bfbm
 import global_scripts.rxncon2bngl as r2b
 
 
@@ -39,7 +37,7 @@ def check_filepath(request, file_path, file, media_root):
     else:
         return True
 
-def bool(request, system_id=None):
+def rule(request, system_id=None):
     form = RuleForm(request.POST or None)
 
     if not form.is_valid() and not system_id:
@@ -81,12 +79,15 @@ class Rule_based(View):
             rbm = r2b.rule_based_model_from_rxncon(rxncon_system)
             model_str = r2b.bngl_from_rule_based_model(rbm)
 
+            if not os.path.exists( "%s/%s/%s" % (media_root, system.slug, "rule_based")):
+                os.mkdir("%s/%s/%s" % (media_root, system.slug, "rule_based"))
+
             with open(model_path, mode='w') as f:
                 f.write(model_str)
 
             r = Rule_based_from_rxnconsys(project_name=project_name, model_path=model_path, comment=request.POST.get('comment'))
             r.save()
-            messages.info(request, "boolnet files for project '" + g.project_name + "' successfully created.")
+            messages.info(request, "BoolNet files for project '" + r.project_name + "' successfully created.")
             if system_type == "Quick":
                 Quick.objects.filter(id=system_id).update(rule_based_model=r)
                 return quick_detail(request, system_id)
@@ -101,7 +102,7 @@ def rule_based_delete(request, pk):
     f = get_object_or_404(Rule_based_from_rxnconsys, pk=pk)
     project_name = f.project_name
     timestamp = f.timestamp
-    filename = f.get_filename()
+    filename = f.get_model_filename()
     system_type = None
     try:
         id = File.objects.filter(rule_based_model=f)[0].id
@@ -116,7 +117,7 @@ def rule_based_delete(request, pk):
 
         if form.is_valid(): # checks CSRF
             f.delete()
-            os.remove(f.graph_file.name)
+            os.remove(f.model_path.name)
             messages.success(request, "Successfully deleted")
             if system_type == "Quick":
                 return HttpResponseRedirect("/quick/"+str(id)+"/") # wherever to go after deleting
@@ -130,7 +131,7 @@ def rule_based_delete(request, pk):
                      "timestamp": timestamp,
                      "file": filename,
                      }
-    return render(request, 'rule_based_delete.html', template_vars)
+    return render(request, 'rule_delete.html', template_vars)
 
 
 

@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'quick_format',
     'graphs',
     'boolean_model',
-    'rule_based_model'
+    'rule_based'
 ]
 
 MIDDLEWARE_CLASSES = [

@@ -123,14 +123,14 @@
         {% endif %}
         {% if instance.boolean_model %}
         <div class="boolean_model">
-            <h5>Boolean Model:
-                <a href="{% url 'bool:boolnetDelete' pk=instance.boolean_model.pk %}" class="btn btn-sm" role="button"
+            <h5>Boolean Model:</h5>
+            <h6>Created: {{ instance.boolean_model.timestamp }}
+            <a href="{% url 'bool:boolnetDelete' pk=instance.boolean_model.pk %}" class="btn btn-sm" role="button"
                        title="Delete File">
                     <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
                 </a>
                 <!--# TODO: download zip/tar would be nice here -->
-            </h5>
-            <h6>Created: {{ instance.boolean_model.timestamp }}</h6>
+                </h6>
             {% if instance.boolean_model.comment %}
             <div class="boolnet_comment">
                 <b>Comment: </b>
@@ -169,6 +169,29 @@
                 </li>
                 </ul>
             </div>
+        </div>
+        {% endif %}
+
+        {% if instance.rule_based_model %}
+        <div class="rule_based_model">
+            <h5>Rule based model:</h5>
+            <h6>Created: {{ instance.rule_based_model.timestamp }}
+            <a href="{% url 'rule_based:rule_basedDelete' pk=instance.rule_based_model.pk %}" class="btn btn-sm" role="button"
+                       title="Delete File">
+                <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+            </a>
+            <a href="{{ instance.rule_based.get_model_download_url }}" class="btn btn-sm" role="button"
+                       title="Show">
+                <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+            </a>
+                </h6>
+            {% if instance.rule_based_model.comment %}
+            <div class="rule_based_comment">
+                <b>Comment: </b>
+                    {{ instance.rule_based_model.comment | linebreaks}}
+            </div>
+
+            {% endif %}
         </div>
         {% endif %}
 

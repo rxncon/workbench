@@ -6,6 +6,7 @@ from django.shortcuts import render_to_response
 from django.utils.text import slugify
 from graphs.models import Graph_from_File
 from boolean_model.models import Bool_from_rxnconsys
+from rule_based.models import Rule_based_from_rxnconsys
 import os
 import shutil
 
@@ -23,6 +24,8 @@ class Quick(models.Model):
     reg_graph = models.ForeignKey(Graph_from_File, null=True, on_delete=models.SET_NULL, blank=True, related_name="regulatory_graph_quick")
     rea_graph = models.ForeignKey(Graph_from_File, null=True, on_delete=models.SET_NULL, blank=True, related_name="reaction_graph_quick")
     boolean_model = models.ForeignKey(Bool_from_rxnconsys, null=True, on_delete=models.SET_NULL, blank=True, related_name="bool_quick")
+    rule_based_model = models.ForeignKey(Rule_based_from_rxnconsys, null=True, on_delete=models.SET_NULL, blank=True, related_name="rule_based_quick")
+
 
     def __str__(self):
         return self.name

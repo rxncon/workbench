@@ -238,12 +238,24 @@ h4.caption {
 	text-indent: 20px;
 }
 
+.boolean_model h6{
+	margin-left: 25px;
+}
 .boolnet_comment{
 	margin-left: 25px;
 }
 
 .boolean_model_files{
 	margin-left: 25px;
+}
+.rule_based_model h6{
+		margin-left: 25px;
+}
+.rule_based_comment{
+		margin-left: 25px;
+}
+.rule_based_model_files{
+	/*margin-left: 25px;*/
 }
 
 .compare_button{

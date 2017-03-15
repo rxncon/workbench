@@ -114,7 +114,7 @@ class Bool(View):
             b = Bool_from_rxnconsys(project_name=project_name, model_path=model_path, symbol_path=symbol_path, init_path=init_path,
                                 comment=request.POST.get('comment'))
             b.save()
-            messages.info(request, "boolnet files for project '" + b.project_name + "' successfully created.")
+            messages.info(request, "BoolNet files for project '" + b.project_name + "' successfully created.")
             if system_type == "Quick":
                 Quick.objects.filter(id=system_id).update(boolean_model=b)
                 return quick_detail(request, system_id)
