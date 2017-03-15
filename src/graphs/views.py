@@ -46,7 +46,7 @@ def create_rxncon_system(system, system_type):
 
 def check_filepath(request, graph_file_path, file, media_root):
     if os.path.exists(graph_file_path):
-        messages.warning(request, "Graph File already exists. Delete it first in the systems detail view.")
+        messages.warning(request, "Graph file already exists. Delete it first in the system's detail view.")
         return False
     elif not os.path.exists("%s/%s/%s" % (media_root, file.slug, "graphs")):
         os.makedirs("%s/%s/%s" % (media_root, file.slug, "graphs"))
@@ -154,8 +154,11 @@ class ReaGraph(View):
             try:
                 system = Quick.objects.filter(id=system_id)[0]
                 system_type = "Quick"
+                project_name = system.name
             except:
                 system = File.objects.filter(id=system_id)[0]
+                system_type = "File"
+                project_name = system.project_name
 
 
             graph_file_name = system.slug + "_reaGraph.xgmml"
@@ -167,10 +170,7 @@ class ReaGraph(View):
                 else:
                     return file_detail(request, system_id)
 
-            if system_type == "Quick":
-                rxncon_system = create_rxncon_system(system, "Quick")
-            else:
-                rxncon_system = create_rxncon_system(system, "File")
+            rxncon_system = create_rxncon_system(system, system_type)
 
             graph = reaction_graph.rxngraph_from_rxncon_system(rxncon_system).reaction_graph
 
@@ -181,16 +181,11 @@ class ReaGraph(View):
             if request.FILES.get('template'):
                 graph_file, graph_string = apply_template_layout(request, graph_file_path)
 
-            if system_type == "Quick":
-                g = Graph_from_File(project_name=system.name, graph_file=graph_file_path, graph_string=graph_string,
-                                comment=request.POST.get('comment'))
-            else:
-                g = Graph_from_File(project_name=system.project_name, graph_file=graph_file_path, graph_string=graph_string,
+            g = Graph_from_File(project_name=project_name, graph_file=graph_file_path, graph_string=graph_string,
                                     comment=request.POST.get('comment'))
             g.save()
             messages.info(request, "Species reaction graph for project '" + g.project_name + "' successfully created.")
             if system_type == "Quick":
-                print("here")
                 Quick.objects.filter(id=system_id).update(rea_graph=g)
                 return quick_detail(request, system_id)
             else:

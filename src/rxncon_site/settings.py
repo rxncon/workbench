@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'fileTree',
     'quick_format',
     'graphs',
+    'boolean_model',
 ]
 
 MIDDLEWARE_CLASSES = [

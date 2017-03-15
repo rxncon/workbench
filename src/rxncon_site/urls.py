@@ -27,6 +27,7 @@ urlpatterns = [
     url(r'^files/', include("fileTree.urls", namespace='fileTree')),
     url(r'^quick/', include("quick_format.urls", namespace='quick_format')),
     url(r'^graphs/', include("graphs.urls", namespace='graphs')),
+    url(r'^bool/', include("boolean_model.urls", namespace='bool')),
     url(r'^$', views.rxncon_site_index, name='index'),
     url(r'^publications$', views.publications, name='publications'),
     url(r'^funding', views.funding, name='funding'),
