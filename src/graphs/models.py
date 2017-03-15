@@ -33,9 +33,6 @@ class Graph_from_File(models.Model): # TODO: rename to just 'Graph', see django 
     def get_project_slug(self):
         return self.slug
 
-    def upload_new_version(self):
-        return reverse("fileTree:upload", kwargs={"slug": self.slug, })
-
     def get_relative_path(self):
         return str(self.graph_file).split("/media_cdn/")[-1]
 
@@ -44,6 +41,7 @@ class Graph_from_File(models.Model): # TODO: rename to just 'Graph', see django 
         return media_url+"%s" %(self.get_relative_path())
 
     def get_absolute_path(self):
+        # TODO: do I need this?
         media_root=settings.MEDIA_ROOT
         return media_root+"/%s" %(self.file)
 
