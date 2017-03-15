@@ -5,6 +5,7 @@ from django.db.models.signals import pre_save
 from django.shortcuts import render_to_response
 from django.utils.text import slugify
 from graphs.models import Graph_from_File
+from boolean_model.models import Bool_from_rxnconsys
 import os
 import shutil
 
@@ -24,7 +25,7 @@ class File(models.Model):
     updated = models.DateTimeField(auto_now=True, auto_now_add=False)  # auto_now refers to every modification, updated gets reset when Post is updated -duh
     reg_graph = models.ForeignKey(Graph_from_File, null=True, on_delete=models.SET_NULL, blank=True, related_name="regulatory_graph_file")
     rea_graph = models.ForeignKey(Graph_from_File, null=True, on_delete=models.SET_NULL, blank=True, related_name="reaction_graph_file")
-
+    boolean_model = models.ForeignKey(Bool_from_rxnconsys, null=True, on_delete=models.SET_NULL, blank=True, related_name="bool_file")
 
     def __str__(self):
         return self.file.name

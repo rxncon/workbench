@@ -5,7 +5,7 @@ from django.db.models.signals import pre_save
 from django.shortcuts import render_to_response
 from django.utils.text import slugify
 from graphs.models import Graph_from_File
-from graphs.models import Graph_from_Quick
+from boolean_model.models import Bool_from_rxnconsys
 import os
 import shutil
 
@@ -22,6 +22,7 @@ class Quick(models.Model):
     # updated gets reset when Post is updated -duh
     reg_graph = models.ForeignKey(Graph_from_File, null=True, on_delete=models.SET_NULL, blank=True, related_name="regulatory_graph_quick")
     rea_graph = models.ForeignKey(Graph_from_File, null=True, on_delete=models.SET_NULL, blank=True, related_name="reaction_graph_quick")
+    boolean_model = models.ForeignKey(Bool_from_rxnconsys, null=True, on_delete=models.SET_NULL, blank=True, related_name="bool_quick")
 
     def __str__(self):
         return self.name
