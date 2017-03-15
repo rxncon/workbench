@@ -6,7 +6,6 @@ class regGraphFileForm(forms.ModelForm):
         model = Graph_from_File
         fields =[
             "comment",
-            "option1"
         ]
 
 class reaGraphFileForm(forms.ModelForm):
@@ -14,7 +13,6 @@ class reaGraphFileForm(forms.ModelForm):
         model = Graph_from_File
         fields =[
             "comment",
-            "option1"
         ]
 
 

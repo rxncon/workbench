@@ -15,7 +15,6 @@ class Graph_from_File(models.Model): # TODO: rename to just 'Graph', see django 
     project_name = models.CharField(max_length=120)
     slug = models.SlugField(blank=True) # TODO: take blank out when file_upload with automated slug creation is done
     comment= models.TextField(null=True, blank=True)
-    option1 = models.NullBooleanField(blank = True, null=True, default=True)
     graph_file = models.FileField(null=True)
     graph_string = models.TextField(null=True)
     timestamp = models.DateTimeField(auto_now=False, auto_now_add=True) #initial timestamp will be saved one time
