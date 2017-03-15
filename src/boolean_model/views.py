@@ -129,7 +129,6 @@ def bool_delete(request, pk):
     f = get_object_or_404(Bool_from_rxnconsys, pk=pk)
     project_name = f.project_name
     timestamp = f.timestamp
-    filename = f.get_filename()
     system_type = None
     try:
         id = File.objects.filter(boolean_model=f)[0].id
@@ -143,9 +142,11 @@ def bool_delete(request, pk):
         form = DeleteBoolForm(request.POST, instance=f)
 
         if form.is_valid(): # checks CSRF
+            os.remove(f.model_path.name)
+            os.remove(f.symbol_path.name)
+            os.remove(f.init_path.name)
             f.delete()
-            os.remove(f.graph_file.name)
-            messages.success(request, "Successfully deleted")
+            messages.success(request, "Tree files Successfully deleted.")
             if system_type == "Quick":
                 return HttpResponseRedirect("/quick/"+str(id)+"/") # wherever to go after deleting
 
@@ -155,8 +156,7 @@ def bool_delete(request, pk):
         form = DeleteBoolForm(instance=f)
     template_vars = {'form': form,
                      'project_name': project_name,
-                     "timestamp": timestamp,
-                     "file": filename,
+                     "timestamp": timestamp
                      }
     return render(request, 'bool_delete.html', template_vars)
 
