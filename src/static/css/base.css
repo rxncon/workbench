@@ -238,6 +238,14 @@ h4.caption {
 	text-indent: 20px;
 }
 
+.boolnet_comment{
+	margin-left: 25px;
+}
+
+.boolean_model_files{
+	margin-left: 25px;
+}
+
 .compare_button{
 	margin: 5px;
 }
