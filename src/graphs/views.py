@@ -224,8 +224,8 @@ def graph_delete(request, pk):
         form = DeleteGraphForm(request.POST, instance=f)
 
         if form.is_valid(): # checks CSRF
-            f.delete()
             os.remove(f.graph_file.name)
+            f.delete()
             messages.success(request, "Successfully deleted")
             if system_type == "Quick":
                 return HttpResponseRedirect("/quick/"+str(id)+"/") # wherever to go after deleting

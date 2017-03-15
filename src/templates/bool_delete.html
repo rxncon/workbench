@@ -1,12 +1,12 @@
 {% extends "base.html" %}
 {% block head_title %} Del: {{ project_name | truncatechars:20 }} |{{file}} |{{ block.super }}  {% endblock %}
 {% block content %}
-    <h2>Delete Graph</h2>
-    <h4>Are you sure you want to delete this graph file?</h4>
+    <h2>Delete Boolean model</h2>
+    <h4>Are you sure you want to delete the BoolNet files?</h4>
     <p>Created: {{ timestamp }}</p>
     <p>Project: {{ project_name }}</p>
-    <p>Filename: {{ file }}</p>
-    <p>Consider saving it first in the respective system detail view. </p>
+
+    <p>Consider saving them first in the respective project detail view. </p>
     <div class="btn-group btn-group-sm" role="group">
     <form class="form" method="post" action='' enctype="multipart/form-data">
         {% csrf_token %}
