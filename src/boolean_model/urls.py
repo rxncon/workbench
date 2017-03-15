@@ -4,8 +4,8 @@ from .views import Bool
 
 
 urlpatterns = [
-    url(r'^bool/$', views.bool, name='regGraph'),
-    url(r'^bool/(?P<system_id>\d+)/$', Bool.as_view(), name='reaGraphCreate'),
-    url(r'^delete/(?P<pk>\d+)/$', views.bool_delete, name="delete"),
+    url(r'^boolnet/$', views.bool, name='boolnet'),
+    url(r'^boolnet/(?P<system_id>\d+)/$', Bool.as_view(), name='boolnetCreate'),
+    url(r'^delete/(?P<pk>\d+)/$', views.bool_delete, name="boolnetDelete"),
 
 ]

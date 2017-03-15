@@ -5,7 +5,7 @@ from django.shortcuts import render, get_object_or_404
 from django.views.generic import View
 from fileTree.models import File
 from fileTree.views import file_detail
-from .forms import boolForm
+from .forms import BoolForm
 from .forms import DeleteBoolForm
 from .models import Bool_from_rxnconsys
 import os
@@ -40,7 +40,7 @@ def check_filepath(request, graph_file_path, file, media_root):
         return True
 
 def bool(request, system_id=None):
-    form = boolForm(request.POST or None)
+    form = BoolForm(request.POST or None)
 
     if not form.is_valid() and not system_id:
         context = {
@@ -49,25 +49,11 @@ def bool(request, system_id=None):
         return render(request, "bool_form.html", context)
 
 
-  # --smoothing TEXT       Smoothing strategy. Default: no_smoothing. Choices:
-  #                        no_smoothing, smooth_production_sources
-  # --knockout TEXT        Generate knockouts. Default: no_knockout. Choices:
-  #                        no_knockout, knockout_neutral_states,
-  #                        knockout_all_states
-  # --overexpression TEXT  Generate overexpressions. Default: no_overexpression.
-  #                        Choices: no_overexpression,
-  #                        overexpress_neutral_states, overexpress_all_states
-  # --k_plus TEXT          Strategy for handling k+ contingencies. Default:
-  #                        strict. Choices: strict, ignore
-  # --k_minus TEXT         Strategy for handling k- contingencies. Default:
-  #                        strict. Choices: strict, ignore
-
-
 class Bool(View):
     def post(self, request, system_id=None):
         self.system_id = system_id
         self.request = request
-        self.form = boolForm(self.request.POST or None)
+        self.form = BoolForm(self.request.POST or None)
 
         if self.form.is_valid():
             media_url = settings.MEDIA_URL
@@ -99,15 +85,17 @@ class Bool(View):
 
             rxncon_system = create_rxncon_system(system, system_type)
 
-            smoothing = request.POST.get('smoothing') #TODO: geht das?
-            print("smoothing strategy from post: " + smoothing)
-
-            model_str, symbol_str, initial_val_str = r2b.boolnet_strs_from_rxncon(rxncon_system, smoothing_strategy = smoothing)
-            # model_str, symbol_str, initial_val_str = boolnet_strs_from_rxncon(rxncon_system,
-            #                                                                   smoothing_strategy=smoothing,
-            #                                                                   knockout_strategy,
-            #                                                                   overexpression_strategy, k_plus_strategy,
-            #                                                                   k_minus_strategy)
+            smoothing = request.POST.get('smoothing')
+            knockout = request.POST.get('knockout')
+            overexpr = request.POST.get('overexpr')
+            k_plus = request.POST.get('k_plus')
+            k_minus = request.POST.get('k_minus')
+            model_str, symbol_str, initial_val_str = r2b.boolnet_strs_from_rxncon(rxncon_system,
+                                                                              smoothing_strategy=smoothing,
+                                                                              knockout_strategy = knockout,
+                                                                              overexpression_strategy=overexpr,
+                                                                                k_plus_strategy=k_plus,
+                                                                              k_minus_strategy=k_minus)
             with open(model_path, mode='w') as f:
                 f.write(model_str)
 
@@ -131,28 +119,22 @@ class Bool(View):
 
 
 
-def graph_delete(request, pk):
-    f = get_object_or_404(Graph_from_File, pk=pk)
+def bool_delete(request, pk):
+    f = get_object_or_404(Bool_from_rxnconsys, pk=pk)
     project_name = f.project_name
     timestamp = f.timestamp
     filename = f.get_filename()
     system_type = None
     try:
-        if File.objects.filter(reg_graph=f):
-            id = File.objects.filter(reg_graph=f)[0].id
-        else:
-            id = File.objects.filter(rea_graph=f)[0].id
-
+        id = File.objects.filter(boolean_model=f)[0].id
+        system_type = "File"
     except:
-        if Quick.objects.filter(reg_graph=f):
-            id = Quick.objects.filter(reg_graph=f)[0].id
-        else:
-            id = Quick.objects.filter(rea_graph=f)[0].id
+        id = Quick.objects.filter(boolean_model=f)[0].id
         system_type = "Quick"
 
     slug = f.slug
     if request.method == 'POST':
-        form = DeleteGraphForm(request.POST, instance=f)
+        form = DeleteBoolForm(request.POST, instance=f)
 
         if form.is_valid(): # checks CSRF
             f.delete()
@@ -164,13 +146,13 @@ def graph_delete(request, pk):
             else:
                 return HttpResponseRedirect("/files/" + str(id) + "/")  # wherever to go after deleting
     else:
-        form = DeleteGraphForm(instance=f)
+        form = DeleteBoolForm(instance=f)
     template_vars = {'form': form,
                      'project_name': project_name,
                      "timestamp": timestamp,
                      "file": filename,
                      }
-    return render(request, 'graph_delete.html', template_vars)
+    return render(request, 'bool_delete.html', template_vars)
 
 
 

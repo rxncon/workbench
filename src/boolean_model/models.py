@@ -18,7 +18,34 @@ class Bool_from_rxnconsys(models.Model):
                                    auto_now_add=False)  # auto_now refers to every modification, updated gets reset when Post is updated -duh
 
     # options
-    smoothing = models.ChoiceField(choices=["no_smoothing", "smooth_production_sources"], default="no_smoothing", help_text="Smoothing strategy.")
+    smoothing_choices = (
+        ("no_smoothing", "no_smoothing"),
+        ("smooth_production_sources", "smooth_production_sources"),
+    )
+    smoothing = models.CharField(max_length= len("smooth_production_sources"), choices=smoothing_choices, default="no_smoothing", help_text="Smoothing strategy.")
+    knockout_choices = (
+        ("no_knockout", "no_knockout"),
+        ("knockout_neutral_states", "knockout_neutral_states"),
+        ("knockout_all_states", "knockout_all_states"),
+
+    )
+    knockout = models.CharField(max_length= len("knockout_neutral_states"), choices=knockout_choices, default="no_knockout", help_text="Generate knockouts.")
+    overexpr_choices = (
+        ("no_overexpression", "no_overexpression"),
+        ("overexpress_neutral_states", "overexpress_neutral_states"),
+        ("overexpress_all_states", "overexpress_all_states"),
+    )
+    overexpr = models.CharField(max_length= len("overexpress_neutral_states"), choices=overexpr_choices, default="no_overexpression", help_text="Generate overexpressions.")
+    k_plus_choices = (
+        ("strict", "strict"),
+        ("ignore", "ignore"),
+    )
+    k_plus = models.CharField(max_length= len("strict"), choices=k_plus_choices, default="strict", help_text="Strategy for handling k+ contingencies.")
+    k_minus_choices = (
+        ("strict", "strict"),
+        ("ignore", "ignore"),
+    )
+    k_minus = models.CharField(max_length= len("strict"), choices=k_minus_choices, default="strict", help_text="Strategy for handling k- contingencies.")
 
     # rxncon2bngl
     model_path = models.FileField(null=True)
