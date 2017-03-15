@@ -16,6 +16,8 @@ import rxncon.input.quick.quick as rxncon_quick
 import rxncon.simulation.boolean.boolean_model as rxncon_boolean_model
 import rxncon.simulation.boolean.boolnet_from_boolean_model as bfbm
 import global_scripts.rxncon2boolnet as r2b
+from rxncon.simulation.boolean.boolean_model import boolean_model_from_rxncon, \
+    SmoothingStrategy, KnockoutStrategy, OverexpressionStrategy
 
 
 def create_rxncon_system(system, system_type):
@@ -85,17 +87,21 @@ class Bool(View):
 
             rxncon_system = create_rxncon_system(system, system_type)
 
-            smoothing = request.POST.get('smoothing')
-            knockout = request.POST.get('knockout')
-            overexpr = request.POST.get('overexpr')
-            k_plus = request.POST.get('k_plus')
-            k_minus = request.POST.get('k_minus')
+            smoothing = SmoothingStrategy(request.POST.get('smoothing'))
+            knockout = KnockoutStrategy(request.POST.get('knockout'))
+            overexpr = OverexpressionStrategy(request.POST.get('overexpr'))
+            k_plus = r2b.QuantitativeContingencyStrategy(request.POST.get('k_plus'))
+            k_minus = r2b.QuantitativeContingencyStrategy(request.POST.get('k_minus'))
             model_str, symbol_str, initial_val_str = r2b.boolnet_strs_from_rxncon(rxncon_system,
                                                                               smoothing_strategy=smoothing,
                                                                               knockout_strategy = knockout,
                                                                               overexpression_strategy=overexpr,
                                                                                 k_plus_strategy=k_plus,
-                                                                              k_minus_strategy=k_minus)
+                                                                               k_minus_strategy=k_minus)
+
+            if not os.path.exists( "%s/%s/%s" % (media_root, system.slug, "boolnet")):
+                os.mkdir("%s/%s/%s" % (media_root, system.slug, "boolnet"))
+
             with open(model_path, mode='w') as f:
                 f.write(model_str)
 
@@ -108,7 +114,7 @@ class Bool(View):
             b = Bool_from_rxnconsys(project_name=project_name, model_path=model_path, symbol_path=symbol_path, init_path=init_path,
                                 comment=request.POST.get('comment'))
             b.save()
-            messages.info(request, "boolnet files for project '" + g.project_name + "' successfully created.")
+            messages.info(request, "boolnet files for project '" + b.project_name + "' successfully created.")
             if system_type == "Quick":
                 Quick.objects.filter(id=system_id).update(boolean_model=b)
                 return quick_detail(request, system_id)
