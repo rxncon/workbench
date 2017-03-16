@@ -1,11 +1,11 @@
 from django.shortcuts import render
-
-# Create your views here.
+from django.conf import settings
 from django.contrib import messages
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.core.urlresolvers import reverse
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404, redirect
+import os
 import rxncon.input.quick.quick as rxncon_quick
 import rxncon.input.excel_book.excel_book as rxncon_excel
 from rxncon_site.views import *
@@ -69,9 +69,21 @@ def quick_compare(request, id):
 def quick_new(request):
     # TODO: like this, it is not case sensitive. "Elefant" and "elefant" are the same project
     form = QuickForm(request.POST or None, request.FILES or None)
+    media_url = settings.MEDIA_URL
+    media_root = settings.MEDIA_ROOT
+
     if form.is_valid():
         instance = form.save(commit=False)
         instance.save()
+
+        filename = instance.slug + "_quick_definition.txt"
+        model_path = "%s/%s/%s/%s" % (media_root, instance.slug, "description", filename)
+        os.mkdir("%s/%s" % (media_root, instance.slug))
+        os.mkdir("%s/%s/%s" % (media_root, instance.slug, "description"))
+
+        with open(model_path, mode='w') as f:
+            f.write(instance.quick_input)
+
         messages.success(request, "Successfully created")
         return HttpResponseRedirect(instance.get_absolute_url())
 
@@ -87,6 +99,7 @@ def quick_delete(request, id):
         form = DeleteQuickForm(request.POST, instance=q)
 
         if form.is_valid(): # checks CSRF
+            q.delete_from_harddisk()
             q.delete()
             messages.success(request, "Successfully deleted")
             return HttpResponseRedirect("/") # wherever to go after deleting
@@ -96,6 +109,7 @@ def quick_delete(request, id):
                      'name': q.name,
                      'timestamp': q.timestamp,
                      'quick_input': q.quick_input,
+                     "download": q.get_download_url()
                      }
     return render(request, 'quick_delete.html', template_vars)
 
@@ -123,5 +137,9 @@ def quick_load(request, id):
     if target[0].loaded:
         messages.info(request, "Quick definition '" + target[0].name + "' successfully loaded")
     return quick_detail(request, id)
+
+# def quick_save(request, id):
+#     q = get_object_or_404(Quick, id=id)
+#     q.download_system_description()
 
 

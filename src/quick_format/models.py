@@ -39,6 +39,20 @@ class Quick(models.Model):
     def load(self):
         pass
 
+    def get_download_url(self):
+        media_url= settings.MEDIA_URL
+        # return media_url+"%s" %(self.file)
+        # media_root = settings.MEDIA_ROOT
+        filename = self.slug + "_quick_definition.txt"
+        return "%s%s/%s/%s" % (media_url, self.slug, "description", filename)
+
+    def delete_from_harddisk(self):
+        # TODO: test if works in dockers
+        media_root = settings.MEDIA_ROOT
+        filename = self.slug + "_quick_definition.txt"
+        path = "%s/%s/" % (media_root, self.slug)
+        shutil.rmtree(path)
+
 def pre_save_post_receiver(sender, instance, *args, **kwargs):
     if not instance.slug:
         # instance.slug = create_slug(instance)
