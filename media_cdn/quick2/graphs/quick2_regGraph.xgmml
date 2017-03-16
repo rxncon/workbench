@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+    <graph directed="1"  xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.cs.rpi.edu/XGMML">
+    <att name="selected" value="1" type="boolean" />
+    <att name="name" value="quick2" type="string"/>
+    <att name="shared name" value="quick2" type="string"/>
+    
+<node id="B_[a]--0" label="B_[a]--0"><att name="rxnconID" value="B_[a]--0" type="string"/><att name="type" value="state" type="string"/></node>
+<node id="A_[b]--0" label="A_[b]--0"><att name="rxnconID" value="A_[b]--0" type="string"/><att name="type" value="state" type="string"/></node>
+<node id="comp1" label="comp1"><att name="rxnconID" value="comp1" type="string"/><att name="type" value="boolean_or" type="string"/></node>
+<node id="D_p+_B_[(r)]" label="D_p+_B_[(r)]"><att name="rxnconID" value="D_p+_B_[(r)]" type="string"/><att name="type" value="reaction" type="string"/></node>
+<node id="comp2" label="comp2"><att name="rxnconID" value="comp2" type="string"/><att name="type" value="boolean_and" type="string"/></node>
+<node id="A_[(r)]-{p}" label="A_[(r)]-{p}"><att name="rxnconID" value="A_[(r)]-{p}" type="string"/><att name="type" value="state" type="string"/></node>
+<node id="B_[(r)]-{ub}" label="B_[(r)]-{ub}"><att name="rxnconID" value="B_[(r)]-{ub}" type="string"/><att name="type" value="state" type="string"/></node>
+<node id="B_[(r)]-{0}" label="B_[(r)]-{0}"><att name="rxnconID" value="B_[(r)]-{0}" type="string"/><att name="type" value="state" type="string"/></node>
+<node id="C_p+_A_[(r)]" label="C_p+_A_[(r)]"><att name="rxnconID" value="C_p+_A_[(r)]" type="string"/><att name="type" value="reaction" type="string"/></node>
+<node id="comp3" label="comp3"><att name="rxnconID" value="comp3" type="string"/><att name="type" value="boolean_and" type="string"/></node>
+<node id="A_[b]--B_[a]" label="A_[b]--B_[a]"><att name="rxnconID" value="A_[b]--B_[a]" type="string"/><att name="type" value="state" type="string"/></node>
+<node id="B_[(r2)]-{p}" label="B_[(r2)]-{p}"><att name="rxnconID" value="B_[(r2)]-{p}" type="string"/><att name="type" value="state" type="string"/></node>
+<node id="A_[(r)]-{0}" label="A_[(r)]-{0}"><att name="rxnconID" value="A_[(r)]-{0}" type="string"/><att name="type" value="state" type="string"/></node>
+<node id="B_[(r2)]-{0}" label="B_[(r2)]-{0}"><att name="rxnconID" value="B_[(r2)]-{0}" type="string"/><att name="type" value="state" type="string"/></node>
+<node id="B_[(r)]-{p}" label="B_[(r)]-{p}"><att name="rxnconID" value="B_[(r)]-{p}" type="string"/><att name="type" value="state" type="string"/></node>
+<node id="F_ub+_B_[(r)]" label="F_ub+_B_[(r)]"><att name="rxnconID" value="F_ub+_B_[(r)]" type="string"/><att name="type" value="reaction" type="string"/></node>
+<node id="A_[b]_ppi+_B_[a]" label="A_[b]_ppi+_B_[a]"><att name="rxnconID" value="A_[b]_ppi+_B_[a]" type="string"/><att name="type" value="reaction" type="string"/></node>
+<node id="E_p+_B_[(r2)]" label="E_p+_B_[(r2)]"><att name="rxnconID" value="E_p+_B_[(r2)]" type="string"/><att name="type" value="reaction" type="string"/></node>
+<edge source="B_[a]--0" target="A_[b]_ppi+_B_[a]"><att name="interaction" value="ss" type="string"/></edge>
+<edge source="A_[b]--0" target="A_[b]_ppi+_B_[a]"><att name="interaction" value="ss" type="string"/></edge>
+<edge source="comp1" target="A_[b]_ppi+_B_[a]"><att name="interaction" value="x" type="string"/></edge>
+<edge source="D_p+_B_[(r)]" target="B_[(r)]-{0}"><att name="interaction" value="consume" type="string"/></edge>
+<edge source="D_p+_B_[(r)]" target="B_[(r)]-{p}"><att name="interaction" value="produce" type="string"/></edge>
+<edge source="comp2" target="comp1"><att name="interaction" value="OR" type="string"/></edge>
+<edge source="A_[(r)]-{p}" target="comp3"><att name="interaction" value="AND" type="string"/></edge>
+<edge source="A_[(r)]-{p}" target="comp2"><att name="interaction" value="AND" type="string"/></edge>
+<edge source="B_[(r)]-{0}" target="D_p+_B_[(r)]"><att name="interaction" value="ss" type="string"/></edge>
+<edge source="B_[(r)]-{0}" target="F_ub+_B_[(r)]"><att name="interaction" value="ss" type="string"/></edge>
+<edge source="C_p+_A_[(r)]" target="A_[(r)]-{0}"><att name="interaction" value="consume" type="string"/></edge>
+<edge source="C_p+_A_[(r)]" target="A_[(r)]-{p}"><att name="interaction" value="produce" type="string"/></edge>
+<edge source="comp3" target="comp1"><att name="interaction" value="OR" type="string"/></edge>
+<edge source="B_[(r2)]-{p}" target="comp3"><att name="interaction" value="AND" type="string"/></edge>
+<edge source="A_[(r)]-{0}" target="C_p+_A_[(r)]"><att name="interaction" value="ss" type="string"/></edge>
+<edge source="B_[(r2)]-{0}" target="E_p+_B_[(r2)]"><att name="interaction" value="ss" type="string"/></edge>
+<edge source="B_[(r)]-{p}" target="comp2"><att name="interaction" value="AND" type="string"/></edge>
+<edge source="F_ub+_B_[(r)]" target="B_[(r)]-{ub}"><att name="interaction" value="produce" type="string"/></edge>
+<edge source="F_ub+_B_[(r)]" target="B_[(r)]-{0}"><att name="interaction" value="consume" type="string"/></edge>
+<edge source="A_[b]_ppi+_B_[a]" target="B_[a]--0"><att name="interaction" value="consume" type="string"/></edge>
+<edge source="A_[b]_ppi+_B_[a]" target="A_[b]--0"><att name="interaction" value="consume" type="string"/></edge>
+<edge source="A_[b]_ppi+_B_[a]" target="A_[b]--B_[a]"><att name="interaction" value="produce" type="string"/></edge>
+<edge source="E_p+_B_[(r2)]" target="B_[(r2)]-{p}"><att name="interaction" value="produce" type="string"/></edge>
+<edge source="E_p+_B_[(r2)]" target="B_[(r2)]-{0}"><att name="interaction" value="consume" type="string"/></edge>
+</graph>
