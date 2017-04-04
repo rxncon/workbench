@@ -120,7 +120,7 @@ def regGraphQuick(request, system_id=None):
         graph_string = xgmml_graph.to_string()
 
         if request.FILES.get('template'):
-            graph_file, graph_string = apply_template_layout(request, graph_file_path)
+            graph_string = apply_template_layout(request, graph_file_path, graph_string)
 
         g = Graph_from_File(project_name=system.name, graph_file=graph_file_path, graph_string=graph_string,
                             comment=request.POST.get('comment'))
@@ -179,7 +179,7 @@ class ReaGraph(View):
             graph_string = xgmml_graph.to_string()
 
             if request.FILES.get('template'):
-                graph_file, graph_string = apply_template_layout(request, graph_file_path)
+                graph_string = apply_template_layout(request, graph_file_path, graph_string)
 
             g = Graph_from_File(project_name=project_name, graph_file=graph_file_path, graph_string=graph_string,
                                     comment=request.POST.get('comment'))

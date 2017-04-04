@@ -6,8 +6,8 @@ class FileForm(forms.ModelForm):
         model = File
         fields =[
             "project_name",
-            "comment",
             "file",
+            "comment",
         ]
 
 class DeleteFileForm(forms.ModelForm):
