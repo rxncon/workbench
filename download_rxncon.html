@@ -2,16 +2,58 @@
 <div w3-include-html="base_header.html"></div>
 
 <div class="content">
-<h4>Install command-line framework</h4>
-    <p> You can clone form our <a href="https://github.com/rxncon/rxncon" target="_blank"> GitHub </a>
-        or install it with <a href ="https://pypi.python.org/pypi/rxncon/2.0b4" target="_blank">pip</a>:</p>
-    <div style="margin: 0 0 0 10px; background-color: #8c8c8c; padding-left: 5px" >
-        <p><i>pip install rxncon</i></p>
+<div class ="downloads">
+    <div class="table_contents">
+        <h4>Table of contents:</h4>
+        <ul>
+            <li><a href="#dependencies">Dependencies</a> </li>
+            <li><a href="#command_line">Install Command-line Framework</a></li>
+            <li><a href="#test">Test Installation</a></li>
+            <li><a href="#gui">Install GUI</a></li>
+        </ul>
     </div>
 
-<h4>Install rxncon with grafical interface and project management:</h4>
-    <p>Soon you can download that here.</p>
+    <div id="dependencies">
+        <h4>Dependencies</h4>
+        <p>You need <a href="https://www.python.org/downloads/release/python-352/">Python 3.5.2</a> or newer installed on your system.</p>
+        <p>Furthermore you need the Python package manager <a href ="https://pypi.python.org/pypi/rxncon/2.0b4" target="_blank">pip</a> installed.</p>
+    </div>
+
+    <div id="command_line">
+        <h4>Install Command-line Framework</h4>
+            <p>Install with <a href ="https://pypi.python.org/pypi/rxncon/2.0b4" target="_blank">pip</a>:</p>
+            <div style="margin: 0 0 0 60px; background-color: #8c8c8c; padding-left: 5px" >
+                <p style="margin-left: 0"><i>$ pip install rxncon</i></p>
+            </div>
+            <p>Or clone form our <a href="https://github.com/rxncon/rxncon" target="_blank"> GitHub </a>.</p>
+            <div class="note">
+            <h5>Note to Windows users:</h5>
+            <p>
+                As compiling the Python library "PyEDA" under Windows is known to cause problems,
+                we choose to use a precompiled version. This version is downloaded from the Humboldt University server.
+                If you prefer to install it yourself, follow <a href="http://www.lfd.uci.edu/~gohlke/pythonlibs/">this</a> link, before installing rxncon via pip.
+
+            </p>
+            </div>
+    </div>
+
+    <div id="test">
+        <h4>Test Installation</h4>
+        <p>In order to test your installation of the rxncon framework open a terminal. If you have installed rxncon
+        under a virtual environment, start it. Type: </p>
+        <div style="margin: 0 0 0 60px; background-color: #8c8c8c; padding-left: 5px" >
+            <p style="margin-left: 0"><i>$ which rxncon2bngl.py</i></p>
+        </div>
+        <p>If this returns a filepath, rxncon was successfully installed.</p>
+    </div>
+
+    <div id="gui">
+        <h4>Install rxncon with grafical interface and project management:</h4>
+            <p>Soon, a browser based User interface can be downloaded here.</p>
+    </div>
 </div>
+
+    </div>
 
 <div w3-include-html="footer.html"></div>
 <script>w3IncludeHTML();</script>

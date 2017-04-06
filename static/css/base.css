@@ -401,3 +401,35 @@ h4.caption {
 .support_list a {
 	text-decoration: none;
 }
+
+.downloads div{
+	margin-bottom: 15px;
+}
+
+.downloads p,ul{
+	margin-left: 30px;
+}
+
+.downloads .note{
+	margin-left: 30px;
+	background-color: rgba(255,249,0,0.5)
+}
+.downloads .note p{
+	margin-left: 30px;
+}
+
+.table_contents {
+	background-color: lightgrey;
+}
+
+/*#command_line p{*/
+	/*margin-left: 0;*/
+/*}*/
+
+.paper_ref{
+	margin-left:20px;
+}
+
+.funding{
+	margin-left:30px;
+}
