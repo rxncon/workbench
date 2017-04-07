@@ -1,0 +1,21 @@
+Metadata-Version: 1.1
+Name: rxncon-GUI
+Version: 0.1
+Summary: A browser based interface for the rxncon framework.
+Home-page: https://www.rxncon.org/
+Author: Mathias Wajnberg
+Author-email: mathias.wajnberg@hu-berlin.de
+License: BSD License
+Description: UNKNOWN
+Keywords: sysbio,signalling,systems biology
+Platform: UNKNOWN
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: Framework :: Django :: 1.10.4
+Classifier: Intended Audience :: sys bio
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Topic :: Internet :: WWW/HTTP
+Classifier: Topic :: Internet :: WWW/HTTP :: Dynamic Content
