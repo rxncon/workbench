@@ -23,7 +23,6 @@ from . import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^posts/', include("posts.urls", namespace='posts')),# string with path for function type views
     url(r'^files/', include("fileTree.urls", namespace='fileTree')),
     url(r'^quick/', include("quick_format.urls", namespace='quick_format')),
     url(r'^graphs/', include("graphs.urls", namespace='graphs')),
