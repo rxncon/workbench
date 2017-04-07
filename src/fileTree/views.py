@@ -10,11 +10,11 @@ import rxncon.visualization.graphML as graphML
 
 
 from .models import File
-from quick_format.models import Quick
+from src.quick_format.models import Quick
 from .forms import FileForm, DeleteFileForm
 import django.forms as forms
 
-from rxncon_site.views import *
+from src.rxncon_site.views import *
 
 
 def file_detail(request, id, compare_dict = None):
