@@ -37,11 +37,11 @@ media_cdn/this-is-a-project-with-like-a-really-long-name/pheromone_NS7cjEv.xls
 media_cdn/this-is-a-project-with-like-a-really-long-name/pheromone_txewqWc.xls
 media_cdn/this-is-a-project-with-like-a-really-long-name/pheromone_vcKRt2B.xls
 media_cdn/this-is-a-project-with-like-a-really-long-name/pheromone_vg1vCNb.xls
-rxncon_GUI.egg-info/PKG-INFO
-rxncon_GUI.egg-info/SOURCES.txt
-rxncon_GUI.egg-info/dependency_links.txt
-rxncon_GUI.egg-info/requires.txt
-rxncon_GUI.egg-info/top_level.txt
+rxncon_gui.egg-info/PKG-INFO
+rxncon_gui.egg-info/SOURCES.txt
+rxncon_gui.egg-info/dependency_links.txt
+rxncon_gui.egg-info/requires.txt
+rxncon_gui.egg-info/top_level.txt
 src/TODO~
 src/__init__.py
 src/crud.md
@@ -54,6 +54,7 @@ src/.idea/modules.xml
 src/.idea/rxncon_site.iml
 src/.idea/vcs.xml
 src/.idea/workspace.xml
+src/__pycache__/__init__.cpython-35.pyc
 src/boolean_model/__init__.py
 src/boolean_model/admin.py
 src/boolean_model/apps.py
