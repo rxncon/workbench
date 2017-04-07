@@ -15,9 +15,9 @@ import rxncon.input.excel_book.excel_book as rxncon_excel
 import rxncon.input.quick.quick as rxncon_quick
 import rxncon.simulation.boolean.boolean_model as rxncon_boolean_model
 import rxncon.simulation.boolean.boolnet_from_boolean_model as bfbm
-import global_scripts.rxncon2boolnet as r2b
 from rxncon.simulation.boolean.boolean_model import boolean_model_from_rxncon, \
     SmoothingStrategy, KnockoutStrategy, OverexpressionStrategy
+
 
 
 def create_rxncon_system(system, system_type):

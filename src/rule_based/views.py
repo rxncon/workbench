@@ -13,7 +13,9 @@ from quick_format.models import Quick
 from quick_format.views import quick_detail
 import rxncon.input.excel_book.excel_book as rxncon_excel
 import rxncon.input.quick.quick as rxncon_quick
-import global_scripts.rxncon2bngl as r2b
+from rxncon.simulation.rule_based.rule_based_model import rule_based_model_from_rxncon
+from rxncon.simulation.rule_based.bngl_from_rule_based_model import bngl_from_rule_based_model
+
 
 
 def create_rxncon_system(system, system_type):
@@ -76,8 +78,8 @@ class Rule_based(View):
                     return file_detail(request, system_id)
 
             rxncon_system = create_rxncon_system(system, system_type)
-            rbm = r2b.rule_based_model_from_rxncon(rxncon_system)
-            model_str = r2b.bngl_from_rule_based_model(rbm)
+            rbm = rule_based_model_from_rxncon(rxncon_system)
+            model_str = bngl_from_rule_based_model(rbm)
 
             if not os.path.exists( "%s/%s/%s" % (media_root, system.slug, "rule_based")):
                 os.mkdir("%s/%s/%s" % (media_root, system.slug, "rule_based"))
