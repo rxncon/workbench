@@ -1,4 +1,0 @@
-A_ppi_B; ! B-{P}
-B_ppi_C; ! A--B
-D_p+_B_[(r1)]
-E_p+_B_[(r2)]
