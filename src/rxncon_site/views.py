@@ -2,8 +2,8 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib import messages
-from src.fileTree.models import File
-from src.quick_format.models import Quick
+from fileTree.models import File
+from quick_format.models import Quick
 import rxncon.input.quick.quick as rxncon_quick
 import rxncon.input.excel_book.excel_book as rxncon_excel
 

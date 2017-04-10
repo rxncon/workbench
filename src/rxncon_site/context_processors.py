@@ -1,5 +1,5 @@
-from src.fileTree.models import File
-from src.quick_format.models import Quick
+from fileTree.models import File
+from quick_format.models import Quick
 from django.conf import settings
 # http://stackoverflow.com/questions/28533854/provide-extra-context-to-all-views
 
@@ -14,7 +14,7 @@ def file_list(request):
         if not current_slug in slug_list:
             slug_list.append(current_slug)
 
-    projects= [queryset_list.filter(slug=slug).order_by("-updated") for slug in slug_list] # list of lists of files
+    projects=[queryset_list.filter(slug=slug).order_by("-updated") for slug in slug_list] # list of lists of files
 
 
 

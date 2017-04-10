@@ -4,9 +4,9 @@ from django.db import models
 from django.db.models.signals import pre_save
 from django.shortcuts import render_to_response
 from django.utils.text import slugify
-from src.graphs.models import Graph_from_File
-from src.boolean_model.models import Bool_from_rxnconsys
-from src.rule_based.models import Rule_based_from_rxnconsys
+from graphs.models import Graph_from_File
+from boolean_model.models import Bool_from_rxnconsys
+from rule_based.models import Rule_based_from_rxnconsys
 import os
 import shutil
 

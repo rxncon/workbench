@@ -1,28 +1,17 @@
-from django.contrib import messages
-from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from django.core.urlresolvers import reverse
-from django.http import HttpResponse, HttpResponseRedirect
-from django.shortcuts import render, get_object_or_404, redirect
-import rxncon.input.excel_book.excel_book as rxncon_excel
-import rxncon.input.quick.quick as rxncon_quick
-import rxncon.visualization.regulatory_graph as regulatory_graph
-import rxncon.visualization.graphML as graphML
-
-
-from .models import File
-from src.quick_format.models import Quick
 from .forms import FileForm, DeleteFileForm
 import django.forms as forms
 
-from src.rxncon_site.views import *
-
+from rxncon_site.views import *
+from .models import File
+from quick_format.models import Quick
+from rxncon.input.excel_book.excel_book import ExcelBook
 
 def file_detail(request, id, compare_dict = None):
     instance = File.objects.get(id=id)
     slug = File.objects.filter(id=id).values("slug")
     project_files = File.objects.filter(slug=slug).order_by("-updated")
     try:
-        book = rxncon_excel.ExcelBook(instance.get_absolute_path())
+        book = ExcelBook(instance.get_absolute_path())
     except Exception as e:
         raise ImportError("Could not import file")
     rxncon_system = book.rxncon_system
@@ -46,7 +35,7 @@ def file_compare(request, id):
     loaded = File.objects.filter(loaded=True)
     if loaded:
         try:
-            loaded_rxncon = rxncon_excel.ExcelBook(loaded[0].get_absolute_path())
+            loaded_rxncon = ExcelBook(loaded[0].get_absolute_path())
         except:
             raise ImportError("Could not import file")
 
