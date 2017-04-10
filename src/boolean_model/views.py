@@ -17,6 +17,7 @@ import rxncon.simulation.boolean.boolean_model as rxncon_boolean_model
 import rxncon.simulation.boolean.boolnet_from_boolean_model as bfbm
 from rxncon.simulation.boolean.boolean_model import boolean_model_from_rxncon, \
     SmoothingStrategy, KnockoutStrategy, OverexpressionStrategy
+from rxncon.simulation.boolean.boolnet_from_boolean_model import QuantitativeContingencyStrategy, boolnet_strs_from_rxncon
 
 
 
@@ -90,9 +91,9 @@ class Bool(View):
             smoothing = SmoothingStrategy(request.POST.get('smoothing'))
             knockout = KnockoutStrategy(request.POST.get('knockout'))
             overexpr = OverexpressionStrategy(request.POST.get('overexpr'))
-            k_plus = r2b.QuantitativeContingencyStrategy(request.POST.get('k_plus'))
-            k_minus = r2b.QuantitativeContingencyStrategy(request.POST.get('k_minus'))
-            model_str, symbol_str, initial_val_str = r2b.boolnet_strs_from_rxncon(rxncon_system,
+            k_plus = QuantitativeContingencyStrategy(request.POST.get('k_plus'))
+            k_minus = QuantitativeContingencyStrategy(request.POST.get('k_minus'))
+            model_str, symbol_str, initial_val_str = boolnet_strs_from_rxncon(rxncon_system,
                                                                               smoothing_strategy=smoothing,
                                                                               knockout_strategy = knockout,
                                                                               overexpression_strategy=overexpr,
