@@ -19,15 +19,14 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.views.generic.base import TemplateView
 from . import views
-#from posts import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^files/', include("fileTree.urls", namespace='fileTree')),
-    url(r'^quick/', include("quick_format.urls", namespace='quick_format')),
-    url(r'^graphs/', include("graphs.urls", namespace='graphs')),
-    url(r'^bool/', include("boolean_model.urls", namespace='bool')),
-    url(r'^rule_based/', include("rule_based.urls", namespace='rule_based')),
+    url(r'^files/', include("src.fileTree.urls", namespace='fileTree')),
+    url(r'^quick/', include("src.quick_format.urls", namespace='quick_format')),
+    url(r'^graphs/', include("src.graphs.urls", namespace='graphs')),
+    url(r'^bool/', include("src.boolean_model.urls", namespace='bool')),
+    url(r'^rule_based/', include("src.rule_based.urls", namespace='rule_based')),
     url(r'^$', views.rxncon_site_index, name='index'),
     url(r'^publications$', views.publications, name='publications'),
     url(r'^funding', views.funding, name='funding'),

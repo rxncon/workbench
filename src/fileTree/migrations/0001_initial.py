@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 from django.db import migrations, models
 import django.db.models.deletion
-import fileTree.models
+import src.fileTree.models
 
 
 class Migration(migrations.Migration):
@@ -25,7 +25,7 @@ class Migration(migrations.Migration):
                 ('project_name', models.CharField(max_length=120)),
                 ('loaded', models.BooleanField(default=False)),
                 ('slug', models.SlugField(blank=True)),
-                ('file', models.FileField(upload_to=fileTree.models.upload_location)),
+                ('file', models.FileField(upload_to=src.fileTree.models.upload_location)),
                 ('comment', models.TextField(blank=True, null=True)),
                 ('timestamp', models.DateTimeField(auto_now_add=True)),
                 ('updated', models.DateTimeField(auto_now=True)),

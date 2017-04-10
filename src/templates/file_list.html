@@ -1,5 +1,9 @@
 <div class="sidebar_header" id="xls_sidebar_header">
-    {% if projects %} <h4>From .xls file</h4> {% endif %}
+    {% if projects %}
+        <h4>From spreadsheet</h4>
+    {% else %}
+        <h4>Projects</h4>
+    {% endif %}
     <a id="new_from_file" class="btn btn-primary btn-xs " href="/files/upload" title="Create new project">
         New
     </a>
