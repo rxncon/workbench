@@ -1,5 +1,0 @@
-django
-rxncon
-typecheck-decorator
-typing
-xlrd
