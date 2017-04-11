@@ -22,7 +22,7 @@ class Bool_from_rxnconsys(models.Model):
         ("no_smoothing", "no_smoothing"),
         ("smooth_production_sources", "smooth_production_sources"),
     )
-    smoothing = models.CharField(max_length= len("smooth_production_sources"), choices=smoothing_choices, default="no_smoothing", help_text="Smoothing strategy.")
+    smoothing = models.CharField(max_length= len("smooth_production_sources"), choices=smoothing_choices, default="smooth_production_sources", help_text="Smoothing strategy.")
     knockout_choices = (
         ("no_knockout", "no_knockout"),
         ("knockout_neutral_states", "knockout_neutral_states"),
