@@ -3,14 +3,14 @@ from django.contrib import messages
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import View
-from src.fileTree.models import File
-from src.fileTree.views import file_detail
+from fileTree.models import File
+from fileTree.views import file_detail
 from .forms import BoolForm
 from .forms import DeleteBoolForm
 from .models import Bool_from_rxnconsys
 import os
-from src.quick_format.models import Quick
-from src.quick_format.views import quick_detail
+from quick_format.models import Quick
+from quick_format.views import quick_detail
 import rxncon.input.excel_book.excel_book as rxncon_excel
 import rxncon.input.quick.quick as rxncon_quick
 import rxncon.simulation.boolean.boolean_model as rxncon_boolean_model

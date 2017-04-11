@@ -37,11 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'src.fileTree',
-    'src.quick_format',
-    'src.graphs',
-    'src.boolean_model',
-    'src.rule_based',
+    'fileTree',
+    'quick_format',
+    'graphs',
+    'boolean_model',
+    'rule_based',
 
 ]
 
@@ -56,7 +56,7 @@ MIDDLEWARE_CLASSES = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'src.rxncon_site.urls'
+ROOT_URLCONF = 'rxncon_site.urls'
 
 TEMPLATES = [
     {
@@ -69,15 +69,15 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'src.rxncon_site.context_processors.file_list',
-                'src.rxncon_site.context_processors.quick_list',
-                'src.rxncon_site.context_processors.get_loaded_system',
+                'rxncon_site.context_processors.file_list',
+                'rxncon_site.context_processors.quick_list',
+                'rxncon_site.context_processors.get_loaded_system',
             ],
         },
     },
 ]
 
-WSGI_APPLICATION = 'src.rxncon_site.wsgi.application'
+WSGI_APPLICATION = 'rxncon_site.wsgi.application'
 
 
 # Database
