@@ -23,6 +23,7 @@ class Quick(models.Model):
     # updated gets reset when Post is updated -duh
     reg_graph = models.ForeignKey(Graph_from_File, null=True, on_delete=models.SET_NULL, blank=True, related_name="regulatory_graph_quick")
     rea_graph = models.ForeignKey(Graph_from_File, null=True, on_delete=models.SET_NULL, blank=True, related_name="reaction_graph_quick")
+    sRea_graph = models.ForeignKey(Graph_from_File, null=True, on_delete=models.SET_NULL, blank=True, related_name="species reaction_graph_quick+")
     boolean_model = models.ForeignKey(Bool_from_rxnconsys, null=True, on_delete=models.SET_NULL, blank=True, related_name="bool_quick")
     rule_based_model = models.ForeignKey(Rule_based_from_rxnconsys, null=True, on_delete=models.SET_NULL, blank=True, related_name="rule_based_quick")
 

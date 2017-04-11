@@ -93,9 +93,8 @@ def regGraphFile(request, system_id=None):
         g.save()
 
         File.objects.filter(id=system_id).update(reg_graph=g)
-        messages.info(request, "regulatory graph for project '" + g.project_name + "' successfully created.")
+        messages.info(request, "Regulatory graph for project '" + g.project_name + "' successfully created.")
         return file_detail(request, system_id)
-
 
 def regGraphQuick(request, system_id=None):
     form = regGraphFileForm(request.POST or None)
@@ -127,9 +126,8 @@ def regGraphQuick(request, system_id=None):
         g.save()
 
         Quick.objects.filter(id=system_id).update(reg_graph=g)
-        messages.info(request, "regulatory graph for project '" + g.project_name + "' successfully created.")
+        messages.info(request, "Regulatory graph for project '" + g.project_name + "' successfully created.")
         return quick_detail(request, system_id)
-
 
 def reaGraph(request, system_id=None):
     form = reaGraphFileForm(request.POST or None)
@@ -139,7 +137,6 @@ def reaGraph(request, system_id=None):
             "form": form,
         }
         return render(request, "reaGraph_form.html", context)
-
 
 class ReaGraph(View):
     def post(self, request, system_id=None):
@@ -184,7 +181,7 @@ class ReaGraph(View):
             g = Graph_from_File(project_name=project_name, graph_file=graph_file_path, graph_string=graph_string,
                                     comment=request.POST.get('comment'))
             g.save()
-            messages.info(request, "Species reaction graph for project '" + g.project_name + "' successfully created.")
+            messages.info(request, "Reaction graph for project '" + g.project_name + "' successfully created.")
             if system_type == "Quick":
                 Quick.objects.filter(id=system_id).update(rea_graph=g)
                 return quick_detail(request, system_id)
@@ -193,10 +190,66 @@ class ReaGraph(View):
                 return file_detail(request, system_id)
 
 
-    # def post(self, system_id=None):
-    #     self.system_id = system_id
-    #     self.media_url = settings.MEDIA_URL
-    #     self.media_root = settings.MEDIA_ROOT
+def sReaGraph(request, system_id=None):
+    form = reaGraphFileForm(request.POST or None)
+
+    if not form.is_valid() and not system_id:
+        context = {
+            "form": form,
+        }
+        return render(request, "sReaGraph_form.html", context)
+
+
+class SReaGraph(ReaGraph):
+    def post(self, request, system_id=None):
+        self.system_id = system_id
+        self.request = request
+        self.form = reaGraphFileForm(self.request.POST or None)
+
+        if self.form.is_valid():
+            media_url = settings.MEDIA_URL
+            media_root = settings.MEDIA_ROOT
+            system_type = None
+            try:
+                system = Quick.objects.filter(id=system_id)[0]
+                system_type = "Quick"
+                project_name = system.name
+            except:
+                system = File.objects.filter(id=system_id)[0]
+                system_type = "File"
+                project_name = system.project_name
+
+
+            graph_file_name = system.slug + "_sReaGraph.xgmml"
+            graph_file_path = "%s/%s/%s/%s" % (media_root, system.slug, "graphs", graph_file_name)
+
+            if not check_filepath(request, graph_file_path, system, media_root):
+                if system_type == "Quick":
+                    return quick_detail(request, system_id)
+                else:
+                    return file_detail(request, system_id)
+
+            rxncon_system = create_rxncon_system(system, system_type)
+
+            graph = regulatory_graph.ReactionSpeciesGraph(rxncon_system=rxncon_system).regulatory_graph
+
+            xgmml_graph = graphML.XGMML(graph, system.slug)
+            graph_file = xgmml_graph.to_file(graph_file_path)
+            graph_string = xgmml_graph.to_string()
+
+            if request.FILES.get('template'):
+                graph_string = apply_template_layout(request, graph_file_path, graph_string)
+
+            g = Graph_from_File(project_name=project_name, graph_file=graph_file_path, graph_string=graph_string,
+                                    comment=request.POST.get('comment'))
+            g.save()
+            messages.info(request, "Species reaction graph for project '" + g.project_name + "' successfully created.")
+            if system_type == "Quick":
+                Quick.objects.filter(id=system_id).update(sRea_graph=g)
+                return quick_detail(request, system_id)
+            else:
+                File.objects.filter(id=system_id).update(sRea_graph=g)
+                return file_detail(request, system_id)
 
 
 
@@ -209,14 +262,18 @@ def graph_delete(request, pk):
     try:
         if File.objects.filter(reg_graph=f):
             id = File.objects.filter(reg_graph=f)[0].id
-        else:
+        elif File.objects.filter(rea_graph=f):
             id = File.objects.filter(rea_graph=f)[0].id
+        else:
+            id = File.objects.filter(sRea_graph=f)[0].id
 
     except:
         if Quick.objects.filter(reg_graph=f):
             id = Quick.objects.filter(reg_graph=f)[0].id
-        else:
+        elif Quick.objects.filter(rea_graph=f):
             id = Quick.objects.filter(rea_graph=f)[0].id
+        else:
+            id = Quick.objects.filter(sRea_graph=f)[0].id
         system_type = "Quick"
 
     slug = f.slug
