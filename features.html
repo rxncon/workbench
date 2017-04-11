@@ -1,10 +1,123 @@
 <script src="static/js/w3data.js"></script>
 <div w3-include-html="base_header.html"></div>
 
-<p>Description of rxncon features. Maybe bullet point style? Ref to romers paper. Or full text like in BA?</p>
+<h2>List of Features:</h2>
+
+
+    <div class="jumbotron">
+        <p> - The rxncon language is a scalable and composable approach to build mechanistic models of signal
+                    transduction.</p>
+        <div id="par_1">
+            <a class="btn btn-link" role="button" style="float: none;margin-top: -15px;">
+                <span class="button-text">Read more</span>
+            </a><br />
+            <div style="display: none" class="hidden_text">
+                Network reconstruction in biology is an iterative process to formalise the structure of a biological network,
+                reflecting our current knowledge. While reconstruction methods for metabolic networks are well established,
+                only few reconstruction methods exist for cellular signal transduction networks. Furthermore, reconstruction
+                of signalling networks is challenging, because state combinations lead to a large number of specific states,
+                generating highly complex structures.
+            </div>
+        </div>
+    </div>
+
+
+    <div class="jumbotron">
+        <p> - Building a rxncon model is writing down molecular biology. This process is straightforward when the biology is
+            well known.</p>
+
+        <div id="par_2">
+            <a class="btn btn-link" role="button" style="float: none;margin-top: -15px;">
+                <span class="button-text">Read more</span>
+            </a><br />
+            <div style="display: none" class="hidden_text">
+                The rxncon-language enables a systematised and condensed reconstruction of
+                    cellular system by separating the reconstruction into reactions (rxn) and contingencies (con). It
+                    largely avoids the combinatorial problem by describing the network on the same granularity as the
+                    biological findings, but creates a gap between the reconstruction and established modelling methods.
+                    <a href="#" style="color: darkorange">How to create a rxncon model </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="jumbotron">
+        <p> - A carefully built rxncon model constitutes a detailed knowledge base.
+            <a href="model_examples.html" style="color: darkorange">Model examples </a></p>
+    </div>
+    <div class="jumbotron">
+
+        <p> - Compilation into an executable format is automatic, as is visualisation in graphical formats.</p>
+            <div id="par_3">
+            <a class="btn btn-link" role="button" style="float: none;margin-top: -15px;" class="hidden_text">
+                <span class="button-text">Read more</span>
+            </a><br />
+            <div style="display: none" class="hidden_text">
+                We developed a framework interpreting the rxncon-language and translating the reconstruction into
+                    mathematical models or visualisations. The user defines the network with one reaction list and one contingency list.
+                    From these data mathematical and graphical representation can be generated. The network can be modified and extended
+                    iteratively, and both visualisation and mathematical models can be generated automatically at any time.
+                    <a href="model_examples.html" style="color: darkorange">List of functions </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="jumbotron">
+        <p> - The rxncon workbench integrates the rxncon toolbox with a local repository into a model managing system under a
+            single GUI. You can download both <a href="download_rxncon.html#gui">here</a>.</p>
+    </div>
+
+    <div class="jumbotron">
+        <p> - The rxncon tools are developed open source and released under the LGPL license.</p>
+
+<p>We finalised a major overhaul of the interpretation engine and the export features and are happy to present rxncon
+    2.0, the second generation rxncon language with an increased expressiveness and precision. </p>
+    </div>
+
+</div>
+</div>
+
 
 <div w3-include-html="footer.html"></div>
 <script>w3IncludeHTML();</script>
 <script src="static/js/jquery-1.10.1.js"></script>
 <script src="static/js/jquery.min.js"></script>
 <script src="static/bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+    $('#par_1 > a').click(function(){
+        var span = $(this).find('span');
+        if(span.text() == "Read more"){
+            span.text("Show less");
+        } else {
+            span.text("Read more");
+        }
+        $(this).next().next().slideToggle();
+        return false;
+    });
+</script>
+
+<script type="text/javascript">
+    $('#par_2 > a').click(function(){
+        var span = $(this).find('span');
+        if(span.text() == "Read more"){
+            span.text("Show less");
+        } else {
+            span.text("Read more");
+        }
+        $(this).next().next().slideToggle();
+        return false;
+    });
+</script>
+
+<script type="text/javascript">
+    $('#par_3 > a').click(function(){
+        var span = $(this).find('span');
+        if(span.text() == "Read more"){
+            span.text("Show less");
+        } else {
+            span.text("Read more");
+        }
+        $(this).next().next().slideToggle();
+        return false;
+    });
+</script>

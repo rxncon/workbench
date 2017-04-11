@@ -433,3 +433,18 @@ h4.caption {
 .funding{
 	margin-left:30px;
 }
+
+.jumbotron{
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	background-color: rgb(240,240,240);
+	margin-left: 20px;
+}
+.jumbotron p{
+	font-size: 12pt;
+}
+
+.hidden_text {
+	margin-left: 12px;
+}
