@@ -1,154 +1,872 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-    <graph directed="1"  xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.cs.rpi.edu/XGMML">
-    <att name="selected" value="1" type="boolean" />
-    <att name="name" value="test" type="string"/>
-    <att name="shared name" value="test" type="string"/>
+<?xml version="1.0" ?>
+<graph directed="1" xmlns="http://www.cs.rpi.edu/XGMML" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink">
+	
     
-<node id="IR_[TK(Y1162)]-{p}" label="IR_[TK(Y1162)]-{p}"><att name="rxnconID" value="IR_[TK(Y1162)]-{p}" type="string"/><att name="type" value="state" type="string"/></node>
-<node id="Shc_[(Y317)]-{p}" label="Shc_[(Y317)]-{p}"><att name="rxnconID" value="Shc_[(Y317)]-{p}" type="string"/><att name="type" value="state" type="string"/></node>
-<node id="[PI3K]" label="[PI3K]"><att name="rxnconID" value="[PI3K]" type="string"/><att name="type" value="output" type="string"/></node>
-<node id="Grb2_[SOS]_ppi+_SOS_[Grb2]" label="Grb2_[SOS]_ppi+_SOS_[Grb2]"><att name="rxnconID" value="Grb2_[SOS]_ppi+_SOS_[Grb2]" type="string"/><att name="type" value="reaction" type="string"/></node>
-<node id="IRS_[Phospholipids]_i+_Phospholipids_[IRS]" label="IRS_[Phospholipids]_i+_Phospholipids_[IRS]"><att name="rxnconID" value="IRS_[Phospholipids]_i+_Phospholipids_[IRS]" type="string"/><att name="type" value="reaction" type="string"/></node>
-<node id="IR01-Ins" label="IR01-Ins"><att name="rxnconID" value="IR01-Ins" type="string"/><att name="type" value="boolean_or" type="string"/></node>
-<node id="IR_[TK(Y1158)]-{p}" label="IR_[TK(Y1158)]-{p}"><att name="rxnconID" value="IR_[TK(Y1158)]-{p}" type="string"/><att name="type" value="state" type="string"/></node>
-<node id="IR-empty" label="IR-empty"><att name="rxnconID" value="IR-empty" type="string"/><att name="type" value="boolean_and" type="string"/></node>
-<node id="Grb2_[SH2]--Shc_[YY]" label="Grb2_[SH2]--Shc_[YY]"><att name="rxnconID" value="Grb2_[SH2]--Shc_[YY]" type="string"/><att name="type" value="state" type="string"/></node>
-<node id="IR_p+_Shc_[(YY239)]" label="IR_p+_Shc_[(YY239)]"><att name="rxnconID" value="IR_p+_Shc_[(YY239)]" type="string"/><att name="type" value="reaction" type="string"/></node>
-<node id="IRS_[(Y)]-{p}" label="IRS_[(Y)]-{p}"><att name="rxnconID" value="IRS_[(Y)]-{p}" type="string"/><att name="type" value="state" type="string"/></node>
-<node id="Grb2_[SH2]--Shc_[Y]" label="Grb2_[SH2]--Shc_[Y]"><att name="rxnconID" value="Grb2_[SH2]--Shc_[Y]" type="string"/><att name="type" value="state" type="string"/></node>
-<node id="Shc_[(YY239)]-{p}" label="Shc_[(YY239)]-{p}"><att name="rxnconID" value="Shc_[(YY239)]-{p}" type="string"/><att name="type" value="state" type="string"/></node>
-<node id="IR_[lig]_i-_insulin_[IR]" label="IR_[lig]_i-_insulin_[IR]"><att name="rxnconID" value="IR_[lig]_i-_insulin_[IR]" type="string"/><att name="type" value="reaction" type="string"/></node>
-<node id="IR_[JMY972]_ppi-_IRS_[PTB]" label="IR_[JMY972]_ppi-_IRS_[PTB]"><att name="rxnconID" value="IR_[JMY972]_ppi-_IRS_[PTB]" type="string"/><att name="type" value="reaction" type="string"/></node>
-<node id="Grb2_[SH2]_ppi+_IRS_[Y]" label="Grb2_[SH2]_ppi+_IRS_[Y]"><att name="rxnconID" value="Grb2_[SH2]_ppi+_IRS_[Y]" type="string"/><att name="type" value="reaction" type="string"/></node>
-<node id="IR_ap+_IR_[JM(Y972)]" label="IR_ap+_IR_[JM(Y972)]"><att name="rxnconID" value="IR_ap+_IR_[JM(Y972)]" type="string"/><att name="type" value="reaction" type="string"/></node>
-<node id="Grb2_[SOS]--SOS_[Grb2]" label="Grb2_[SOS]--SOS_[Grb2]"><att name="rxnconID" value="Grb2_[SOS]--SOS_[Grb2]" type="string"/><att name="type" value="state" type="string"/></node>
-<node id="uPPase4_p-_IR_[JM(Y972)]" label="uPPase4_p-_IR_[JM(Y972)]"><att name="rxnconID" value="uPPase4_p-_IR_[JM(Y972)]" type="string"/><att name="type" value="reaction" type="string"/></node>
-<node id="IR-phos" label="IR-phos"><att name="rxnconID" value="IR-phos" type="string"/><att name="type" value="boolean_and" type="string"/></node>
-<node id="Grb2_[SH2]--IRS_[Y]" label="Grb2_[SH2]--IRS_[Y]"><att name="rxnconID" value="Grb2_[SH2]--IRS_[Y]" type="string"/><att name="type" value="state" type="string"/></node>
-<node id="Grb2_[SH2]_ppi-_Shc_[YY]" label="Grb2_[SH2]_ppi-_Shc_[YY]"><att name="rxnconID" value="Grb2_[SH2]_ppi-_Shc_[YY]" type="string"/><att name="type" value="reaction" type="string"/></node>
-<node id="IRS_[Phospholipids]--Phospholipids_[IRS]" label="IRS_[Phospholipids]--Phospholipids_[IRS]"><att name="rxnconID" value="IRS_[Phospholipids]--Phospholipids_[IRS]" type="string"/><att name="type" value="state" type="string"/></node>
-<node id="IR_[JMY972]_ppi+_IRS_[PTB]" label="IR_[JMY972]_ppi+_IRS_[PTB]"><att name="rxnconID" value="IR_[JMY972]_ppi+_IRS_[PTB]" type="string"/><att name="type" value="reaction" type="string"/></node>
-<node id="Grb2_[SOS]_ppi-_SOS_[Grb2]" label="Grb2_[SOS]_ppi-_SOS_[Grb2]"><att name="rxnconID" value="Grb2_[SOS]_ppi-_SOS_[Grb2]" type="string"/><att name="type" value="reaction" type="string"/></node>
-<node id="IR-Ins" label="IR-Ins"><att name="rxnconID" value="IR-Ins" type="string"/><att name="type" value="boolean_and" type="string"/></node>
-<node id="[Grb2-SOS]" label="[Grb2-SOS]"><att name="rxnconID" value="[Grb2-SOS]" type="string"/><att name="type" value="output" type="string"/></node>
-<node id="IR_[JM(Y972)]-{p}" label="IR_[JM(Y972)]-{p}"><att name="rxnconID" value="IR_[JM(Y972)]-{p}" type="string"/><att name="type" value="state" type="string"/></node>
-<node id="IR_[IRBD]_ppi-_IR_[IRBD]" label="IR_[IRBD]_ppi-_IR_[IRBD]"><att name="rxnconID" value="IR_[IRBD]_ppi-_IR_[IRBD]" type="string"/><att name="type" value="reaction" type="string"/></node>
-<node id="IR_p+_IR_[TK(Y1162)]" label="IR_p+_IR_[TK(Y1162)]"><att name="rxnconID" value="IR_p+_IR_[TK(Y1162)]" type="string"/><att name="type" value="reaction" type="string"/></node>
-<node id="uPPase6_p-_Shc_[(YY239)]" label="uPPase6_p-_Shc_[(YY239)]"><att name="rxnconID" value="uPPase6_p-_Shc_[(YY239)]" type="string"/><att name="type" value="reaction" type="string"/></node>
-<node id="IR_[IRBD]_ppi+_IR_[IRBD]" label="IR_[IRBD]_ppi+_IR_[IRBD]"><att name="rxnconID" value="IR_[IRBD]_ppi+_IR_[IRBD]" type="string"/><att name="type" value="reaction" type="string"/></node>
-<node id="IR_p+_IRS_[(Y)]" label="IR_p+_IRS_[(Y)]"><att name="rxnconID" value="IR_p+_IRS_[(Y)]" type="string"/><att name="type" value="reaction" type="string"/></node>
-<node id="Grb2_[SH2]_ppi-_Shc_[Y]" label="Grb2_[SH2]_ppi-_Shc_[Y]"><att name="rxnconID" value="Grb2_[SH2]_ppi-_Shc_[Y]" type="string"/><att name="type" value="reaction" type="string"/></node>
-<node id="IR_[lig]--0" label="IR_[lig]--0"><att name="rxnconID" value="IR_[lig]--0" type="string"/><att name="type" value="boolean_not" type="string"/></node>
-<node id="IR_p+_IR_[TK(Y1158)]" label="IR_p+_IR_[TK(Y1158)]"><att name="rxnconID" value="IR_p+_IR_[TK(Y1158)]" type="string"/><att name="type" value="reaction" type="string"/></node>
-<node id="uPPase2_p-_IR_[TK(Y1162)]" label="uPPase2_p-_IR_[TK(Y1162)]"><att name="rxnconID" value="uPPase2_p-_IR_[TK(Y1162)]" type="string"/><att name="type" value="reaction" type="string"/></node>
-<node id="IRS_[PTB]--IR_[JMY972]" label="IRS_[PTB]--IR_[JMY972]"><att name="rxnconID" value="IRS_[PTB]--IR_[JMY972]" type="string"/><att name="type" value="state" type="string"/></node>
-<node id="IRS_[Y]--PI3K_[SH2]" label="IRS_[Y]--PI3K_[SH2]"><att name="rxnconID" value="IRS_[Y]--PI3K_[SH2]" type="string"/><att name="type" value="state" type="string"/></node>
-<node id="IRS_[Y]_ppi+_PI3K_[SH2]" label="IRS_[Y]_ppi+_PI3K_[SH2]"><att name="rxnconID" value="IRS_[Y]_ppi+_PI3K_[SH2]" type="string"/><att name="type" value="reaction" type="string"/></node>
-<node id="uPPase5_p-_IRS_[(Y)]" label="uPPase5_p-_IRS_[(Y)]"><att name="rxnconID" value="uPPase5_p-_IRS_[(Y)]" type="string"/><att name="type" value="reaction" type="string"/></node>
-<node id="IR_p+_Shc_[(Y317)]" label="IR_p+_Shc_[(Y317)]"><att name="rxnconID" value="IR_p+_Shc_[(Y317)]" type="string"/><att name="type" value="reaction" type="string"/></node>
-<node id="IR_[lig]_i+_insulin_[IR]" label="IR_[lig]_i+_insulin_[IR]"><att name="rxnconID" value="IR_[lig]_i+_insulin_[IR]" type="string"/><att name="type" value="reaction" type="string"/></node>
-<node id="IR_[JMY972]_ppi-_Shc_[PTB]" label="IR_[JMY972]_ppi-_Shc_[PTB]"><att name="rxnconID" value="IR_[JMY972]_ppi-_Shc_[PTB]" type="string"/><att name="type" value="reaction" type="string"/></node>
-<node id="IR_[TK(Y1163)]-{p}" label="IR_[TK(Y1163)]-{p}"><att name="rxnconID" value="IR_[TK(Y1163)]-{p}" type="string"/><att name="type" value="state" type="string"/></node>
-<node id="uPPase3_p-_IR_[TK(Y1163)]" label="uPPase3_p-_IR_[TK(Y1163)]"><att name="rxnconID" value="uPPase3_p-_IR_[TK(Y1163)]" type="string"/><att name="type" value="reaction" type="string"/></node>
-<node id="IR_[lig]--insulin_[IR]" label="IR_[lig]--insulin_[IR]"><att name="rxnconID" value="IR_[lig]--insulin_[IR]" type="string"/><att name="type" value="state" type="string"/></node>
-<node id="IRS_[Y]_ppi-_PI3K_[SH2]" label="IRS_[Y]_ppi-_PI3K_[SH2]"><att name="rxnconID" value="IRS_[Y]_ppi-_PI3K_[SH2]" type="string"/><att name="type" value="reaction" type="string"/></node>
-<node id="uPPase7_p-_Shc_[(Y317)]" label="uPPase7_p-_Shc_[(Y317)]"><att name="rxnconID" value="uPPase7_p-_Shc_[(Y317)]" type="string"/><att name="type" value="reaction" type="string"/></node>
-<node id="Grb2_[SH2]_ppi+_Shc_[YY]" label="Grb2_[SH2]_ppi+_Shc_[YY]"><att name="rxnconID" value="Grb2_[SH2]_ppi+_Shc_[YY]" type="string"/><att name="type" value="reaction" type="string"/></node>
-<node id="IR_[JMY972]_ppi+_Shc_[PTB]" label="IR_[JMY972]_ppi+_Shc_[PTB]"><att name="rxnconID" value="IR_[JMY972]_ppi+_Shc_[PTB]" type="string"/><att name="type" value="reaction" type="string"/></node>
-<node id="IR_p+_IR_[TK(Y1163)]" label="IR_p+_IR_[TK(Y1163)]"><att name="rxnconID" value="IR_p+_IR_[TK(Y1163)]" type="string"/><att name="type" value="reaction" type="string"/></node>
-<node id="IRS_[Phospholipids]_i-_Phospholipids_[IRS]" label="IRS_[Phospholipids]_i-_Phospholipids_[IRS]"><att name="rxnconID" value="IRS_[Phospholipids]_i-_Phospholipids_[IRS]" type="string"/><att name="type" value="reaction" type="string"/></node>
-<node id="IR_[IRBD]--IR_[IRBD]" label="IR_[IRBD]--IR_[IRBD]"><att name="rxnconID" value="IR_[IRBD]--IR_[IRBD]" type="string"/><att name="type" value="state" type="string"/></node>
-<node id="Grb2_[SH2]_ppi+_Shc_[Y]" label="Grb2_[SH2]_ppi+_Shc_[Y]"><att name="rxnconID" value="Grb2_[SH2]_ppi+_Shc_[Y]" type="string"/><att name="type" value="reaction" type="string"/></node>
-<node id="Grb2_[SH2]_ppi-_IRS_[Y]" label="Grb2_[SH2]_ppi-_IRS_[Y]"><att name="rxnconID" value="Grb2_[SH2]_ppi-_IRS_[Y]" type="string"/><att name="type" value="reaction" type="string"/></node>
-<node id="Grb2-SOS" label="Grb2-SOS"><att name="rxnconID" value="Grb2-SOS" type="string"/><att name="type" value="boolean_and" type="string"/></node>
-<node id="GS" label="GS"><att name="rxnconID" value="GS" type="string"/><att name="type" value="boolean_or" type="string"/></node>
-<node id="IRstar" label="IRstar"><att name="rxnconID" value="IRstar" type="string"/><att name="type" value="boolean_and" type="string"/></node>
-<node id="IR_[JMY972]--Shc_[PTB]" label="IR_[JMY972]--Shc_[PTB]"><att name="rxnconID" value="IR_[JMY972]--Shc_[PTB]" type="string"/><att name="type" value="state" type="string"/></node>
-<node id="uPPase1_p-_IR_[TK(Y1158)]" label="uPPase1_p-_IR_[TK(Y1158)]"><att name="rxnconID" value="uPPase1_p-_IR_[TK(Y1158)]" type="string"/><att name="type" value="reaction" type="string"/></node>
-<edge source="IR_[TK(Y1162)]-{p}" target="uPPase2_p-_IR_[TK(Y1162)]"><att name="interaction" value="ss" type="string"/></edge>
-<edge source="IR_[TK(Y1162)]-{p}" target="IR-phos"><att name="interaction" value="AND" type="string"/></edge>
-<edge source="Shc_[(Y317)]-{p}" target="uPPase7_p-_Shc_[(Y317)]"><att name="interaction" value="ss" type="string"/></edge>
-<edge source="Shc_[(Y317)]-{p}" target="Grb2_[SH2]_ppi+_Shc_[Y]"><att name="interaction" value="!" type="string"/></edge>
-<edge source="Grb2_[SOS]_ppi+_SOS_[Grb2]" target="Grb2_[SOS]--SOS_[Grb2]"><att name="interaction" value="produce" type="string"/></edge>
-<edge source="IRS_[Phospholipids]_i+_Phospholipids_[IRS]" target="IRS_[Phospholipids]--Phospholipids_[IRS]"><att name="interaction" value="produce" type="string"/></edge>
-<edge source="IR01-Ins" target="IR-Ins"><att name="interaction" value="AND" type="string"/></edge>
-<edge source="IR_[TK(Y1158)]-{p}" target="uPPase1_p-_IR_[TK(Y1158)]"><att name="interaction" value="ss" type="string"/></edge>
-<edge source="IR_[TK(Y1158)]-{p}" target="IR-phos"><att name="interaction" value="AND" type="string"/></edge>
-<edge source="IR-empty" target="IR_[lig]_i+_insulin_[IR]"><att name="interaction" value="!" type="string"/></edge>
-<edge source="Grb2_[SH2]--Shc_[YY]" target="GS"><att name="interaction" value="OR" type="string"/></edge>
-<edge source="Grb2_[SH2]--Shc_[YY]" target="Grb2_[SH2]_ppi-_Shc_[YY]"><att name="interaction" value="ss" type="string"/></edge>
-<edge source="IR_p+_Shc_[(YY239)]" target="Shc_[(YY239)]-{p}"><att name="interaction" value="produce" type="string"/></edge>
-<edge source="IRS_[(Y)]-{p}" target="uPPase5_p-_IRS_[(Y)]"><att name="interaction" value="ss" type="string"/></edge>
-<edge source="IRS_[(Y)]-{p}" target="Grb2_[SH2]_ppi+_IRS_[Y]"><att name="interaction" value="!" type="string"/></edge>
-<edge source="IRS_[(Y)]-{p}" target="IRS_[Y]_ppi+_PI3K_[SH2]"><att name="interaction" value="!" type="string"/></edge>
-<edge source="Grb2_[SH2]--Shc_[Y]" target="Grb2_[SH2]_ppi-_Shc_[Y]"><att name="interaction" value="ss" type="string"/></edge>
-<edge source="Shc_[(YY239)]-{p}" target="Grb2_[SH2]_ppi+_Shc_[YY]"><att name="interaction" value="!" type="string"/></edge>
-<edge source="Shc_[(YY239)]-{p}" target="uPPase6_p-_Shc_[(YY239)]"><att name="interaction" value="ss" type="string"/></edge>
-<edge source="IR_[lig]_i-_insulin_[IR]" target="IR_[lig]--insulin_[IR]"><att name="interaction" value="consume" type="string"/></edge>
-<edge source="IR_[JMY972]_ppi-_IRS_[PTB]" target="IRS_[PTB]--IR_[JMY972]"><att name="interaction" value="consume" type="string"/></edge>
-<edge source="Grb2_[SH2]_ppi+_IRS_[Y]" target="Grb2_[SH2]--IRS_[Y]"><att name="interaction" value="produce" type="string"/></edge>
-<edge source="IR_ap+_IR_[JM(Y972)]" target="IR_[JM(Y972)]-{p}"><att name="interaction" value="produce" type="string"/></edge>
-<edge source="Grb2_[SOS]--SOS_[Grb2]" target="Grb2_[SOS]_ppi-_SOS_[Grb2]"><att name="interaction" value="ss" type="string"/></edge>
-<edge source="Grb2_[SOS]--SOS_[Grb2]" target="Grb2-SOS"><att name="interaction" value="AND" type="string"/></edge>
-<edge source="uPPase4_p-_IR_[JM(Y972)]" target="IR_[JM(Y972)]-{p}"><att name="interaction" value="consume" type="string"/></edge>
-<edge source="IR-phos" target="IRstar"><att name="interaction" value="AND" type="string"/></edge>
-<edge source="Grb2_[SH2]--IRS_[Y]" target="GS"><att name="interaction" value="OR" type="string"/></edge>
-<edge source="Grb2_[SH2]--IRS_[Y]" target="Grb2_[SH2]_ppi-_IRS_[Y]"><att name="interaction" value="ss" type="string"/></edge>
-<edge source="Grb2_[SH2]_ppi-_Shc_[YY]" target="Grb2_[SH2]--Shc_[YY]"><att name="interaction" value="consume" type="string"/></edge>
-<edge source="IRS_[Phospholipids]--Phospholipids_[IRS]" target="IR_[JMY972]_ppi+_IRS_[PTB]"><att name="interaction" value="!" type="string"/></edge>
-<edge source="IRS_[Phospholipids]--Phospholipids_[IRS]" target="IRS_[Phospholipids]_i-_Phospholipids_[IRS]"><att name="interaction" value="ss" type="string"/></edge>
-<edge source="IR_[JMY972]_ppi+_IRS_[PTB]" target="IRS_[PTB]--IR_[JMY972]"><att name="interaction" value="produce" type="string"/></edge>
-<edge source="Grb2_[SOS]_ppi-_SOS_[Grb2]" target="Grb2_[SOS]--SOS_[Grb2]"><att name="interaction" value="consume" type="string"/></edge>
-<edge source="IR-Ins" target="IRstar"><att name="interaction" value="AND" type="string"/></edge>
-<edge source="IR-Ins" target="IR_p+_IR_[TK(Y1158)]"><att name="interaction" value="!" type="string"/></edge>
-<edge source="IR-Ins" target="IR_p+_IR_[TK(Y1162)]"><att name="interaction" value="!" type="string"/></edge>
-<edge source="IR-Ins" target="IR_p+_IR_[TK(Y1163)]"><att name="interaction" value="!" type="string"/></edge>
-<edge source="IR_[JM(Y972)]-{p}" target="IR_[JMY972]_ppi+_IRS_[PTB]"><att name="interaction" value="!" type="string"/></edge>
-<edge source="IR_[JM(Y972)]-{p}" target="IR_[JMY972]_ppi+_Shc_[PTB]"><att name="interaction" value="!" type="string"/></edge>
-<edge source="IR_[JM(Y972)]-{p}" target="uPPase4_p-_IR_[JM(Y972)]"><att name="interaction" value="ss" type="string"/></edge>
-<edge source="IR_[IRBD]_ppi-_IR_[IRBD]" target="IR_[IRBD]--IR_[IRBD]"><att name="interaction" value="consume" type="string"/></edge>
-<edge source="IR_p+_IR_[TK(Y1162)]" target="IR_[TK(Y1162)]-{p}"><att name="interaction" value="produce" type="string"/></edge>
-<edge source="uPPase6_p-_Shc_[(YY239)]" target="Shc_[(YY239)]-{p}"><att name="interaction" value="consume" type="string"/></edge>
-<edge source="IR_[IRBD]_ppi+_IR_[IRBD]" target="IR_[IRBD]--IR_[IRBD]"><att name="interaction" value="produce" type="string"/></edge>
-<edge source="IR_p+_IRS_[(Y)]" target="IRS_[(Y)]-{p}"><att name="interaction" value="produce" type="string"/></edge>
-<edge source="Grb2_[SH2]_ppi-_Shc_[Y]" target="Grb2_[SH2]--Shc_[Y]"><att name="interaction" value="consume" type="string"/></edge>
-<edge source="IR_[lig]--0" target="IR-empty"><att name="interaction" value="AND" type="string"/></edge>
-<edge source="IR_p+_IR_[TK(Y1158)]" target="IR_[TK(Y1158)]-{p}"><att name="interaction" value="produce" type="string"/></edge>
-<edge source="uPPase2_p-_IR_[TK(Y1162)]" target="IR_[TK(Y1162)]-{p}"><att name="interaction" value="consume" type="string"/></edge>
-<edge source="IRS_[PTB]--IR_[JMY972]" target="IR_[JMY972]_ppi-_IRS_[PTB]"><att name="interaction" value="ss" type="string"/></edge>
-<edge source="IRS_[PTB]--IR_[JMY972]" target="IR_p+_IRS_[(Y)]"><att name="interaction" value="!" type="string"/></edge>
-<edge source="IRS_[Y]--PI3K_[SH2]" target="IRS_[Y]_ppi-_PI3K_[SH2]"><att name="interaction" value="ss" type="string"/></edge>
-<edge source="IRS_[Y]--PI3K_[SH2]" target="[PI3K]"><att name="interaction" value="!" type="string"/></edge>
-<edge source="IRS_[Y]_ppi+_PI3K_[SH2]" target="IRS_[Y]--PI3K_[SH2]"><att name="interaction" value="produce" type="string"/></edge>
-<edge source="uPPase5_p-_IRS_[(Y)]" target="IRS_[(Y)]-{p}"><att name="interaction" value="consume" type="string"/></edge>
-<edge source="IR_p+_Shc_[(Y317)]" target="Shc_[(Y317)]-{p}"><att name="interaction" value="produce" type="string"/></edge>
-<edge source="IR_[lig]_i+_insulin_[IR]" target="IR_[lig]--insulin_[IR]"><att name="interaction" value="produce" type="string"/></edge>
-<edge source="IR_[JMY972]_ppi-_Shc_[PTB]" target="IR_[JMY972]--Shc_[PTB]"><att name="interaction" value="consume" type="string"/></edge>
-<edge source="IR_[TK(Y1163)]-{p}" target="uPPase3_p-_IR_[TK(Y1163)]"><att name="interaction" value="ss" type="string"/></edge>
-<edge source="IR_[TK(Y1163)]-{p}" target="IR-phos"><att name="interaction" value="AND" type="string"/></edge>
-<edge source="uPPase3_p-_IR_[TK(Y1163)]" target="IR_[TK(Y1163)]-{p}"><att name="interaction" value="consume" type="string"/></edge>
-<edge source="IR_[lig]--insulin_[IR]" target="IR01-Ins"><att name="interaction" value="OR" type="string"/></edge>
-<edge source="IR_[lig]--insulin_[IR]" target="IR_[lig]_i-_insulin_[IR]"><att name="interaction" value="ss" type="string"/></edge>
-<edge source="IR_[lig]--insulin_[IR]" target="IR_[lig]--0"><att name="interaction" value="NOT" type="string"/></edge>
-<edge source="IRS_[Y]_ppi-_PI3K_[SH2]" target="IRS_[Y]--PI3K_[SH2]"><att name="interaction" value="consume" type="string"/></edge>
-<edge source="uPPase7_p-_Shc_[(Y317)]" target="Shc_[(Y317)]-{p}"><att name="interaction" value="consume" type="string"/></edge>
-<edge source="Grb2_[SH2]_ppi+_Shc_[YY]" target="Grb2_[SH2]--Shc_[YY]"><att name="interaction" value="produce" type="string"/></edge>
-<edge source="IR_[JMY972]_ppi+_Shc_[PTB]" target="IR_[JMY972]--Shc_[PTB]"><att name="interaction" value="produce" type="string"/></edge>
-<edge source="IR_p+_IR_[TK(Y1163)]" target="IR_[TK(Y1163)]-{p}"><att name="interaction" value="produce" type="string"/></edge>
-<edge source="IRS_[Phospholipids]_i-_Phospholipids_[IRS]" target="IRS_[Phospholipids]--Phospholipids_[IRS]"><att name="interaction" value="consume" type="string"/></edge>
-<edge source="IR_[IRBD]--IR_[IRBD]" target="IR-empty"><att name="interaction" value="AND" type="string"/></edge>
-<edge source="IR_[IRBD]--IR_[IRBD]" target="IR_[IRBD]_ppi-_IR_[IRBD]"><att name="interaction" value="ss" type="string"/></edge>
-<edge source="IR_[IRBD]--IR_[IRBD]" target="IR-Ins"><att name="interaction" value="AND" type="string"/></edge>
-<edge source="Grb2_[SH2]_ppi+_Shc_[Y]" target="Grb2_[SH2]--Shc_[Y]"><att name="interaction" value="produce" type="string"/></edge>
-<edge source="Grb2_[SH2]_ppi-_IRS_[Y]" target="Grb2_[SH2]--IRS_[Y]"><att name="interaction" value="consume" type="string"/></edge>
-<edge source="Grb2-SOS" target="[Grb2-SOS]"><att name="interaction" value="!" type="string"/></edge>
-<edge source="GS" target="Grb2-SOS"><att name="interaction" value="AND" type="string"/></edge>
-<edge source="IRstar" target="IR_p+_Shc_[(Y317)]"><att name="interaction" value="!" type="string"/></edge>
-<edge source="IRstar" target="IR_ap+_IR_[JM(Y972)]"><att name="interaction" value="!" type="string"/></edge>
-<edge source="IRstar" target="IR_p+_Shc_[(YY239)]"><att name="interaction" value="!" type="string"/></edge>
-<edge source="IRstar" target="IR_p+_IRS_[(Y)]"><att name="interaction" value="!" type="string"/></edge>
-<edge source="IR_[JMY972]--Shc_[PTB]" target="IR_p+_Shc_[(Y317)]"><att name="interaction" value="!" type="string"/></edge>
-<edge source="IR_[JMY972]--Shc_[PTB]" target="IR_p+_Shc_[(YY239)]"><att name="interaction" value="!" type="string"/></edge>
-<edge source="IR_[JMY972]--Shc_[PTB]" target="IR_[JMY972]_ppi-_Shc_[PTB]"><att name="interaction" value="ss" type="string"/></edge>
-<edge source="uPPase1_p-_IR_[TK(Y1158)]" target="IR_[TK(Y1158)]-{p}"><att name="interaction" value="consume" type="string"/></edge>
+	<att name="selected" type="boolean" value="1"/>
+	
+    
+	<att name="name" type="string" value="test"/>
+	
+    
+	<att name="shared name" type="string" value="test"/>
+	
+    
+
+	<node id="IR_p+_IR_[TK(Y1158)]" label="IR_p+_IR_[TK(Y1158)]">
+		<att name="rxnconID" type="string" value="IR_p+_IR_[TK(Y1158)]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="400.5803247670658" y="-269.9570890528257" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Shc_[(YY239)]-{p}" label="Shc_[(YY239)]-{p}">
+		<att name="rxnconID" type="string" value="Shc_[(YY239)]-{p}"/>
+		<att name="type" type="string" value="state"/>
+		<graphics x="-4.319592835473259" y="248.3072236913149" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="IR_p+_IR_[TK(Y1162)]" label="IR_p+_IR_[TK(Y1162)]">
+		<att name="rxnconID" type="string" value="IR_p+_IR_[TK(Y1162)]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="203.49892294211463" y="-362.116818056732" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="uPPase3_p-_IR_[TK(Y1163)]" label="uPPase3_p-_IR_[TK(Y1163)]">
+		<att name="rxnconID" type="string" value="uPPase3_p-_IR_[TK(Y1163)]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="210.03885900778846" y="-240.3475614649351" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="IR_p+_Shc_[(Y317)]" label="IR_p+_Shc_[(Y317)]">
+		<att name="rxnconID" type="string" value="IR_p+_Shc_[(Y317)]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="235.69466650290565" y="86.17094744619772" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="IR_[JMY972]--Shc_[PTB]" label="IR_[JMY972]--Shc_[PTB]">
+		<att name="rxnconID" type="string" value="IR_[JMY972]--Shc_[PTB]"/>
+		<att name="type" type="string" value="state"/>
+		<graphics x="191.9981065968998" y="177.5738252538149" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Grb2_[SOS]_ppi-_SOS_[Grb2]" label="Grb2_[SOS]_ppi-_SOS_[Grb2]">
+		<att name="rxnconID" type="string" value="Grb2_[SOS]_ppi-_SOS_[Grb2]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-750.6144078989498" y="493.08084429678365" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="IRS_[Phospholipids]_i+_Phospholipids_[IRS]" label="IRS_[Phospholipids]_i+_Phospholipids_[IRS]">
+		<att name="rxnconID" type="string" value="IRS_[Phospholipids]_i+_Phospholipids_[IRS]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-245.6766332407467" y="-299.9984708887632" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="uPPase1_p-_IR_[TK(Y1158)]" label="uPPase1_p-_IR_[TK(Y1158)]">
+		<att name="rxnconID" type="string" value="uPPase1_p-_IR_[TK(Y1158)]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="424.57046758933143" y="-159.83712445321635" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="IR_[lig]--insulin_[IR]" label="IR_[lig]--insulin_[IR]">
+		<att name="rxnconID" type="string" value="IR_[lig]--insulin_[IR]"/>
+		<att name="type" type="string" value="state"/>
+		<graphics x="310.2018305043705" y="-577.8347440821226" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="uPPase6_p-_Shc_[(YY239)]" label="uPPase6_p-_Shc_[(YY239)]">
+		<att name="rxnconID" type="string" value="uPPase6_p-_Shc_[(YY239)]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-105.21523797707482" y="274.82815874990865" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Grb2_[SH2]_ppi-_Shc_[Y]" label="Grb2_[SH2]_ppi-_Shc_[Y]">
+		<att name="rxnconID" type="string" value="Grb2_[SH2]_ppi-_Shc_[Y]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="376.11603033347205" y="615.7643159764712" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Grb2-SOS" label="Grb2-SOS">
+		<att name="rxnconID" type="string" value="Grb2-SOS"/>
+		<att name="type" type="string" value="boolean_and"/>
+		<graphics x="-517.2257970591061" y="478.7093233006899" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="IR_[lig]--0" label="IR_[lig]--0">
+		<att name="rxnconID" type="string" value="IR_[lig]--0"/>
+		<att name="type" type="string" value="boolean_not"/>
+		<graphics x="404.7594934682377" y="-577.5704008204038" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="IR_[JMY972]_ppi-_IRS_[PTB]" label="IR_[JMY972]_ppi-_IRS_[PTB]">
+		<att name="rxnconID" type="string" value="IR_[JMY972]_ppi-_IRS_[PTB]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-274.97970330910607" y="-136.1134077173765" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="uPPase2_p-_IR_[TK(Y1162)]" label="uPPase2_p-_IR_[TK(Y1162)]">
+		<att name="rxnconID" type="string" value="uPPase2_p-_IR_[TK(Y1162)]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="41.85624182028846" y="-413.064327822357" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Grb2_[SOS]_ppi+_SOS_[Grb2]" label="Grb2_[SOS]_ppi+_SOS_[Grb2]">
+		<att name="rxnconID" type="string" value="Grb2_[SOS]_ppi+_SOS_[Grb2]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-709.1847814341061" y="364.7063020604555" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Grb2_[SH2]--Shc_[Y]" label="Grb2_[SH2]--Shc_[Y]">
+		<att name="rxnconID" type="string" value="Grb2_[SH2]--Shc_[Y]"/>
+		<att name="type" type="string" value="state"/>
+		<graphics x="364.2629419545658" y="507.6944307225649" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="uPPase4_p-_IR_[JM(Y972)]" label="uPPase4_p-_IR_[JM(Y972)]">
+		<att name="rxnconID" type="string" value="uPPase4_p-_IR_[JM(Y972)]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-53.112531067895134" y="115.1524385350649" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Grb2_[SH2]--IRS_[Y]" label="Grb2_[SH2]--IRS_[Y]">
+		<att name="rxnconID" type="string" value="Grb2_[SH2]--IRS_[Y]"/>
+		<att name="type" type="string" value="state"/>
+		<graphics x="-396.77316034035607" y="283.64773882803365" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="IR-empty" label="IR-empty">
+		<att name="rxnconID" type="string" value="IR-empty"/>
+		<att name="type" type="string" value="boolean_and"/>
+		<graphics x="468.43594610495643" y="-503.7970243555601" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Grb2_[SH2]_ppi-_Shc_[YY]" label="Grb2_[SH2]_ppi-_Shc_[YY]">
+		<att name="rxnconID" type="string" value="Grb2_[SH2]_ppi-_Shc_[YY]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-232.3497289438717" y="554.0815767186587" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="IR_[TK(Y1163)]-{p}" label="IR_[TK(Y1163)]-{p}">
+		<att name="rxnconID" type="string" value="IR_[TK(Y1163)]-{p}"/>
+		<att name="type" type="string" value="state"/>
+		<graphics x="244.9646249989994" y="-135.816654787689" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="IR_[IRBD]_ppi-_IR_[IRBD]" label="IR_[IRBD]_ppi-_IR_[IRBD]">
+		<att name="rxnconID" type="string" value="IR_[IRBD]_ppi-_IR_[IRBD]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="535.709780333472" y="-419.99129925790385" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Grb2_[SH2]--Shc_[YY]" label="Grb2_[SH2]--Shc_[YY]">
+		<att name="rxnconID" type="string" value="Grb2_[SH2]--Shc_[YY]"/>
+		<att name="type" type="string" value="state"/>
+		<graphics x="-241.30315911965295" y="443.7360872167055" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="IR_[lig]_i-_insulin_[IR]" label="IR_[lig]_i-_insulin_[IR]">
+		<att name="rxnconID" type="string" value="IR_[lig]_i-_insulin_[IR]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="268.494921324683" y="-681.7290922266538" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="IRS_[PTB]--IR_[JMY972]" label="IRS_[PTB]--IR_[JMY972]">
+		<att name="rxnconID" type="string" value="IRS_[PTB]--IR_[JMY972]"/>
+		<att name="type" type="string" value="state"/>
+		<graphics x="-174.2606176157467" y="-94.02132855477885" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="IR_ap+_IR_[JM(Y972)]" label="IR_ap+_IR_[JM(Y972)]">
+		<att name="rxnconID" type="string" value="IR_ap+_IR_[JM(Y972)]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="118.93695318503455" y="24.541003598541465" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="IRS_[(Y)]-{p}" label="IRS_[(Y)]-{p}">
+		<att name="rxnconID" type="string" value="IRS_[(Y)]-{p}"/>
+		<att name="type" type="string" value="state"/>
+		<graphics x="-255.95123040871545" y="38.6469568150942" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Grb2_[SOS]--SOS_[Grb2]" label="Grb2_[SOS]--SOS_[Grb2]">
+		<att name="rxnconID" type="string" value="Grb2_[SOS]--SOS_[Grb2]"/>
+		<att name="type" type="string" value="state"/>
+		<graphics x="-645.8607457895748" y="461.0536531346743" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Grb2_[SH2]_ppi+_Shc_[Y]" label="Grb2_[SH2]_ppi+_Shc_[Y]">
+		<att name="rxnconID" type="string" value="Grb2_[SH2]_ppi+_Shc_[Y]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="342.80584966940955" y="382.6011384862368" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="IR_[lig]_i+_insulin_[IR]" label="IR_[lig]_i+_insulin_[IR]">
+		<att name="rxnconID" type="string" value="IR_[lig]_i+_insulin_[IR]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="434.6784692983158" y="-627.1202055079038" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Shc_[(Y317)]-{p}" label="Shc_[(Y317)]-{p}">
+		<att name="rxnconID" type="string" value="Shc_[(Y317)]-{p}"/>
+		<att name="type" type="string" value="state"/>
+		<graphics x="283.6181207875736" y="253.80890215811178" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="uPPase5_p-_IRS_[(Y)]" label="uPPase5_p-_IRS_[(Y)]">
+		<att name="rxnconID" type="string" value="uPPase5_p-_IRS_[(Y)]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-250.87850702004357" y="142.35649432119772" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="IR_[JMY972]_ppi-_Shc_[PTB]" label="IR_[JMY972]_ppi-_Shc_[PTB]">
+		<att name="rxnconID" type="string" value="IR_[JMY972]_ppi-_Shc_[PTB]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="307.9827600698002" y="177.01813067373678" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Grb2_[SH2]_ppi+_Shc_[YY]" label="Grb2_[SH2]_ppi+_Shc_[YY]">
+		<att name="rxnconID" type="string" value="Grb2_[SH2]_ppi+_Shc_[YY]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-111.5128148813717" y="367.8735078710024" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="IRS_[Y]_ppi-_PI3K_[SH2]" label="IRS_[Y]_ppi-_PI3K_[SH2]">
+		<att name="rxnconID" type="string" value="IRS_[Y]_ppi-_PI3K_[SH2]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-639.6126989145748" y="23.386748685211387" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="IR_p+_IR_[TK(Y1163)]" label="IR_p+_IR_[TK(Y1163)]">
+		<att name="rxnconID" type="string" value="IR_p+_IR_[TK(Y1163)]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="349.6095911244877" y="-152.40722333016947" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="IR01-Ins" label="IR01-Ins">
+		<att name="rxnconID" type="string" value="IR01-Ins"/>
+		<att name="type" type="string" value="boolean_or"/>
+		<graphics x="296.2062555531986" y="-433.0231901270445" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="IRstar" label="IRstar">
+		<att name="rxnconID" type="string" value="IRstar"/>
+		<att name="type" type="string" value="boolean_and"/>
+		<graphics x="143.14370024008826" y="-67.16425000253275" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="IR_p+_Shc_[(YY239)]" label="IR_p+_Shc_[(YY239)]">
+		<att name="rxnconID" type="string" value="IR_p+_Shc_[(YY239)]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="99.32095587058143" y="103.39932574209615" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="IR-Ins" label="IR-Ins">
+		<att name="rxnconID" type="string" value="IR-Ins"/>
+		<att name="type" type="string" value="boolean_and"/>
+		<graphics x="287.234179137183" y="-270.857296572357" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="IR_[JMY972]_ppi+_IRS_[PTB]" label="IR_[JMY972]_ppi+_IRS_[PTB]">
+		<att name="rxnconID" type="string" value="IR_[JMY972]_ppi+_IRS_[PTB]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-67.3847631235592" y="-114.05839978280619" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="IR-phos" label="IR-phos">
+		<att name="rxnconID" type="string" value="IR-phos"/>
+		<att name="type" type="string" value="boolean_and"/>
+		<graphics x="163.20795881552772" y="-195.88685284677103" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Grb2_[SH2]_ppi+_IRS_[Y]" label="Grb2_[SH2]_ppi+_IRS_[Y]">
+		<att name="rxnconID" type="string" value="Grb2_[SH2]_ppi+_IRS_[Y]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-349.13042962746545" y="153.92064227041647" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="IR_[TK(Y1162)]-{p}" label="IR_[TK(Y1162)]-{p}">
+		<att name="rxnconID" type="string" value="IR_[TK(Y1162)]-{p}"/>
+		<att name="type" type="string" value="state"/>
+		<graphics x="100.7838159780033" y="-319.046749697357" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="IR_[JMY972]_ppi+_Shc_[PTB]" label="IR_[JMY972]_ppi+_Shc_[PTB]">
+		<att name="rxnconID" type="string" value="IR_[JMY972]_ppi+_Shc_[PTB]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="69.00621282858924" y="156.56660784658834" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="IRS_[Y]--PI3K_[SH2]" label="IRS_[Y]--PI3K_[SH2]">
+		<att name="rxnconID" type="string" value="IRS_[Y]--PI3K_[SH2]"/>
+		<att name="type" type="string" value="state"/>
+		<graphics x="-538.8539098520748" y="-20.273707733779702" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="[Grb2-SOS]" label="[Grb2-SOS]">
+		<att name="rxnconID" type="string" value="[Grb2-SOS]"/>
+		<att name="type" type="string" value="output"/>
+		<graphics x="-549.9632238169186" y="591.6932710545962" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="uPPase7_p-_Shc_[(Y317)]" label="uPPase7_p-_Shc_[(Y317)]">
+		<att name="rxnconID" type="string" value="uPPase7_p-_Shc_[(Y317)]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="242.02813970847205" y="354.28067339834615" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="IR_p+_IRS_[(Y)]" label="IR_p+_IRS_[(Y)]">
+		<att name="rxnconID" type="string" value="IR_p+_IRS_[(Y)]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-72.31385553078576" y="-26.566675768523965" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="IR_[IRBD]--IR_[IRBD]" label="IR_[IRBD]--IR_[IRBD]">
+		<att name="rxnconID" type="string" value="IR_[IRBD]--IR_[IRBD]"/>
+		<att name="type" type="string" value="state"/>
+		<graphics x="433.12015020651893" y="-372.30721722665385" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="IRS_[Phospholipids]_i-_Phospholipids_[IRS]" label="IRS_[Phospholipids]_i-_Phospholipids_[IRS]">
+		<att name="rxnconID" type="string" value="IRS_[Phospholipids]_i-_Phospholipids_[IRS]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-149.86675775246545" y="-346.23556195321635" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Grb2_[SH2]_ppi-_IRS_[Y]" label="Grb2_[SH2]_ppi-_IRS_[Y]">
+		<att name="rxnconID" type="string" value="Grb2_[SH2]_ppi-_IRS_[Y]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-320.20684564309045" y="349.9257539647524" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="IRS_[Phospholipids]--Phospholipids_[IRS]" label="IRS_[Phospholipids]--Phospholipids_[IRS]">
+		<att name="rxnconID" type="string" value="IRS_[Phospholipids]--Phospholipids_[IRS]"/>
+		<att name="type" type="string" value="state"/>
+		<graphics x="-141.2687963266842" y="-236.6158720118101" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="GS" label="GS">
+		<att name="rxnconID" type="string" value="GS"/>
+		<att name="type" type="string" value="boolean_or"/>
+		<graphics x="-389.29806268410607" y="420.6086458104555" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="IR_[IRBD]_ppi+_IR_[IRBD]" label="IR_[IRBD]_ppi+_IR_[IRBD]">
+		<att name="rxnconID" type="string" value="IR_[IRBD]_ppi+_IR_[IRBD]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="550.9342066030033" y="-327.26131878915385" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="IRS_[Y]_ppi+_PI3K_[SH2]" label="IRS_[Y]_ppi+_PI3K_[SH2]">
+		<att name="rxnconID" type="string" value="IRS_[Y]_ppi+_PI3K_[SH2]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-402.8667272348873" y="5.3727163213197855" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="[PI3K]" label="[PI3K]">
+		<att name="rxnconID" type="string" value="[PI3K]"/>
+		<att name="type" type="string" value="output"/>
+		<graphics x="-633.7389196176998" y="-92.84499035897807" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="IR_[TK(Y1158)]-{p}" label="IR_[TK(Y1158)]-{p}">
+		<att name="rxnconID" type="string" value="IR_[TK(Y1158)]-{p}"/>
+		<att name="type" type="string" value="state"/>
+		<graphics x="313.9149194936283" y="-202.76240216317728" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="IR_[JM(Y972)]-{p}" label="IR_[JM(Y972)]-{p}">
+		<att name="rxnconID" type="string" value="IR_[JM(Y972)]-{p}"/>
+		<att name="type" type="string" value="state"/>
+		<graphics x="6.008242247534554" y="26.119872464508262" z="0.0"></graphics>
+	</node>
+	
+
+	<edge source="IR_p+_IR_[TK(Y1158)]" target="IR_[TK(Y1158)]-{p}">
+		<att name="interaction" type="string" value="produce"/>
+	</edge>
+	
+
+	<edge source="Shc_[(YY239)]-{p}" target="Grb2_[SH2]_ppi+_Shc_[YY]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Shc_[(YY239)]-{p}" target="uPPase6_p-_Shc_[(YY239)]">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="IR_p+_IR_[TK(Y1162)]" target="IR_[TK(Y1162)]-{p}">
+		<att name="interaction" type="string" value="produce"/>
+	</edge>
+	
+
+	<edge source="uPPase3_p-_IR_[TK(Y1163)]" target="IR_[TK(Y1163)]-{p}">
+		<att name="interaction" type="string" value="consume"/>
+	</edge>
+	
+
+	<edge source="IR_p+_Shc_[(Y317)]" target="Shc_[(Y317)]-{p}">
+		<att name="interaction" type="string" value="produce"/>
+	</edge>
+	
+
+	<edge source="IR_[JMY972]--Shc_[PTB]" target="IR_p+_Shc_[(YY239)]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="IR_[JMY972]--Shc_[PTB]" target="IR_p+_Shc_[(Y317)]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="IR_[JMY972]--Shc_[PTB]" target="IR_[JMY972]_ppi-_Shc_[PTB]">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="Grb2_[SOS]_ppi-_SOS_[Grb2]" target="Grb2_[SOS]--SOS_[Grb2]">
+		<att name="interaction" type="string" value="consume"/>
+	</edge>
+	
+
+	<edge source="IRS_[Phospholipids]_i+_Phospholipids_[IRS]" target="IRS_[Phospholipids]--Phospholipids_[IRS]">
+		<att name="interaction" type="string" value="produce"/>
+	</edge>
+	
+
+	<edge source="uPPase1_p-_IR_[TK(Y1158)]" target="IR_[TK(Y1158)]-{p}">
+		<att name="interaction" type="string" value="consume"/>
+	</edge>
+	
+
+	<edge source="IR_[lig]--insulin_[IR]" target="IR_[lig]_i-_insulin_[IR]">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="IR_[lig]--insulin_[IR]" target="IR01-Ins">
+		<att name="interaction" type="string" value="OR"/>
+	</edge>
+	
+
+	<edge source="IR_[lig]--insulin_[IR]" target="IR_[lig]--0">
+		<att name="interaction" type="string" value="NOT"/>
+	</edge>
+	
+
+	<edge source="uPPase6_p-_Shc_[(YY239)]" target="Shc_[(YY239)]-{p}">
+		<att name="interaction" type="string" value="consume"/>
+	</edge>
+	
+
+	<edge source="Grb2_[SH2]_ppi-_Shc_[Y]" target="Grb2_[SH2]--Shc_[Y]">
+		<att name="interaction" type="string" value="consume"/>
+	</edge>
+	
+
+	<edge source="Grb2-SOS" target="[Grb2-SOS]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="IR_[lig]--0" target="IR-empty">
+		<att name="interaction" type="string" value="AND"/>
+	</edge>
+	
+
+	<edge source="IR_[JMY972]_ppi-_IRS_[PTB]" target="IRS_[PTB]--IR_[JMY972]">
+		<att name="interaction" type="string" value="consume"/>
+	</edge>
+	
+
+	<edge source="uPPase2_p-_IR_[TK(Y1162)]" target="IR_[TK(Y1162)]-{p}">
+		<att name="interaction" type="string" value="consume"/>
+	</edge>
+	
+
+	<edge source="Grb2_[SOS]_ppi+_SOS_[Grb2]" target="Grb2_[SOS]--SOS_[Grb2]">
+		<att name="interaction" type="string" value="produce"/>
+	</edge>
+	
+
+	<edge source="Grb2_[SH2]--Shc_[Y]" target="Grb2_[SH2]_ppi-_Shc_[Y]">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="uPPase4_p-_IR_[JM(Y972)]" target="IR_[JM(Y972)]-{p}">
+		<att name="interaction" type="string" value="consume"/>
+	</edge>
+	
+
+	<edge source="Grb2_[SH2]--IRS_[Y]" target="Grb2_[SH2]_ppi-_IRS_[Y]">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="Grb2_[SH2]--IRS_[Y]" target="GS">
+		<att name="interaction" type="string" value="OR"/>
+	</edge>
+	
+
+	<edge source="IR-empty" target="IR_[lig]_i+_insulin_[IR]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Grb2_[SH2]_ppi-_Shc_[YY]" target="Grb2_[SH2]--Shc_[YY]">
+		<att name="interaction" type="string" value="consume"/>
+	</edge>
+	
+
+	<edge source="IR_[TK(Y1163)]-{p}" target="IR-phos">
+		<att name="interaction" type="string" value="AND"/>
+	</edge>
+	
+
+	<edge source="IR_[TK(Y1163)]-{p}" target="uPPase3_p-_IR_[TK(Y1163)]">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="IR_[IRBD]_ppi-_IR_[IRBD]" target="IR_[IRBD]--IR_[IRBD]">
+		<att name="interaction" type="string" value="consume"/>
+	</edge>
+	
+
+	<edge source="Grb2_[SH2]--Shc_[YY]" target="Grb2_[SH2]_ppi-_Shc_[YY]">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="Grb2_[SH2]--Shc_[YY]" target="GS">
+		<att name="interaction" type="string" value="OR"/>
+	</edge>
+	
+
+	<edge source="IR_[lig]_i-_insulin_[IR]" target="IR_[lig]--insulin_[IR]">
+		<att name="interaction" type="string" value="consume"/>
+	</edge>
+	
+
+	<edge source="IRS_[PTB]--IR_[JMY972]" target="IR_p+_IRS_[(Y)]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="IRS_[PTB]--IR_[JMY972]" target="IR_[JMY972]_ppi-_IRS_[PTB]">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="IR_ap+_IR_[JM(Y972)]" target="IR_[JM(Y972)]-{p}">
+		<att name="interaction" type="string" value="produce"/>
+	</edge>
+	
+
+	<edge source="IRS_[(Y)]-{p}" target="Grb2_[SH2]_ppi+_IRS_[Y]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="IRS_[(Y)]-{p}" target="uPPase5_p-_IRS_[(Y)]">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="IRS_[(Y)]-{p}" target="IRS_[Y]_ppi+_PI3K_[SH2]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Grb2_[SOS]--SOS_[Grb2]" target="Grb2_[SOS]_ppi-_SOS_[Grb2]">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="Grb2_[SOS]--SOS_[Grb2]" target="Grb2-SOS">
+		<att name="interaction" type="string" value="AND"/>
+	</edge>
+	
+
+	<edge source="Grb2_[SH2]_ppi+_Shc_[Y]" target="Grb2_[SH2]--Shc_[Y]">
+		<att name="interaction" type="string" value="produce"/>
+	</edge>
+	
+
+	<edge source="IR_[lig]_i+_insulin_[IR]" target="IR_[lig]--insulin_[IR]">
+		<att name="interaction" type="string" value="produce"/>
+	</edge>
+	
+
+	<edge source="Shc_[(Y317)]-{p}" target="Grb2_[SH2]_ppi+_Shc_[Y]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Shc_[(Y317)]-{p}" target="uPPase7_p-_Shc_[(Y317)]">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="uPPase5_p-_IRS_[(Y)]" target="IRS_[(Y)]-{p}">
+		<att name="interaction" type="string" value="consume"/>
+	</edge>
+	
+
+	<edge source="IR_[JMY972]_ppi-_Shc_[PTB]" target="IR_[JMY972]--Shc_[PTB]">
+		<att name="interaction" type="string" value="consume"/>
+	</edge>
+	
+
+	<edge source="Grb2_[SH2]_ppi+_Shc_[YY]" target="Grb2_[SH2]--Shc_[YY]">
+		<att name="interaction" type="string" value="produce"/>
+	</edge>
+	
+
+	<edge source="IRS_[Y]_ppi-_PI3K_[SH2]" target="IRS_[Y]--PI3K_[SH2]">
+		<att name="interaction" type="string" value="consume"/>
+	</edge>
+	
+
+	<edge source="IR_p+_IR_[TK(Y1163)]" target="IR_[TK(Y1163)]-{p}">
+		<att name="interaction" type="string" value="produce"/>
+	</edge>
+	
+
+	<edge source="IR01-Ins" target="IR-Ins">
+		<att name="interaction" type="string" value="AND"/>
+	</edge>
+	
+
+	<edge source="IRstar" target="IR_p+_Shc_[(YY239)]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="IRstar" target="IR_p+_Shc_[(Y317)]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="IRstar" target="IR_p+_IRS_[(Y)]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="IRstar" target="IR_ap+_IR_[JM(Y972)]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="IR_p+_Shc_[(YY239)]" target="Shc_[(YY239)]-{p}">
+		<att name="interaction" type="string" value="produce"/>
+	</edge>
+	
+
+	<edge source="IR-Ins" target="IR_p+_IR_[TK(Y1162)]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="IR-Ins" target="IR_p+_IR_[TK(Y1158)]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="IR-Ins" target="IRstar">
+		<att name="interaction" type="string" value="AND"/>
+	</edge>
+	
+
+	<edge source="IR-Ins" target="IR_p+_IR_[TK(Y1163)]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="IR_[JMY972]_ppi+_IRS_[PTB]" target="IRS_[PTB]--IR_[JMY972]">
+		<att name="interaction" type="string" value="produce"/>
+	</edge>
+	
+
+	<edge source="IR-phos" target="IRstar">
+		<att name="interaction" type="string" value="AND"/>
+	</edge>
+	
+
+	<edge source="Grb2_[SH2]_ppi+_IRS_[Y]" target="Grb2_[SH2]--IRS_[Y]">
+		<att name="interaction" type="string" value="produce"/>
+	</edge>
+	
+
+	<edge source="IR_[TK(Y1162)]-{p}" target="IR-phos">
+		<att name="interaction" type="string" value="AND"/>
+	</edge>
+	
+
+	<edge source="IR_[TK(Y1162)]-{p}" target="uPPase2_p-_IR_[TK(Y1162)]">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="IR_[JMY972]_ppi+_Shc_[PTB]" target="IR_[JMY972]--Shc_[PTB]">
+		<att name="interaction" type="string" value="produce"/>
+	</edge>
+	
+
+	<edge source="IRS_[Y]--PI3K_[SH2]" target="[PI3K]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="IRS_[Y]--PI3K_[SH2]" target="IRS_[Y]_ppi-_PI3K_[SH2]">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="uPPase7_p-_Shc_[(Y317)]" target="Shc_[(Y317)]-{p}">
+		<att name="interaction" type="string" value="consume"/>
+	</edge>
+	
+
+	<edge source="IR_p+_IRS_[(Y)]" target="IRS_[(Y)]-{p}">
+		<att name="interaction" type="string" value="produce"/>
+	</edge>
+	
+
+	<edge source="IR_[IRBD]--IR_[IRBD]" target="IR-Ins">
+		<att name="interaction" type="string" value="AND"/>
+	</edge>
+	
+
+	<edge source="IR_[IRBD]--IR_[IRBD]" target="IR_[IRBD]_ppi-_IR_[IRBD]">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="IR_[IRBD]--IR_[IRBD]" target="IR-empty">
+		<att name="interaction" type="string" value="AND"/>
+	</edge>
+	
+
+	<edge source="IRS_[Phospholipids]_i-_Phospholipids_[IRS]" target="IRS_[Phospholipids]--Phospholipids_[IRS]">
+		<att name="interaction" type="string" value="consume"/>
+	</edge>
+	
+
+	<edge source="Grb2_[SH2]_ppi-_IRS_[Y]" target="Grb2_[SH2]--IRS_[Y]">
+		<att name="interaction" type="string" value="consume"/>
+	</edge>
+	
+
+	<edge source="IRS_[Phospholipids]--Phospholipids_[IRS]" target="IR_[JMY972]_ppi+_IRS_[PTB]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="IRS_[Phospholipids]--Phospholipids_[IRS]" target="IRS_[Phospholipids]_i-_Phospholipids_[IRS]">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="GS" target="Grb2-SOS">
+		<att name="interaction" type="string" value="AND"/>
+	</edge>
+	
+
+	<edge source="IR_[IRBD]_ppi+_IR_[IRBD]" target="IR_[IRBD]--IR_[IRBD]">
+		<att name="interaction" type="string" value="produce"/>
+	</edge>
+	
+
+	<edge source="IRS_[Y]_ppi+_PI3K_[SH2]" target="IRS_[Y]--PI3K_[SH2]">
+		<att name="interaction" type="string" value="produce"/>
+	</edge>
+	
+
+	<edge source="IR_[TK(Y1158)]-{p}" target="IR-phos">
+		<att name="interaction" type="string" value="AND"/>
+	</edge>
+	
+
+	<edge source="IR_[TK(Y1158)]-{p}" target="uPPase1_p-_IR_[TK(Y1158)]">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="IR_[JM(Y972)]-{p}" target="IR_[JMY972]_ppi+_IRS_[PTB]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="IR_[JM(Y972)]-{p}" target="uPPase4_p-_IR_[JM(Y972)]">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="IR_[JM(Y972)]-{p}" target="IR_[JMY972]_ppi+_Shc_[PTB]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
 </graph>

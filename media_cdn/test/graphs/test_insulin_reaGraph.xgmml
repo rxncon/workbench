@@ -1,0 +1,576 @@
+<?xml version="1.0" ?>
+<graph directed="1" xmlns="http://www.cs.rpi.edu/XGMML" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink">
+	
+    
+	<att name="selected" type="boolean" value="1"/>
+	
+    
+	<att name="name" type="string" value="test"/>
+	
+    
+	<att name="shared name" type="string" value="test"/>
+	
+    
+
+	<node id="IR_[IRBD]" label="IRBD">
+		<att name="rxnconID" type="string" value="IR_[IRBD]"/>
+		<att name="type" type="string" value="40"/>
+		<graphics x="-187.2027515142392" y="-214.2224661020132" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="IR_[JM]" label="JM">
+		<att name="rxnconID" type="string" value="IR_[JM]"/>
+		<att name="type" type="string" value="40"/>
+		<graphics x="-251.5478442876767" y="-73.08520947969873" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="IRS_[Y]" label="Y">
+		<att name="rxnconID" type="string" value="IRS_[Y]"/>
+		<att name="type" type="string" value="40"/>
+		<graphics x="201.17891657658112" y="157.6134408804087" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Phospholipids" label="Phospholipids">
+		<att name="rxnconID" type="string" value="Phospholipids"/>
+		<att name="type" type="string" value="80"/>
+		<graphics x="521.0562816888857" y="229.925528893104" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Grb2_[SOS]" label="SOS">
+		<att name="rxnconID" type="string" value="Grb2_[SOS]"/>
+		<att name="type" type="string" value="40"/>
+		<graphics x="91.7884823114444" y="531.8675760122446" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="SOS_[Grb2]" label="Grb2">
+		<att name="rxnconID" type="string" value="SOS_[Grb2]"/>
+		<att name="type" type="string" value="40"/>
+		<graphics x="63.91606104679596" y="648.4733499380259" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="insulin" label="insulin">
+		<att name="rxnconID" type="string" value="insulin"/>
+		<att name="type" type="string" value="80"/>
+		<graphics x="30.87776530094635" y="-538.7011190561147" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Phospholipids_[IRS]" label="IRS">
+		<att name="rxnconID" type="string" value="Phospholipids_[IRS]"/>
+		<att name="type" type="string" value="40"/>
+		<graphics x="412.38117182560455" y="190.8421548696665" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Shc_[(YY239)]" label="YY239">
+		<att name="rxnconID" type="string" value="Shc_[(YY239)]"/>
+		<att name="type" type="string" value="20"/>
+		<graphics x="-181.6254352300595" y="11.514209160437986" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="uPPase1" label="uPPase1">
+		<att name="rxnconID" type="string" value="uPPase1"/>
+		<att name="type" type="string" value="80"/>
+		<graphics x="83.6279598505069" y="-300.997078528771" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="IR_[JMY972]" label="JMY972">
+		<att name="rxnconID" type="string" value="IR_[JMY972]"/>
+		<att name="type" type="string" value="40"/>
+		<graphics x="-26.526489612383727" y="-52.97980557955225" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="IR_[lig]" label="lig">
+		<att name="rxnconID" type="string" value="IR_[lig]"/>
+		<att name="type" type="string" value="40"/>
+		<graphics x="-58.749924060625915" y="-301.8300558236929" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Grb2" label="Grb2">
+		<att name="rxnconID" type="string" value="Grb2"/>
+		<att name="type" type="string" value="80"/>
+		<graphics x="105.60585749454987" y="405.80120027982275" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="PI3K_[SH2]" label="SH2">
+		<att name="rxnconID" type="string" value="PI3K_[SH2]"/>
+		<att name="type" type="string" value="40"/>
+		<graphics x="311.3567882806827" y="65.92744387113135" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="IR_[JM(Y972)]" label="Y972">
+		<att name="rxnconID" type="string" value="IR_[JM(Y972)]"/>
+		<att name="type" type="string" value="20"/>
+		<graphics x="-258.4079059331845" y="-165.93117581881006" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="SOS" label="SOS">
+		<att name="rxnconID" type="string" value="SOS"/>
+		<att name="type" type="string" value="80"/>
+		<graphics x="24.60068476505768" y="755.1134866567759" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Shc_[Y]" label="Y">
+		<att name="rxnconID" type="string" value="Shc_[Y]"/>
+		<att name="type" type="string" value="40"/>
+		<graphics x="-28.655858871264343" y="252.26106966458838" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="uPPase6" label="uPPase6">
+		<att name="rxnconID" type="string" value="uPPase6"/>
+		<att name="type" type="string" value="80"/>
+		<graphics x="-301.2526782720517" y="60.799697289100095" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Grb2_[SH2]" label="SH2">
+		<att name="rxnconID" type="string" value="Grb2_[SH2]"/>
+		<att name="type" type="string" value="40"/>
+		<graphics x="102.75324976749909" y="269.6496194692759" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="insulin_[IR]" label="IR">
+		<att name="rxnconID" type="string" value="insulin_[IR]"/>
+		<att name="type" type="string" value="40"/>
+		<graphics x="-13.294874545855407" y="-428.84088956392725" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="IR_[TK(Y1158)]" label="Y1158">
+		<att name="rxnconID" type="string" value="IR_[TK(Y1158)]"/>
+		<att name="type" type="string" value="20"/>
+		<graphics x="-9.791305896563415" y="-221.59980069673975" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="IRS_[PTB]" label="PTB">
+		<att name="rxnconID" type="string" value="IRS_[PTB]"/>
+		<att name="type" type="string" value="40"/>
+		<graphics x="84.40248072453034" y="-3.0711866525502955" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="uPPase4" label="uPPase4">
+		<att name="rxnconID" type="string" value="uPPase4"/>
+		<att name="type" type="string" value="80"/>
+		<graphics x="-188.50232731990326" y="-87.6649366525503" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="uPPase3" label="uPPase3">
+		<att name="rxnconID" type="string" value="uPPase3"/>
+		<att name="type" type="string" value="80"/>
+		<graphics x="-238.69936406306732" y="-417.6744161752554" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="IR_[TK]" label="TK">
+		<att name="rxnconID" type="string" value="IR_[TK]"/>
+		<att name="type" type="string" value="40"/>
+		<graphics x="-115.74833714656341" y="-246.95800076998194" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Shc_[PTB]" label="PTB">
+		<att name="rxnconID" type="string" value="Shc_[PTB]"/>
+		<att name="type" type="string" value="40"/>
+		<graphics x="-8.29248273066986" y="61.237014183631345" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="IR_[TK(Y1163)]" label="Y1163">
+		<att name="rxnconID" type="string" value="IR_[TK(Y1163)]"/>
+		<att name="type" type="string" value="20"/>
+		<graphics x="-185.0399860113095" y="-303.7854391244741" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="IR_[TK(Y1162)]" label="Y1162">
+		<att name="rxnconID" type="string" value="IR_[TK(Y1162)]"/>
+		<att name="type" type="string" value="20"/>
+		<graphics x="-235.53594243220795" y="-241.99379788912256" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="uPPase5" label="uPPase5">
+		<att name="rxnconID" type="string" value="uPPase5"/>
+		<att name="type" type="string" value="80"/>
+		<graphics x="168.8984905511905" y="-147.62056027925928" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="IRS_[Phospholipids]" label="Phospholipids">
+		<att name="rxnconID" type="string" value="IRS_[Phospholipids]"/>
+		<att name="type" type="string" value="40"/>
+		<graphics x="296.4463878900577" y="134.23320711576025" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="uPPase2" label="uPPase2">
+		<att name="rxnconID" type="string" value="uPPase2"/>
+		<att name="type" type="string" value="80"/>
+		<graphics x="-357.3369373052548" y="-291.44757901705225" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="IRS_[(Y)]" label="Y">
+		<att name="rxnconID" type="string" value="IRS_[(Y)]"/>
+		<att name="type" type="string" value="20"/>
+		<graphics x="61.30206263371002" y="-87.96758328951319" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="IRS" label="IRS">
+		<att name="rxnconID" type="string" value="IRS"/>
+		<att name="type" type="string" value="80"/>
+		<graphics x="182.55129206486237" y="35.911757835975095" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="IR" label="IR">
+		<att name="rxnconID" type="string" value="IR"/>
+		<att name="type" type="string" value="80"/>
+		<graphics x="-119.96688115291107" y="-144.63942777193506" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Shc" label="Shc">
+		<att name="rxnconID" type="string" value="Shc"/>
+		<att name="type" type="string" value="80"/>
+		<graphics x="-90.37233006648529" y="129.36919344388525" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="PI3K" label="PI3K">
+		<att name="rxnconID" type="string" value="PI3K"/>
+		<att name="type" type="string" value="80"/>
+		<graphics x="417.9018627435733" y="10.10819948636572" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="uPPase7" label="uPPase7">
+		<att name="rxnconID" type="string" value="uPPase7"/>
+		<att name="type" type="string" value="80"/>
+		<graphics x="-199.7808765142392" y="116.11589754544775" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Shc_[(Y317)]" label="Y317">
+		<att name="rxnconID" type="string" value="Shc_[(Y317)]"/>
+		<att name="type" type="string" value="20"/>
+		<graphics x="-120.07287633113373" y="10.616820702186033" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Shc_[YY]" label="YY">
+		<att name="rxnconID" type="string" value="Shc_[YY]"/>
+		<att name="type" type="string" value="40"/>
+		<graphics x="15.75761378117096" y="193.62966097318213" z="0.0"></graphics>
+	</node>
+	
+
+	<edge source="IR_[IRBD]" target="IR_[IRBD]">
+		<att name="width" type="string" value="10"/>
+		<att name="interaction" type="string" value="interaction"/>
+	</edge>
+	
+
+	<edge source="IR_[JM]" target="IR_[JM(Y972)]">
+		<att name="width" type="string" value="0"/>
+		<att name="interaction" type="string" value="interaction"/>
+	</edge>
+	
+
+	<edge source="IRS_[Y]" target="PI3K_[SH2]">
+		<att name="width" type="string" value="10"/>
+		<att name="interaction" type="string" value="interaction"/>
+	</edge>
+	
+
+	<edge source="Phospholipids" target="Phospholipids_[IRS]">
+		<att name="width" type="string" value="0"/>
+		<att name="interaction" type="string" value="interaction"/>
+	</edge>
+	
+
+	<edge source="Grb2_[SOS]" target="SOS_[Grb2]">
+		<att name="width" type="string" value="10"/>
+		<att name="interaction" type="string" value="interaction"/>
+	</edge>
+	
+
+	<edge source="insulin" target="insulin_[IR]">
+		<att name="width" type="string" value="0"/>
+		<att name="interaction" type="string" value="interaction"/>
+	</edge>
+	
+
+	<edge source="uPPase1" target="IR_[TK(Y1158)]">
+		<att name="width" type="string" value="10"/>
+		<att name="interaction" type="string" value="modification"/>
+	</edge>
+	
+
+	<edge source="IR_[JMY972]" target="Shc_[PTB]">
+		<att name="width" type="string" value="10"/>
+		<att name="interaction" type="string" value="interaction"/>
+	</edge>
+	
+
+	<edge source="IR_[JMY972]" target="IRS_[PTB]">
+		<att name="width" type="string" value="10"/>
+		<att name="interaction" type="string" value="interaction"/>
+	</edge>
+	
+
+	<edge source="IR_[lig]" target="insulin_[IR]">
+		<att name="width" type="string" value="10"/>
+		<att name="interaction" type="string" value="interaction"/>
+	</edge>
+	
+
+	<edge source="Grb2" target="Grb2_[SOS]">
+		<att name="width" type="string" value="0"/>
+		<att name="interaction" type="string" value="interaction"/>
+	</edge>
+	
+
+	<edge source="Grb2" target="Grb2_[SH2]">
+		<att name="width" type="string" value="0"/>
+		<att name="interaction" type="string" value="interaction"/>
+	</edge>
+	
+
+	<edge source="SOS" target="SOS_[Grb2]">
+		<att name="width" type="string" value="0"/>
+		<att name="interaction" type="string" value="interaction"/>
+	</edge>
+	
+
+	<edge source="uPPase6" target="Shc_[(YY239)]">
+		<att name="width" type="string" value="10"/>
+		<att name="interaction" type="string" value="modification"/>
+	</edge>
+	
+
+	<edge source="Grb2_[SH2]" target="Shc_[Y]">
+		<att name="width" type="string" value="10"/>
+		<att name="interaction" type="string" value="interaction"/>
+	</edge>
+	
+
+	<edge source="Grb2_[SH2]" target="Shc_[YY]">
+		<att name="width" type="string" value="10"/>
+		<att name="interaction" type="string" value="interaction"/>
+	</edge>
+	
+
+	<edge source="Grb2_[SH2]" target="IRS_[Y]">
+		<att name="width" type="string" value="10"/>
+		<att name="interaction" type="string" value="interaction"/>
+	</edge>
+	
+
+	<edge source="uPPase4" target="IR_[JM(Y972)]">
+		<att name="width" type="string" value="10"/>
+		<att name="interaction" type="string" value="modification"/>
+	</edge>
+	
+
+	<edge source="uPPase3" target="IR_[TK(Y1163)]">
+		<att name="width" type="string" value="10"/>
+		<att name="interaction" type="string" value="modification"/>
+	</edge>
+	
+
+	<edge source="IR_[TK]" target="IR_[TK(Y1162)]">
+		<att name="width" type="string" value="0"/>
+		<att name="interaction" type="string" value="interaction"/>
+	</edge>
+	
+
+	<edge source="IR_[TK]" target="IR_[TK(Y1158)]">
+		<att name="width" type="string" value="0"/>
+		<att name="interaction" type="string" value="interaction"/>
+	</edge>
+	
+
+	<edge source="IR_[TK]" target="IR_[TK(Y1163)]">
+		<att name="width" type="string" value="0"/>
+		<att name="interaction" type="string" value="interaction"/>
+	</edge>
+	
+
+	<edge source="uPPase5" target="IRS_[(Y)]">
+		<att name="width" type="string" value="10"/>
+		<att name="interaction" type="string" value="modification"/>
+	</edge>
+	
+
+	<edge source="IRS_[Phospholipids]" target="Phospholipids_[IRS]">
+		<att name="width" type="string" value="10"/>
+		<att name="interaction" type="string" value="interaction"/>
+	</edge>
+	
+
+	<edge source="uPPase2" target="IR_[TK(Y1162)]">
+		<att name="width" type="string" value="10"/>
+		<att name="interaction" type="string" value="modification"/>
+	</edge>
+	
+
+	<edge source="IRS" target="IRS_[Phospholipids]">
+		<att name="width" type="string" value="0"/>
+		<att name="interaction" type="string" value="interaction"/>
+	</edge>
+	
+
+	<edge source="IRS" target="IRS_[Y]">
+		<att name="width" type="string" value="0"/>
+		<att name="interaction" type="string" value="interaction"/>
+	</edge>
+	
+
+	<edge source="IRS" target="IRS_[(Y)]">
+		<att name="width" type="string" value="0"/>
+		<att name="interaction" type="string" value="interaction"/>
+	</edge>
+	
+
+	<edge source="IRS" target="IRS_[PTB]">
+		<att name="width" type="string" value="0"/>
+		<att name="interaction" type="string" value="interaction"/>
+	</edge>
+	
+
+	<edge source="IR" target="Shc_[(YY239)]">
+		<att name="width" type="string" value="10"/>
+		<att name="interaction" type="string" value="modification"/>
+	</edge>
+	
+
+	<edge source="IR" target="IR_[IRBD]">
+		<att name="width" type="string" value="0"/>
+		<att name="interaction" type="string" value="interaction"/>
+	</edge>
+	
+
+	<edge source="IR" target="IR_[TK(Y1158)]">
+		<att name="width" type="string" value="10"/>
+		<att name="interaction" type="string" value="modification"/>
+	</edge>
+	
+
+	<edge source="IR" target="IR_[JM]">
+		<att name="width" type="string" value="0"/>
+		<att name="interaction" type="string" value="interaction"/>
+	</edge>
+	
+
+	<edge source="IR" target="IR_[TK]">
+		<att name="width" type="string" value="0"/>
+		<att name="interaction" type="string" value="interaction"/>
+	</edge>
+	
+
+	<edge source="IR" target="IR_[TK(Y1163)]">
+		<att name="width" type="string" value="10"/>
+		<att name="interaction" type="string" value="modification"/>
+	</edge>
+	
+
+	<edge source="IR" target="IR_[TK(Y1162)]">
+		<att name="width" type="string" value="10"/>
+		<att name="interaction" type="string" value="modification"/>
+	</edge>
+	
+
+	<edge source="IR" target="IR_[JMY972]">
+		<att name="width" type="string" value="0"/>
+		<att name="interaction" type="string" value="interaction"/>
+	</edge>
+	
+
+	<edge source="IR" target="IR_[lig]">
+		<att name="width" type="string" value="0"/>
+		<att name="interaction" type="string" value="interaction"/>
+	</edge>
+	
+
+	<edge source="IR" target="IRS_[(Y)]">
+		<att name="width" type="string" value="10"/>
+		<att name="interaction" type="string" value="modification"/>
+	</edge>
+	
+
+	<edge source="IR" target="IR_[JM(Y972)]">
+		<att name="width" type="string" value="10"/>
+		<att name="interaction" type="string" value="modification"/>
+	</edge>
+	
+
+	<edge source="IR" target="Shc_[(Y317)]">
+		<att name="width" type="string" value="10"/>
+		<att name="interaction" type="string" value="modification"/>
+	</edge>
+	
+
+	<edge source="Shc" target="Shc_[(YY239)]">
+		<att name="width" type="string" value="0"/>
+		<att name="interaction" type="string" value="interaction"/>
+	</edge>
+	
+
+	<edge source="Shc" target="Shc_[Y]">
+		<att name="width" type="string" value="0"/>
+		<att name="interaction" type="string" value="interaction"/>
+	</edge>
+	
+
+	<edge source="Shc" target="Shc_[YY]">
+		<att name="width" type="string" value="0"/>
+		<att name="interaction" type="string" value="interaction"/>
+	</edge>
+	
+
+	<edge source="Shc" target="Shc_[PTB]">
+		<att name="width" type="string" value="0"/>
+		<att name="interaction" type="string" value="interaction"/>
+	</edge>
+	
+
+	<edge source="Shc" target="Shc_[(Y317)]">
+		<att name="width" type="string" value="0"/>
+		<att name="interaction" type="string" value="interaction"/>
+	</edge>
+	
+
+	<edge source="PI3K" target="PI3K_[SH2]">
+		<att name="width" type="string" value="0"/>
+		<att name="interaction" type="string" value="interaction"/>
+	</edge>
+	
+
+	<edge source="uPPase7" target="Shc_[(Y317)]">
+		<att name="width" type="string" value="10"/>
+		<att name="interaction" type="string" value="modification"/>
+	</edge>
+	
+
+</graph>
