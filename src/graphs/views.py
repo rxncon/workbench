@@ -78,7 +78,6 @@ def regGraphFile(request, system_id=None):
             return file_detail(request, system_id)
 
         rxncon_system = create_rxncon_system(system, "File")
-        # graph_file, graph_string = create_graph_without_template(request, media_root, system, rxncon_system, graph_file_path)
 
         graph = regulatory_graph.RegulatoryGraph(rxncon_system).to_graph()
         xgmml_graph = graphML.XGMML(graph, system.slug)
@@ -104,7 +103,7 @@ def regGraphQuick(request, system_id=None):
         media_root = settings.MEDIA_ROOT
 
         system = Quick.objects.get(id=system_id)
-        graph_file_name = system.slug + "_regGraph.xgmml"
+        graph_file_name = system.slug + "_" + system.get_filename().split(".")[0] + "_regGraph.xgmml"
         graph_file_path = "%s/%s/%s/%s" % (media_root, system.slug, "graphs", graph_file_name)
 
         if not check_filepath(request, graph_file_path, system, media_root):
@@ -158,7 +157,7 @@ class ReaGraph(View):
                 project_name = system.project_name
 
 
-            graph_file_name = system.slug + "_reaGraph.xgmml"
+            graph_file_name = system.slug + "_" + system.get_filename().split(".")[0] + "_reaGraph.xgmml"
             graph_file_path = "%s/%s/%s/%s" % (media_root, system.slug, "graphs", graph_file_name)
 
             if not check_filepath(request, graph_file_path, system, media_root):
@@ -220,7 +219,7 @@ class SReaGraph(ReaGraph):
                 project_name = system.project_name
 
 
-            graph_file_name = system.slug + "_sReaGraph.xgmml"
+            graph_file_name = system.slug + "_" + system.get_filename().split(".")[0] + "_sReaGraph.xgmml"
             graph_file_path = "%s/%s/%s/%s" % (media_root, system.slug, "graphs", graph_file_name)
 
             if not check_filepath(request, graph_file_path, system, media_root):

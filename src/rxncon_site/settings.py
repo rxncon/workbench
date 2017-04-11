@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'src.graphs',
     'src.boolean_model',
     'src.rule_based',
+
 ]
 
 MIDDLEWARE_CLASSES = [
