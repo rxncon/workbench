@@ -26,6 +26,7 @@ class File(models.Model):
     updated = models.DateTimeField(auto_now=True, auto_now_add=False)  # auto_now refers to every modification, updated gets reset when Post is updated -duh
     reg_graph = models.ForeignKey(Graph_from_File, null=True, on_delete=models.SET_NULL, blank=True, related_name="regulatory_graph_file")
     rea_graph = models.ForeignKey(Graph_from_File, null=True, on_delete=models.SET_NULL, blank=True, related_name="reaction_graph_file")
+    sRea_graph = models.ForeignKey(Graph_from_File, null=True, on_delete=models.SET_NULL, blank=True, related_name="species reaction_graph_file+")
     boolean_model = models.ForeignKey(Bool_from_rxnconsys, null=True, on_delete=models.SET_NULL, blank=True, related_name="bool_file")
     rule_based_model = models.ForeignKey(Rule_based_from_rxnconsys, null=True, on_delete=models.SET_NULL, blank=True, related_name="rule_based_file")
 
@@ -55,12 +56,10 @@ class File(models.Model):
         return media_root+"/%s" %(self.file)
 
     def delete_file_from_harddisk(self):
-        # TODO: test if works in dockers
         path = self.get_absolute_path()
         os.remove(path)
 
     def delete_project_from_harddisk(self):
-        # TODO: test if works in dockers
         path = self.get_absolute_path()
         path = os.path.dirname(path)
         shutil.rmtree(path)

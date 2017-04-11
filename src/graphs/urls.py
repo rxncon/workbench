@@ -1,6 +1,7 @@
 from django.conf.urls import url
 from . import views
 from .views import ReaGraph
+from .views import SReaGraph
 
 
 urlpatterns = [
@@ -10,6 +11,8 @@ urlpatterns = [
     url(r'^regGraphQuick/(?P<system_id>\d+)/$', views.regGraphQuick, name ='regGraphCreateFromQuick'),
     url(r'^reaGraph/$', views.reaGraph, name='reaGraph'),
     url(r'^reaGraph/(?P<system_id>\d+)/$', ReaGraph.as_view(), name='reaGraphCreate'),
+    url(r'^sReaGraph/$', views.sReaGraph, name='sReaGraph'),
+    url(r'^sReaGraph/(?P<system_id>\d+)/$', SReaGraph.as_view(), name='sReaGraphCreate'),
     # url(r'^upload/(?P<slug>[\w-]+)/$', views.file_upload, name ='upload'),
     url(r'^delete/(?P<pk>\d+)/$', views.graph_delete, name="delete"),
     # url(r'^delete/(?P<slug>[\w-]+)/$', views.file_delete_project, name="delete_project"),
