@@ -23,9 +23,9 @@ setup(
     author_email='mathias.wajnberg@hu-berlin.de',
     keywords=['sysbio', 'signalling', 'systems biology'],
     install_requires=[
-        'django',
-	'rxncon',
-	'typecheck-decorator',
-        'typing',
+        'django>=1.10',
+	    'rxncon>=2.0b7',
+	    'typecheck-decorator>=1.3',
+        'typing>=3.5',
     ]
 )
