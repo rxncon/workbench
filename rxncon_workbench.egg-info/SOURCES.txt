@@ -7,10 +7,6 @@ media_cdn/insulin/insulin.xls
 media_cdn/quick1/description/quick1_quick_definition.txt
 media_cdn/quick1/graphs/quick1_reaGraph.xgmml
 media_cdn/quick1/rule_based/quick1_model.bngl
-media_cdn/test/insulin.xls
-media_cdn/test/graphs/test_insulin_regGraph.xgmml
-media_cdn/test/graphs/test_reaGraph.xgmml
-media_cdn/test/graphs/test_sReaGraph.xgmml
 rxncon_workbench.egg-info/PKG-INFO
 rxncon_workbench.egg-info/SOURCES.txt
 rxncon_workbench.egg-info/dependency_links.txt
@@ -62,10 +58,8 @@ src/fileTree/__pycache__/models.cpython-35.pyc
 src/fileTree/__pycache__/urls.cpython-35.pyc
 src/fileTree/__pycache__/views.cpython-35.pyc
 src/fileTree/migrations/0001_initial.py
-src/fileTree/migrations/0010_file_srea_graph.py
 src/fileTree/migrations/__init__.py
 src/fileTree/migrations/__pycache__/0001_initial.cpython-35.pyc
-src/fileTree/migrations/__pycache__/0010_file_srea_graph.cpython-35.pyc
 src/fileTree/migrations/__pycache__/__init__.cpython-35.pyc
 src/graphs/__init__.py
 src/graphs/admin.py
@@ -100,10 +94,8 @@ src/quick_format/__pycache__/models.cpython-35.pyc
 src/quick_format/__pycache__/urls.cpython-35.pyc
 src/quick_format/__pycache__/views.cpython-35.pyc
 src/quick_format/migrations/0001_initial.py
-src/quick_format/migrations/0009_quick_srea_graph.py
 src/quick_format/migrations/__init__.py
 src/quick_format/migrations/__pycache__/0001_initial.cpython-35.pyc
-src/quick_format/migrations/__pycache__/0009_quick_srea_graph.cpython-35.pyc
 src/quick_format/migrations/__pycache__/__init__.cpython-35.pyc
 src/rule_based/__init__.py
 src/rule_based/admin.py
@@ -156,8 +148,11 @@ src/static/css/joyride-2.1.css
 src/static/downloads/rxncon2_cytoscape.xml
 src/static/downloads/rxncon2cytoscape.xml
 src/static/img/BMBF_Logo.svg
+src/static/img/Japan-Society-600x227.jpg
+src/static/img/favicon.ico
 src/static/img/glyphi_logo.svg
 src/static/img/group_logo.png
+src/static/img/logotype-mobile-en_US.svg
 src/static/img/rxncon_logo_stretch.png
 src/static/js/jquery-1.10.1.js
 src/static/js/jquery.joyride-2.1.js
