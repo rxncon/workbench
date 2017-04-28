@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+    <graph directed="1"  xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.cs.rpi.edu/XGMML">
+    <att name="selected" value="1" type="boolean" />
+    <att name="name" value="example-4-application-note" type="string"/>
+    <att name="shared name" value="example-4-application-note" type="string"/>
+    
+<node id="Fus3" label="Fus3"><att name="rxnconID" value="Fus3" type="string"/><att name="type" value="80" type="string"/></node>
+<node id="Ste7" label="Ste7"><att name="rxnconID" value="Ste7" type="string"/><att name="type" value="80" type="string"/></node>
+<node id="Fus3_[(Y182)]" label="Y182"><att name="rxnconID" value="Fus3_[(Y182)]" type="string"/><att name="type" value="20" type="string"/></node>
+<node id="Fus3_[Dock]" label="Dock"><att name="rxnconID" value="Fus3_[Dock]" type="string"/><att name="type" value="40" type="string"/></node>
+<node id="Sst2_[MAPK]" label="MAPK"><att name="rxnconID" value="Sst2_[MAPK]" type="string"/><att name="type" value="40" type="string"/></node>
+<node id="Sst2" label="Sst2"><att name="rxnconID" value="Sst2" type="string"/><att name="type" value="80" type="string"/></node>
+<node id="Fus3_[(T180)]" label="T180"><att name="rxnconID" value="Fus3_[(T180)]" type="string"/><att name="type" value="20" type="string"/></node>
+<edge source="Fus3" target="Fus3_[Dock]"><att name="width" value="0" type="string"/><att name="interaction" value="interaction" type="string"/></edge>
+<edge source="Fus3" target="Fus3_[(T180)]"><att name="width" value="0" type="string"/><att name="interaction" value="interaction" type="string"/></edge>
+<edge source="Fus3" target="Fus3_[(Y182)]"><att name="width" value="0" type="string"/><att name="interaction" value="interaction" type="string"/></edge>
+<edge source="Ste7" target="Fus3_[(T180)]"><att name="width" value="10" type="string"/><att name="interaction" value="modification" type="string"/></edge>
+<edge source="Ste7" target="Fus3_[(Y182)]"><att name="width" value="10" type="string"/><att name="interaction" value="modification" type="string"/></edge>
+<edge source="Fus3_[Dock]" target="Sst2_[MAPK]"><att name="width" value="10" type="string"/><att name="interaction" value="interaction" type="string"/></edge>
+<edge source="Sst2" target="Sst2_[MAPK]"><att name="width" value="0" type="string"/><att name="interaction" value="interaction" type="string"/></edge>
+</graph>

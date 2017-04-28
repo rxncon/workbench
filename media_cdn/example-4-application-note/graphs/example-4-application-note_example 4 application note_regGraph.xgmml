@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+    <graph directed="1"  xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.cs.rpi.edu/XGMML">
+    <att name="selected" value="1" type="boolean" />
+    <att name="name" value="example-4-application-note" type="string"/>
+    <att name="shared name" value="example-4-application-note" type="string"/>
+    
+<node id="Fus3_[Dock]--Sst2_[MAPK]" label="Fus3_[Dock]--Sst2_[MAPK]"><att name="rxnconID" value="Fus3_[Dock]--Sst2_[MAPK]" type="string"/><att name="type" value="state" type="string"/></node>
+<node id="Fus180or182P" label="Fus180or182P"><att name="rxnconID" value="Fus180or182P" type="string"/><att name="type" value="boolean_or" type="string"/></node>
+<node id="Ste7_p+_Fus3_[(Y182)]" label="Ste7_p+_Fus3_[(Y182)]"><att name="rxnconID" value="Ste7_p+_Fus3_[(Y182)]" type="string"/><att name="type" value="reaction" type="string"/></node>
+<node id="Fus3_[Dock]_ppi+_Sst2_[MAPK]" label="Fus3_[Dock]_ppi+_Sst2_[MAPK]"><att name="rxnconID" value="Fus3_[Dock]_ppi+_Sst2_[MAPK]" type="string"/><att name="type" value="reaction" type="string"/></node>
+<node id="Fus3_[(T180)]-{p}" label="Fus3_[(T180)]-{p}"><att name="rxnconID" value="Fus3_[(T180)]-{p}" type="string"/><att name="type" value="state" type="string"/></node>
+<node id="Ste7_p+_Fus3_[(T180)]" label="Ste7_p+_Fus3_[(T180)]"><att name="rxnconID" value="Ste7_p+_Fus3_[(T180)]" type="string"/><att name="type" value="reaction" type="string"/></node>
+<node id="Fus3_[(Y182)]-{p}" label="Fus3_[(Y182)]-{p}"><att name="rxnconID" value="Fus3_[(Y182)]-{p}" type="string"/><att name="type" value="state" type="string"/></node>
+<node id="Fus3_[Dock]_ppi-_Sst2_[MAPK]" label="Fus3_[Dock]_ppi-_Sst2_[MAPK]"><att name="rxnconID" value="Fus3_[Dock]_ppi-_Sst2_[MAPK]" type="string"/><att name="type" value="reaction" type="string"/></node>
+<edge source="Fus3_[Dock]--Sst2_[MAPK]" target="Fus3_[Dock]_ppi-_Sst2_[MAPK]"><att name="interaction" value="ss" type="string"/></edge>
+<edge source="Fus180or182P" target="Fus3_[Dock]_ppi+_Sst2_[MAPK]"><att name="interaction" value="!" type="string"/></edge>
+<edge source="Ste7_p+_Fus3_[(Y182)]" target="Fus3_[(Y182)]-{p}"><att name="interaction" value="produce" type="string"/></edge>
+<edge source="Fus3_[Dock]_ppi+_Sst2_[MAPK]" target="Fus3_[Dock]--Sst2_[MAPK]"><att name="interaction" value="produce" type="string"/></edge>
+<edge source="Fus3_[(T180)]-{p}" target="Fus180or182P"><att name="interaction" value="OR" type="string"/></edge>
+<edge source="Ste7_p+_Fus3_[(T180)]" target="Fus3_[(T180)]-{p}"><att name="interaction" value="produce" type="string"/></edge>
+<edge source="Fus3_[(Y182)]-{p}" target="Fus180or182P"><att name="interaction" value="OR" type="string"/></edge>
+<edge source="Fus3_[Dock]_ppi-_Sst2_[MAPK]" target="Fus3_[Dock]--Sst2_[MAPK]"><att name="interaction" value="consume" type="string"/></edge>
+</graph>

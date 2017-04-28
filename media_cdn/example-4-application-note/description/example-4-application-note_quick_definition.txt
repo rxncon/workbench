@@ -1,0 +1,4 @@
+Fus3_[Dock]_ppi_Sst2_[MAPK]; ! <Fus180or182P>
+<Fus180or182P>; OR Fus3_[(T180)]-{P}; OR Fus3_[(Y182)]-{P}
+Ste7_P+_Fus3_[(T180)]
+Ste7_P+_Fus3_[(Y182)]

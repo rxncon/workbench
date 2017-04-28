@@ -36,13 +36,16 @@ class Quick(models.Model):
         return self.name
 
     def __unicode__(self):
-        return self.name
+        return self.slug
 
     def get_absolute_url(self):
         return reverse("quick_format:quick_detail", kwargs={"id": self.id})
 
     def load(self):
         pass
+
+    def get_filename(self):
+        return self.name
 
     def get_download_url(self):
         media_url= settings.MEDIA_URL
