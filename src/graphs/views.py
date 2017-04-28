@@ -9,8 +9,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404, redirect
 from django.template import RequestContext
 from django.views.generic import View
-from fileTree.models import File
-from fileTree.views import file_detail
+
 from .models import Graph_from_File
 import os
 import rxncon.input.excel_book.excel_book as rxncon_excel
@@ -19,10 +18,20 @@ import rxncon.visualization.reaction_graph as reaction_graph
 import rxncon.visualization.graphML as graphML
 from rxncon.visualization.graphML import map_layout2xgmml
 import rxncon.input.quick.quick as rxncon_quick
-from quick_format.models import Quick
-from quick_format.views import quick_detail
+
 from .forms import DeleteGraphForm
 from xml.dom import minidom
+
+try:
+    from fileTree.models import File
+    from fileTree.views import file_detail
+    from quick_format.models import Quick
+    from quick_format.views import quick_detail
+except ImportError:
+    from src.fileTree.models import File
+    from src.fileTree.views import file_detail
+    from src.quick_format.models import Quick
+    from src.quick_format.views import quick_detail
 
 
 def apply_template_layout(request, graph_file_path, graph_string):

@@ -4,8 +4,10 @@ from __future__ import unicode_literals
 
 from django.db import migrations, models
 import django.db.models.deletion
-import fileTree.models
-
+try:
+    import fileTree as fileTree
+except ImportError:
+    import src.fileTree as fileTree
 
 class Migration(migrations.Migration):
 

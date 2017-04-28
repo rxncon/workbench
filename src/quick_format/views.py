@@ -8,10 +8,14 @@ from django.shortcuts import render, get_object_or_404, redirect
 import os
 import rxncon.input.quick.quick as rxncon_quick
 import rxncon.input.excel_book.excel_book as rxncon_excel
-from rxncon_site.views import *
 from .models import Quick
-from fileTree.models import File
 from .forms import QuickForm, DeleteQuickForm
+try:
+    from rxncon_site.views import *
+    from fileTree.models import File
+except ImportError:
+    from src.rxncon_site.views import *
+    from src.fileTree.models import File
 
 
 def quick_detail(request, id, compare_dict=None):

@@ -1,5 +1,11 @@
-from fileTree.models import File
-from quick_format.models import Quick
+try:
+    from fileTree.models import File
+    from quick_format.models import Quick
+
+except ImportError:
+    from src.fileTree.models import File
+    from src.quick_format.models import Quick
+
 from django.conf import settings
 # http://stackoverflow.com/questions/28533854/provide-extra-context-to-all-views
 

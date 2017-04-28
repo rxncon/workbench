@@ -3,14 +3,10 @@ from django.contrib import messages
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import View
-from fileTree.models import File
-from fileTree.views import file_detail
 from .forms import BoolForm
 from .forms import DeleteBoolForm
 from .models import Bool_from_rxnconsys
 import os
-from quick_format.models import Quick
-from quick_format.views import quick_detail
 import rxncon.input.excel_book.excel_book as rxncon_excel
 import rxncon.input.quick.quick as rxncon_quick
 import rxncon.simulation.boolean.boolean_model as rxncon_boolean_model
@@ -18,6 +14,18 @@ import rxncon.simulation.boolean.boolnet_from_boolean_model as bfbm
 from rxncon.simulation.boolean.boolean_model import boolean_model_from_rxncon, \
     SmoothingStrategy, KnockoutStrategy, OverexpressionStrategy
 from rxncon.simulation.boolean.boolnet_from_boolean_model import QuantitativeContingencyStrategy, boolnet_strs_from_rxncon
+
+
+try:
+    from fileTree.models import File
+    from fileTree.views import file_detail
+    from quick_format.models import Quick
+    from quick_format.views import quick_detail
+except ImportError:
+    from src.fileTree.models import File
+    from src.fileTree.views import file_detail
+    from src.quick_format.models import Quick
+    from src.quick_format.views import quick_detail
 
 
 

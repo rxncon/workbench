@@ -1,9 +1,14 @@
 from .forms import FileForm, DeleteFileForm
 import django.forms as forms
 
-from rxncon_site.views import *
+try:
+    from rxncon_site.views import *
+    from quick_format.models import Quick
+except ImportError:
+    from src.rxncon_site.views import *
+    from src.quick_format.models import Quick
+
 from .models import File
-from quick_format.models import Quick
 from rxncon.input.excel_book.excel_book import ExcelBook
 
 def file_detail(request, id, compare_dict = None):

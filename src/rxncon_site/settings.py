@@ -29,21 +29,37 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
+try:
+    import fileTree.urls
+    INSTALLED_APPS = [
+        'django.contrib.admin',
+        'django.contrib.auth',
+        'django.contrib.contenttypes',
+        'django.contrib.sessions',
+        'django.contrib.messages',
+        'django.contrib.staticfiles',
+        'fileTree',
+        'quick_format',
+        'graphs',
+        'boolean_model',
+        'rule_based',
 
-INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'fileTree',
-    'quick_format',
-    'graphs',
-    'boolean_model',
-    'rule_based',
+    ]
+except ImportError:
+    INSTALLED_APPS = [
+        'django.contrib.admin',
+        'django.contrib.auth',
+        'django.contrib.contenttypes',
+        'django.contrib.sessions',
+        'django.contrib.messages',
+        'django.contrib.staticfiles',
+        'src.fileTree',
+        'src.quick_format',
+        'src.graphs',
+        'src.boolean_model',
+        'src.rule_based',
 
-]
+    ]
 
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
@@ -55,29 +71,56 @@ MIDDLEWARE_CLASSES = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
-ROOT_URLCONF = 'rxncon_site.urls'
-
-TEMPLATES = [
-    {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
-        'APP_DIRS': True,
-        'OPTIONS': {
-            'context_processors': [
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
-                'rxncon_site.context_processors.file_list',
-                'rxncon_site.context_processors.quick_list',
-                'rxncon_site.context_processors.get_loaded_system',
-            ],
+try:
+    import rxncon_site.urls
+    ROOT_URLCONF = 'rxncon_site.urls'
+except ImportError:
+    ROOT_URLCONF = 'src.rxncon_site.urls'
+try:
+    import rxncon_site.context_processors.file_list
+    TEMPLATES = [
+        {
+            'BACKEND': 'django.template.backends.django.DjangoTemplates',
+            'DIRS': [os.path.join(BASE_DIR, 'templates')],
+            'APP_DIRS': True,
+            'OPTIONS': {
+                'context_processors': [
+                    'django.template.context_processors.debug',
+                    'django.template.context_processors.request',
+                    'django.contrib.auth.context_processors.auth',
+                    'django.contrib.messages.context_processors.messages',
+                    'rxncon_site.context_processors.file_list',
+                    'rxncon_site.context_processors.quick_list',
+                    'rxncon_site.context_processors.get_loaded_system',
+                ],
+            },
         },
-    },
-]
+    ]
+except ImportError:
+    TEMPLATES = [
+        {
+            'BACKEND': 'django.template.backends.django.DjangoTemplates',
+            'DIRS': [os.path.join(BASE_DIR, 'templates')],
+            'APP_DIRS': True,
+            'OPTIONS': {
+                'context_processors': [
+                    'django.template.context_processors.debug',
+                    'django.template.context_processors.request',
+                    'django.contrib.auth.context_processors.auth',
+                    'django.contrib.messages.context_processors.messages',
+                    'src.rxncon_site.context_processors.file_list',
+                    'src.rxncon_site.context_processors.quick_list',
+                    'src.rxncon_site.context_processors.get_loaded_system',
+                ],
+            },
+        },
+    ]
 
-WSGI_APPLICATION = 'rxncon_site.wsgi.application'
+try:
+    import rxncon_site.wsgi.application
+    WSGI_APPLICATION = 'rxncon_site.wsgi.application'
+except ImportError:
+    WSGI_APPLICATION = 'src.rxncon_site.wsgi.application'
 
 
 # Database
