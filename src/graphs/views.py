@@ -35,9 +35,6 @@ def apply_template_layout(request, graph_file_path, graph_string):
 
 def create_rxncon_system(system, system_type):
     if system_type == "File":
-        try:
-            book = rxncon_excel.ExcelBook(system.get_absolute_path())
-        except:
             book = rxncon_excel.ExcelBook(system.get_absolute_path())
     else:
         book = rxncon_quick.Quick(system.quick_input)
