@@ -137,7 +137,7 @@ def quick_load(request, id):
                                                 project_type="Quick", project_id=id)
     target = Quick.objects.filter(id=id)
     target.update(loaded=True)
-
+    target.update(rxncon_system=rxncon_system)
     if target[0].loaded:
         messages.info(request, "Quick definition '" + target[0].name + "' successfully loaded")
     return quick_detail(request, id)

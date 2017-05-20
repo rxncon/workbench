@@ -153,9 +153,11 @@ def file_delete_project(request, slug):
 def file_load(request, id):
     File.objects.all().update(loaded=False)
     Quick.objects.all().update(loaded=False)
-    rxncon_system = create_rxncon_system_object(request=request, project_name=File.objects.get(id=id).project_name, project_type="File", project_id=id)
+    if not File.objects.get(id=id).rxncon_system:
+        rxncon_system = create_rxncon_system_object(request=request, project_name=File.objects.get(id=id).project_name, project_type="File", project_id=id)
     target = File.objects.filter(id=id)
     target.update(loaded=True)
+    target.update(rxncon_system=rxncon_system)
     if target[0].loaded:
         messages.info(request, "File '" + target[0].get_filename() + "' successfully loaded")
     return file_detail(request, id)
