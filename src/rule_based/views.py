@@ -6,6 +6,8 @@ from django.views.generic import View
 from fileTree.models import File
 from fileTree.views import file_detail
 from .forms import RuleForm
+import pickle
+from rxncon_system.models import Rxncon_system
 from .forms import DeleteRuleForm
 from .models import Rule_based_from_rxnconsys
 import os
@@ -66,8 +68,8 @@ class Rule_based(View):
                 else:
                     return file_detail(request, system_id)
 
-            # rxncon_system = create_rxncon_system(system, system_type)
-            rxncon_system = system.rxncon_system
+            pickled_rxncon_system = Rxncon_system.objects.get(project_id=system_id, project_type=system_type)
+            rxncon_system = pickle.loads(pickled_rxncon_system.pickled_system)
 
             rbm = rule_based_model_from_rxncon(rxncon_system)
             model_str = bngl_from_rule_based_model(rbm)

@@ -23,6 +23,8 @@ from quick_format.models import Quick
 from quick_format.views import quick_detail
 from .forms import DeleteGraphForm
 from xml.dom import minidom
+import pickle
+from rxncon_system.models import Rxncon_system
 
 
 def apply_template_layout(request, graph_file_path, graph_string):
@@ -74,8 +76,8 @@ def regGraphFile(request, system_id=None):
         if not check_filepath(request, graph_file_path, system, media_root):
             return file_detail(request, system_id)
 
-        # rxncon_system = create_rxncon_system(system, "File")
-        rxncon_system = system.rxncon_system
+        pickled_rxncon_system = Rxncon_system.objects.get(project_id=system_id, project_type="File")
+        rxncon_system = pickle.loads(pickled_rxncon_system.pickled_system)
 
         graph = regulatory_graph.RegulatoryGraph(rxncon_system).to_graph()
         xgmml_graph = graphML.XGMML(graph, system.slug)
@@ -107,8 +109,8 @@ def regGraphQuick(request, system_id=None):
         if not check_filepath(request, graph_file_path, system, media_root):
             return quick_detail(request, system_id)
 
-        # rxncon_system = create_rxncon_system(system, "Quick")
-        rxncon_system = system.rxncon_system
+        pickled_rxncon_system = Rxncon_system.objects.get(project_id=system_id, project_type="Quick")
+        rxncon_system = pickle.loads(pickled_rxncon_system.pickled_system)
         # graph_file, graph_string = create_graph_without_template(request, media_root, system, rxncon_system,
         #                                                          graph_file_path)
         graph = regulatory_graph.RegulatoryGraph(rxncon_system).to_graph()
@@ -165,8 +167,8 @@ class ReaGraph(View):
                 else:
                     return file_detail(request, system_id)
 
-            # rxncon_system = create_rxncon_system(system, system_type)
-            rxncon_system = system.rxncon_system
+            pickled_rxncon_system = Rxncon_system.objects.get(project_id=system_id, project_type=system_type)
+            rxncon_system = pickle.loads(pickled_rxncon_system.pickled_system)
 
             graph = reaction_graph.rxngraph_from_rxncon_system(rxncon_system).reaction_graph
 
@@ -228,8 +230,8 @@ class SReaGraph(ReaGraph):
                 else:
                     return file_detail(request, system_id)
 
-            # rxncon_system = create_rxncon_system(system, system_type)
-            rxncon_system = system.rxncon_system
+            pickled_rxncon_system = Rxncon_system.objects.get(project_id=system_id, project_type=system_type)
+            rxncon_system = pickle.loads(pickled_rxncon_system.pickled_system)
 
             graph = regulatory_graph.ReactionSpeciesGraph(rxncon_system=rxncon_system).regulatory_graph
 

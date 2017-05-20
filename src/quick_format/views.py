@@ -8,21 +8,18 @@ from django.shortcuts import render, get_object_or_404, redirect
 import os
 import rxncon.input.quick.quick as rxncon_quick
 import rxncon.input.excel_book.excel_book as rxncon_excel
-from rxncon_site.views import *
-from rxncon_site.views import compare_systems
-
-
-
-
+from rxncon_site.views import compare_systems, create_rxncon_system_object
+import pickle
 from .models import Quick
 from fileTree.models import File
+from rxncon_system.models import Rxncon_system
 from .forms import QuickForm, DeleteQuickForm
 
 
 def quick_detail(request, id, compare_dict=None):
     instance = Quick.objects.get(id=id)
-    # rxncon_system = rxncon_quick.Quick(instance.quick_input)
-    rxncon_system = instance.rxncon_system
+    pickled_rxncon_system = Rxncon_system.objects.get(project_id=id, project_type="Quick")
+    rxncon_system = pickle.loads(pickled_rxncon_system.pickled_system)
 
     context_data = {
         "title": instance.name,
@@ -78,7 +75,6 @@ def quick_new(request):
     if form.is_valid():
         instance = form.save(commit=False)
         instance.save()
-        instance.create_rxncon_system()
 
         filename = instance.slug + "_quick_definition.txt"
         model_path = "%s/%s/%s/%s" % (media_root, instance.slug, "description", filename)
@@ -89,7 +85,8 @@ def quick_new(request):
             f.write(instance.quick_input)
 
         messages.success(request, "Successfully created")
-        return HttpResponseRedirect(instance.get_absolute_url())
+        # return HttpResponseRedirect(instance.get_absolute_url())
+        return HttpResponseRedirect(instance.load())
 
     context={
         "form": form,
@@ -122,7 +119,6 @@ def quick_update(request, id=None):
     form = QuickForm(request.POST or None, instance=instance)
     if form.is_valid():
         instance = form.save(commit=False)
-        instance.create_rxncon_system()
         instance.save()
         messages.success(request, "Item Saved", extra_tags='html_safe')
         return HttpResponseRedirect(instance.get_absolute_url())
@@ -137,14 +133,14 @@ def quick_update(request, id=None):
 def quick_load(request, id):
     File.objects.all().update(loaded=False)
     Quick.objects.all().update(loaded=False)
+    rxncon_system = create_rxncon_system_object(request=request, project_name=Quick.objects.get(id=id).name,
+                                                project_type="Quick", project_id=id)
     target = Quick.objects.filter(id=id)
     target.update(loaded=True)
+
     if target[0].loaded:
         messages.info(request, "Quick definition '" + target[0].name + "' successfully loaded")
     return quick_detail(request, id)
 
-# def quick_save(request, id):
-#     q = get_object_or_404(Quick, id=id)
-#     q.download_system_description()
 
 

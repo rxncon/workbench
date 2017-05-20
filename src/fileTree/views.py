@@ -22,7 +22,7 @@ def file_detail(request, id, compare_dict = None):
     instance = File.objects.get(id=id)
     slug = File.objects.filter(id=id).values("slug")
     project_files = File.objects.filter(slug=slug).order_by("-updated")
-    pickled_rxncon_system= Rxncon_system.objects.get(project_id=id)
+    pickled_rxncon_system = Rxncon_system.objects.get(project_id=id, project_type="File")
     rxncon_system = pickle.loads(pickled_rxncon_system.pickled_system)
 
     context_data = {
@@ -154,7 +154,6 @@ def file_load(request, id):
     File.objects.all().update(loaded=False)
     Quick.objects.all().update(loaded=False)
     rxncon_system = create_rxncon_system_object(request=request, project_name=File.objects.get(id=id).project_name, project_type="File", project_id=id)
-    # target.update(rxncon_system=rxncon_system)
     target = File.objects.filter(id=id)
     target.update(loaded=True)
     if target[0].loaded:

@@ -7,6 +7,7 @@ from django.utils.text import slugify
 from graphs.models import Graph_from_File
 from boolean_model.models import Bool_from_rxnconsys
 from rule_based.models import Rule_based_from_rxnconsys
+from rxncon_system.models import Rxncon_system
 import rxncon.input.quick.quick as rxncon_quick
 import os
 import shutil
@@ -22,7 +23,7 @@ class Quick(models.Model):
     timestamp = models.DateTimeField(auto_now=False, auto_now_add=True)  # initial timestamp will be saved one time
     updated = models.DateTimeField(auto_now=True, auto_now_add=False)  # auto_now refers to every modification,
     # updated gets reset when Post is updated -duh
-    rxncon_system = models.ForeignKey(Rule_based_from_rxnconsys, null=True, on_delete=models.SET_NULL, blank=True, related_name="rxncon_system_quicktele")
+    rxncon_system = models.OneToOneField(Rxncon_system, null=True, on_delete=models.SET_NULL, blank=True, unique=True, related_name="rxncon_system_quick") #pickled object hold here
     reg_graph = models.ForeignKey(Graph_from_File, null=True, on_delete=models.SET_NULL, blank=True, related_name="regulatory_graph_quick")
     rea_graph = models.ForeignKey(Graph_from_File, null=True, on_delete=models.SET_NULL, blank=True, related_name="reaction_graph_quick")
     sRea_graph = models.ForeignKey(Graph_from_File, null=True, on_delete=models.SET_NULL, blank=True, related_name="species reaction_graph_quick+")
@@ -36,11 +37,15 @@ class Quick(models.Model):
     def __unicode__(self):
         return self.name
 
+    def load(self):
+        return reverse("quick_format:quick_load", kwargs={"id": self.id})
+
+    def get_filename(self):
+        # no real functionality in quick object, as these do not come from uploaded files
+        return self.name
+
     def get_absolute_url(self):
         return reverse("quick_format:quick_detail", kwargs={"id": self.id})
-
-    def load(self):
-        pass
 
     def get_download_url(self):
         media_url= settings.MEDIA_URL
@@ -55,13 +60,13 @@ class Quick(models.Model):
         path = "%s/%s/" % (media_root, self.slug)
         shutil.rmtree(path)
 
-    def create_rxncon_system(self):
-        try:
-            self.rxncon_system = rxncon_quick.Quick(str(self.quick_input)).rxncon_system
-            print("Created rxncon_system.")
-        except ImportError:
-            # catch rxncon error here
-            pass
+    # def create_rxncon_system(self):
+    #     try:
+    #         self.rxncon_system = rxncon_quick.Quick(str(self.quick_input)).rxncon_system
+    #         print("Created rxncon_system.")
+    #     except ImportError:
+    #         # catch rxncon error here
+    #         pass
 
 def pre_save_post_receiver(sender, instance, *args, **kwargs):
     if not instance.slug:

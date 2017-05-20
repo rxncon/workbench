@@ -27,7 +27,7 @@ class File(models.Model):
     comment= models.TextField(null=True, blank=True)
     timestamp = models.DateTimeField(auto_now=False, auto_now_add=True) #initial timestamp will be saved one time
     updated = models.DateTimeField(auto_now=True, auto_now_add=False)  # auto_now refers to every modification, updated gets reset when Post is updated -duh
-    rxncon_system = models.ForeignKey(Rxncon_system, null=True, on_delete=models.SET_NULL, blank=True, related_name="rxncon_system_file") #pickled object
+    rxncon_system = models.OneToOneField(Rxncon_system, null=True, on_delete=models.SET_NULL, blank=True, unique=True, related_name="rxncon_system_file") #pickled object hold here
     reg_graph = models.ForeignKey(Graph_from_File, null=True, on_delete=models.SET_NULL, blank=True, related_name="regulatory_graph_file")
     rea_graph = models.ForeignKey(Graph_from_File, null=True, on_delete=models.SET_NULL, blank=True, related_name="reaction_graph_file")
     sRea_graph = models.ForeignKey(Graph_from_File, null=True, on_delete=models.SET_NULL, blank=True, related_name="species reaction_graph_file+")

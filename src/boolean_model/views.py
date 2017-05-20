@@ -11,6 +11,9 @@ from .models import Bool_from_rxnconsys
 import os
 from quick_format.models import Quick
 from quick_format.views import quick_detail
+import pickle
+from rxncon_system.models import Rxncon_system
+
 import rxncon.input.excel_book.excel_book as rxncon_excel
 import rxncon.input.quick.quick as rxncon_quick
 import rxncon.simulation.boolean.boolean_model as rxncon_boolean_model
@@ -21,15 +24,15 @@ from rxncon.simulation.boolean.boolnet_from_boolean_model import QuantitativeCon
 
 
 
-def create_rxncon_system(system, system_type):
-    if system_type == "File":
-        try:
-            book = rxncon_excel.ExcelBook(system.get_absolute_path())
-        except:
-            book = rxncon_excel.ExcelBook(system.get_absolute_path())
-    else:
-        book = rxncon_quick.Quick(system.quick_input)
-    return book.rxncon_system
+# def create_rxncon_system(system, system_type):
+#     if system_type == "File":
+#         try:
+#             book = rxncon_excel.ExcelBook(system.get_absolute_path())
+#         except:
+#             book = rxncon_excel.ExcelBook(system.get_absolute_path())
+#     else:
+#         book = rxncon_quick.Quick(system.quick_input)
+#     return book.rxncon_system
 
 
 def check_filepath(request, file_path, file, media_root):
@@ -86,8 +89,8 @@ class Bool(View):
                     else:
                         return file_detail(request, system_id)
 
-            # rxncon_system = create_rxncon_system(system, system_type)
-            rxncon_system = system.rxncon_system
+            pickled_rxncon_system = Rxncon_system.objects.get(project_id=system_id, project_type=system_type)
+            rxncon_system = pickle.loads(pickled_rxncon_system.pickled_system)
 
             smoothing = SmoothingStrategy(request.POST.get('smoothing'))
             knockout = KnockoutStrategy(request.POST.get('knockout'))

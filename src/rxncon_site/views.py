@@ -55,11 +55,10 @@ def create_rxncon_system(system_type, system_id):
 
     return book.rxncon_system
 
-
 def create_rxncon_system_object(request, project_name, project_type, project_id):
     rxncon_system = create_rxncon_system(project_type, project_id)
     pickled_sys = pickle.dumps(rxncon_system)
-    sys_obj = Rxncon_system(project_name=project_name, pickled_system = pickled_sys, project_id=project_id)
+    sys_obj = Rxncon_system(project_name=project_name, pickled_system = pickled_sys, project_id=project_id, project_type= project_type)
     sys_obj.save()
     print("Rxncon system for project '" + project_name + "' successfully created.")
     messages.info(request, "Rxncon system for project '" + project_name + "' successfully created.")
