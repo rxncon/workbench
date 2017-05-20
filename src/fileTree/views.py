@@ -1,4 +1,3 @@
-from django.contrib import messages
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.core.urlresolvers import reverse
 from django.http import HttpResponse, HttpResponseRedirect
@@ -7,25 +6,24 @@ import rxncon.input.excel_book.excel_book as rxncon_excel
 import rxncon.input.quick.quick as rxncon_quick
 import rxncon.visualization.regulatory_graph as regulatory_graph
 import rxncon.visualization.graphML as graphML
-
-
+from rxncon_site.views import compare_systems, create_rxncon_system_object
+from django.contrib import messages
 from .models import File
 from quick_format.models import Quick
+from rxncon_system.models import Rxncon_system
 from .forms import FileForm, DeleteFileForm
 import django.forms as forms
-
+import pickle
 from rxncon_site.views import *
 
+# TODO: all prints in logger, use function from rxncon utils to to as in rxncon_system.py
 
 def file_detail(request, id, compare_dict = None):
     instance = File.objects.get(id=id)
     slug = File.objects.filter(id=id).values("slug")
     project_files = File.objects.filter(slug=slug).order_by("-updated")
-    try:
-        book = rxncon_excel.ExcelBook(instance.get_absolute_path())
-    except Exception as e:
-        raise ImportError("Could not import file")
-    rxncon_system = book.rxncon_system
+    pickled_rxncon_system= Rxncon_system.objects.get(project_id=id)
+    rxncon_system = pickle.loads(pickled_rxncon_system.pickled_system)
 
     context_data = {
         "project_files": project_files,
@@ -44,37 +42,39 @@ def file_detail(request, id, compare_dict = None):
 
 def file_compare(request, id):
     loaded = File.objects.filter(loaded=True)
+    # if loaded:
+    #     try:
+    #         loaded_rxncon = rxncon_excel.ExcelBook(loaded[0].get_absolute_path())
+    #     except:
+    #         raise ImportError("Could not import file")
+    #
+    # else:
+    #     loaded = Quick.objects.get(loaded=True)
+    #     try:
+    #         loaded_rxncon = rxncon_quick.Quick(loaded.quick_input)
+    #     except:
+    #         raise ImportError("Could not import quick")
+    #
+    #
+    # loaded_rxncon_system = loaded_rxncon.rxncon_system
     if loaded:
-        try:
-            loaded_rxncon = rxncon_excel.ExcelBook(loaded[0].get_absolute_path())
-        except:
-            raise ImportError("Could not import file")
+        loaded_rxncon_system = loaded.rxncon_system
 
-    else:
-        loaded = Quick.objects.get(loaded=True)
-        try:
-            loaded_rxncon = rxncon_quick.Quick(loaded.quick_input)
-        except:
-            raise ImportError("Could not import quick")
+        differences = compare_systems(request, id, loaded_rxncon_system)
 
-
-    loaded_rxncon_system = loaded_rxncon.rxncon_system
-
-    differences = compare_systems(request, id, loaded_rxncon_system)
-
-    compare_dict = {
-        "compare_nr_reactions": len(loaded_rxncon_system.reactions),
-        "compare_nr_contingencies": len(loaded_rxncon_system.contingencies),
-        "nr_different_reactions": differences["rxns"],
-        "nr_different_contingencies": differences["cnts"],
-    }
+        compare_dict = {
+            "compare_nr_reactions": len(loaded_rxncon_system.reactions),
+            "compare_nr_contingencies": len(loaded_rxncon_system.contingencies),
+            "nr_different_reactions": differences["rxns"],
+            "nr_different_contingencies": differences["cnts"],
+        }
 
 
-    return file_detail(request, id, compare_dict)
+        return file_detail(request, id, compare_dict)
 
 
 def file_upload(request, slug= None):
-    # TODO: like this, it is not case sensitive. "Elefant" and "elefant" are the same project
+    print("Entered file_upload")
     form = FileForm(request.POST or None, request.FILES or None)
     context = {}
     if slug != None: # add file to existing project
@@ -93,10 +93,12 @@ def file_upload(request, slug= None):
             pass
 
     if form.is_valid():
+        print("Valid form")
         instance = form.save(commit=False)
         instance.save()
-        messages.success(request, "Successfully created")
-        return HttpResponseRedirect(instance.get_absolute_url())
+        messages.success(request, "Successfully created.")
+        # return HttpResponseRedirect(instance.get_absolute_url())
+        return HttpResponseRedirect(instance.load())
 
     context.update({
         "form": form,
@@ -151,6 +153,8 @@ def file_delete_project(request, slug):
 def file_load(request, id):
     File.objects.all().update(loaded=False)
     Quick.objects.all().update(loaded=False)
+    rxncon_system = create_rxncon_system_object(request=request, project_name=File.objects.get(id=id).project_name, project_type="File", project_id=id)
+    # target.update(rxncon_system=rxncon_system)
     target = File.objects.filter(id=id)
     target.update(loaded=True)
     if target[0].loaded:

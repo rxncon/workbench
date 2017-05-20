@@ -7,12 +7,15 @@ from django.utils.text import slugify
 from graphs.models import Graph_from_File
 from boolean_model.models import Bool_from_rxnconsys
 from rule_based.models import Rule_based_from_rxnconsys
+from rxncon_system.models import Rxncon_system
 import os
 import shutil
+import rxncon.input.excel_book.excel_book as rxncon_excel
+from django.contrib import messages
 
 
+#TODO: PEP-8 coding style
 def upload_location(instance, filename):
-    # return "%s/%s" %(os.path.splitext(filename)[0],filename)
     return "%s/%s" %(instance.slug,filename)
 
 
@@ -24,6 +27,7 @@ class File(models.Model):
     comment= models.TextField(null=True, blank=True)
     timestamp = models.DateTimeField(auto_now=False, auto_now_add=True) #initial timestamp will be saved one time
     updated = models.DateTimeField(auto_now=True, auto_now_add=False)  # auto_now refers to every modification, updated gets reset when Post is updated -duh
+    rxncon_system = models.ForeignKey(Rxncon_system, null=True, on_delete=models.SET_NULL, blank=True, related_name="rxncon_system_file") #pickled object
     reg_graph = models.ForeignKey(Graph_from_File, null=True, on_delete=models.SET_NULL, blank=True, related_name="regulatory_graph_file")
     rea_graph = models.ForeignKey(Graph_from_File, null=True, on_delete=models.SET_NULL, blank=True, related_name="reaction_graph_file")
     sRea_graph = models.ForeignKey(Graph_from_File, null=True, on_delete=models.SET_NULL, blank=True, related_name="species reaction_graph_file+")
@@ -32,8 +36,12 @@ class File(models.Model):
 
     def __str__(self):
         return self.file.name
+
     def __unicode__(self):
         return self.file.name
+
+    def load(self):
+        return reverse("fileTree:load", kwargs={"id": self.id})
 
     def get_filename(self):
         return str(self.file.name).split("/")[-1]
@@ -46,6 +54,9 @@ class File(models.Model):
 
     def upload_new_version(self):
         return reverse("fileTree:upload", kwargs={"slug": self.slug, })
+
+    # def get_pickled_rxncon_system(self):
+    #     return self.rxncon_system.get_pickled_system()
 
     def get_download_url(self):
         media_url= settings.MEDIA_URL
@@ -64,24 +75,24 @@ class File(models.Model):
         path = os.path.dirname(path)
         shutil.rmtree(path)
 
+    # def create_rxncon_system(self):
+    #     try:
+    #         book= rxncon_excel.ExcelBook(self.get_absolute_path())
+    #         self.rxncon_system = book.rxncon_system
+    #         self.save(force_update=True)
+    #         print(self.rxncon_system.reactions)
+    #         print("Created rxncon_system.")
+    #     except ImportError as error:
+    #         messages.add_message(messages.ERROR, error)
+
+
     class Meta:
         ordering = ["-updated", "-timestamp"]
 
-def create_slug(instance, new_slug=None):
-    slug = slugify(instance.project_name)
-    # if new_slug is not None:
-    #     slug = new_slug
-    # qs = File.objects.filter(slug=slug).order_by("-id")
-    # exists = qs.exists()
-    # if exists:
-    #     new_slug = "%s-%s" %(slug, qs.first().id)
-    #     return create_slug(instance, new_slug=new_slug)
-    # return slug
 
 
 def pre_save_post_receiver(sender, instance, *args, **kwargs):
     if not instance.slug:
-        # instance.slug = create_slug(instance)
         instance.slug=slugify(instance.project_name)
 
 

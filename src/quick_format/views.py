@@ -9,6 +9,7 @@ import os
 import rxncon.input.quick.quick as rxncon_quick
 import rxncon.input.excel_book.excel_book as rxncon_excel
 from rxncon_site.views import *
+from rxncon_site.views import compare_systems
 
 
 
@@ -20,13 +21,14 @@ from .forms import QuickForm, DeleteQuickForm
 
 def quick_detail(request, id, compare_dict=None):
     instance = Quick.objects.get(id=id)
-    rxncon_system = rxncon_quick.Quick(instance.quick_input)
+    # rxncon_system = rxncon_quick.Quick(instance.quick_input)
+    rxncon_system = instance.rxncon_system
 
     context_data = {
         "title": instance.name,
         "instance": instance,
-        "nr_reactions": len(rxncon_system.rxncon_system.reactions),
-        "nr_contingencies": len(rxncon_system.rxncon_system.contingencies),
+        "nr_reactions": len(rxncon_system.reactions),
+        "nr_contingencies": len(rxncon_system.contingencies),
         "loaded": instance.loaded,
     }
 
@@ -38,20 +40,21 @@ def quick_detail(request, id, compare_dict=None):
 
 def quick_compare(request, id):
     loaded = File.objects.filter(loaded=True)
-    if loaded:
-        try:
-            loaded_rxncon = rxncon_excel.ExcelBook(loaded[0].get_absolute_path())
-        except:
-            raise ImportError("Could not import file")
-
-    else:
-        loaded = Quick.objects.get(loaded=True)
-        try:
-            loaded_rxncon = rxncon_quick.Quick(loaded.quick_input)
-        except:
-            raise ImportError("Could not import quick")
-
-    loaded_rxncon_system = loaded_rxncon.rxncon_system
+    # if loaded:
+    #     try:
+    #         loaded_rxncon = rxncon_excel.ExcelBook(loaded[0].get_absolute_path())
+    #     except:
+    #         raise ImportError("Could not import file")
+    #
+    # else:
+    #     loaded = Quick.objects.get(loaded=True)
+    #     try:
+    #         loaded_rxncon = rxncon_quick.Quick(loaded.quick_input)
+    #     except:
+    #         raise ImportError("Could not import quick")
+    #
+    # loaded_rxncon_system = loaded_rxncon.rxncon_system
+    loaded_rxncon_system = loaded.rxncon_system
 
     differences = compare_systems(request, id, loaded_rxncon_system, called_from="Quick")
 
@@ -75,6 +78,7 @@ def quick_new(request):
     if form.is_valid():
         instance = form.save(commit=False)
         instance.save()
+        instance.create_rxncon_system()
 
         filename = instance.slug + "_quick_definition.txt"
         model_path = "%s/%s/%s/%s" % (media_root, instance.slug, "description", filename)
@@ -118,6 +122,7 @@ def quick_update(request, id=None):
     form = QuickForm(request.POST or None, instance=instance)
     if form.is_valid():
         instance = form.save(commit=False)
+        instance.create_rxncon_system()
         instance.save()
         messages.success(request, "Item Saved", extra_tags='html_safe')
         return HttpResponseRedirect(instance.get_absolute_url())

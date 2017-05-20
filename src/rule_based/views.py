@@ -18,17 +18,6 @@ from rxncon.simulation.rule_based.bngl_from_rule_based_model import bngl_from_ru
 
 
 
-def create_rxncon_system(system, system_type):
-    if system_type == "File":
-        try:
-            book = rxncon_excel.ExcelBook(system.get_absolute_path())
-        except:
-            book = rxncon_excel.ExcelBook(system.get_absolute_path())
-    else:
-        book = rxncon_quick.Quick(system.quick_input)
-    return book.rxncon_system
-
-
 def check_filepath(request, file_path, file, media_root):
     if os.path.exists(file_path):
         messages.warning(request, "Rule based model files already exist. Delete first in the system's detail view.")
@@ -77,7 +66,9 @@ class Rule_based(View):
                 else:
                     return file_detail(request, system_id)
 
-            rxncon_system = create_rxncon_system(system, system_type)
+            # rxncon_system = create_rxncon_system(system, system_type)
+            rxncon_system = system.rxncon_system
+
             rbm = rule_based_model_from_rxncon(rxncon_system)
             model_str = bngl_from_rule_based_model(rbm)
 

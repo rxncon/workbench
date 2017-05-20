@@ -86,7 +86,8 @@ class Bool(View):
                     else:
                         return file_detail(request, system_id)
 
-            rxncon_system = create_rxncon_system(system, system_type)
+            # rxncon_system = create_rxncon_system(system, system_type)
+            rxncon_system = system.rxncon_system
 
             smoothing = SmoothingStrategy(request.POST.get('smoothing'))
             knockout = KnockoutStrategy(request.POST.get('knockout'))

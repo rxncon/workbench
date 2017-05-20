@@ -33,12 +33,12 @@ def apply_template_layout(request, graph_file_path, graph_string):
 
     return graph_string
 
-def create_rxncon_system(system, system_type):
-    if system_type == "File":
-            book = rxncon_excel.ExcelBook(system.get_absolute_path())
-    else:
-        book = rxncon_quick.Quick(system.quick_input)
-    return book.rxncon_system
+# def create_rxncon_system(system, system_type):
+#     if system_type == "File":
+#             book = rxncon_excel.ExcelBook(system.get_absolute_path())
+#     else:
+#         book = rxncon_quick.Quick(system.quick_input)
+#     return book.rxncon_system
 
 
 def check_filepath(request, graph_file_path, file, media_root):
@@ -74,7 +74,8 @@ def regGraphFile(request, system_id=None):
         if not check_filepath(request, graph_file_path, system, media_root):
             return file_detail(request, system_id)
 
-        rxncon_system = create_rxncon_system(system, "File")
+        # rxncon_system = create_rxncon_system(system, "File")
+        rxncon_system = system.rxncon_system
 
         graph = regulatory_graph.RegulatoryGraph(rxncon_system).to_graph()
         xgmml_graph = graphML.XGMML(graph, system.slug)
@@ -106,7 +107,8 @@ def regGraphQuick(request, system_id=None):
         if not check_filepath(request, graph_file_path, system, media_root):
             return quick_detail(request, system_id)
 
-        rxncon_system = create_rxncon_system(system, "Quick")
+        # rxncon_system = create_rxncon_system(system, "Quick")
+        rxncon_system = system.rxncon_system
         # graph_file, graph_string = create_graph_without_template(request, media_root, system, rxncon_system,
         #                                                          graph_file_path)
         graph = regulatory_graph.RegulatoryGraph(rxncon_system).to_graph()
@@ -163,7 +165,8 @@ class ReaGraph(View):
                 else:
                     return file_detail(request, system_id)
 
-            rxncon_system = create_rxncon_system(system, system_type)
+            # rxncon_system = create_rxncon_system(system, system_type)
+            rxncon_system = system.rxncon_system
 
             graph = reaction_graph.rxngraph_from_rxncon_system(rxncon_system).reaction_graph
 
@@ -225,7 +228,8 @@ class SReaGraph(ReaGraph):
                 else:
                     return file_detail(request, system_id)
 
-            rxncon_system = create_rxncon_system(system, system_type)
+            # rxncon_system = create_rxncon_system(system, system_type)
+            rxncon_system = system.rxncon_system
 
             graph = regulatory_graph.ReactionSpeciesGraph(rxncon_system=rxncon_system).regulatory_graph
 

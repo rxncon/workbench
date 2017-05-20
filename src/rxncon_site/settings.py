@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'quick_format',
     'graphs',
     'boolean_model',
-    'rule_based'
+    'rule_based',
+    'rxncon_system'
 ]
 
 MIDDLEWARE_CLASSES = [
