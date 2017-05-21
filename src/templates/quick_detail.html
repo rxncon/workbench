@@ -38,47 +38,48 @@
                 <p>{{instance.comment|linebreaks}}</p>
             </div>
         </div>
+        {% if nr_reactions %}
+            {% if compare_nr_reactions is None  %}
+                <div class = "infos">
+                    <h5>Infos:</h5>
+                    <ul>
+                        <li>Number of Reactions: {{ nr_reactions }}</li>
+                        <li>Number of Contingencies: {{ nr_contingencies }}</li>
+                        <li>Loaded: {{ loaded }}</li>
+                    </ul>
 
-        {% if compare_nr_reactions is None %}
-            <div class = "infos">
-                <h5>Infos:</h5>
-                <ul>
-                    <li>Number of Reactions: {{ nr_reactions }}</li>
-                    <li>Number of Contingencies: {{ nr_contingencies }}</li>
-                    <li>Loaded: {{ loaded }}</li>
-                </ul>
+                    {% if loaded == False %}
+                        <div class="compare_button">
+                            <a href="{% url 'quick_format:quick_compare' id=instance.id %}" class="btn btn-primary btn-xs " title="Compare with loaded">Compare</a>
+                        </div>
+                    {% endif %}
+                </div>
+            {% else %}
+            <h5>Infos:</h5>
+                <div class = "infos">
+                    <div class="tg-wrap"><table>
+                      <tr>
+                        <th></th>
+                        <th>This system<br></th>
+                        <th>Loaded system<br></th>
+                          <th title="Number of entries, that do not occur in the loaded system."># different <br></th>
+                      </tr>
+                      <tr>
+                        <td># Reactions<br></td>
+                        <td>{{ nr_reactions }}</td>
+                        <td>{{ compare_nr_reactions }}</td>
+                        <td>{{ nr_different_reactions}}</td>
+                      </tr>
+                      <tr>
+                        <td># Contingencies</td>
+                        <td>{{ nr_contingencies }}</td>
+                        <td>{{ compare_nr_contingencies }}</td>
+                        <td>{{ nr_different_contingencies}}</td>
+                      </tr>
 
-                {% if loaded == False %}
-                    <div class="compare_button">
-                        <a href="{% url 'quick_format:quick_compare' id=instance.id %}" class="btn btn-primary btn-xs " title="Compare with loaded">Compare</a>
-                    </div>
-                {% endif %}
-            </div>
-        {% else %}
-        <h5>Infos:</h5>
-            <div class = "infos">
-                <div class="tg-wrap"><table>
-                  <tr>
-                    <th></th>
-                    <th>This system<br></th>
-                    <th>Loaded system<br></th>
-                      <th title="Number of entries, that do not occur in the loaded system."># different <br></th>
-                  </tr>
-                  <tr>
-                    <td># Reactions<br></td>
-                    <td>{{ nr_reactions }}</td>
-                    <td>{{ compare_nr_reactions }}</td>
-                    <td>{{ nr_different_reactions}}</td>
-                  </tr>
-                  <tr>
-                    <td># Contingencies</td>
-                    <td>{{ nr_contingencies }}</td>
-                    <td>{{ compare_nr_contingencies }}</td>
-                    <td>{{ nr_different_contingencies}}</td>
-                  </tr>
-
-                </table></div>
-            </div>
+                    </table></div>
+                </div>
+            {% endif %}
         {% endif %}
 
         {% if instance.rea_graph %}

@@ -22,17 +22,22 @@ def file_detail(request, id, compare_dict = None):
     instance = File.objects.get(id=id)
     slug = File.objects.filter(id=id).values("slug")
     project_files = File.objects.filter(slug=slug).order_by("-updated")
-    pickled_rxncon_system = Rxncon_system.objects.get(project_id=id, project_type="File")
-    rxncon_system = pickle.loads(pickled_rxncon_system.pickled_system)
+    if instance.rxncon_system:
+        pickled_rxncon_system = Rxncon_system.objects.get(project_id=id, project_type="File")
+        rxncon_system = pickle.loads(pickled_rxncon_system.pickled_system)
+    else:
+        rxncon_system = None
 
     context_data = {
         "project_files": project_files,
         "title": instance.project_name,
         "instance": instance,
-        "nr_reactions": len(rxncon_system.reactions),
-        "nr_contingencies": len(rxncon_system.contingencies),
         "loaded": instance.loaded,
     }
+
+    if rxncon_system:
+        context_data["nr_reactions"] = len(rxncon_system.reactions)
+        context_data["nr_contingencies"] = len(rxncon_system.contingencies)
 
     if compare_dict:
         context_data.update(compare_dict)
@@ -96,7 +101,6 @@ def file_upload(request, slug= None):
         print("Valid form")
         instance = form.save(commit=False)
         instance.save()
-        messages.success(request, "Successfully created.")
         # return HttpResponseRedirect(instance.get_absolute_url())
         return HttpResponseRedirect(instance.load())
 
@@ -154,7 +158,18 @@ def file_load(request, id):
     File.objects.all().update(loaded=False)
     Quick.objects.all().update(loaded=False)
     if not File.objects.get(id=id).rxncon_system:
-        rxncon_system = create_rxncon_system_object(request=request, project_name=File.objects.get(id=id).project_name, project_type="File", project_id=id)
+        try:
+            rxncon_system = create_rxncon_system_object(request=request, project_name=File.objects.get(id=id).project_name, project_type="File", project_id=id)
+        except SyntaxError as e:
+
+            context={
+                "project_name" : File.objects.get(id=id).project_name,
+                "file_name": File.objects.get(id=id).get_filename(),
+                "error": e
+            }
+            return render(request, 'error.html', context)
+    else:
+        rxncon_system = File.objects.get(id=id).rxncon_system
     target = File.objects.filter(id=id)
     target.update(loaded=True)
     target.update(rxncon_system=rxncon_system)

@@ -45,23 +45,24 @@ def compare_systems(request, id, system, called_from="File"):
 def guided_tour(request):
     return render(request, "guided_tour.html")
 
-def create_rxncon_system(system_type, system_id):
+def create_rxncon_system(request, system_type, system_id):
     if system_type=="File":
         system = File.objects.filter(id=system_id)[0]
         book = rxncon_excel.ExcelBook(system.get_absolute_path())
+
     else:
         system = Quick.objects.filter(id=system_id)[0]
         book = rxncon_quick.Quick(system.quick_input)
-
     return book.rxncon_system
 
 def create_rxncon_system_object(request, project_name, project_type, project_id):
-    rxncon_system = create_rxncon_system(project_type, project_id)
-    pickled_sys = pickle.dumps(rxncon_system)
-    sys_obj = Rxncon_system(project_name=project_name, pickled_system = pickled_sys, project_id=project_id, project_type= project_type)
-    sys_obj.save()
-    print("Rxncon system for project '" + project_name + "' successfully created.")
-    messages.info(request, "Rxncon system for project '" + project_name + "' successfully created.")
-    return sys_obj
+    rxncon_system = create_rxncon_system(request, project_type, project_id)
+    if rxncon_system:
+        pickled_sys = pickle.dumps(rxncon_system)
+        sys_obj = Rxncon_system(project_name=project_name, pickled_system = pickled_sys, project_id=project_id, project_type= project_type)
+        sys_obj.save()
+        print("Rxncon system for project '" + project_name + "' successfully created.")
+        messages.info(request, "Rxncon system for project '" + project_name + "' successfully created.")
+        return sys_obj
 
 

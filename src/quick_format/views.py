@@ -18,16 +18,22 @@ from .forms import QuickForm, DeleteQuickForm
 
 def quick_detail(request, id, compare_dict=None):
     instance = Quick.objects.get(id=id)
-    pickled_rxncon_system = Rxncon_system.objects.get(project_id=id, project_type="Quick")
-    rxncon_system = pickle.loads(pickled_rxncon_system.pickled_system)
+    if instance.rxncon_system:
+        pickled_rxncon_system = Rxncon_system.objects.get(project_id=id, project_type="Quick")
+        rxncon_system = pickle.loads(pickled_rxncon_system.pickled_system)
+    else:
+        rxncon_system = None
 
     context_data = {
         "title": instance.name,
         "instance": instance,
-        "nr_reactions": len(rxncon_system.reactions),
-        "nr_contingencies": len(rxncon_system.contingencies),
         "loaded": instance.loaded,
     }
+
+    if rxncon_system:
+        context_data["nr_reactions"] = len(rxncon_system.reactions)
+        context_data["nr_contingencies"] = len(rxncon_system.contingencies)
+
 
     if compare_dict:
         context_data.update(compare_dict)
@@ -67,7 +73,6 @@ def quick_compare(request, id):
 
 
 def quick_new(request):
-    # TODO: like this, it is not case sensitive. "Elefant" and "elefant" are the same project
     form = QuickForm(request.POST or None, request.FILES or None)
     media_url = settings.MEDIA_URL
     media_root = settings.MEDIA_ROOT
@@ -78,14 +83,20 @@ def quick_new(request):
 
         filename = instance.slug + "_quick_definition.txt"
         model_path = "%s/%s/%s/%s" % (media_root, instance.slug, "description", filename)
-        os.mkdir("%s/%s" % (media_root, instance.slug))
-        os.mkdir("%s/%s/%s" % (media_root, instance.slug, "description"))
 
-        with open(model_path, mode='w') as f:
-            f.write(instance.quick_input)
+        try:
+            os.mkdir("%s/%s" % (media_root, instance.slug))
+            os.mkdir("%s/%s/%s" % (media_root, instance.slug, "description"))
+            with open(model_path, mode='w') as f:
+                f.write(instance.quick_input)
+        except FileExistsError as e:
+            context = {
+                "project_name": instance.name,
+                "error": "There already is a project with the name \"" + str(instance.name) +"\". Please choose another name."
+            }
+            instance.delete()
+            return render(request, 'error.html', context)
 
-        messages.success(request, "Successfully created")
-        # return HttpResponseRedirect(instance.get_absolute_url())
         return HttpResponseRedirect(instance.load())
 
     context={
@@ -133,8 +144,19 @@ def quick_update(request, id=None):
 def quick_load(request, id):
     File.objects.all().update(loaded=False)
     Quick.objects.all().update(loaded=False)
-    rxncon_system = create_rxncon_system_object(request=request, project_name=Quick.objects.get(id=id).name,
+    if not Quick.objects.get(id=id).rxncon_system:
+        try:
+            rxncon_system = create_rxncon_system_object(request=request, project_name=Quick.objects.get(id=id).name,
                                                 project_type="Quick", project_id=id)
+        except SyntaxError as e:
+            context = {
+                "project_name": Quick.objects.get(id=id).name,
+                "error": e
+            }
+            return render(request, 'error.html', context)
+    else:
+        rxncon_system = Quick.objects.get(id=id).rxncon_system
+
     target = Quick.objects.filter(id=id)
     target.update(loaded=True)
     target.update(rxncon_system=rxncon_system)
