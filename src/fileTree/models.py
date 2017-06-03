@@ -68,7 +68,9 @@ class File(models.Model):
 
     def delete_file_from_harddisk(self):
         path = self.get_absolute_path()
-        os.remove(path)
+        # os.remove(path)
+        path = os.path.dirname(path)
+        shutil.rmtree(path)
 
     def delete_project_from_harddisk(self):
         path = self.get_absolute_path()

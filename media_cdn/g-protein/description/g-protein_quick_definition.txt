@@ -1,5 +1,0 @@
-GPCR_ppi_Adrenalin
-G_[gamma]_ppi+_G_[beta]
-G_[beta]_p+_G_[alpha(GDP)]; ! G_[beta]--G_[gamma]; !GPCR--Adrenalin
-G_[gamma]_ppi-_G_[beta]; ! G_[alpha]-{p}
-G_[alpha]_ppi_AC; !G_[alpha]-{p}

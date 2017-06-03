@@ -114,16 +114,34 @@ def file_delete(request, pk):
     project_name = f.project_name
     timestamp = f.timestamp
     filename = f.get_filename()
-    slug = f.slug
+    download = f.get_download_url()
     if request.method == 'POST':
         form = DeleteFileForm(request.POST, instance=f)
-
         if form.is_valid(): # checks CSRF
+            if f.rxncon_system:
+                f.rxncon_system.delete()
+            if f.reg_graph:
+                f.reg_graph.delete()
+            if f.rea_graph:
+                f.rea_graph.delete()
+            if f.sRea_graph:
+                f.sRea_graph.delete()
+            if f.boolean_model:
+                f.boolean_model.delete()
+            if f.rule_based_model:
+                f.rule_based_model.delete()
+
             f.delete_file_from_harddisk()
             f.delete()
-            other_file_id = str(File.objects.filter(project_name=project_name).latest("updated").id)
             messages.success(request, "Successfully deleted")
-            return HttpResponseRedirect("/files/"+other_file_id+"/") # wherever to go after deleting
+            try:
+                other_file_id = str(File.objects.filter(project_name=project_name).latest("updated").id)
+                if other_file_id:
+                    return HttpResponseRedirect("/files/" + other_file_id + "/")  # wherever to go after deleting
+            except:
+                return HttpResponseRedirect("/")
+
+
     else:
         form = DeleteFileForm(instance=f)
 
@@ -131,6 +149,7 @@ def file_delete(request, pk):
                      'project_name': project_name,
                      "timestamp": timestamp,
                      "file": filename,
+                     "download": download,
                      }
     return render(request, 'file_delete.html', template_vars)
 
@@ -142,6 +161,18 @@ def file_delete_project(request, slug):
     if request.method == 'POST':
         form = DeleteFileForm(request.POST, instance=f)
         if form.is_valid(): # checks CSRF
+            if f.rxncon_system:
+                f.rxncon_system.delete()
+            if f.reg_graph:
+                f.reg_graph.delete()
+            if f.rea_graph:
+                f.rea_graph.delete()
+            if f.sRea_graph:
+                f.sRea_graph.delete()
+            if f.boolean_model:
+                f.boolean_model.delete()
+            if f.rule_based_model:
+                f.rule_based_model.delete()
             f.delete_project_from_harddisk()
             project.delete()
             messages.success(request, "Successfully deleted")
@@ -151,6 +182,7 @@ def file_delete_project(request, slug):
     template_vars = {'form': form,
                      'project': project_name,
                      "timestamp": timestamp,
+                     "download": f.get_download_url(),
                         }
     return render(request, 'file_delete.html', template_vars)
 

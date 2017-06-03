@@ -109,8 +109,19 @@ def quick_delete(request, id):
     q = get_object_or_404(Quick, id=id)
     if request.method == 'POST':
         form = DeleteQuickForm(request.POST, instance=q)
-
         if form.is_valid(): # checks CSRF
+            if q.rxncon_system:
+                q.rxncon_system.delete()
+            if q.reg_graph:
+                q.reg_graph.delete()
+            if q.rea_graph:
+                q.rea_graph.delete()
+            if q.sRea_graph:
+                q.sRea_graph.delete()
+            if q.boolean_model: 
+                q.boolean_model.delete()
+            if q.rule_based_model:
+                q.rule_based_model.delete()
             q.delete_from_harddisk()
             q.delete()
             messages.success(request, "Successfully deleted")
