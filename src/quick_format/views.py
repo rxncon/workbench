@@ -133,11 +133,12 @@ def quick_update(request, id=None):
     instance = get_object_or_404(Quick, id=id)
     form = QuickForm(request.POST or None, instance=instance)
     if form.is_valid():
+        # instance.rxncon_system = None
         instance = form.save(commit=False)
         instance.save()
         messages.success(request, "Item Saved", extra_tags='html_safe')
-        return HttpResponseRedirect(instance.get_absolute_url())
-
+        # return HttpResponseRedirect(instance.load())
+        return quick_load(request, id, update=True)
     context_data = {
         "title": instance.name,
         "instance":instance,
@@ -145,7 +146,10 @@ def quick_update(request, id=None):
     }
     return render(request, "quick_form.html", context_data)
 
-def quick_load(request, id):
+
+
+
+def quick_load(request, id, update=False):
     File.objects.all().update(loaded=False)
     Quick.objects.all().update(loaded=False)
     if not Quick.objects.get(id=id).rxncon_system:
@@ -158,6 +162,11 @@ def quick_load(request, id):
                 "error": e
             }
             return render(request, 'error.html', context)
+    elif update:
+        Quick.objects.get(id=id).rxncon_system.delete()
+        rxncon_system = create_rxncon_system_object(request=request, project_name=Quick.objects.get(id=id).name,
+                                                    project_type="Quick", project_id=id)
+
     else:
         rxncon_system = Quick.objects.get(id=id).rxncon_system
 
