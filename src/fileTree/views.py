@@ -47,35 +47,25 @@ def file_detail(request, id, compare_dict = None):
 
 def file_compare(request, id):
     loaded = File.objects.filter(loaded=True)
-    # if loaded:
-    #     try:
-    #         loaded_rxncon = rxncon_excel.ExcelBook(loaded[0].get_absolute_path())
-    #     except:
-    #         raise ImportError("Could not import file")
-    #
-    # else:
-    #     loaded = Quick.objects.get(loaded=True)
-    #     try:
-    #         loaded_rxncon = rxncon_quick.Quick(loaded.quick_input)
-    #     except:
-    #         raise ImportError("Could not import quick")
-    #
-    #
-    # loaded_rxncon_system = loaded_rxncon.rxncon_system
-    if loaded:
-        loaded_rxncon_system = loaded.rxncon_system
+    if not loaded:
+        # Quick
+        loaded = Quick.objects.filter(loaded=True)
+        pickled_rxncon_system = Rxncon_system.objects.get(project_id=loaded[0].id, project_type="Quick")
+    else:
+        # File
+        pickled_rxncon_system = Rxncon_system.objects.get(project_id=loaded[0].id, project_type="File")
 
-        differences = compare_systems(request, id, loaded_rxncon_system)
+    loaded_rxncon_system = pickle.loads(pickled_rxncon_system.pickled_system)
+    differences = compare_systems(request, id, loaded_rxncon_system, called_from="Quick")
 
-        compare_dict = {
+    compare_dict = {
             "compare_nr_reactions": len(loaded_rxncon_system.reactions),
             "compare_nr_contingencies": len(loaded_rxncon_system.contingencies),
             "nr_different_reactions": differences["rxns"],
             "nr_different_contingencies": differences["cnts"],
         }
 
-
-        return file_detail(request, id, compare_dict)
+    return file_detail(request, id, compare_dict)
 
 
 def file_upload(request, slug= None):

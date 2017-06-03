@@ -27,7 +27,7 @@ def support(request):
     return render(request, "static_pages/support.html")
 
 def compare_systems(request, id, system, called_from="File"):
-    rxncon_system = system.rxncon_system
+    rxncon_system = system#.rxncon_system
 
     rxns = 0
     for rxn in rxncon_system.reactions:
