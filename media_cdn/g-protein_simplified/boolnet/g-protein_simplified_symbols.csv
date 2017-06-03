@@ -1,0 +1,13 @@
+R0, GPCR_[Adrenalin]_ppi+_Adrenalin_[GPCR]
+R1, GPCR_[Adrenalin]_ppi-_Adrenalin_[GPCR]
+R2, G_[alpha]_ppi+_AC_[G]
+R3, G_[alpha]_ppi-_AC_[G]
+R4, G_ap+_G_[alpha(GDP)]
+S0, AC_[G]--0
+S1, AC_[G]--G_[alpha]
+S2, Adrenalin_[GPCR]--0
+S3, Adrenalin_[GPCR]--GPCR_[Adrenalin]
+S4, GPCR_[Adrenalin]--0
+S5, G_[alpha(GDP)]-{0}
+S6, G_[alpha(GDP)]-{p}
+S7, G_[alpha]--0

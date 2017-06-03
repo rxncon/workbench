@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+    <graph directed="1"  xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.cs.rpi.edu/XGMML">
+    <att name="selected" value="1" type="boolean" />
+    <att name="name" value="g-protein" type="string"/>
+    <att name="shared name" value="g-protein" type="string"/>
+    
+<node id="G_[alpha]_ppi+_AC_[G]" label="G_[alpha]_ppi+_AC_[G]"><att name="rxnconID" value="G_[alpha]_ppi+_AC_[G]" type="string"/><att name="type" value="reaction" type="string"/></node>
+<node id="Adrenalin_[GPCR]--GPCR_[Adrenalin]" label="Adrenalin_[GPCR]--GPCR_[Adrenalin]"><att name="rxnconID" value="Adrenalin_[GPCR]--GPCR_[Adrenalin]" type="string"/><att name="type" value="state" type="string"/></node>
+<node id="G_[gamma]_ppi-_G_[beta]" label="G_[gamma]_ppi-_G_[beta]"><att name="rxnconID" value="G_[gamma]_ppi-_G_[beta]" type="string"/><att name="type" value="reaction" type="string"/></node>
+<node id="AC_[G]--G_[alpha]" label="AC_[G]--G_[alpha]"><att name="rxnconID" value="AC_[G]--G_[alpha]" type="string"/><att name="type" value="state" type="string"/></node>
+<node id="GPCR_[Adrenalin]_ppi+_Adrenalin_[GPCR]" label="GPCR_[Adrenalin]_ppi+_Adrenalin_[GPCR]"><att name="rxnconID" value="GPCR_[Adrenalin]_ppi+_Adrenalin_[GPCR]" type="string"/><att name="type" value="reaction" type="string"/></node>
+<node id="G_[alpha(GDP)]-{p}" label="G_[alpha(GDP)]-{p}"><att name="rxnconID" value="G_[alpha(GDP)]-{p}" type="string"/><att name="type" value="state" type="string"/></node>
+<node id="GPCR_[Adrenalin]_ppi-_Adrenalin_[GPCR]" label="GPCR_[Adrenalin]_ppi-_Adrenalin_[GPCR]"><att name="rxnconID" value="GPCR_[Adrenalin]_ppi-_Adrenalin_[GPCR]" type="string"/><att name="type" value="reaction" type="string"/></node>
+<node id="G_ap+_G_[alpha(GDP)]" label="G_ap+_G_[alpha(GDP)]"><att name="rxnconID" value="G_ap+_G_[alpha(GDP)]" type="string"/><att name="type" value="reaction" type="string"/></node>
+<node id="G_[gamma]_ppi+_G_[beta]" label="G_[gamma]_ppi+_G_[beta]"><att name="rxnconID" value="G_[gamma]_ppi+_G_[beta]" type="string"/><att name="type" value="reaction" type="string"/></node>
+<node id="G_[beta]--G_[gamma]" label="G_[beta]--G_[gamma]"><att name="rxnconID" value="G_[beta]--G_[gamma]" type="string"/><att name="type" value="state" type="string"/></node>
+<node id="G_[alpha]_ppi-_AC_[G]" label="G_[alpha]_ppi-_AC_[G]"><att name="rxnconID" value="G_[alpha]_ppi-_AC_[G]" type="string"/><att name="type" value="reaction" type="string"/></node>
+<edge source="G_[alpha]_ppi+_AC_[G]" target="AC_[G]--G_[alpha]"><att name="interaction" value="produce" type="string"/></edge>
+<edge source="Adrenalin_[GPCR]--GPCR_[Adrenalin]" target="GPCR_[Adrenalin]_ppi-_Adrenalin_[GPCR]"><att name="interaction" value="ss" type="string"/></edge>
+<edge source="Adrenalin_[GPCR]--GPCR_[Adrenalin]" target="G_ap+_G_[alpha(GDP)]"><att name="interaction" value="!" type="string"/></edge>
+<edge source="G_[gamma]_ppi-_G_[beta]" target="G_[beta]--G_[gamma]"><att name="interaction" value="consume" type="string"/></edge>
+<edge source="AC_[G]--G_[alpha]" target="G_[alpha]_ppi-_AC_[G]"><att name="interaction" value="ss" type="string"/></edge>
+<edge source="GPCR_[Adrenalin]_ppi+_Adrenalin_[GPCR]" target="Adrenalin_[GPCR]--GPCR_[Adrenalin]"><att name="interaction" value="produce" type="string"/></edge>
+<edge source="G_[alpha(GDP)]-{p}" target="G_[alpha]_ppi+_AC_[G]"><att name="interaction" value="!" type="string"/></edge>
+<edge source="G_[alpha(GDP)]-{p}" target="G_[gamma]_ppi-_G_[beta]"><att name="interaction" value="!" type="string"/></edge>
+<edge source="GPCR_[Adrenalin]_ppi-_Adrenalin_[GPCR]" target="Adrenalin_[GPCR]--GPCR_[Adrenalin]"><att name="interaction" value="consume" type="string"/></edge>
+<edge source="G_ap+_G_[alpha(GDP)]" target="G_[alpha(GDP)]-{p}"><att name="interaction" value="produce" type="string"/></edge>
+<edge source="G_[gamma]_ppi+_G_[beta]" target="G_[beta]--G_[gamma]"><att name="interaction" value="produce" type="string"/></edge>
+<edge source="G_[beta]--G_[gamma]" target="G_ap+_G_[alpha(GDP)]"><att name="interaction" value="!" type="string"/></edge>
+<edge source="G_[beta]--G_[gamma]" target="G_[gamma]_ppi-_G_[beta]"><att name="interaction" value="ss" type="string"/></edge>
+<edge source="G_[alpha]_ppi-_AC_[G]" target="AC_[G]--G_[alpha]"><att name="interaction" value="consume" type="string"/></edge>
+</graph>

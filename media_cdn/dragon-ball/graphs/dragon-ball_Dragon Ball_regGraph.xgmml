@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+    <graph directed="1"  xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.cs.rpi.edu/XGMML">
+    <att name="selected" value="1" type="boolean" />
+    <att name="name" value="dragon-ball" type="string"/>
+    <att name="shared name" value="dragon-ball" type="string"/>
+    
+<node id="Potara_[Vegeta]--Vegeta_[RightEar]" label="Potara_[Vegeta]--Vegeta_[RightEar]"><att name="rxnconID" value="Potara_[Vegeta]--Vegeta_[RightEar]" type="string"/><att name="type" value="state" type="string"/></node>
+<node id="Goku_[IndexFingers]_ppi-_Vegeta_[IndexFingers]" label="Goku_[IndexFingers]_ppi-_Vegeta_[IndexFingers]"><att name="rxnconID" value="Goku_[IndexFingers]_ppi-_Vegeta_[IndexFingers]" type="string"/><att name="type" value="reaction" type="string"/></node>
+<node id="Vegeta_[RightEar]_ppi+_Potara_[Vegeta]" label="Vegeta_[RightEar]_ppi+_Potara_[Vegeta]"><att name="rxnconID" value="Vegeta_[RightEar]_ppi+_Potara_[Vegeta]" type="string"/><att name="type" value="reaction" type="string"/></node>
+<node id="KI_p+_Vegeta_[(ki)]" label="KI_p+_Vegeta_[(ki)]"><att name="rxnconID" value="KI_p+_Vegeta_[(ki)]" type="string"/><att name="type" value="reaction" type="string"/></node>
+<node id="Goku_[(ki)]-{p}" label="Goku_[(ki)]-{p}"><att name="rxnconID" value="Goku_[(ki)]-{p}" type="string"/><att name="type" value="state" type="string"/></node>
+<node id="Goku_[Vegeta]_ppi-_Vegeta_[Goku]" label="Goku_[Vegeta]_ppi-_Vegeta_[Goku]"><att name="rxnconID" value="Goku_[Vegeta]_ppi-_Vegeta_[Goku]" type="string"/><att name="type" value="reaction" type="string"/></node>
+<node id="Goku_[LeftEar]_ppi+_Potara_[Goku]" label="Goku_[LeftEar]_ppi+_Potara_[Goku]"><att name="rxnconID" value="Goku_[LeftEar]_ppi+_Potara_[Goku]" type="string"/><att name="type" value="reaction" type="string"/></node>
+<node id="Goku_[IndexFingers]--Vegeta_[IndexFingers]" label="Goku_[IndexFingers]--Vegeta_[IndexFingers]"><att name="rxnconID" value="Goku_[IndexFingers]--Vegeta_[IndexFingers]" type="string"/><att name="type" value="state" type="string"/></node>
+<node id="Goku_[RightEar]--Potara_[Goku]" label="Goku_[RightEar]--Potara_[Goku]"><att name="rxnconID" value="Goku_[RightEar]--Potara_[Goku]" type="string"/><att name="type" value="state" type="string"/></node>
+<node id="Goku_[Vegeta]_ppi+_Vegeta_[Goku]" label="Goku_[Vegeta]_ppi+_Vegeta_[Goku]"><att name="rxnconID" value="Goku_[Vegeta]_ppi+_Vegeta_[Goku]" type="string"/><att name="type" value="reaction" type="string"/></node>
+<node id="Goku_[IndexFingers]_ppi+_Vegeta_[IndexFingers]" label="Goku_[IndexFingers]_ppi+_Vegeta_[IndexFingers]"><att name="rxnconID" value="Goku_[IndexFingers]_ppi+_Vegeta_[IndexFingers]" type="string"/><att name="type" value="reaction" type="string"/></node>
+<node id="Goku_[Vegeta]--Vegeta_[Goku]" label="Goku_[Vegeta]--Vegeta_[Goku]"><att name="rxnconID" value="Goku_[Vegeta]--Vegeta_[Goku]" type="string"/><att name="type" value="state" type="string"/></node>
+<node id="Vegeta_[LeftEar]_ppi+_Potara_[Vegeta]" label="Vegeta_[LeftEar]_ppi+_Potara_[Vegeta]"><att name="rxnconID" value="Vegeta_[LeftEar]_ppi+_Potara_[Vegeta]" type="string"/><att name="type" value="reaction" type="string"/></node>
+<node id="Goku_[LeftEar]--Potara_[Goku]" label="Goku_[LeftEar]--Potara_[Goku]"><att name="rxnconID" value="Goku_[LeftEar]--Potara_[Goku]" type="string"/><att name="type" value="state" type="string"/></node>
+<node id="KI_p+_Goku_[(ki)]" label="KI_p+_Goku_[(ki)]"><att name="rxnconID" value="KI_p+_Goku_[(ki)]" type="string"/><att name="type" value="reaction" type="string"/></node>
+<node id="Goku_[LeftEar]_ppi-_Potara_[Goku]" label="Goku_[LeftEar]_ppi-_Potara_[Goku]"><att name="rxnconID" value="Goku_[LeftEar]_ppi-_Potara_[Goku]" type="string"/><att name="type" value="reaction" type="string"/></node>
+<node id="Potara_[Vegeta]--Vegeta_[LeftEar]" label="Potara_[Vegeta]--Vegeta_[LeftEar]"><att name="rxnconID" value="Potara_[Vegeta]--Vegeta_[LeftEar]" type="string"/><att name="type" value="state" type="string"/></node>
+<node id="Vegeta_[LeftEar]_ppi-_Potara_[Vegeta]" label="Vegeta_[LeftEar]_ppi-_Potara_[Vegeta]"><att name="rxnconID" value="Vegeta_[LeftEar]_ppi-_Potara_[Vegeta]" type="string"/><att name="type" value="reaction" type="string"/></node>
+<node id="Goku_[RightEar]_ppi+_Potara_[Goku]" label="Goku_[RightEar]_ppi+_Potara_[Goku]"><att name="rxnconID" value="Goku_[RightEar]_ppi+_Potara_[Goku]" type="string"/><att name="type" value="reaction" type="string"/></node>
+<node id="Vegeta_[(ki)]-{p}" label="Vegeta_[(ki)]-{p}"><att name="rxnconID" value="Vegeta_[(ki)]-{p}" type="string"/><att name="type" value="state" type="string"/></node>
+<node id="Vegeta_[RightEar]_ppi-_Potara_[Vegeta]" label="Vegeta_[RightEar]_ppi-_Potara_[Vegeta]"><att name="rxnconID" value="Vegeta_[RightEar]_ppi-_Potara_[Vegeta]" type="string"/><att name="type" value="reaction" type="string"/></node>
+<node id="Goku_[RightEar]_ppi-_Potara_[Goku]" label="Goku_[RightEar]_ppi-_Potara_[Goku]"><att name="rxnconID" value="Goku_[RightEar]_ppi-_Potara_[Goku]" type="string"/><att name="type" value="reaction" type="string"/></node>
+<edge source="Potara_[Vegeta]--Vegeta_[RightEar]" target="Vegeta_[RightEar]_ppi-_Potara_[Vegeta]"><att name="interaction" value="ss" type="string"/></edge>
+<edge source="Goku_[IndexFingers]_ppi-_Vegeta_[IndexFingers]" target="Goku_[IndexFingers]--Vegeta_[IndexFingers]"><att name="interaction" value="consume" type="string"/></edge>
+<edge source="Vegeta_[RightEar]_ppi+_Potara_[Vegeta]" target="Potara_[Vegeta]--Vegeta_[RightEar]"><att name="interaction" value="produce" type="string"/></edge>
+<edge source="KI_p+_Vegeta_[(ki)]" target="Vegeta_[(ki)]-{p}"><att name="interaction" value="produce" type="string"/></edge>
+<edge source="Goku_[Vegeta]_ppi-_Vegeta_[Goku]" target="Goku_[Vegeta]--Vegeta_[Goku]"><att name="interaction" value="consume" type="string"/></edge>
+<edge source="Goku_[LeftEar]_ppi+_Potara_[Goku]" target="Goku_[LeftEar]--Potara_[Goku]"><att name="interaction" value="produce" type="string"/></edge>
+<edge source="Goku_[IndexFingers]--Vegeta_[IndexFingers]" target="Goku_[IndexFingers]_ppi-_Vegeta_[IndexFingers]"><att name="interaction" value="ss" type="string"/></edge>
+<edge source="Goku_[RightEar]--Potara_[Goku]" target="Goku_[RightEar]_ppi-_Potara_[Goku]"><att name="interaction" value="ss" type="string"/></edge>
+<edge source="Goku_[Vegeta]_ppi+_Vegeta_[Goku]" target="Goku_[Vegeta]--Vegeta_[Goku]"><att name="interaction" value="produce" type="string"/></edge>
+<edge source="Goku_[IndexFingers]_ppi+_Vegeta_[IndexFingers]" target="Goku_[IndexFingers]--Vegeta_[IndexFingers]"><att name="interaction" value="produce" type="string"/></edge>
+<edge source="Goku_[Vegeta]--Vegeta_[Goku]" target="Goku_[Vegeta]_ppi-_Vegeta_[Goku]"><att name="interaction" value="ss" type="string"/></edge>
+<edge source="Vegeta_[LeftEar]_ppi+_Potara_[Vegeta]" target="Potara_[Vegeta]--Vegeta_[LeftEar]"><att name="interaction" value="produce" type="string"/></edge>
+<edge source="Goku_[LeftEar]--Potara_[Goku]" target="Goku_[LeftEar]_ppi-_Potara_[Goku]"><att name="interaction" value="ss" type="string"/></edge>
+<edge source="KI_p+_Goku_[(ki)]" target="Goku_[(ki)]-{p}"><att name="interaction" value="produce" type="string"/></edge>
+<edge source="Goku_[LeftEar]_ppi-_Potara_[Goku]" target="Goku_[LeftEar]--Potara_[Goku]"><att name="interaction" value="consume" type="string"/></edge>
+<edge source="Potara_[Vegeta]--Vegeta_[LeftEar]" target="Vegeta_[LeftEar]_ppi-_Potara_[Vegeta]"><att name="interaction" value="ss" type="string"/></edge>
+<edge source="Vegeta_[LeftEar]_ppi-_Potara_[Vegeta]" target="Potara_[Vegeta]--Vegeta_[LeftEar]"><att name="interaction" value="consume" type="string"/></edge>
+<edge source="Goku_[RightEar]_ppi+_Potara_[Goku]" target="Goku_[RightEar]--Potara_[Goku]"><att name="interaction" value="produce" type="string"/></edge>
+<edge source="Vegeta_[RightEar]_ppi-_Potara_[Vegeta]" target="Potara_[Vegeta]--Vegeta_[RightEar]"><att name="interaction" value="consume" type="string"/></edge>
+<edge source="Goku_[RightEar]_ppi-_Potara_[Goku]" target="Goku_[RightEar]--Potara_[Goku]"><att name="interaction" value="consume" type="string"/></edge>
+</graph>

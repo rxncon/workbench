@@ -1,0 +1,3 @@
+A_ppi_B; ! B_[(r)]-{p}
+C_p+_B_[(r)]
+A_syn_D; ! A--B

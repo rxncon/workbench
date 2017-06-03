@@ -1,0 +1,113 @@
+IL6R_[siteIIb]_ppi-_IL6ST_[CBMb]
+IL6R_[siteIIb]_ppi+_IL6ST_[CBMb]; ! JAK1_[FERM]--IL6ST_[Box12]; ! IL6_[siteI]--IL6R_[CBM]
+IL6_[siteIIa]_ppi+_IL6ST_[CBMa]; ! JAK1_[FERM]--IL6ST_[Box12]; ! IL6_[siteI]--IL6R_[CBM]
+IL6_[siteII]_ppi+_IL6ST_[CBM]; ! <IL6_siteII>
+<IL6_siteII>; AND IL6R_[siteIIb]--IL6ST_[CBMb]; AND IL6_[siteIIa]--IL6ST_[CBMa]
+IL6_[siteIIIa]_ppi-_IL6ST_[IgLikeA]
+IL6R_[siteIIIb]_ppi-_IL6ST_[IgLikeB]
+IL6_[siteIII]_ppi-_IL6ST_[IgLike]
+IL6_[siteIIa]_ppi-_IL6ST_[CBMa]
+IL6R_[siteIIIb]_ppi+_IL6ST_[IgLikeB]; ! <IL6_comp1>
+IL6_[siteIIIa]_ppi+_IL6ST_[IgLikeA]; ! <IL6_comp1>
+IL6_[siteIII]_ppi+_IL6ST_[IgLike];! <IL6_siteIII>
+<IL6_siteIII>; AND IL6_[siteIIIa]--IL6ST_[IgLikeA]; AND IL6R_[siteIIIb]--IL6ST_[IgLikeB]; AND IL6_[siteI]--IL6R_[CBM]; AND IL6ST_[Box12]--JAK1_[FERM]
+IL6_[siteI]_ppi-_IL6R_[CBM]
+IL6_[siteI]_ppi+_IL6R_[CBM]
+IL6ST_[Box12]_ppi-_JAK1_[FERM]
+IL6ST_[Box12]_ppi+_JAK1_[FERM]
+IL6ST_[pmotifY759]_ppi-_JAK1_[JH1]; ! JAK1_[(JH1)]-{P}
+<JAK_at_IL6_receptor>; AND JAK1_[(JH1)]-{P}; AND JAK1_[(Y1022)]-{P}; AND JAK1_[(Y1023)]-{P}; AND JAK1_[FERM]--IL6ST_[Box12]
+IL6ST_[pmotifY759]_ppi+_JAK1_[JH1]; ! <JAK_at_IL6_receptor>
+IL6ST_[pmotifY759]_ppi-_PTPN11_[PTP]
+IL6ST_[pmotifY759]_ppi+_PTPN11_[PTP]; ! IL6ST_[Y759]--PTPN11_[nSH2]
+IL6ST_[pmotifY767]_ppi-_JAK1_[JH1]; ! JAK1_[(JH1)]-{P}
+IL6ST_[pmotifY767]_ppi+_JAK1_[JH1]; ! <JAK_at_IL6_receptor>
+IL6ST_[pmotifY767]_ppi-_PTPN11_[PTP]
+IL6ST_[pmotifY767]_ppi+_PTPN11_[PTP]; ! IL6ST_[Y759]--PTPN11_[nSH2]
+IL6ST_[pmotifY814]_ppi-_JAK1_[JH1]; ! JAK1_[(JH1)]-{P}
+IL6ST_[pmotifY814]_ppi+_JAK1_[JH1]; ! <JAK_at_IL6_receptor>
+IL6ST_[pmotifY814]_ppi-_PTPN11_[PTP]
+IL6ST_[pmotifY814]_ppi+_PTPN11_[PTP]; ! IL6ST_[Y759]--PTPN11_[nSH2]
+IL6ST_[pmotifY905]_ppi-_JAK1_[JH1]; ! JAK1_[(JH1)]-{P}
+IL6ST_[pmotifY905]_ppi+_JAK1_[JH1]; ! <JAK_at_IL6_receptor>
+IL6ST_[pmotifY905]_ppi-_PTPN11_[PTP]
+IL6ST_[pmotifY905]_ppi+_PTPN11_[PTP]; ! IL6ST_[Y759]--PTPN11_[nSH2]
+IL6ST_[pmotifY915]_ppi-_JAK1_[JH1]; ! JAK1_[(JH1)]-{P}
+IL6ST_[pmotifY915]_ppi+_JAK1_[JH1]; ! <JAK_at_IL6_receptor>
+IL6ST_[pmotifY915]_ppi-_PTPN11_[PTP]
+IL6ST_[pmotifY915]_ppi+_PTPN11_[PTP]; ! IL6ST_[Y759]--PTPN11_[nSH2]
+IL6ST_[STAT3]_ppi-_STAT3_[SH2]; ! <IL6ST_STAT>
+IL6ST_[STAT3]_ppi+_STAT3_[SH2]; ! <IL6ST_STAT>
+<IL6ST_STAT>; OR IL6ST_[(Y767)]-{P}; OR IL6ST_[(Y814)]-{P}; OR IL6ST_[(Y905)]-{P}; OR IL6ST_[(Y915)]-{P}
+IL6ST_[Y759]_ppi-_PTPN11_[nSH2]; ! IL6ST_[(Y759)]-{P}
+IL6ST_[Y759]_ppi+_PTPN11_[nSH2]; ! IL6ST_[(Y759)]-{P}
+IL6ST_[Y759]_ppi-_SOCS3_[SH2]; ! IL6ST_[(Y759)]-{P}
+IL6ST_[Y759]_ppi+_SOCS3_[SH2]; ! IL6ST_[(Y759)]-{P}; ! SOCS3g_[promoter]--STAT3_[DNABS]
+IL6ST_[Y915]_ppi+_STAT3_[SH2]; ! IL6ST_[(Y915)]-{P}
+IL6ST_[Y915]_ppi-_STAT3_[SH2]; ! IL6ST_[(Y915)]-{P}
+IL6ST_[Y905]_ppi+_STAT3_[SH2]; ! IL6ST_[(Y905)]-{P}
+IL6ST_[Y905]_ppi-_STAT3_[SH2]; ! IL6ST_[(Y905)]-{P}
+IL6ST_[Y814]_ppi+_STAT3_[SH2]; ! IL6ST_[(Y814)]-{P}
+IL6ST_[Y814]_ppi-_STAT3_[SH2]; ! IL6ST_[(Y814)]-{P}
+IL6ST_[Y767]_ppi+_STAT3_[SH2]; ! IL6ST_[(Y767)]-{P}
+IL6ST_[Y767]_ppi-_STAT3_[SH2]; ! IL6ST_[(Y767)]-{P}
+JAK1_p+_JAK1_[(JH1)]; ! JAK1_[FERM]--IL6ST_[Box12]; ! <IL6_comp1>; ! IL6_[siteI]--IL6R_[CBM]; ! <IL6_comp2>
+<IL6_comp1>; AND IL6_[siteIIa]--IL6ST_[CBMa]; AND IL6R_[siteIIb]--IL6ST_[CBMb]
+<IL6_comp2>; AND IL6_[siteIIIa]--IL6ST_[IgLikeA]; AND IL6R_[siteIIIb]--IL6ST_[IgLikeB]
+JAK1_p-_JAK1_[(JH1)]
+JAK1_p-_JAK1_[(Y1022)]; ! JAK1_[pmotifY1023]--PTPN11_[PTP]
+JAK1_p-_JAK1_[(Y1023)]; ! JAK1_[pmotifY1022]--PTPN11_[PTP]
+JAK1_ppi-_JAK1_[pmotifY1022]
+JAK1_ppi+_JAK1_[pmotifY1022]; ! JAK1_[(JH1)]-{P}
+JAK1_ppi+_JAK1_[pmotifY1023]
+JAK1_ppi-_JAK1_[pmotifY1023]; ! JAK1_[(JH1)]-{P}
+JAK1_ppi+_PTPN11_[pmotifY542]; ! JAK1_[(JH1)]-{P}; ! JAK1_[(Y1022)]-{P}; ! JAK1_[FERM]--IL6ST_[Box12]; ! IL6ST_[Y759]--PTPN11_[nSH2]; ! JAK1_[(Y1023)]-{P}
+JAK1_ppi-_PTPN11_[pmotifY542]; ! JAK1_[(JH1)]-{P}
+JAK1_ppi-_PTPN11_[pmotifY580]
+JAK1_ppi+_PTPN11_[pmotifY580]; ! JAK1_[(JH1)]-{P}; ! JAK1_[(Y1022)]-{P}; ! JAK1_[(Y1023)]-{P}; ! JAK1_[FERM]--IL6ST_[Box12]; ! IL6ST_[(Y759)]-{P}; ! IL6ST_[Y759]--PTPN11_[nSH2]
+JAK1_[JH1]_ppi-_SOCS3_[KIR]
+JAK1_[JH1]_ppi+_SOCS3_[KIR]; ! JAK1_[(JH1)]-{P}; ! IL6ST_[Y759]--SOCS3_[SH2]
+JAK1_ppi-_STAT3_[pmotifY701]
+JAK1_ppi+_STAT3_[pmotifY701]; ! <JAK1_bound_STAT3>
+<JAK1_bound_STAT3>; AND JAK1_[(JH1)]-{P}; AND JAK1_[(Y1022)]-{P}; AND JAK1_[(Y1023)]-{P}; AND JAK1_[FERM]--IL6ST_[Box12]; AND IL6ST_[STAT3]--STAT3_[SH2]; AND <IL6ST_phos_sites>
+<IL6ST_phos_sites>; OR IL6ST_[(Y767)]-{P}; OR IL6ST_[(Y814)]-{P}; OR IL6ST_[(Y905)]-{P}; OR IL6ST_[(Y915)]-{P}
+JAK1_ppi-_STAT3_[pmotifY701]; ! JAK1_[FERM]--IL6ST_[Box12]
+JAK1_p+_IL6ST_[(Y759)]; ! JAK1_[(JH1)]-{P}; ! IL6ST_[pmotifY759]--JAK1_[JH1]
+JAK1_p+_IL6ST_[(Y767)]; ! JAK1_[(JH1)]-{P}; ! IL6ST_[pmotifY767]--JAK1_[JH1]
+JAK1_p+_IL6ST_[(Y814)] ; ! IL6ST_[pmotifY814]--JAK1_[JH1]; ! JAK1_[(JH1)]-{P}
+JAK1_p+_IL6ST_[(Y905)] ; ! IL6ST_[pmotifY905]--JAK1_[JH1]; ! JAK1_[(JH1)]-{P}
+JAK1_p+_IL6ST_[(Y915)]; ! JAK1_[(JH1)]-{P}; ! IL6ST_[pmotifY915]--JAK1_[JH1]
+JAK1_p+_JAK1_[(Y1022)]; ! JAK1_[(JH1)]-{P}; ! JAK1@0--JAK1@1_[pmotifY1023]
+JAK1_p+_JAK1_[(Y1023)]; ! JAK1_[(JH1)]-{P}; ! JAK1@0--JAK1@1_[pmotifY1022]
+JAK1_[pmotifY1022]_ppi-_PTPN11_[PTP]
+JAK1_[pmotifY1022]_ppi+_PTPN11_[PTP]; ! IL6ST_[Y759]--PTPN11_[nSH2]
+JAK1_[pmotifY1023]_ppi+_PTPN11_[PTP]; ! IL6ST_[Y759]--PTPN11_[nSH2]
+JAK1_[pmotifY1023]_ppi-_PTPN11_[PTP]
+JAK1_p+_PTPN11_[(Y542)]; ! JAK1_[(JH1)]-{P}; ! JAK1--PTPN11_[pmotifY542]
+JAK1_p+_PTPN11_[(Y580)]; ! JAK1_[(JH1)]-{P}; ! JAK1--PTPN11_[pmotifY580]
+JAK1_p+_STAT3_[(Y701)]; ! JAK1_[(JH1)]-{P}; ! JAK1--STAT3_[pmotifY701]
+PTPN11_p-_PTPN11_[(Y542)]; ! PTPN11@0_[PTP]--PTPN11@1_[pmotifY542]
+PTPN11_p-_PTPN11_[(Y580)]; ! PTPN11@0_[PTP]--PTPN11@1_[pmotifY580]
+PTPN11_p-_IL6ST_[(Y759)]; ! IL6ST_[(Y767)]-{0}; ! IL6ST_[(Y814)]-{0}; ! IL6ST_[(Y905)]-{0}; ! IL6ST_[(Y915)]-{0}; ! IL6ST_[pmotifY759]--PTPN11_[PTP]
+PTPN11_p-_IL6ST_[(Y767)]; ! IL6ST_[pmotifY767]--PTPN11_[PTP]
+PTPN11_p-_IL6ST_[(Y814)]; ! IL6ST_[pmotifY814]--PTPN11_[PTP]
+PTPN11_p-_IL6ST_[(Y905)]; ! IL6ST_[pmotifY905]--PTPN11_[PTP]
+PTPN11_p-_IL6ST_[(Y915)]; ! IL6ST_[pmotifY915]--PTPN11_[PTP]
+PTPN11_[PTP]_ppi-_PTPN11_[pmotifY542]
+PTPN11_[PTP]_ppi+_PTPN11_[pmotifY542]
+PTPN11_[PTP]_ppi-_PTPN11_[pmotifY580]
+PTPN11_[PTP]_ppi+_PTPN11_[pmotifY580]
+PTPN11_[cSH2]_ppi+_PTPN11_[Y580]; ! PTPN11_[(Y580)]-{P}
+PTPN11_[cSH2]_ppi-_PTPN11_[Y580]
+PTPN11_[nSH2]_ppi+_PTPN11_[Y542]; ! PTPN11_[(Y542)]-{P}
+PTPN11_[nSH2]_ppi-_PTPN11_[Y542]
+SOCS3g_[promoter]_ppi-_STAT3_[DNABS]
+SOCS3g_[promoter]_ppi+_STAT3_[DNABS]; ! STAT3_[(DNABS)]-{P}; ! STAT3@0_[SH2phos]--STAT3@1_[Y701]
+STAT3_p+_STAT3_[(DNABS)]; ! STAT3@0_[SH2phos]--STAT3@1_[Y701]
+STAT3_p-_STAT3_[(DNABS)]; ! STAT3_[SH2phos]--0
+STAT3_p-_STAT3_[(Y701)]; ! STAT3@0--STAT3@1
+STAT3_[SH2phos]_ppi-_STAT3_[Y701]
+STAT3_[SH2phos]_ppi+_STAT3_[Y701]; ! STAT3_[(Y701)]-{P}
+
+PTPN11_[nSH2]_ppi-_PTPN11_[PTP]
+PTPN11_[nSH2]_ppi+_PTPN11_[PTP]
