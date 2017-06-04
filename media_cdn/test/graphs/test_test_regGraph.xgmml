@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+    <graph directed="1"  xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.cs.rpi.edu/XGMML">
+    <att name="selected" value="1" type="boolean" />
+    <att name="name" value="test" type="string"/>
+    <att name="shared name" value="test" type="string"/>
+    
+<node id="B_[(C)]-{p}" label="B_[(C)]-{p}"><att name="rxnconID" value="B_[(C)]-{p}" type="string"/><att name="type" value="state" type="string"/></node>
+<node id="A_[B]--B_[A]" label="A_[B]--B_[A]"><att name="rxnconID" value="A_[B]--B_[A]" type="string"/><att name="type" value="state" type="string"/></node>
+<node id="C_[(D)]-{p}" label="C_[(D)]-{p}"><att name="rxnconID" value="C_[(D)]-{p}" type="string"/><att name="type" value="state" type="string"/></node>
+<node id="D_p+_C_[(D)]" label="D_p+_C_[(D)]"><att name="rxnconID" value="D_p+_C_[(D)]" type="string"/><att name="type" value="reaction" type="string"/></node>
+<node id="A_[B]_ppi+_B_[A]" label="A_[B]_ppi+_B_[A]"><att name="rxnconID" value="A_[B]_ppi+_B_[A]" type="string"/><att name="type" value="reaction" type="string"/></node>
+<node id="C_p+_B_[(C)]" label="C_p+_B_[(C)]"><att name="rxnconID" value="C_p+_B_[(C)]" type="string"/><att name="type" value="reaction" type="string"/></node>
+<node id="A_[B]_ppi-_B_[A]" label="A_[B]_ppi-_B_[A]"><att name="rxnconID" value="A_[B]_ppi-_B_[A]" type="string"/><att name="type" value="reaction" type="string"/></node>
+<edge source="B_[(C)]-{p}" target="A_[B]_ppi+_B_[A]"><att name="interaction" value="!" type="string"/></edge>
+<edge source="A_[B]--B_[A]" target="A_[B]_ppi-_B_[A]"><att name="interaction" value="ss" type="string"/></edge>
+<edge source="D_p+_C_[(D)]" target="C_[(D)]-{p}"><att name="interaction" value="produce" type="string"/></edge>
+<edge source="A_[B]_ppi+_B_[A]" target="A_[B]--B_[A]"><att name="interaction" value="produce" type="string"/></edge>
+<edge source="C_p+_B_[(C)]" target="B_[(C)]-{p}"><att name="interaction" value="produce" type="string"/></edge>
+<edge source="A_[B]_ppi-_B_[A]" target="A_[B]--B_[A]"><att name="interaction" value="consume" type="string"/></edge>
+</graph>
