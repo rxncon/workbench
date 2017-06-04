@@ -152,25 +152,28 @@ def quick_update(request, id=None):
 def quick_load(request, id, update=False):
     File.objects.all().update(loaded=False)
     Quick.objects.all().update(loaded=False)
-    if not Quick.objects.get(id=id).rxncon_system:
+    target = Quick.objects.get(id=id)
+    if not target.rxncon_system:
         try:
-            rxncon_system = create_rxncon_system_object(request=request, project_name=Quick.objects.get(id=id).name,
+            rxncon_system = create_rxncon_system_object(request=request, project_name=target.name,
                                                 project_type="Quick", project_id=id)
         except SyntaxError as e:
             context = {
-                "project_name": Quick.objects.get(id=id).name,
-                "error": e
+                "project_name": target.name,
+                "error": e,
+                "sender": target,
+                "sender_type": "Quick",
             }
             return render(request, 'error.html', context)
     elif update:
-        Quick.objects.get(id=id).rxncon_system.delete()
+        target.rxncon_system.delete()
         rxncon_system = create_rxncon_system_object(request=request, project_name=Quick.objects.get(id=id).name,
                                                     project_type="Quick", project_id=id)
 
     else:
         rxncon_system = Quick.objects.get(id=id).rxncon_system
 
-    target = Quick.objects.filter(id=id)
+    target = Quick.objects.filter(id=id) # target has to be redone with filter function, to make following update steps work
     target.update(loaded=True)
     target.update(rxncon_system=rxncon_system)
     if target[0].loaded:

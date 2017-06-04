@@ -49,8 +49,7 @@ class Quick(models.Model):
 
     def get_download_url(self):
         media_url= settings.MEDIA_URL
-        # return media_url+"%s" %(self.file)
-        # media_root = settings.MEDIA_ROOT
+
         filename = self.slug + "_quick_definition.txt"
         return "%s%s/%s/%s" % (media_url, self.slug, "description", filename)
 
@@ -58,15 +57,9 @@ class Quick(models.Model):
         media_root = settings.MEDIA_ROOT
         filename = self.slug + "_quick_definition.txt"
         path = "%s/%s/" % (media_root, self.slug)
-        shutil.rmtree(path)
+        if os.path.exists(path):
+            shutil.rmtree(path)
 
-    # def create_rxncon_system(self):
-    #     try:
-    #         self.rxncon_system = rxncon_quick.Quick(str(self.quick_input)).rxncon_system
-    #         print("Created rxncon_system.")
-    #     except ImportError:
-    #         # catch rxncon error here
-    #         pass
 
 def pre_save_post_receiver(sender, instance, *args, **kwargs):
     if not instance.slug:

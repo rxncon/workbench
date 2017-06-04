@@ -4,7 +4,7 @@
 <div class="error">
     <div class = "error_header">
         <p> <h2>Error!</h2>
-        <h4>An error as occured while parsing the provided rxncon system.</h4> </p>
+        <h4>An error as occured while parsing the provided rxncon definition.</h4> </p>
     </div>
 
     <p><b>Project:</b> {{project_name}}</p>
@@ -12,6 +12,14 @@
         <p><b>File:</b> {{file_name}}</p>
     {% endif %}
     <p><b>Error: </b> {{error}}</p>
+    <p>The project entry was created, but can not be loaded as no rxncon system can be generated.</p>
+    {% if sender_type == "Quick" %}
+        <p>You can edit the input <a href="{{sender.get_absolute_url}}edit">here</a>.</p>
+    {% elif sender_type == "File" %}
+        <p>You can provide a corrected version by klicking <a href="{{sender.upload_new_version}}">here</a>.</p>
+    {% endif %}
+
+
 
 </div>
 

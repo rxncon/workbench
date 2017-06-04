@@ -179,20 +179,24 @@ def file_delete_project(request, slug):
 def file_load(request, id):
     File.objects.all().update(loaded=False)
     Quick.objects.all().update(loaded=False)
-    if not File.objects.get(id=id).rxncon_system:
+    target = File.objects.get(id=id)
+    if not target.rxncon_system:
         try:
-            rxncon_system = create_rxncon_system_object(request=request, project_name=File.objects.get(id=id).project_name, project_type="File", project_id=id)
+            rxncon_system = create_rxncon_system_object(request=request, project_name=target.project_name, project_type="File", project_id=id)
         except SyntaxError as e:
 
             context={
-                "project_name" : File.objects.get(id=id).project_name,
-                "file_name": File.objects.get(id=id).get_filename(),
-                "error": e
+                "project_name" : target.project_name,
+                "file_name": target.get_filename(),
+                "error": e,
+                "sender": target,
+                "sender_type": "File",
             }
             return render(request, 'error.html', context)
     else:
         rxncon_system = File.objects.get(id=id).rxncon_system
-    target = File.objects.filter(id=id)
+
+    target = File.objects.filter(id=id) # target has to be redone with filter function, to make following update steps work
     target.update(loaded=True)
     target.update(rxncon_system=rxncon_system)
     if target[0].loaded:

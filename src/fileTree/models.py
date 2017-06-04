@@ -68,25 +68,15 @@ class File(models.Model):
 
     def delete_file_from_harddisk(self):
         path = self.get_absolute_path()
-        # os.remove(path)
-        path = os.path.dirname(path)
-        shutil.rmtree(path)
+        if os.path.exists(path):
+            path = os.path.dirname(path)
+            shutil.rmtree(path)
 
     def delete_project_from_harddisk(self):
         path = self.get_absolute_path()
-        path = os.path.dirname(path)
-        shutil.rmtree(path)
-
-    # def create_rxncon_system(self):
-    #     try:
-    #         book= rxncon_excel.ExcelBook(self.get_absolute_path())
-    #         self.rxncon_system = book.rxncon_system
-    #         self.save(force_update=True)
-    #         print(self.rxncon_system.reactions)
-    #         print("Created rxncon_system.")
-    #     except ImportError as error:
-    #         messages.add_message(messages.ERROR, error)
-
+        if os.path.exists(path):
+            path = os.path.dirname(path)
+            shutil.rmtree(path)
 
     class Meta:
         ordering = ["-updated", "-timestamp"]
