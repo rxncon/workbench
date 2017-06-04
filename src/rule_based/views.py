@@ -111,8 +111,9 @@ def rule_based_delete(request, pk):
         form = DeleteRuleForm(request.POST, instance=f)
 
         if form.is_valid(): # checks CSRF
+            if os.path.exists(f.model_path.name):
+                os.remove(f.model_path.name)
             f.delete()
-            os.remove(f.model_path.name)
             messages.success(request, "Successfully deleted")
             if system_type == "Quick":
                 return HttpResponseRedirect("/quick/"+str(id)+"/") # wherever to go after deleting

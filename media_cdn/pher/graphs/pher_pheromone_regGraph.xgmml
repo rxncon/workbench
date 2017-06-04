@@ -1,0 +1,5852 @@
+<?xml version="1.0" ?>
+<graph directed="1" xmlns="http://www.cs.rpi.edu/XGMML" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink">
+	
+    
+	<att name="selected" type="boolean" value="1"/>
+	
+    
+	<att name="name" type="string" value="pher"/>
+	
+    
+	<att name="shared name" type="string" value="pher"/>
+	
+    
+
+	<node id="Gpa1_[Ste4]--Ste4_[Gpa1]" label="Gpa1_[Ste4]--Ste4_[Gpa1]">
+		<att name="rxnconID" type="string" value="Gpa1_[Ste4]--Ste4_[Gpa1]"/>
+		<att name="type" type="string" value="state"/>
+		<graphics x="-500.8014354513607" y="-453.09882744326103" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Ste2_[Yck]_ppi+_Yck_[Ste2]" label="Ste2_[Yck]_ppi+_Yck_[Ste2]">
+		<att name="rxnconID" type="string" value="Ste2_[Yck]_ppi+_Yck_[Ste2]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-751.7809581564388" y="-494.10483940615165" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Kss1_p+_Sst2_[(S539)]" label="Kss1_p+_Sst2_[(S539)]">
+		<att name="rxnconID" type="string" value="Kss1_p+_Sst2_[(S539)]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="510.2350940896549" y="170.46446601377022" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="UC113_trsl_Ste11mRNA" label="UC113_trsl_Ste11mRNA">
+		<att name="rxnconID" type="string" value="UC113_trsl_Ste11mRNA"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-465.7125987814388" y="186.49980536923897" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Sst2_[(S539)]-{p}" label="Sst2_[(S539)]-{p}">
+		<att name="rxnconID" type="string" value="Sst2_[(S539)]-{p}"/>
+		<att name="type" type="string" value="state"/>
+		<graphics x="342.9640979959049" y="406.4998664043952" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Ste11_p+_Ste7_[(T363)]" label="Ste11_p+_Ste7_[(T363)]">
+		<att name="rxnconID" type="string" value="Ste11_p+_Ste7_[(T363)]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-226.7260417746029" y="20.499576487403033" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Kss1_[Dock]--Ptp_[MAPK]" label="Kss1_[Dock]--Ptp_[MAPK]">
+		<att name="rxnconID" type="string" value="Kss1_[Dock]--Ptp_[MAPK]"/>
+		<att name="type" type="string" value="state"/>
+		<graphics x="426.8257618142643" y="-105.7340737201165" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Ste4_[Ste20]--0" label="Ste4_[Ste20]--0">
+		<att name="rxnconID" type="string" value="Ste4_[Ste20]--0"/>
+		<att name="type" type="string" value="boolean_not"/>
+		<graphics x="-490.0440807150326" y="-535.3404656268548" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Ste7_[MAPK]--0" label="Ste7_[MAPK]--0">
+		<att name="rxnconID" type="string" value="Ste7_[MAPK]--0"/>
+		<att name="type" type="string" value="boolean_not"/>
+		<graphics x="136.62057687774086" y="54.523822703223345" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Ste11_[(S302)]-{p}" label="Ste11_[(S302)]-{p}">
+		<att name="rxnconID" type="string" value="Ste11_[(S302)]-{p}"/>
+		<att name="type" type="string" value="state"/>
+		<graphics x="-339.9728221701107" y="-79.23997887148369" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Gpa1_[Ste2]_ppi+_Ste2_[Gpa1]" label="Gpa1_[Ste2]_ppi+_Ste2_[Gpa1]">
+		<att name="rxnconID" type="string" value="Gpa1_[Ste2]_ppi+_Ste2_[Gpa1]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-621.3084239767513" y="-249.36256035341728" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Kss1_[Dock]_ppi+_Ste12_[MAPK]" label="Kss1_[Dock]_ppi+_Ste12_[MAPK]">
+		<att name="rxnconID" type="string" value="Kss1_[Dock]_ppi+_Ste12_[MAPK]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="330.6112537576237" y="48.916461863379595" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Ptp_[MAPK]_ppi+_Kss1_[Dock]" label="Ptp_[MAPK]_ppi+_Kss1_[Dock]">
+		<att name="rxnconID" type="string" value="Ptp_[MAPK]_ppi+_Kss1_[Dock]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="467.68690683379555" y="8.746707835059283" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Ste5_[Ste7]--Ste7_[Ste5]" label="Ste5_[Ste7]--Ste7_[Ste5]">
+		<att name="rxnconID" type="string" value="Ste5_[Ste7]--Ste7_[Ste5]"/>
+		<att name="type" type="string" value="state"/>
+		<graphics x="67.22744943633461" y="-97.20730217470634" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Ste12_trsl_Ste2mRNA" label="Ste12_trsl_Ste2mRNA">
+		<att name="rxnconID" type="string" value="Ste12_trsl_Ste2mRNA"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-344.4313182638607" y="39.93268195615303" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Gpa1_aGEx_Gpa1_[(GnP)]" label="Gpa1_aGEx_Gpa1_[(GnP)]">
+		<att name="rxnconID" type="string" value="Gpa1_aGEx_Gpa1_[(GnP)]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-695.6696300314388" y="-222.2387295581292" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Ste12_trsl_PtpmRNA" label="Ste12_trsl_PtpmRNA">
+		<att name="rxnconID" type="string" value="Ste12_trsl_PtpmRNA"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="41.433481235651016" y="-21.079280934471967" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="not Ste12_[MAPK]--0" label="not Ste12_[MAPK]--0">
+		<att name="rxnconID" type="string" value="not Ste12_[MAPK]--0"/>
+		<att name="type" type="string" value="boolean_not"/>
+		<graphics x="108.0497608377018" y="129.82481757627022" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="UC129_deg_Ste2" label="UC129_deg_Ste2">
+		<att name="rxnconID" type="string" value="UC129_deg_Ste2"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-757.5318126486263" y="44.11401740537178" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Ste12_[Dig2]--0" label="Ste12_[Dig2]--0">
+		<att name="rxnconID" type="string" value="Ste12_[Dig2]--0"/>
+		<att name="type" type="string" value="boolean_not"/>
+		<graphics x="-223.62986562714195" y="195.97441474423897" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="UC102_trsl_Far1mRNA" label="UC102_trsl_Far1mRNA">
+		<att name="rxnconID" type="string" value="UC102_trsl_Far1mRNA"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="81.00240518584633" y="-566.4366265155267" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Kss1_[Dock]_ppi-_Ste12_[MAPK]" label="Kss1_[Dock]_ppi-_Ste12_[MAPK]">
+		<att name="rxnconID" type="string" value="Kss1_[Dock]_ppi-_Ste12_[MAPK]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="290.6395740701237" y="-254.3763504840325" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="UC107_trsl_PtpmRNA" label="UC107_trsl_PtpmRNA">
+		<att name="rxnconID" type="string" value="UC107_trsl_PtpmRNA"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="413.3228321267643" y="-260.9149514056634" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Ste7_p+_Fus3_[(T180)]" label="Ste7_p+_Fus3_[(T180)]">
+		<att name="rxnconID" type="string" value="Ste7_p+_Fus3_[(T180)]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="98.54850961699867" y="267.77226630673897" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="UC54_trsl_Ste11mRNA" label="UC54_trsl_Ste11mRNA">
+		<att name="rxnconID" type="string" value="UC54_trsl_Ste11mRNA"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-432.0497569845638" y="261.43083564267647" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="not Ste7_[MAPK]--0" label="not Ste7_[MAPK]--0">
+		<att name="rxnconID" type="string" value="not Ste7_[MAPK]--0"/>
+		<att name="type" type="string" value="boolean_not"/>
+		<graphics x="304.0995655252018" y="-109.71316154970634" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="UC112_trsl_Ste7mRNA" label="UC112_trsl_Ste7mRNA">
+		<att name="rxnconID" type="string" value="UC112_trsl_Ste7mRNA"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="84.98912240996742" y="556.0179938458015" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Fus3_[(Y182)]-{0}" label="Fus3_[(Y182)]-{0}">
+		<att name="rxnconID" type="string" value="Fus3_[(Y182)]-{0}"/>
+		<att name="type" type="string" value="boolean_not"/>
+		<graphics x="112.68976022735023" y="426.0265998028327" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Ste11PSte5Ste5Ste7" label="Ste11PSte5Ste5Ste7">
+		<att name="rxnconID" type="string" value="Ste11PSte5Ste5Ste7"/>
+		<att name="type" type="string" value="boolean_and"/>
+		<graphics x="-134.00356863007164" y="-172.5127716876458" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="UC19_deg_Gpa1" label="UC19_deg_Gpa1">
+		<att name="rxnconID" type="string" value="UC19_deg_Gpa1"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-639.3850841330013" y="-93.0148125506829" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Kss1_p+_Dig1_[(MAPK)]" label="Kss1_p+_Dig1_[(MAPK)]">
+		<att name="rxnconID" type="string" value="Kss1_p+_Dig1_[(MAPK)]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="553.1305408669987" y="174.80522529111397" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Fus3_[Dock]_ppi+_Msg5_[MAPK]" label="Fus3_[Dock]_ppi+_Msg5_[MAPK]">
+		<att name="rxnconID" type="string" value="Fus3_[Dock]_ppi+_Msg5_[MAPK]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="387.3177051736393" y="104.45558539853585" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Ptp_[MAPK]_ppi-_Fus3_[Dock]" label="Ptp_[MAPK]_ppi-_Fus3_[Dock]">
+		<att name="rxnconID" type="string" value="Ptp_[MAPK]_ppi-_Fus3_[Dock]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="130.5559864236393" y="342.12028876767647" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Pher" label="Pher">
+		<att name="rxnconID" type="string" value="Pher"/>
+		<att name="type" type="string" value="component"/>
+		<graphics x="-1087.3480968283138" y="-45.12789543642509" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Ste4_[Ste5]_ppi-_Ste5_[Ste4]" label="Ste4_[Ste5]_ppi-_Ste5_[Ste4]">
+		<att name="rxnconID" type="string" value="Ste4_[Ste5]_ppi-_Ste5_[Ste4]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-174.3966502951107" y="-682.7212639666985" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="UC118_deg_Dig2" label="UC118_deg_Dig2">
+		<att name="rxnconID" type="string" value="UC118_deg_Dig2"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-98.44663045868492" y="-298.97163780703056" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Ste20_p+_Ste11_[(T307)]" label="Ste20_p+_Ste11_[(T307)]">
+		<att name="rxnconID" type="string" value="Ste20_p+_Ste11_[(T307)]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-278.2484111593685" y="-314.2807503558587" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Ste7_[Ste5]--0" label="Ste7_[Ste5]--0">
+		<att name="rxnconID" type="string" value="Ste7_[Ste5]--0"/>
+		<att name="type" type="string" value="boolean_not"/>
+		<graphics x="225.39396860137367" y="-77.867740712304" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="UC97_p-_Ste11_[(T307)]" label="UC97_p-_Ste11_[(T307)]">
+		<att name="rxnconID" type="string" value="UC97_p-_Ste11_[(T307)]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-414.8657665060482" y="-69.72677238955009" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Ste20_[Ste4]--Ste4_[Ste20]" label="Ste20_[Ste4]--Ste4_[Ste20]">
+		<att name="rxnconID" type="string" value="Ste20_[Ste4]--Ste4_[Ste20]"/>
+		<att name="type" type="string" value="state"/>
+		<graphics x="-366.8649120138607" y="-609.0988884784173" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Ste5_[Ste7]_ppi+_Ste7_[Ste5]" label="Ste5_[Ste7]_ppi+_Ste7_[Ste5]">
+		<att name="rxnconID" type="string" value="Ste5_[Ste7]_ppi+_Ste7_[Ste5]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="93.88791086211586" y="-163.2896386004876" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="UC53_deg_Ste11" label="UC53_deg_Ste11">
+		<att name="rxnconID" type="string" value="UC53_deg_Ste11"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-198.32514760956383" y="83.47002021298897" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Kss1_[(Y185)]-{0}" label="Kss1_[(Y185)]-{0}">
+		<att name="rxnconID" type="string" value="Kss1_[(Y185)]-{0}"/>
+		<att name="type" type="string" value="boolean_not"/>
+		<graphics x="641.3443470193424" y="246.23485175595772" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="UC101_trsl_Dig2mRNA" label="UC101_trsl_Dig2mRNA">
+		<att name="rxnconID" type="string" value="UC101_trsl_Dig2mRNA"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-213.0761394308529" y="-260.15383537783134" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Pher_[Ste2]_i+_Ste2_[Pher]" label="Pher_[Ste2]_i+_Ste2_[Pher]">
+		<att name="rxnconID" type="string" value="Pher_[Ste2]_i+_Ste2_[Pher]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-928.0367564962826" y="-109.48839958681572" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Ste12" label="Ste12">
+		<att name="rxnconID" type="string" value="Ste12"/>
+		<att name="type" type="string" value="component"/>
+		<graphics x="-60.526689510198594" y="87.83281318173897" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="UC130_deg_Ste20" label="UC130_deg_Ste20">
+		<att name="rxnconID" type="string" value="UC130_deg_Ste20"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-325.15757558807945" y="-564.2904167987298" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Ste11_[(Feedback)]-{0}" label="Ste11_[(Feedback)]-{0}">
+		<att name="rxnconID" type="string" value="Ste11_[(Feedback)]-{0}"/>
+		<att name="type" type="string" value="boolean_not"/>
+		<graphics x="209.99370004668617" y="26.30907050595772" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Ste5_[Ste7]_ppi-_Ste7_[Ste5]" label="Ste5_[Ste7]_ppi-_Ste7_[Ste5]">
+		<att name="rxnconID" type="string" value="Ste5_[Ste7]_ppi-_Ste7_[Ste5]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-10.596763591619492" y="-212.06579407228935" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="UC120_deg_Fus3" label="UC120_deg_Fus3">
+		<att name="rxnconID" type="string" value="UC120_deg_Fus3"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="28.38529397979164" y="133.14171210752022" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Ste12_trsl_Ste12mRNA" label="Ste12_trsl_Ste12mRNA">
+		<att name="rxnconID" type="string" value="Ste12_trsl_Ste12mRNA"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-208.11628530487633" y="142.3639716290046" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="UC114_trsl_Ste12mRNA" label="UC114_trsl_Ste12mRNA">
+		<att name="rxnconID" type="string" value="UC114_trsl_Ste12mRNA"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-153.78465078339195" y="206.29094306455147" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Fus3_[(T180)]-{p}" label="Fus3_[(T180)]-{p}">
+		<att name="rxnconID" type="string" value="Fus3_[(T180)]-{p}"/>
+		<att name="type" type="string" value="state"/>
+		<graphics x="239.62465097442055" y="242.66502753720772" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="UC85_p-_Far1_[(S87)]" label="UC85_p-_Far1_[(S87)]">
+		<att name="rxnconID" type="string" value="UC85_p-_Far1_[(S87)]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-805.4897718237362" y="829.4645880840827" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="UC88_p-_Fus3_[(Y182)]" label="UC88_p-_Fus3_[(Y182)]">
+		<att name="rxnconID" type="string" value="UC88_p-_Fus3_[(Y182)]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="171.3104572488346" y="379.86357490048897" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Ste4_[Gpa1]--0" label="Ste4_[Gpa1]--0">
+		<att name="rxnconID" type="string" value="Ste4_[Gpa1]--0"/>
+		<att name="type" type="string" value="boolean_not"/>
+		<graphics x="-289.9835185812435" y="-498.8856316424798" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="UC128_deg_Ste12" label="UC128_deg_Ste12">
+		<att name="rxnconID" type="string" value="UC128_deg_Ste12"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-151.55281637177086" y="18.934635081153033" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Ste7Ste5Kss1" label="Ste7Ste5Kss1">
+		<att name="rxnconID" type="string" value="Ste7Ste5Kss1"/>
+		<att name="type" type="string" value="boolean_and"/>
+		<graphics x="191.18084909453773" y="-143.010807118554" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Fus3_[Dock]_ppi-_Ste5_[MAPK]" label="Fus3_[Dock]_ppi-_Ste5_[MAPK]">
+		<att name="rxnconID" type="string" value="Fus3_[Dock]_ppi-_Ste5_[MAPK]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="557.9556141091862" y="-19.777797780175092" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="not Sst2_[MAPK]--0" label="not Sst2_[MAPK]--0">
+		<att name="rxnconID" type="string" value="not Sst2_[MAPK]--0"/>
+		<att name="type" type="string" value="boolean_not"/>
+		<graphics x="155.16635324492836" y="-194.59200867189872" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Dig2_[(MAPK)]-{p}" label="Dig2_[(MAPK)]-{p}">
+		<att name="rxnconID" type="string" value="Dig2_[(MAPK)]-{p}"/>
+		<att name="type" type="string" value="state"/>
+		<graphics x="195.81779672637367" y="-119.04003532900322" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Ste4_[Ste5]--Ste5_[Ste4]" label="Ste4_[Ste5]--Ste5_[Ste4]">
+		<att name="rxnconID" type="string" value="Ste4_[Ste5]--Ste5_[Ste4]"/>
+		<att name="type" type="string" value="state"/>
+		<graphics x="-173.96418569550133" y="-552.880565724511" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Ste2_[Sst2]--0" label="Ste2_[Sst2]--0">
+		<att name="rxnconID" type="string" value="Ste2_[Sst2]--0"/>
+		<att name="type" type="string" value="boolean_not"/>
+		<graphics x="-570.5184459494076" y="-401.06975945009697" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Gpa1Ste2Pher" label="Gpa1Ste2Pher">
+		<att name="rxnconID" type="string" value="Gpa1Ste2Pher"/>
+		<att name="type" type="string" value="boolean_and"/>
+		<graphics x="-829.8651256369076" y="-272.35469444765556" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Ste12_trsl_Gpa1mRNA" label="Ste12_trsl_Gpa1mRNA">
+		<att name="rxnconID" type="string" value="Ste12_trsl_Gpa1mRNA"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-287.754636745306" y="-11.018001637596967" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Dig1_[MAPK]_ppi-_Fus3_[Dock]" label="Dig1_[MAPK]_ppi-_Fus3_[Dock]">
+		<att name="rxnconID" type="string" value="Dig1_[MAPK]_ppi-_Fus3_[Dock]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="159.9335041238346" y="354.24455634580147" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Kss1_[Dock]_ppi+_Sst2_[MAPK]" label="Kss1_[Dock]_ppi+_Sst2_[MAPK]">
+		<att name="rxnconID" type="string" value="Kss1_[Dock]_ppi+_Sst2_[MAPK]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="337.4017811013737" y="51.58859626279366" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Ste4" label="Ste4">
+		<att name="rxnconID" type="string" value="Ste4"/>
+		<att name="type" type="string" value="component"/>
+		<graphics x="-1104.7814464376888" y="880.0939826153327" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Ste12_trsl_Far1mRNA" label="Ste12_trsl_Far1mRNA">
+		<att name="rxnconID" type="string" value="Ste12_trsl_Far1mRNA"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-45.11760423645592" y="-122.91189201845634" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Dig1_[MAPK]_ppi-_Kss1_[Dock]" label="Dig1_[MAPK]_ppi-_Kss1_[Dock]">
+		<att name="rxnconID" type="string" value="Dig1_[MAPK]_ppi-_Kss1_[Dock]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="641.2809314919987" y="20.427432932715533" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Ste7_p+_Kss1_[(T183)]" label="Ste7_p+_Kss1_[(T183)]">
+		<att name="rxnconID" type="string" value="Ste7_p+_Kss1_[(T183)]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="189.77816965117836" y="210.58559028134835" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Ste2_[Yck]--Yck_[Ste2]" label="Ste2_[Yck]--Yck_[Ste2]">
+		<att name="rxnconID" type="string" value="Ste2_[Yck]--Yck_[Ste2]"/>
+		<att name="type" type="string" value="state"/>
+		<graphics x="-827.8748912619076" y="-547.4006462909173" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Sst2_[MAPK]--0" label="Sst2_[MAPK]--0">
+		<att name="rxnconID" type="string" value="Sst2_[MAPK]--0"/>
+		<att name="type" type="string" value="boolean_not"/>
+		<graphics x="-158.66307638153648" y="-312.6253777362298" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Ste4554" label="Ste4554">
+		<att name="rxnconID" type="string" value="Ste4554"/>
+		<att name="type" type="string" value="boolean_and"/>
+		<graphics x="-56.960935573431016" y="-623.5054741717767" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="UC9_trsl_Ste2mRNA" label="UC9_trsl_Ste2mRNA">
+		<att name="rxnconID" type="string" value="UC9_trsl_Ste2mRNA"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-828.4603404806576" y="34.99979011044991" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Ste11_[(T307)]-{p}" label="Ste11_[(T307)]-{p}">
+		<att name="rxnconID" type="string" value="Ste11_[(T307)]-{p}"/>
+		<att name="type" type="string" value="state"/>
+		<graphics x="-296.26145742401695" y="-114.67468651308525" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Ptp_p-_Fus3_[(Y182)]" label="Ptp_p-_Fus3_[(Y182)]">
+		<att name="rxnconID" type="string" value="Ptp_p-_Fus3_[(Y182)]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="133.00651742949867" y="171.68608466611397" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Ste20" label="Ste20">
+		<att name="rxnconID" type="string" value="Ste20"/>
+		<att name="type" type="string" value="component"/>
+		<graphics x="-323.52256582245445" y="-450.0442314959954" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Ste12_[MAPK]--0" label="Ste12_[MAPK]--0">
+		<att name="rxnconID" type="string" value="Ste12_[MAPK]--0"/>
+		<att name="type" type="string" value="boolean_not"/>
+		<graphics x="-44.9740485952816" y="161.82777778134835" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Dig1_[MAPK]--Kss1_[Dock]" label="Dig1_[MAPK]--Kss1_[Dock]">
+		<att name="rxnconID" type="string" value="Dig1_[MAPK]--Kss1_[Dock]"/>
+		<att name="type" type="string" value="state"/>
+		<graphics x="554.8721790505924" y="32.75188056455147" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="UC122_deg_Kss1" label="UC122_deg_Kss1">
+		<att name="rxnconID" type="string" value="UC122_deg_Kss1"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="686.2244739724674" y="-72.17872246279228" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Kss1_[Dock]_ppi-_Msg5_[MAPK]" label="Kss1_[Dock]_ppi-_Msg5_[MAPK]">
+		<att name="rxnconID" type="string" value="Kss1_[Dock]_ppi-_Msg5_[MAPK]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="680.8575916482487" y="113.19643012509835" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Ste11_p+_Ste7_[(S359)]" label="Ste11_p+_Ste7_[(S359)]">
+		<att name="rxnconID" type="string" value="Ste11_p+_Ste7_[(S359)]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-223.4237956808529" y="-20.24897392763603" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Ste12_trsl_Msg5mRNA" label="Ste12_trsl_Msg5mRNA">
+		<att name="rxnconID" type="string" value="Ste12_trsl_Msg5mRNA"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="51.4048404885807" y="229.46837226377022" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Ste2_[(S338orS339)]-{0}" label="Ste2_[(S338orS339)]-{0}">
+		<att name="rxnconID" type="string" value="Ste2_[(S338orS339)]-{0}"/>
+		<att name="type" type="string" value="boolean_not"/>
+		<graphics x="-664.9784679220638" y="-416.16901787294853" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Fus3_p+_Sst2_[(S539)]" label="Fus3_p+_Sst2_[(S539)]">
+		<att name="rxnconID" type="string" value="Fus3_p+_Sst2_[(S539)]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="258.2410755349674" y="144.08366767392647" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Far1_[(T306)]-{p}" label="Far1_[(T306)]-{p}">
+		<att name="rxnconID" type="string" value="Far1_[(T306)]-{p}"/>
+		<att name="type" type="string" value="state"/>
+		<graphics x="559.0606556130924" y="365.46306220517647" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Fus3_[Dock]--0" label="Fus3_[Dock]--0">
+		<att name="rxnconID" type="string" value="Fus3_[Dock]--0"/>
+		<att name="type" type="string" value="boolean_not"/>
+		<graphics x="285.05726816192055" y="362.07951728330147" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Kss1P" label="Kss1P">
+		<att name="rxnconID" type="string" value="Kss1P"/>
+		<att name="type" type="string" value="boolean_or"/>
+		<graphics x="498.6571521951237" y="8.651309885840533" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Far1_[MAPK]--Kss1_[Dock]" label="Far1_[MAPK]--Kss1_[Dock]">
+		<att name="rxnconID" type="string" value="Far1_[MAPK]--Kss1_[Dock]"/>
+		<att name="type" type="string" value="state"/>
+		<graphics x="501.2731800271549" y="106.11101142392647" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="UC131_deg_Ste4" label="UC131_deg_Ste4">
+		<att name="rxnconID" type="string" value="UC131_deg_Ste4"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-1007.5594005392513" y="919.940235056739" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Msg5" label="Msg5">
+		<att name="rxnconID" type="string" value="Msg5"/>
+		<att name="type" type="string" value="component"/>
+		<graphics x="402.4178943826237" y="296.62746039853585" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="UC12_deg_Ste2" label="UC12_deg_Ste2">
+		<att name="rxnconID" type="string" value="UC12_deg_Ste2"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-802.4828014181576" y="-172.98096283449638" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Far1" label="Far1">
+		<att name="rxnconID" type="string" value="Far1"/>
+		<att name="type" type="string" value="component"/>
+		<graphics x="53.258913059381484" y="-390.3304863788079" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="UC119_deg_Far1" label="UC119_deg_Far1">
+		<att name="rxnconID" type="string" value="UC119_deg_Far1"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="114.22003366485023" y="-505.8807793475579" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Msg5_p-_Kss1_[(Y185)]" label="Msg5_p-_Kss1_[(Y185)]">
+		<att name="rxnconID" type="string" value="Msg5_p-_Kss1_[(Y185)]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="529.3649158669987" y="276.43532172666085" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Dig1_[MAPK]_ppi+_Kss1_[Dock]" label="Dig1_[MAPK]_ppi+_Kss1_[Dock]">
+		<att name="rxnconID" type="string" value="Dig1_[MAPK]_ppi+_Kss1_[Dock]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="413.2793445779362" y="34.69885627255928" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="UC121_deg_Gpa1" label="UC121_deg_Gpa1">
+		<att name="rxnconID" type="string" value="UC121_deg_Gpa1"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-575.5473766134701" y="-34.45412834658134" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Ste11_[Ste5]--0" label="Ste11_[Ste5]--0">
+		<att name="rxnconID" type="string" value="Ste11_[Ste5]--0"/>
+		<att name="type" type="string" value="boolean_not"/>
+		<graphics x="160.77040292754555" y="-29.006801686425092" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Fus3_[Dock]_ppi-_Ste12_[MAPK]" label="Fus3_[Dock]_ppi-_Ste12_[MAPK]">
+		<att name="rxnconID" type="string" value="Fus3_[Dock]_ppi-_Ste12_[MAPK]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="319.6884327127018" y="344.2617072247077" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Ste7PKss1" label="Ste7PKss1">
+		<att name="rxnconID" type="string" value="Ste7PKss1"/>
+		<att name="type" type="string" value="boolean_and"/>
+		<graphics x="41.11398508086586" y="161.17503730283272" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Dig2_[MAPK]_ppi+_Kss1_[Dock]" label="Dig2_[MAPK]_ppi+_Kss1_[Dock]">
+		<att name="rxnconID" type="string" value="Dig2_[MAPK]_ppi+_Kss1_[Dock]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="481.1276722146549" y="-35.58015068544853" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Ste12_trsl_Dig2mRNA" label="Ste12_trsl_Dig2mRNA">
+		<att name="rxnconID" type="string" value="Ste12_trsl_Dig2mRNA"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-130.08244894013023" y="-50.70098503603447" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Sst2" label="Sst2">
+		<att name="rxnconID" type="string" value="Sst2"/>
+		<att name="type" type="string" value="component"/>
+		<graphics x="10.758531589654922" y="579.9972418926765" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="UC109_trsl_Ste2mRNA" label="UC109_trsl_Ste2mRNA">
+		<att name="rxnconID" type="string" value="UC109_trsl_Ste2mRNA"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-845.0487804220638" y="-40.34609612001884" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="UC111_trsl_Ste5mRNA" label="UC111_trsl_Ste5mRNA">
+		<att name="rxnconID" type="string" value="UC111_trsl_Ste5mRNA"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="222.59523202910805" y="-467.2106133319329" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="UC18_trsl_Sst2mRNA" label="UC18_trsl_Sst2mRNA">
+		<att name="rxnconID" type="string" value="UC18_trsl_Sst2mRNA"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-106.41002462372398" y="684.2643317364265" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="UC117_deg_Dig1" label="UC117_deg_Dig1">
+		<att name="rxnconID" type="string" value="UC117_deg_Dig1"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-240.0440349386654" y="454.0134162090827" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Msg5_p-_Fus3_[(T180)]" label="Msg5_p-_Fus3_[(T180)]">
+		<att name="rxnconID" type="string" value="Msg5_p-_Fus3_[(T180)]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="274.25526620879555" y="396.41984931455147" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="UC124_deg_Pher" label="UC124_deg_Pher">
+		<att name="rxnconID" type="string" value="UC124_deg_Pher"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-1201.7907237814388" y="-49.84283073915947" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Fus3P" label="Fus3P">
+		<att name="rxnconID" type="string" value="Fus3P"/>
+		<att name="type" type="string" value="boolean_or"/>
+		<graphics x="200.14935495391273" y="201.15724555478585" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Ste7_[(T363)]-{p}" label="Ste7_[(T363)]-{p}">
+		<att name="rxnconID" type="string" value="Ste7_[(T363)]-{p}"/>
+		<att name="type" type="string" value="state"/>
+		<graphics x="-4.954359035345078" y="267.87392035947335" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Fus3_[Dock]_ppi+_Sst2_[MAPK]" label="Fus3_[Dock]_ppi+_Sst2_[MAPK]">
+		<att name="rxnconID" type="string" value="Fus3_[Dock]_ppi+_Sst2_[MAPK]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="229.93516733184242" y="78.86955634580147" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Dig1_[Ste12]--Ste12_[Dig1]" label="Dig1_[Ste12]--Ste12_[Dig1]">
+		<att name="rxnconID" type="string" value="Dig1_[Ste12]--Ste12_[Dig1]"/>
+		<att name="type" type="string" value="state"/>
+		<graphics x="81.05346872344398" y="29.636737742285845" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Fus3_[(Y182)]-{p}" label="Fus3_[(Y182)]-{p}">
+		<att name="rxnconID" type="string" value="Fus3_[(Y182)]-{p}"/>
+		<att name="type" type="string" value="state"/>
+		<graphics x="224.27018930449867" y="212.9341620586921" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Kss1_[Dock]--Ste12_[MAPK]" label="Kss1_[Dock]--Ste12_[MAPK]">
+		<att name="rxnconID" type="string" value="Kss1_[Dock]--Ste12_[MAPK]"/>
+		<att name="type" type="string" value="state"/>
+		<graphics x="284.3621387673893" y="-85.46512230410087" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Fus3_[Dock]--Sst2_[MAPK]" label="Fus3_[Dock]--Sst2_[MAPK]">
+		<att name="rxnconID" type="string" value="Fus3_[Dock]--Sst2_[MAPK]"/>
+		<att name="type" type="string" value="state"/>
+		<graphics x="297.7036915017643" y="48.83055488095772" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Ste12_trsl_Sst2mRNA" label="Ste12_trsl_Sst2mRNA">
+		<att name="rxnconID" type="string" value="Ste12_trsl_Sst2mRNA"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-86.18389699921227" y="302.22697822080147" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="UC83_p-_Dig1_[(MAPK)]" label="UC83_p-_Dig1_[(MAPK)]">
+		<att name="rxnconID" type="string" value="UC83_p-_Dig1_[(MAPK)]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="396.9442615701237" y="447.7313117168952" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Gpa1" label="Gpa1">
+		<att name="rxnconID" type="string" value="Gpa1"/>
+		<att name="type" type="string" value="component"/>
+		<graphics x="-551.3024425314388" y="-147.6001168109368" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Kss1" label="Kss1">
+		<att name="rxnconID" type="string" value="Kss1"/>
+		<att name="type" type="string" value="component"/>
+		<graphics x="527.6386585427799" y="-23.177303395409467" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Ste7_[(S359)]-{p}" label="Ste7_[(S359)]-{p}">
+		<att name="rxnconID" type="string" value="Ste7_[(S359)]-{p}"/>
+		<att name="type" type="string" value="state"/>
+		<graphics x="9.525022525934219" y="214.26506415830147" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Dig2_[MAPK]_ppi-_Fus3_[Dock]" label="Dig2_[MAPK]_ppi-_Fus3_[Dock]">
+		<att name="rxnconID" type="string" value="Dig2_[MAPK]_ppi-_Fus3_[Dock]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="326.33143808379555" y="169.30473700986397" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Yck" label="Yck">
+		<att name="rxnconID" type="string" value="Yck"/>
+		<att name="type" type="string" value="component"/>
+		<graphics x="-937.4014415548763" y="-546.855175099511" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="UC104_trsl_Gpa1mRNA" label="UC104_trsl_Gpa1mRNA">
+		<att name="rxnconID" type="string" value="UC104_trsl_Gpa1mRNA"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-641.7050914572201" y="-16.68745049013603" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Ptp_p-_Kss1_[(Y185)]" label="Ptp_p-_Kss1_[(Y185)]">
+		<att name="rxnconID" type="string" value="Ptp_p-_Kss1_[(Y185)]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="435.9119129373112" y="14.404392161231158" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Far1_[(S87)]-{p}" label="Far1_[(S87)]-{p}">
+		<att name="rxnconID" type="string" value="Far1_[(S87)]-{p}"/>
+		<att name="type" type="string" value="state"/>
+		<graphics x="-907.5594005392513" y="849.8815802715827" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="UC86_p-_Far1_[(T306)]" label="UC86_p-_Far1_[(T306)]">
+		<att name="rxnconID" type="string" value="UC86_p-_Far1_[(T306)]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="697.8541126443424" y="384.2289923809577" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Kss1_[Dock]_ppi-_Ste7_[MAPK]" label="Kss1_[Dock]_ppi-_Ste7_[MAPK]">
+		<att name="rxnconID" type="string" value="Kss1_[Dock]_ppi-_Ste7_[MAPK]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="327.3430042459049" y="-204.86689671053398" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Ste20_p+_Ste11_[(S306)]" label="Ste20_p+_Ste11_[(S306)]">
+		<att name="rxnconID" type="string" value="Ste20_p+_Ste11_[(S306)]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-346.0506725119076" y="-335.5012322284173" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Fus3_[Dock]--Ste11_[MAPK]" label="Fus3_[Dock]--Ste11_[MAPK]">
+		<att name="rxnconID" type="string" value="Fus3_[Dock]--Ste11_[MAPK]"/>
+		<att name="type" type="string" value="state"/>
+		<graphics x="497.6337757302799" y="103.0188788555671" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Kss1_[Dock]_ppi-_Sst2_[MAPK]" label="Kss1_[Dock]_ppi-_Sst2_[MAPK]">
+		<att name="rxnconID" type="string" value="Kss1_[Dock]_ppi-_Sst2_[MAPK]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="485.4150257302799" y="-272.7659569598626" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Sst2_[Ste2]--0" label="Sst2_[Ste2]--0">
+		<att name="rxnconID" type="string" value="Sst2_[Ste2]--0"/>
+		<att name="type" type="string" value="boolean_not"/>
+		<graphics x="79.74658395781898" y="-117.73320396913994" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="UC87_p-_Fus3_[(T180)]" label="UC87_p-_Fus3_[(T180)]">
+		<att name="rxnconID" type="string" value="UC87_p-_Fus3_[(T180)]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="208.7272052957096" y="398.0054816387702" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Ste4_[Ste5]--0" label="Ste4_[Ste5]--0">
+		<att name="rxnconID" type="string" value="Ste4_[Ste5]--0"/>
+		<att name="type" type="string" value="boolean_not"/>
+		<graphics x="-375.4748973654232" y="-483.0922051288079" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Gpa1Ste2Sst2" label="Gpa1Ste2Sst2">
+		<att name="rxnconID" type="string" value="Gpa1Ste2Sst2"/>
+		<att name="type" type="string" value="boolean_and"/>
+		<graphics x="-562.2749156759701" y="-281.6786309100579" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Ste4_[Ste20]_ppi-_Ste20_[Ste4]" label="Ste4_[Ste20]_ppi-_Ste20_[Ste4]">
+		<att name="rxnconID" type="string" value="Ste4_[Ste20]_ppi-_Ste20_[Ste4]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-398.95237539276695" y="-727.2887078143548" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Ptp_[MAPK]_ppi+_Fus3_[Dock]" label="Ptp_[MAPK]_ppi+_Fus3_[Dock]">
+		<att name="rxnconID" type="string" value="Ptp_[MAPK]_ppi+_Fus3_[Dock]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="359.5804310037174" y="168.25148383603585" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Gpa1_[(GnP)]-{gtp}" label="Gpa1_[(GnP)]-{gtp}">
+		<att name="rxnconID" type="string" value="Gpa1_[(GnP)]-{gtp}"/>
+		<att name="type" type="string" value="state"/>
+		<graphics x="-642.6698131369076" y="-326.3510857440423" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Ste11P" label="Ste11P">
+		<att name="rxnconID" type="string" value="Ste11P"/>
+		<att name="type" type="string" value="boolean_or"/>
+		<graphics x="-268.1542186544857" y="-191.6328078128289" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Far1_[MAPK]_ppi+_Fus3_[Dock]" label="Far1_[MAPK]_ppi+_Fus3_[Dock]">
+		<att name="rxnconID" type="string" value="Far1_[MAPK]_ppi+_Fus3_[Dock]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="396.1199512673893" y="160.69139472470772" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Ste11_[(S306)]-{p}" label="Ste11_[(S306)]-{p}">
+		<att name="rxnconID" type="string" value="Ste11_[(S306)]-{p}"/>
+		<att name="type" type="string" value="state"/>
+		<graphics x="-344.56455800995445" y="-138.0449105121087" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Ste11_[(Feedback)]-{p}" label="Ste11_[(Feedback)]-{p}">
+		<att name="rxnconID" type="string" value="Ste11_[(Feedback)]-{p}"/>
+		<att name="type" type="string" value="state"/>
+		<graphics x="67.51709177031898" y="15.704425730567095" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Kss1_[Dock]--Ste7_[MAPK]" label="Kss1_[Dock]--Ste7_[MAPK]">
+		<att name="rxnconID" type="string" value="Kss1_[Dock]--Ste7_[MAPK]"/>
+		<att name="type" type="string" value="state"/>
+		<graphics x="356.9549427224674" y="-86.04533775820244" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Kss1_[(Y185)]-{p}" label="Kss1_[(Y185)]-{p}">
+		<att name="rxnconID" type="string" value="Kss1_[(Y185)]-{p}"/>
+		<att name="type" type="string" value="state"/>
+		<graphics x="427.4767322732487" y="143.20326606259835" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Dig1_[Ste12]_ppi-_Ste12_[Dig1]" label="Dig1_[Ste12]_ppi-_Ste12_[Dig1]">
+		<att name="rxnconID" type="string" value="Dig1_[Ste12]_ppi-_Ste12_[Dig1]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-43.17211530670738" y="-43.89873894228447" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="UC133_deg_Ste7" label="UC133_deg_Ste7">
+		<att name="rxnconID" type="string" value="UC133_deg_Ste7"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="51.84959604277992" y="491.1219367168952" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Fus3_p+_Far1_[(T306)]" label="Fus3_p+_Far1_[(T306)]">
+		<att name="rxnconID" type="string" value="Fus3_p+_Far1_[(T306)]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="312.91603281035805" y="350.2255744122077" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="UC123_deg_Msg5" label="UC123_deg_Msg5">
+		<att name="rxnconID" type="string" value="UC123_deg_Msg5"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="487.8024769021549" y="409.3002814434577" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="UC110_trsl_Ste4mRNA" label="UC110_trsl_Ste4mRNA">
+		<att name="rxnconID" type="string" value="UC110_trsl_Ste4mRNA"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-1201.7907237814388" y="829.4645880840827" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="not Ste11_[MAPK]--0" label="not Ste11_[MAPK]--0">
+		<att name="rxnconID" type="string" value="not Ste11_[MAPK]--0"/>
+		<att name="type" type="string" value="boolean_not"/>
+		<graphics x="431.5948047830143" y="-203.79858692659843" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Ste12_[Dig1]--0" label="Ste12_[Dig1]--0">
+		<att name="rxnconID" type="string" value="Ste12_[Dig1]--0"/>
+		<att name="type" type="string" value="boolean_not"/>
+		<graphics x="-79.07267187103844" y="-10.598507008690717" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Dig2_[(MAPK)]-{0}" label="Dig2_[(MAPK)]-{0}">
+		<att name="rxnconID" type="string" value="Dig2_[(MAPK)]-{0}"/>
+		<att name="type" type="string" value="boolean_not"/>
+		<graphics x="307.2137012673893" y="-80.8479424334954" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Gpa1_[Ste2]_ppi-_Ste2_[Gpa1]" label="Gpa1_[Ste2]_ppi-_Ste2_[Gpa1]">
+		<att name="rxnconID" type="string" value="Gpa1_[Ste2]_ppi-_Ste2_[Gpa1]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-782.2367687033138" y="-415.78619011415947" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Gpa1_[Ste2]--Ste2_[Gpa1]" label="Gpa1_[Ste2]--Ste2_[Gpa1]">
+		<att name="rxnconID" type="string" value="Gpa1_[Ste2]--Ste2_[Gpa1]"/>
+		<att name="type" type="string" value="state"/>
+		<graphics x="-695.0844249533138" y="-340.9405480243157" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Ste11_[MAPK]--0" label="Ste11_[MAPK]--0">
+		<att name="rxnconID" type="string" value="Ste11_[MAPK]--0"/>
+		<att name="type" type="string" value="boolean_not"/>
+		<graphics x="345.95045663848305" y="-407.84080132021415" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Sst2_[Ste2]--Ste2_[Sst2]" label="Sst2_[Ste2]--Ste2_[Sst2]">
+		<att name="rxnconID" type="string" value="Sst2_[Ste2]--Ste2_[Sst2]"/>
+		<att name="type" type="string" value="state"/>
+		<graphics x="-358.1180858419857" y="-260.6201363421868" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Kss1_p+_Far1_[(T306)]" label="Kss1_p+_Far1_[(T306)]">
+		<att name="rxnconID" type="string" value="Kss1_p+_Far1_[(T306)]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="578.0104236794987" y="143.2505683086921" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Ste4_[Ste20]_ppi+_Ste20_[Ste4]" label="Ste4_[Ste20]_ppi+_Ste20_[Ste4]">
+		<att name="rxnconID" type="string" value="Ste4_[Ste20]_ppi+_Ste20_[Ste4]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-409.97642324432945" y="-542.1189080096673" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Kss1_p+_Dig2_[(MAPK)]" label="Kss1_p+_Dig2_[(MAPK)]">
+		<att name="rxnconID" type="string" value="Kss1_p+_Dig2_[(MAPK)]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="388.5438099099674" y="-9.920345387596967" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Ste4_[Ste5]_ppi+_Ste5_[Ste4]" label="Ste4_[Ste5]_ppi+_Ste5_[Ste4]">
+		<att name="rxnconID" type="string" value="Ste4_[Ste5]_ppi+_Ste5_[Ste4]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-65.58687208160973" y="-451.02143486513603" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Fus3_[Dock]_ppi-_Ste7_[MAPK]" label="Fus3_[Dock]_ppi-_Ste7_[MAPK]">
+		<att name="rxnconID" type="string" value="Fus3_[Dock]_ppi-_Ste7_[MAPK]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="453.1645984841862" y="297.66057197080147" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="UC106_trsl_Msg5mRNA" label="UC106_trsl_Msg5mRNA">
+		<att name="rxnconID" type="string" value="UC106_trsl_Msg5mRNA"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="509.2173938943424" y="467.49382392392647" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="UC84_p-_Dig2_[(MAPK)]" label="UC84_p-_Dig2_[(MAPK)]">
+		<att name="rxnconID" type="string" value="UC84_p-_Dig2_[(MAPK)]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="250.43727304473305" y="-283.0754357196282" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="UC127_deg_Ste11" label="UC127_deg_Ste11">
+		<att name="rxnconID" type="string" value="UC127_deg_Ste11"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-377.2144908712826" y="232.4051093243171" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Ste2" label="Ste2">
+		<att name="rxnconID" type="string" value="Ste2"/>
+		<att name="type" type="string" value="component"/>
+		<graphics x="-711.9286632345638" y="-65.4285088397454" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="UC116_trsl_YckmRNA" label="UC116_trsl_YckmRNA">
+		<att name="rxnconID" type="string" value="UC116_trsl_YckmRNA"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-1074.3677501486263" y="-560.4202996112298" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Ste5_[Ste5]--Ste5_[Ste5]" label="Ste5_[Ste5]--Ste5_[Ste5]">
+		<att name="rxnconID" type="string" value="Ste5_[Ste5]--Ste5_[Ste5]"/>
+		<att name="type" type="string" value="state"/>
+		<graphics x="-122.64577291473961" y="-396.16440971865165" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="UC100_trsl_Dig1mRNA" label="UC100_trsl_Dig1mRNA">
+		<att name="rxnconID" type="string" value="UC100_trsl_Dig1mRNA"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-219.51923940643883" y="523.782276072364" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Far1_[MAPK]_ppi-_Fus3_[Dock]" label="Far1_[MAPK]_ppi-_Fus3_[Dock]">
+		<att name="rxnconID" type="string" value="Far1_[MAPK]_ppi-_Fus3_[Dock]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="473.8499622537174" y="335.52531806455147" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Fus3" label="Fus3">
+		<att name="rxnconID" type="string" value="Fus3"/>
+		<att name="type" type="string" value="component"/>
+		<graphics x="155.42831613555336" y="183.6154364727546" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Ste20Ste4Ste5Ste11" label="Ste20Ste4Ste5Ste11">
+		<att name="rxnconID" type="string" value="Ste20Ste4Ste5Ste11"/>
+		<att name="type" type="string" value="boolean_and"/>
+		<graphics x="-231.29963491425133" y="-422.6702996112298" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Fus3_p+_Dig1_[(MAPK)]" label="Fus3_p+_Dig1_[(MAPK)]">
+		<att name="rxnconID" type="string" value="Fus3_p+_Dig1_[(MAPK)]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="235.0262012673893" y="328.5601691387702" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Ste2_[Sst2]_ppi+_Sst2_[Ste2]" label="Ste2_[Sst2]_ppi+_Sst2_[Ste2]">
+		<att name="rxnconID" type="string" value="Ste2_[Sst2]_ppi+_Sst2_[Ste2]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-452.6702403830013" y="-373.12881096376884" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Fus3_[Dock]--Ste5_[MAPK]" label="Fus3_[Dock]--Ste5_[MAPK]">
+		<att name="rxnconID" type="string" value="Fus3_[Dock]--Ste5_[MAPK]"/>
+		<att name="type" type="string" value="state"/>
+		<graphics x="375.50038339629555" y="48.67967597470772" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Dig2_[MAPK]_ppi+_Fus3_[Dock]" label="Dig2_[MAPK]_ppi+_Fus3_[Dock]">
+		<att name="rxnconID" type="string" value="Dig2_[MAPK]_ppi+_Fus3_[Dock]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="254.17509653106117" y="46.88818732724678" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Ptp_[MAPK]_ppi-_Kss1_[Dock]" label="Ptp_[MAPK]_ppi-_Kss1_[Dock]">
+		<att name="rxnconID" type="string" value="Ptp_[MAPK]_ppi-_Kss1_[Dock]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="467.9790821267643" y="-213.1641045428704" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="UC125_deg_Ptp" label="UC125_deg_Ptp">
+		<att name="rxnconID" type="string" value="UC125_deg_Ptp"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="440.2987842752018" y="-148.13954170717705" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Fus3_deg_Ste7" label="Fus3_deg_Ste7">
+		<att name="rxnconID" type="string" value="Fus3_deg_Ste7"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="172.4510822488346" y="244.4406317852546" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Dig2" label="Dig2">
+		<att name="rxnconID" type="string" value="Dig2"/>
+		<att name="type" type="string" value="component"/>
+		<graphics x="-99.58106420502281" y="-190.9800830699395" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Ste2_[Yck]_ppi-_Yck_[Ste2]" label="Ste2_[Yck]_ppi-_Yck_[Ste2]">
+		<att name="rxnconID" type="string" value="Ste2_[Yck]_ppi-_Yck_[Ste2]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-879.1890392111263" y="-654.5325432635735" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Kss1_[Dock]--Sst2_[MAPK]" label="Kss1_[Dock]--Sst2_[MAPK]">
+		<att name="rxnconID" type="string" value="Kss1_[Dock]--Sst2_[MAPK]"/>
+		<att name="type" type="string" value="state"/>
+		<graphics x="420.2530384255924" y="-62.83367546572197" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Kss1_[Dock]_ppi+_Ste5_[MAPK]" label="Kss1_[Dock]_ppi+_Ste5_[MAPK]">
+		<att name="rxnconID" type="string" value="Kss1_[Dock]_ppi+_Ste5_[MAPK]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="454.3195667459049" y="-47.15948112978447" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Ste5_[Ste5]_ppi+_Ste5_[Ste5]" label="Ste5_[Ste5]_ppi+_Ste5_[Ste5]">
+		<att name="rxnconID" type="string" value="Ste5_[Ste5]_ppi+_Ste5_[Ste5]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-5.445829372259141" y="-482.60911186708915" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="UC99_syn_Pher" label="UC99_syn_Pher">
+		<att name="rxnconID" type="string" value="UC99_syn_Pher"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-1176.6530284689388" y="48.475177683692095" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Far1_[MAPK]_ppi+_Kss1_[Dock]" label="Far1_[MAPK]_ppi+_Kss1_[Dock]">
+		<att name="rxnconID" type="string" value="Far1_[MAPK]_ppi+_Kss1_[Dock]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="426.29823495879555" y="47.69336310849678" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Kss1_[Dock]_ppi-_Ste11_[MAPK]" label="Kss1_[Dock]_ppi-_Ste11_[MAPK]">
+		<att name="rxnconID" type="string" value="Kss1_[Dock]_ppi-_Ste11_[MAPK]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="556.8756580544987" y="-146.31262596621025" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="UC96_p-_Ste11_[(S306)]" label="UC96_p-_Ste11_[(S306)]">
+		<att name="rxnconID" type="string" value="UC96_p-_Ste11_[(S306)]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-463.5195750997982" y="-131.24013527407158" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="UC105_trsl_Kss1mRNA" label="UC105_trsl_Kss1mRNA">
+		<att name="rxnconID" type="string" value="UC105_trsl_Kss1mRNA"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="759.4931507302799" y="-20.405391774315717" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Pher_[Ste2]--Ste2_[Pher]" label="Pher_[Ste2]--Ste2_[Pher]">
+		<att name="rxnconID" type="string" value="Pher_[Ste2]--Ste2_[Pher]"/>
+		<att name="type" type="string" value="state"/>
+		<graphics x="-969.9591197775326" y="-264.6464959002923" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Dig1_[MAPK]_ppi+_Fus3_[Dock]" label="Dig1_[MAPK]_ppi+_Fus3_[Dock]">
+		<att name="rxnconID" type="string" value="Dig1_[MAPK]_ppi+_Fus3_[Dock]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="418.3139209939518" y="221.96306220517647" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Fus3_[Dock]_ppi+_Ste5_[MAPK]" label="Fus3_[Dock]_ppi+_Ste5_[MAPK]">
+		<att name="rxnconID" type="string" value="Fus3_[Dock]_ppi+_Ste5_[MAPK]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="382.6898060037174" y="161.7945136211921" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Kss1_[Dock]_ppi+_Ste11_[MAPK]" label="Kss1_[Dock]_ppi+_Ste11_[MAPK]">
+		<att name="rxnconID" type="string" value="Kss1_[Dock]_ppi+_Ste11_[MAPK]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="326.8805713845768" y="2.7667731426764703" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Kss1_[Dock]--Msg5_[MAPK]" label="Kss1_[Dock]--Msg5_[MAPK]">
+		<att name="rxnconID" type="string" value="Kss1_[Dock]--Msg5_[MAPK]"/>
+		<att name="type" type="string" value="state"/>
+		<graphics x="524.0831775857487" y="62.593646921973345" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Fus3_[Dock]_ppi-_Msg5_[MAPK]" label="Fus3_[Dock]_ppi-_Msg5_[MAPK]">
+		<att name="rxnconID" type="string" value="Fus3_[Dock]_ppi-_Msg5_[MAPK]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="402.17921640410805" y="374.55559150205147" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Fus3_[Dock]_ppi-_Sst2_[MAPK]" label="Fus3_[Dock]_ppi-_Sst2_[MAPK]">
+		<att name="rxnconID" type="string" value="Fus3_[Dock]_ppi-_Sst2_[MAPK]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="291.0302601052799" y="-139.85122307314384" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Ste7P" label="Ste7P">
+		<att name="rxnconID" type="string" value="Ste7P"/>
+		<att name="type" type="string" value="boolean_or"/>
+		<graphics x="-62.69039152130699" y="208.8489569805671" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Ste11_[Ste5]--Ste5_[Ste11]" label="Ste11_[Ste5]--Ste5_[Ste11]">
+		<att name="rxnconID" type="string" value="Ste11_[Ste5]--Ste5_[Ste11]"/>
+		<att name="type" type="string" value="state"/>
+		<graphics x="-11.356834392400742" y="-291.4280205584954" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Dig2_[MAPK]_ppi-_Kss1_[Dock]" label="Dig2_[MAPK]_ppi-_Kss1_[Dock]">
+		<att name="rxnconID" type="string" value="Dig2_[MAPK]_ppi-_Kss1_[Dock]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="527.8429432107487" y="-118.30715569033134" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Far1_[(T306)]-{0}" label="Far1_[(T306)]-{0}">
+		<att name="rxnconID" type="string" value="Far1_[(T306)]-{0}"/>
+		<att name="type" type="string" value="boolean_not"/>
+		<graphics x="608.2313099099674" y="203.1170233868171" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Kss1_[Dock]--Ste5_[MAPK]" label="Kss1_[Dock]--Ste5_[MAPK]">
+		<att name="rxnconID" type="string" value="Kss1_[Dock]--Ste5_[MAPK]"/>
+		<att name="type" type="string" value="state"/>
+		<graphics x="402.8949451638737" y="-96.379947743554" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="not Fus3_[Dock]--0" label="not Fus3_[Dock]--0">
+		<att name="rxnconID" type="string" value="not Fus3_[Dock]--0"/>
+		<att name="type" type="string" value="boolean_not"/>
+		<graphics x="392.7598133279362" y="208.18870917783272" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="UC91_p-_Sst2_[(S539)]" label="UC91_p-_Sst2_[(S539)]">
+		<att name="rxnconID" type="string" value="UC91_p-_Sst2_[(S539)]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="394.0951709939518" y="535.8427008770515" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="UC93_p-_Ste7_[(S359)]" label="UC93_p-_Ste7_[(S359)]">
+		<att name="rxnconID" type="string" value="UC93_p-_Ste7_[(S359)]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-44.98238513931847" y="338.5349005840827" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Dig1" label="Dig1">
+		<att name="rxnconID" type="string" value="Dig1"/>
+		<att name="type" type="string" value="component"/>
+		<graphics x="-139.18938253388023" y="383.9300421856452" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Kss1_[Dock]_ppi+_Ste7_[MAPK]" label="Kss1_[Dock]_ppi+_Ste7_[MAPK]">
+		<att name="rxnconID" type="string" value="Kss1_[Dock]_ppi+_Ste7_[MAPK]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="467.3835315896549" y="-19.43653496279228" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Fus180or182P" label="Fus180or182P">
+		<att name="rxnconID" type="string" value="Fus180or182P"/>
+		<att name="type" type="string" value="boolean_or"/>
+		<graphics x="381.1794300271549" y="133.18034736142647" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Fus3_p+_Dig2_[(MAPK)]" label="Fus3_p+_Dig2_[(MAPK)]">
+		<att name="rxnconID" type="string" value="Fus3_p+_Dig2_[(MAPK)]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="179.68951608672523" y="58.90965644345772" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Far1_[MAPK]_ppi-_Kss1_[Dock]" label="Far1_[MAPK]_ppi-_Kss1_[Dock]">
+		<att name="rxnconID" type="string" value="Far1_[MAPK]_ppi-_Kss1_[Dock]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="614.5360584451237" y="-6.873561940331342" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Fus3_deg_Ste12" label="Fus3_deg_Ste12">
+		<att name="rxnconID" type="string" value="Fus3_deg_Ste12"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="60.82985116973305" y="153.84471503720772" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="UC94_p-_Ste7_[(T363)]" label="UC94_p-_Ste7_[(T363)]">
+		<att name="rxnconID" type="string" value="UC94_p-_Ste7_[(T363)]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-66.2776202963314" y="390.8400763653327" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Msg5_p-_Kss1_[(T183)]" label="Msg5_p-_Kss1_[(T183)]">
+		<att name="rxnconID" type="string" value="Msg5_p-_Kss1_[(T183)]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="544.4919300271549" y="230.55018989072335" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Ste2_[Sst2]_ppi-_Sst2_[Ste2]" label="Ste2_[Sst2]_ppi-_Sst2_[Ste2]">
+		<att name="rxnconID" type="string" value="Ste2_[Sst2]_ppi-_Sst2_[Ste2]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-467.9516124533138" y="-267.54693230165947" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Ste11" label="Ste11">
+		<att name="rxnconID" type="string" value="Ste11"/>
+		<att name="type" type="string" value="component"/>
+		<graphics x="-325.9771861837826" y="130.62138740048897" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Ste5" label="Ste5">
+		<att name="rxnconID" type="string" value="Ste5"/>
+		<att name="type" type="string" value="component"/>
+		<graphics x="189.86297800078773" y="-255.22435768618095" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Ptp" label="Ptp">
+		<att name="rxnconID" type="string" value="Ptp"/>
+		<att name="type" type="string" value="component"/>
+		<graphics x="347.1879444314518" y="-64.54413994326103" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Ste7" label="Ste7">
+		<att name="rxnconID" type="string" value="Ste7"/>
+		<att name="type" type="string" value="component"/>
+		<graphics x="99.86749460235023" y="389.59331122861397" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Ste7PSte5Fus3" label="Ste7PSte5Fus3">
+		<att name="rxnconID" type="string" value="Ste7PSte5Fus3"/>
+		<att name="type" type="string" value="boolean_and"/>
+		<graphics x="97.99516489043617" y="93.9648017071296" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Gpa1_[Ste4]_ppi+_Ste4_[Gpa1]" label="Gpa1_[Ste4]_ppi+_Ste4_[Gpa1]">
+		<att name="rxnconID" type="string" value="Gpa1_[Ste4]_ppi+_Ste4_[Gpa1]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-533.2008189962826" y="-365.0135460711907" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Kss1_p+_Ste11_[(Feedback)]" label="Kss1_p+_Ste11_[(Feedback)]">
+		<att name="rxnconID" type="string" value="Kss1_p+_Ste11_[(Feedback)]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="399.7841663552799" y="-56.34423454775322" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="UC17_deg_Sst2" label="UC17_deg_Sst2">
+		<att name="rxnconID" type="string" value="UC17_deg_Sst2"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="171.90947153106117" y="562.559375681739" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="UC89_p-_Kss1_[(T183)]" label="UC89_p-_Kss1_[(T183)]">
+		<att name="rxnconID" type="string" value="UC89_p-_Kss1_[(T183)]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="644.9129505349674" y="149.41249457822335" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Sst2_[(S539)]-{0}" label="Sst2_[(S539)]-{0}">
+		<att name="rxnconID" type="string" value="Sst2_[(S539)]-{0}"/>
+		<att name="type" type="string" value="boolean_not"/>
+		<graphics x="393.3112659646549" y="263.30693427548897" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="UC126_deg_Sst2" label="UC126_deg_Sst2">
+		<att name="rxnconID" type="string" value="UC126_deg_Sst2"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="23.260213871149062" y="697.5489997051765" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Kss1_[(T183)]-{p}" label="Kss1_[(T183)]-{p}">
+		<att name="rxnconID" type="string" value="Kss1_[(T183)]-{p}"/>
+		<att name="type" type="string" value="state"/>
+		<graphics x="435.1513538552799" y="115.52858344541085" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="UC134_deg_Yck" label="UC134_deg_Yck">
+		<att name="rxnconID" type="string" value="UC134_deg_Yck"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-1018.3159923361263" y="-634.0941582538079" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Dig1_[Ste12]_ppi+_Ste12_[Dig1]" label="Dig1_[Ste12]_ppi+_Ste12_[Dig1]">
+		<att name="rxnconID" type="string" value="Dig1_[Ste12]_ppi+_Ste12_[Dig1]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="79.29078104033852" y="193.28459540830147" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Fus3_[Dock]--Msg5_[MAPK]" label="Fus3_[Dock]--Msg5_[MAPK]">
+		<att name="rxnconID" type="string" value="Fus3_[Dock]--Msg5_[MAPK]"/>
+		<att name="type" type="string" value="state"/>
+		<graphics x="301.68690683379555" y="219.85573188291085" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Dig2_[Ste12]_ppi-_Ste12_[Dig2]" label="Dig2_[Ste12]_ppi-_Ste12_[Dig2]">
+		<att name="rxnconID" type="string" value="Dig2_[Ste12]_ppi-_Ste12_[Dig2]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-198.61237905487633" y="264.6264533184577" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Ste2_[(S338orS339)]-{p}" label="Ste2_[(S338orS339)]-{p}">
+		<att name="rxnconID" type="string" value="Ste2_[(S338orS339)]-{p}"/>
+		<att name="type" type="string" value="state"/>
+		<graphics x="-824.8513927267513" y="-350.5258446551751" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Ste5Ste5Ste4" label="Ste5Ste5Ste4">
+		<att name="rxnconID" type="string" value="Ste5Ste5Ste4"/>
+		<att name="type" type="string" value="boolean_and"/>
+		<graphics x="-78.76949499115563" y="-547.0755120135735" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Kss183or185P" label="Kss183or185P">
+		<att name="rxnconID" type="string" value="Kss183or185P"/>
+		<att name="type" type="string" value="boolean_or"/>
+		<graphics x="577.6585560037174" y="42.94800178037178" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Ste7Kss1" label="Ste7Kss1">
+		<att name="rxnconID" type="string" value="Ste7Kss1"/>
+		<att name="type" type="string" value="boolean_or"/>
+		<graphics x="94.43676950469398" y="-38.61089714540947" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Pher_[Ste2]_i-_Ste2_[Pher]" label="Pher_[Ste2]_i-_Ste2_[Pher]">
+		<att name="rxnconID" type="string" value="Pher_[Ste2]_i-_Ste2_[Pher]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-1088.0045909689388" y="-268.20681389345634" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Ste12act" label="Ste12act">
+		<att name="rxnconID" type="string" value="Ste12act"/>
+		<att name="type" type="string" value="boolean_and"/>
+		<graphics x="-111.85789297089195" y="80.72060004697335" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Msg5_p-_Fus3_[(Y182)]" label="Msg5_p-_Fus3_[(Y182)]">
+		<att name="rxnconID" type="string" value="Msg5_p-_Fus3_[(Y182)]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="385.8602161599674" y="240.21596137509835" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="UC132_deg_Ste5" label="UC132_deg_Ste5">
+		<att name="rxnconID" type="string" value="UC132_deg_Ste5"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="233.51164438262367" y="-406.6169396258782" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Ste5_[Ste5]_ppi-_Ste5_[Ste5]" label="Ste5_[Ste5]_ppi-_Ste5_[Ste5]">
+		<att name="rxnconID" type="string" value="Ste5_[Ste5]_ppi-_Ste5_[Ste5]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-140.38073537811852" y="-500.9569512225579" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Fus3_[Dock]_ppi+_Ste7_[MAPK]" label="Fus3_[Dock]_ppi+_Ste7_[MAPK]">
+		<att name="rxnconID" type="string" value="Fus3_[Dock]_ppi+_Ste7_[MAPK]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="187.56732370391273" y="87.94313422666085" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Ste7Kss1noSte5" label="Ste7Kss1noSte5">
+		<att name="rxnconID" type="string" value="Ste7Kss1noSte5"/>
+		<att name="type" type="string" value="boolean_and"/>
+		<graphics x="189.10548593535805" y="-67.58665855898369" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Ste5_[Ste11]_ppi+_Ste11_[Ste5]" label="Ste5_[Ste11]_ppi+_Ste11_[Ste5]">
+		<att name="rxnconID" type="string" value="Ste5_[Ste11]_ppi+_Ste11_[Ste5]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="167.65904428496742" y="-402.17756279482353" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Dig2_[MAPK]--Kss1_[Dock]" label="Dig2_[MAPK]--Kss1_[Dock]">
+		<att name="rxnconID" type="string" value="Dig2_[MAPK]--Kss1_[Dock]"/>
+		<att name="type" type="string" value="state"/>
+		<graphics x="418.63966562285805" y="-58.98760612978447" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Kss1_[Dock]_ppi-_Ste5_[MAPK]" label="Kss1_[Dock]_ppi-_Ste5_[MAPK]">
+		<att name="rxnconID" type="string" value="Kss1_[Dock]_ppi-_Ste5_[MAPK]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="521.5303821755924" y="-231.6015511371087" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Ste7_p+_Fus3_[(Y182)]" label="Ste7_p+_Fus3_[(Y182)]">
+		<att name="rxnconID" type="string" value="Ste7_p+_Fus3_[(Y182)]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="94.93785287871742" y="234.14494697080147" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="UC20_trsl_Gpa1mRNA" label="UC20_trsl_Gpa1mRNA">
+		<att name="rxnconID" type="string" value="UC20_trsl_Gpa1mRNA"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-688.3234996603451" y="-144.7528839923333" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Dig2_[MAPK]--Fus3_[Dock]" label="Dig2_[MAPK]--Fus3_[Dock]">
+		<att name="rxnconID" type="string" value="Dig2_[MAPK]--Fus3_[Dock]"/>
+		<att name="type" type="string" value="state"/>
+		<graphics x="343.1405506326237" y="60.351764597754595" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Fus3_[Dock]_ppi+_Ste12_[MAPK]" label="Fus3_[Dock]_ppi+_Ste12_[MAPK]">
+		<att name="rxnconID" type="string" value="Fus3_[Dock]_ppi+_Ste12_[MAPK]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="207.42462350860023" y="121.2145575665046" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Gpa1_[Ste4]_ppi-_Ste4_[Gpa1]" label="Gpa1_[Ste4]_ppi-_Ste4_[Gpa1]">
+		<att name="rxnconID" type="string" value="Gpa1_[Ste4]_ppi-_Ste4_[Gpa1]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-559.9814586447201" y="-568.8589897967767" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Gpa1_aGHy_Gpa1_[(GnP)]" label="Gpa1_aGHy_Gpa1_[(GnP)]">
+		<att name="rxnconID" type="string" value="Gpa1_aGHy_Gpa1_[(GnP)]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-726.1704845236263" y="-271.8890038348626" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="UC92_p-_Ste2_[(S338orS339)]" label="UC92_p-_Ste2_[(S338orS339)]">
+		<att name="rxnconID" type="string" value="UC92_p-_Ste2_[(S338orS339)]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-889.6290416525326" y="-442.4658318377923" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Fus3_p+_Ste11_[(Feedback)]" label="Fus3_p+_Ste11_[(Feedback)]">
+		<att name="rxnconID" type="string" value="Fus3_p+_Ste11_[(Feedback)]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="278.3199939919987" y="80.86302558408272" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="UC115_trsl_Ste20mRNA" label="UC115_trsl_Ste20mRNA">
+		<att name="rxnconID" type="string" value="UC115_trsl_Ste20mRNA"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-285.734128932806" y="-619.9216729022454" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Fus3_[Dock]--Ste7_[MAPK]" label="Fus3_[Dock]--Ste7_[MAPK]">
+		<att name="rxnconID" type="string" value="Fus3_[Dock]--Ste7_[MAPK]"/>
+		<att name="type" type="string" value="state"/>
+		<graphics x="293.1292286111393" y="100.29576484189522" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="UC95_p-_Ste11_[(S302)]" label="UC95_p-_Ste11_[(S302)]">
+		<att name="rxnconID" type="string" value="UC95_p-_Ste11_[(S302)]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-445.1215038107357" y="-0.7850457049797797" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Far1_[MAPK]--Fus3_[Dock]" label="Far1_[MAPK]--Fus3_[Dock]">
+		<att name="rxnconID" type="string" value="Far1_[MAPK]--Fus3_[Dock]"/>
+		<att name="type" type="string" value="state"/>
+		<graphics x="288.6718311502018" y="247.29643622861397" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Dig1_[(MAPK)]-{p}" label="Dig1_[(MAPK)]-{p}">
+		<att name="rxnconID" type="string" value="Dig1_[(MAPK)]-{p}"/>
+		<att name="type" type="string" value="state"/>
+		<graphics x="340.2438221169987" y="292.39397040830147" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="UC90_p-_Kss1_[(Y185)]" label="UC90_p-_Kss1_[(Y185)]">
+		<att name="rxnconID" type="string" value="UC90_p-_Kss1_[(Y185)]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="586.1940784646549" y="294.68727485166085" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Yck_p+_Ste2_[(S338orS339)]" label="Yck_p+_Ste2_[(S338orS339)]">
+		<att name="rxnconID" type="string" value="Yck_p+_Ste2_[(S338orS339)]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-938.7069835470638" y="-419.96519096865165" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Dig2_[Ste12]--Ste12_[Dig2]" label="Dig2_[Ste12]--Ste12_[Dig2]">
+		<att name="rxnconID" type="string" value="Dig2_[Ste12]--Ste12_[Dig2]"/>
+		<att name="type" type="string" value="state"/>
+		<graphics x="-102.86118123993492" y="154.84166327939522" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Fus3_[Dock]_ppi-_Ste11_[MAPK]" label="Fus3_[Dock]_ppi-_Ste11_[MAPK]">
+		<att name="rxnconID" type="string" value="Fus3_[Dock]_ppi-_Ste11_[MAPK]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="542.7499256326237" y="199.29399482236397" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Fus3_[Dock]_ppi+_Ste11_[MAPK]" label="Fus3_[Dock]_ppi+_Ste11_[MAPK]">
+		<att name="rxnconID" type="string" value="Fus3_[Dock]_ppi+_Ste11_[MAPK]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="329.7935047341862" y="133.60136786923897" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Ste12_trsl_Fus3mRNA" label="Ste12_trsl_Fus3mRNA">
+		<att name="rxnconID" type="string" value="Ste12_trsl_Fus3mRNA"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="4.526300449518203" y="46.70628730283272" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Dig2_[Ste12]_ppi+_Ste12_[Dig2]" label="Dig2_[Ste12]_ppi+_Ste12_[Dig2]">
+		<att name="rxnconID" type="string" value="Dig2_[Ste12]_ppi+_Ste12_[Dig2]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-14.766715984197617" y="-46.65974052919853" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Ste7_p+_Kss1_[(Y185)]" label="Ste7_p+_Kss1_[(Y185)]">
+		<att name="rxnconID" type="string" value="Ste7_p+_Kss1_[(Y185)]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="234.42997934356117" y="307.88896552548897" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Ste2_[Yck]--0" label="Ste2_[Yck]--0">
+		<att name="rxnconID" type="string" value="Ste2_[Yck]--0"/>
+		<att name="type" type="string" value="boolean_not"/>
+		<graphics x="-648.4872569845638" y="-495.57209404482353" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Fus3_[Dock]--Ste12_[MAPK]" label="Fus3_[Dock]--Ste12_[MAPK]">
+		<att name="rxnconID" type="string" value="Fus3_[Dock]--Ste12_[MAPK]"/>
+		<att name="type" type="string" value="state"/>
+		<graphics x="257.6284961892643" y="212.4433173321296" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="UC108_trsl_Sst2mRNA" label="UC108_trsl_Sst2mRNA">
+		<att name="rxnconID" type="string" value="UC108_trsl_Sst2mRNA"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-37.3135233329258" y="729.4645880840827" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Ste5_[Ste11]_ppi-_Ste11_[Ste5]" label="Ste5_[Ste11]_ppi-_Ste11_[Ste5]">
+		<att name="rxnconID" type="string" value="Ste5_[Ste11]_ppi-_Ste11_[Ste5]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-6.85260770783043" y="-412.9063378192376" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Ste20_p+_Ste11_[(S302)]" label="Ste20_p+_Ste11_[(S302)]">
+		<att name="rxnconID" type="string" value="Ste20_p+_Ste11_[(S302)]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-315.0210094259701" y="-289.97259148134697" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Dig1_[MAPK]--Fus3_[Dock]" label="Dig1_[MAPK]--Fus3_[Dock]">
+		<att name="rxnconID" type="string" value="Dig1_[MAPK]--Fus3_[Dock]"/>
+		<att name="type" type="string" value="state"/>
+		<graphics x="281.5406971169987" y="211.62047187314522" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="UC56_trsl_Ste7mRNA" label="UC56_trsl_Ste7mRNA">
+		<att name="rxnconID" type="string" value="UC56_trsl_Ste7mRNA"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="-25.3725557135067" y="497.66936103330147" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Kss1_[Dock]_ppi+_Msg5_[MAPK]" label="Kss1_[Dock]_ppi+_Msg5_[MAPK]">
+		<att name="rxnconID" type="string" value="Kss1_[Dock]_ppi+_Msg5_[MAPK]"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="428.1899891091862" y="-11.27802666201103" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Kss1_[Dock]--Ste11_[MAPK]" label="Kss1_[Dock]--Ste11_[MAPK]">
+		<att name="rxnconID" type="string" value="Kss1_[Dock]--Ste11_[MAPK]"/>
+		<att name="type" type="string" value="state"/>
+		<graphics x="457.6670704080143" y="-100.90102776064384" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Dig1_[(MAPK)]-{0}" label="Dig1_[(MAPK)]-{0}">
+		<att name="rxnconID" type="string" value="Dig1_[(MAPK)]-{0}"/>
+		<att name="type" type="string" value="boolean_not"/>
+		<graphics x="499.1293811990299" y="151.9153632305671" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="Fus3_[Dock]--Ptp_[MAPK]" label="Fus3_[Dock]--Ptp_[MAPK]">
+		<att name="rxnconID" type="string" value="Fus3_[Dock]--Ptp_[MAPK]"/>
+		<att name="type" type="string" value="state"/>
+		<graphics x="281.46144296660805" y="157.24650947080147" z="0.0"></graphics>
+	</node>
+	
+
+	<node id="UC103_trsl_Fus3mRNA" label="UC103_trsl_Fus3mRNA">
+		<att name="rxnconID" type="string" value="UC103_trsl_Fus3mRNA"/>
+		<att name="type" type="string" value="reaction"/>
+		<graphics x="3.7563152505435937" y="113.96483222470772" z="0.0"></graphics>
+	</node>
+	
+
+	<edge source="Gpa1_[Ste4]--Ste4_[Gpa1]" target="Ste4_[Gpa1]--0">
+		<att name="interaction" type="string" value="NOT"/>
+	</edge>
+	
+
+	<edge source="Gpa1_[Ste4]--Ste4_[Gpa1]" target="Gpa1_[Ste2]_ppi+_Ste2_[Gpa1]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Gpa1_[Ste4]--Ste4_[Gpa1]" target="Gpa1_[Ste4]_ppi-_Ste4_[Gpa1]">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="Ste2_[Yck]_ppi+_Yck_[Ste2]" target="Ste2_[Yck]--Yck_[Ste2]">
+		<att name="interaction" type="string" value="produce"/>
+	</edge>
+	
+
+	<edge source="Kss1_p+_Sst2_[(S539)]" target="Sst2_[(S539)]-{p}">
+		<att name="interaction" type="string" value="produce"/>
+	</edge>
+	
+
+	<edge source="UC113_trsl_Ste11mRNA" target="Ste11">
+		<att name="interaction" type="string" value="synthesis"/>
+	</edge>
+	
+
+	<edge source="Sst2_[(S539)]-{p}" target="Sst2_[(S539)]-{0}">
+		<att name="interaction" type="string" value="NOT"/>
+	</edge>
+	
+
+	<edge source="Sst2_[(S539)]-{p}" target="UC91_p-_Sst2_[(S539)]">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="Sst2_[(S539)]-{p}" target="UC17_deg_Sst2">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Ste11_p+_Ste7_[(T363)]" target="Ste7_[(T363)]-{p}">
+		<att name="interaction" type="string" value="produce"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Ptp_[MAPK]" target="Ptp_[MAPK]_ppi+_Fus3_[Dock]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Ptp_[MAPK]" target="Kss1_[Dock]_ppi+_Ste11_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Ptp_[MAPK]" target="Kss1_[Dock]_ppi+_Ste7_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Ptp_[MAPK]" target="Far1_[MAPK]_ppi+_Kss1_[Dock]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Ptp_[MAPK]" target="Ptp_p-_Kss1_[(Y185)]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Ptp_[MAPK]" target="Ptp_[MAPK]_ppi-_Kss1_[Dock]">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Ptp_[MAPK]" target="Kss1_[Dock]_ppi+_Msg5_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Ptp_[MAPK]" target="Dig1_[MAPK]_ppi+_Kss1_[Dock]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Ptp_[MAPK]" target="Kss1_[Dock]_ppi+_Ste5_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Ptp_[MAPK]" target="Dig2_[MAPK]_ppi+_Kss1_[Dock]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Ptp_[MAPK]" target="Kss1_[Dock]_ppi+_Ste12_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Ptp_[MAPK]" target="Kss1_[Dock]_ppi+_Sst2_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Ste4_[Ste20]--0" target="Gpa1_[Ste4]_ppi+_Ste4_[Gpa1]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Ste7_[MAPK]--0" target="Ste7Ste5Kss1">
+		<att name="interaction" type="string" value="AND"/>
+	</edge>
+	
+
+	<edge source="Ste7_[MAPK]--0" target="Ste7_p+_Fus3_[(Y182)]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Ste7_[MAPK]--0" target="Ste7_p+_Fus3_[(T180)]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Ste7_[MAPK]--0" target="Ste5_[Ste7]_ppi+_Ste7_[Ste5]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Ste7_[MAPK]--0" target="Fus3_deg_Ste7">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Ste11_[(S302)]-{p}" target="Ste11_p+_Ste7_[(T363)]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Ste11_[(S302)]-{p}" target="UC95_p-_Ste11_[(S302)]">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="Ste11_[(S302)]-{p}" target="Ste11_p+_Ste7_[(S359)]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Ste11_[(S302)]-{p}" target="Ste11P">
+		<att name="interaction" type="string" value="OR"/>
+	</edge>
+	
+
+	<edge source="Gpa1_[Ste2]_ppi+_Ste2_[Gpa1]" target="Gpa1_[Ste2]--Ste2_[Gpa1]">
+		<att name="interaction" type="string" value="produce"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]_ppi+_Ste12_[MAPK]" target="Kss1_[Dock]--Ste12_[MAPK]">
+		<att name="interaction" type="string" value="produce"/>
+	</edge>
+	
+
+	<edge source="Ptp_[MAPK]_ppi+_Kss1_[Dock]" target="Kss1_[Dock]--Ptp_[MAPK]">
+		<att name="interaction" type="string" value="produce"/>
+	</edge>
+	
+
+	<edge source="Ste5_[Ste7]--Ste7_[Ste5]" target="Ste7Ste5Kss1">
+		<att name="interaction" type="string" value="AND"/>
+	</edge>
+	
+
+	<edge source="Ste5_[Ste7]--Ste7_[Ste5]" target="Ste11PSte5Ste5Ste7">
+		<att name="interaction" type="string" value="AND"/>
+	</edge>
+	
+
+	<edge source="Ste5_[Ste7]--Ste7_[Ste5]" target="Ste7_[Ste5]--0">
+		<att name="interaction" type="string" value="NOT"/>
+	</edge>
+	
+
+	<edge source="Ste5_[Ste7]--Ste7_[Ste5]" target="Ste7PSte5Fus3">
+		<att name="interaction" type="string" value="AND"/>
+	</edge>
+	
+
+	<edge source="Ste5_[Ste7]--Ste7_[Ste5]" target="Ste5_[Ste7]_ppi-_Ste7_[Ste5]">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="Ste12_trsl_Ste2mRNA" target="Ste2">
+		<att name="interaction" type="string" value="synthesis"/>
+	</edge>
+	
+
+	<edge source="Gpa1_aGEx_Gpa1_[(GnP)]" target="Gpa1_[(GnP)]-{gtp}">
+		<att name="interaction" type="string" value="produce"/>
+	</edge>
+	
+
+	<edge source="Ste12_trsl_PtpmRNA" target="Ptp">
+		<att name="interaction" type="string" value="synthesis"/>
+	</edge>
+	
+
+	<edge source="not Ste12_[MAPK]--0" target="Ste12_[MAPK]--0">
+		<att name="interaction" type="string" value="NOT"/>
+	</edge>
+	
+
+	<edge source="UC129_deg_Ste2" target="Ste2">
+		<att name="interaction" type="string" value="degrade"/>
+	</edge>
+	
+
+	<edge source="Ste12_[Dig2]--0" target="Ste12act">
+		<att name="interaction" type="string" value="AND"/>
+	</edge>
+	
+
+	<edge source="UC102_trsl_Far1mRNA" target="Far1">
+		<att name="interaction" type="string" value="synthesis"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]_ppi-_Ste12_[MAPK]" target="Kss1_[Dock]--Ste12_[MAPK]">
+		<att name="interaction" type="string" value="consume"/>
+	</edge>
+	
+
+	<edge source="UC107_trsl_PtpmRNA" target="Ptp">
+		<att name="interaction" type="string" value="synthesis"/>
+	</edge>
+	
+
+	<edge source="Ste7_p+_Fus3_[(T180)]" target="Fus3_[(T180)]-{p}">
+		<att name="interaction" type="string" value="produce"/>
+	</edge>
+	
+
+	<edge source="UC54_trsl_Ste11mRNA" target="Ste11">
+		<att name="interaction" type="string" value="synthesis"/>
+	</edge>
+	
+
+	<edge source="not Ste7_[MAPK]--0" target="Ste7_[MAPK]--0">
+		<att name="interaction" type="string" value="NOT"/>
+	</edge>
+	
+
+	<edge source="UC112_trsl_Ste7mRNA" target="Ste7">
+		<att name="interaction" type="string" value="synthesis"/>
+	</edge>
+	
+
+	<edge source="Fus3_[(Y182)]-{0}" target="Msg5_p-_Fus3_[(T180)]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Ste11PSte5Ste5Ste7" target="Ste11_p+_Ste7_[(S359)]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Ste11PSte5Ste5Ste7" target="Ste11_p+_Ste7_[(T363)]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="UC19_deg_Gpa1" target="Gpa1">
+		<att name="interaction" type="string" value="degrade"/>
+	</edge>
+	
+
+	<edge source="Kss1_p+_Dig1_[(MAPK)]" target="Dig1_[(MAPK)]-{p}">
+		<att name="interaction" type="string" value="produce"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]_ppi+_Msg5_[MAPK]" target="Fus3_[Dock]--Msg5_[MAPK]">
+		<att name="interaction" type="string" value="produce"/>
+	</edge>
+	
+
+	<edge source="Ptp_[MAPK]_ppi-_Fus3_[Dock]" target="Fus3_[Dock]--Ptp_[MAPK]">
+		<att name="interaction" type="string" value="consume"/>
+	</edge>
+	
+
+	<edge source="Pher" target="UC124_deg_Pher">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="Pher" target="Pher_[Ste2]_i+_Ste2_[Pher]">
+		<att name="interaction" type="string" value="is"/>
+	</edge>
+	
+
+	<edge source="Ste4_[Ste5]_ppi-_Ste5_[Ste4]" target="Ste4_[Ste5]--Ste5_[Ste4]">
+		<att name="interaction" type="string" value="consume"/>
+	</edge>
+	
+
+	<edge source="UC118_deg_Dig2" target="Dig2">
+		<att name="interaction" type="string" value="degrade"/>
+	</edge>
+	
+
+	<edge source="Ste20_p+_Ste11_[(T307)]" target="Ste11_[(T307)]-{p}">
+		<att name="interaction" type="string" value="produce"/>
+	</edge>
+	
+
+	<edge source="Ste7_[Ste5]--0" target="Ste7Kss1noSte5">
+		<att name="interaction" type="string" value="AND"/>
+	</edge>
+	
+
+	<edge source="Ste7_[Ste5]--0" target="Fus3_[Dock]_ppi+_Ste7_[MAPK]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Ste7_[Ste5]--0" target="Kss1_[Dock]_ppi+_Ste7_[MAPK]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Ste7_[Ste5]--0" target="Fus3_deg_Ste7">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="UC97_p-_Ste11_[(T307)]" target="Ste11_[(T307)]-{p}">
+		<att name="interaction" type="string" value="consume"/>
+	</edge>
+	
+
+	<edge source="Ste20_[Ste4]--Ste4_[Ste20]" target="Ste4_[Ste20]--0">
+		<att name="interaction" type="string" value="NOT"/>
+	</edge>
+	
+
+	<edge source="Ste20_[Ste4]--Ste4_[Ste20]" target="Ste4_[Ste20]_ppi-_Ste20_[Ste4]">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="Ste20_[Ste4]--Ste4_[Ste20]" target="Ste20Ste4Ste5Ste11">
+		<att name="interaction" type="string" value="AND"/>
+	</edge>
+	
+
+	<edge source="Ste5_[Ste7]_ppi+_Ste7_[Ste5]" target="Ste5_[Ste7]--Ste7_[Ste5]">
+		<att name="interaction" type="string" value="produce"/>
+	</edge>
+	
+
+	<edge source="UC53_deg_Ste11" target="Ste11">
+		<att name="interaction" type="string" value="degrade"/>
+	</edge>
+	
+
+	<edge source="Kss1_[(Y185)]-{0}" target="Msg5_p-_Kss1_[(T183)]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="UC101_trsl_Dig2mRNA" target="Dig2">
+		<att name="interaction" type="string" value="synthesis"/>
+	</edge>
+	
+
+	<edge source="Pher_[Ste2]_i+_Ste2_[Pher]" target="Pher_[Ste2]--Ste2_[Pher]">
+		<att name="interaction" type="string" value="produce"/>
+	</edge>
+	
+
+	<edge source="Ste12" target="Ste12_trsl_Msg5mRNA">
+		<att name="interaction" type="string" value="modifiy"/>
+	</edge>
+	
+
+	<edge source="Ste12" target="Ste12_trsl_Fus3mRNA">
+		<att name="interaction" type="string" value="modifiy"/>
+	</edge>
+	
+
+	<edge source="Ste12" target="Dig1_[Ste12]_ppi+_Ste12_[Dig1]">
+		<att name="interaction" type="string" value="is"/>
+	</edge>
+	
+
+	<edge source="Ste12" target="Fus3_deg_Ste12">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="Ste12" target="Ste12_trsl_Gpa1mRNA">
+		<att name="interaction" type="string" value="modifiy"/>
+	</edge>
+	
+
+	<edge source="Ste12" target="UC128_deg_Ste12">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="Ste12" target="Fus3_[Dock]_ppi+_Ste12_[MAPK]">
+		<att name="interaction" type="string" value="is"/>
+	</edge>
+	
+
+	<edge source="Ste12" target="Dig2_[Ste12]_ppi+_Ste12_[Dig2]">
+		<att name="interaction" type="string" value="is"/>
+	</edge>
+	
+
+	<edge source="Ste12" target="Ste12_trsl_Ste2mRNA">
+		<att name="interaction" type="string" value="modifiy"/>
+	</edge>
+	
+
+	<edge source="Ste12" target="Ste12_trsl_Sst2mRNA">
+		<att name="interaction" type="string" value="modifiy"/>
+	</edge>
+	
+
+	<edge source="Ste12" target="Ste12_trsl_Dig2mRNA">
+		<att name="interaction" type="string" value="modifiy"/>
+	</edge>
+	
+
+	<edge source="Ste12" target="Kss1_[Dock]_ppi+_Ste12_[MAPK]">
+		<att name="interaction" type="string" value="is"/>
+	</edge>
+	
+
+	<edge source="Ste12" target="Ste12_trsl_Ste12mRNA">
+		<att name="interaction" type="string" value="modifiy"/>
+	</edge>
+	
+
+	<edge source="Ste12" target="Ste12_trsl_Far1mRNA">
+		<att name="interaction" type="string" value="modifiy"/>
+	</edge>
+	
+
+	<edge source="Ste12" target="Ste12_trsl_PtpmRNA">
+		<att name="interaction" type="string" value="modifiy"/>
+	</edge>
+	
+
+	<edge source="UC130_deg_Ste20" target="Ste20">
+		<att name="interaction" type="string" value="degrade"/>
+	</edge>
+	
+
+	<edge source="Ste11_[(Feedback)]-{0}" target="Kss1_[Dock]_ppi+_Ste11_[MAPK]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Ste11_[(Feedback)]-{0}" target="Fus3_[Dock]_ppi+_Ste11_[MAPK]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Ste5_[Ste7]_ppi-_Ste7_[Ste5]" target="Ste5_[Ste7]--Ste7_[Ste5]">
+		<att name="interaction" type="string" value="consume"/>
+	</edge>
+	
+
+	<edge source="UC120_deg_Fus3" target="Fus3">
+		<att name="interaction" type="string" value="degrade"/>
+	</edge>
+	
+
+	<edge source="UC114_trsl_Ste12mRNA" target="Ste12">
+		<att name="interaction" type="string" value="synthesis"/>
+	</edge>
+	
+
+	<edge source="Fus3_[(T180)]-{p}" target="Fus3_p+_Dig1_[(MAPK)]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Fus3_[(T180)]-{p}" target="Fus3_[Dock]_ppi+_Ste11_[MAPK]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Fus3_[(T180)]-{p}" target="Fus3P">
+		<att name="interaction" type="string" value="OR"/>
+	</edge>
+	
+
+	<edge source="Fus3_[(T180)]-{p}" target="Far1_[MAPK]_ppi+_Fus3_[Dock]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Fus3_[(T180)]-{p}" target="Fus3_[Dock]_ppi+_Sst2_[MAPK]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Fus3_[(T180)]-{p}" target="Fus180or182P">
+		<att name="interaction" type="string" value="OR"/>
+	</edge>
+	
+
+	<edge source="Fus3_[(T180)]-{p}" target="Dig2_[MAPK]_ppi+_Fus3_[Dock]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Fus3_[(T180)]-{p}" target="Dig1_[MAPK]_ppi+_Fus3_[Dock]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Fus3_[(T180)]-{p}" target="Fus3_deg_Ste12">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Fus3_[(T180)]-{p}" target="UC87_p-_Fus3_[(T180)]">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="Fus3_[(T180)]-{p}" target="Ste7_p+_Fus3_[(Y182)]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Fus3_[(T180)]-{p}" target="Fus3_deg_Ste7">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Fus3_[(T180)]-{p}" target="Fus3_[Dock]_ppi+_Ste12_[MAPK]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Fus3_[(T180)]-{p}" target="Fus3_p+_Far1_[(T306)]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Fus3_[(T180)]-{p}" target="Fus3_p+_Dig2_[(MAPK)]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Fus3_[(T180)]-{p}" target="Fus3_p+_Sst2_[(S539)]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Fus3_[(T180)]-{p}" target="Fus3_[Dock]_ppi+_Msg5_[MAPK]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Fus3_[(T180)]-{p}" target="Fus3_p+_Ste11_[(Feedback)]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Fus3_[(T180)]-{p}" target="Msg5_p-_Fus3_[(T180)]">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="UC85_p-_Far1_[(S87)]" target="Far1_[(S87)]-{p}">
+		<att name="interaction" type="string" value="consume"/>
+	</edge>
+	
+
+	<edge source="UC88_p-_Fus3_[(Y182)]" target="Fus3_[(Y182)]-{p}">
+		<att name="interaction" type="string" value="consume"/>
+	</edge>
+	
+
+	<edge source="Ste4_[Gpa1]--0" target="Ste4_[Ste5]_ppi+_Ste5_[Ste4]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Ste4_[Gpa1]--0" target="Ste4_[Ste20]_ppi+_Ste20_[Ste4]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="UC128_deg_Ste12" target="Ste12">
+		<att name="interaction" type="string" value="degrade"/>
+	</edge>
+	
+
+	<edge source="Ste7Ste5Kss1" target="Ste7Kss1">
+		<att name="interaction" type="string" value="OR"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]_ppi-_Ste5_[MAPK]" target="Fus3_[Dock]--Ste5_[MAPK]">
+		<att name="interaction" type="string" value="consume"/>
+	</edge>
+	
+
+	<edge source="not Sst2_[MAPK]--0" target="Sst2_[MAPK]--0">
+		<att name="interaction" type="string" value="NOT"/>
+	</edge>
+	
+
+	<edge source="Dig2_[(MAPK)]-{p}" target="UC84_p-_Dig2_[(MAPK)]">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="Dig2_[(MAPK)]-{p}" target="Dig2_[(MAPK)]-{0}">
+		<att name="interaction" type="string" value="NOT"/>
+	</edge>
+	
+
+	<edge source="Dig2_[(MAPK)]-{p}" target="Dig2_[Ste12]_ppi+_Ste12_[Dig2]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Ste4_[Ste5]--Ste5_[Ste4]" target="Ste4_[Ste5]_ppi-_Ste5_[Ste4]">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="Ste4_[Ste5]--Ste5_[Ste4]" target="Ste5_[Ste5]_ppi+_Ste5_[Ste5]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Ste4_[Ste5]--Ste5_[Ste4]" target="Ste4554">
+		<att name="interaction" type="string" value="AND"/>
+	</edge>
+	
+
+	<edge source="Ste4_[Ste5]--Ste5_[Ste4]" target="Ste4_[Ste5]--0">
+		<att name="interaction" type="string" value="NOT"/>
+	</edge>
+	
+
+	<edge source="Ste4_[Ste5]--Ste5_[Ste4]" target="Ste5Ste5Ste4">
+		<att name="interaction" type="string" value="AND"/>
+	</edge>
+	
+
+	<edge source="Ste4_[Ste5]--Ste5_[Ste4]" target="Ste20Ste4Ste5Ste11">
+		<att name="interaction" type="string" value="AND"/>
+	</edge>
+	
+
+	<edge source="Ste2_[Sst2]--0" target="Ste2_[Yck]_ppi+_Yck_[Ste2]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Gpa1Ste2Pher" target="Gpa1_aGEx_Gpa1_[(GnP)]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Ste12_trsl_Gpa1mRNA" target="Gpa1">
+		<att name="interaction" type="string" value="synthesis"/>
+	</edge>
+	
+
+	<edge source="Dig1_[MAPK]_ppi-_Fus3_[Dock]" target="Dig1_[MAPK]--Fus3_[Dock]">
+		<att name="interaction" type="string" value="consume"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]_ppi+_Sst2_[MAPK]" target="Kss1_[Dock]--Sst2_[MAPK]">
+		<att name="interaction" type="string" value="produce"/>
+	</edge>
+	
+
+	<edge source="Ste4" target="UC131_deg_Ste4">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="Ste12_trsl_Far1mRNA" target="Far1">
+		<att name="interaction" type="string" value="synthesis"/>
+	</edge>
+	
+
+	<edge source="Dig1_[MAPK]_ppi-_Kss1_[Dock]" target="Dig1_[MAPK]--Kss1_[Dock]">
+		<att name="interaction" type="string" value="consume"/>
+	</edge>
+	
+
+	<edge source="Ste7_p+_Kss1_[(T183)]" target="Kss1_[(T183)]-{p}">
+		<att name="interaction" type="string" value="produce"/>
+	</edge>
+	
+
+	<edge source="Ste2_[Yck]--Yck_[Ste2]" target="Ste2_[Yck]--0">
+		<att name="interaction" type="string" value="NOT"/>
+	</edge>
+	
+
+	<edge source="Ste2_[Yck]--Yck_[Ste2]" target="Yck_p+_Ste2_[(S338orS339)]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Ste2_[Yck]--Yck_[Ste2]" target="Ste2_[Yck]_ppi-_Yck_[Ste2]">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="Sst2_[MAPK]--0" target="Ste2_[Sst2]_ppi+_Sst2_[Ste2]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Ste4554" target="Ste5_[Ste5]_ppi+_Ste5_[Ste5]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="UC9_trsl_Ste2mRNA" target="Ste2">
+		<att name="interaction" type="string" value="synthesis"/>
+	</edge>
+	
+
+	<edge source="Ste11_[(T307)]-{p}" target="Ste11_p+_Ste7_[(T363)]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Ste11_[(T307)]-{p}" target="Ste11_p+_Ste7_[(S359)]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Ste11_[(T307)]-{p}" target="UC97_p-_Ste11_[(T307)]">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="Ste11_[(T307)]-{p}" target="Ste11P">
+		<att name="interaction" type="string" value="OR"/>
+	</edge>
+	
+
+	<edge source="Ptp_p-_Fus3_[(Y182)]" target="Fus3_[(Y182)]-{p}">
+		<att name="interaction" type="string" value="consume"/>
+	</edge>
+	
+
+	<edge source="Ste20" target="Ste20_p+_Ste11_[(S302)]">
+		<att name="interaction" type="string" value="modifiy"/>
+	</edge>
+	
+
+	<edge source="Ste20" target="Ste20_p+_Ste11_[(T307)]">
+		<att name="interaction" type="string" value="modifiy"/>
+	</edge>
+	
+
+	<edge source="Ste20" target="Ste20_p+_Ste11_[(S306)]">
+		<att name="interaction" type="string" value="modifiy"/>
+	</edge>
+	
+
+	<edge source="Ste20" target="UC130_deg_Ste20">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="Ste20" target="Ste4_[Ste20]_ppi+_Ste20_[Ste4]">
+		<att name="interaction" type="string" value="is"/>
+	</edge>
+	
+
+	<edge source="Ste12_[MAPK]--0" target="Ste12act">
+		<att name="interaction" type="string" value="AND"/>
+	</edge>
+	
+
+	<edge source="Dig1_[MAPK]--Kss1_[Dock]" target="Kss1_[Dock]_ppi+_Ste11_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Dig1_[MAPK]--Kss1_[Dock]" target="Kss1_[Dock]_ppi+_Ste7_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Dig1_[MAPK]--Kss1_[Dock]" target="Dig1_[MAPK]_ppi-_Kss1_[Dock]">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="Dig1_[MAPK]--Kss1_[Dock]" target="Dig1_[MAPK]_ppi+_Fus3_[Dock]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Dig1_[MAPK]--Kss1_[Dock]" target="Kss1_[Dock]_ppi+_Msg5_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Dig1_[MAPK]--Kss1_[Dock]" target="Kss1_[Dock]_ppi+_Ste5_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Dig1_[MAPK]--Kss1_[Dock]" target="Dig2_[MAPK]_ppi+_Kss1_[Dock]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Dig1_[MAPK]--Kss1_[Dock]" target="Kss1_p+_Dig1_[(MAPK)]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Dig1_[MAPK]--Kss1_[Dock]" target="Kss1_[Dock]_ppi+_Ste12_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Dig1_[MAPK]--Kss1_[Dock]" target="Ptp_[MAPK]_ppi+_Kss1_[Dock]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Dig1_[MAPK]--Kss1_[Dock]" target="Far1_[MAPK]_ppi+_Kss1_[Dock]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Dig1_[MAPK]--Kss1_[Dock]" target="Kss1_[Dock]_ppi+_Sst2_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="UC122_deg_Kss1" target="Kss1">
+		<att name="interaction" type="string" value="degrade"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]_ppi-_Msg5_[MAPK]" target="Kss1_[Dock]--Msg5_[MAPK]">
+		<att name="interaction" type="string" value="consume"/>
+	</edge>
+	
+
+	<edge source="Ste11_p+_Ste7_[(S359)]" target="Ste7_[(S359)]-{p}">
+		<att name="interaction" type="string" value="produce"/>
+	</edge>
+	
+
+	<edge source="Ste12_trsl_Msg5mRNA" target="Msg5">
+		<att name="interaction" type="string" value="synthesis"/>
+	</edge>
+	
+
+	<edge source="Ste2_[(S338orS339)]-{0}" target="Ste2_[Sst2]_ppi+_Sst2_[Ste2]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Ste2_[(S338orS339)]-{0}" target="Ste2_[Yck]_ppi+_Yck_[Ste2]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Fus3_p+_Sst2_[(S539)]" target="Sst2_[(S539)]-{p}">
+		<att name="interaction" type="string" value="produce"/>
+	</edge>
+	
+
+	<edge source="Far1_[(T306)]-{p}" target="UC86_p-_Far1_[(T306)]">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="Far1_[(T306)]-{p}" target="Far1_[(T306)]-{0}">
+		<att name="interaction" type="string" value="NOT"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--0" target="Fus3_deg_Ste7">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Kss1P" target="Kss1_[Dock]_ppi+_Ste11_[MAPK]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Kss1P" target="Dig1_[MAPK]_ppi+_Kss1_[Dock]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Kss1P" target="Far1_[MAPK]_ppi+_Kss1_[Dock]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Kss1P" target="Dig2_[MAPK]_ppi+_Kss1_[Dock]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Kss1P" target="Kss1_p+_Dig1_[(MAPK)]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Kss1P" target="Kss1_p+_Dig2_[(MAPK)]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Kss1P" target="Kss1_[Dock]_ppi+_Msg5_[MAPK]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Kss1P" target="Kss1_p+_Ste11_[(Feedback)]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Kss1P" target="Kss1_p+_Far1_[(T306)]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Far1_[MAPK]--Kss1_[Dock]" target="Kss1_[Dock]_ppi+_Ste11_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Far1_[MAPK]--Kss1_[Dock]" target="Far1_[MAPK]_ppi+_Fus3_[Dock]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Far1_[MAPK]--Kss1_[Dock]" target="Kss1_[Dock]_ppi+_Ste7_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Far1_[MAPK]--Kss1_[Dock]" target="Far1_[MAPK]_ppi-_Kss1_[Dock]">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="Far1_[MAPK]--Kss1_[Dock]" target="Kss1_[Dock]_ppi+_Msg5_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Far1_[MAPK]--Kss1_[Dock]" target="Dig1_[MAPK]_ppi+_Kss1_[Dock]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Far1_[MAPK]--Kss1_[Dock]" target="Kss1_[Dock]_ppi+_Ste5_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Far1_[MAPK]--Kss1_[Dock]" target="Dig2_[MAPK]_ppi+_Kss1_[Dock]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Far1_[MAPK]--Kss1_[Dock]" target="Kss1_[Dock]_ppi+_Ste12_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Far1_[MAPK]--Kss1_[Dock]" target="Ptp_[MAPK]_ppi+_Kss1_[Dock]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Far1_[MAPK]--Kss1_[Dock]" target="Kss1_[Dock]_ppi+_Sst2_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Far1_[MAPK]--Kss1_[Dock]" target="Kss1_p+_Far1_[(T306)]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="UC131_deg_Ste4" target="Ste4">
+		<att name="interaction" type="string" value="degrade"/>
+	</edge>
+	
+
+	<edge source="Msg5" target="Msg5_p-_Kss1_[(T183)]">
+		<att name="interaction" type="string" value="modifiy"/>
+	</edge>
+	
+
+	<edge source="Msg5" target="Msg5_p-_Fus3_[(Y182)]">
+		<att name="interaction" type="string" value="modifiy"/>
+	</edge>
+	
+
+	<edge source="Msg5" target="Msg5_p-_Kss1_[(Y185)]">
+		<att name="interaction" type="string" value="modifiy"/>
+	</edge>
+	
+
+	<edge source="Msg5" target="Kss1_[Dock]_ppi+_Msg5_[MAPK]">
+		<att name="interaction" type="string" value="is"/>
+	</edge>
+	
+
+	<edge source="Msg5" target="Fus3_[Dock]_ppi+_Msg5_[MAPK]">
+		<att name="interaction" type="string" value="is"/>
+	</edge>
+	
+
+	<edge source="Msg5" target="UC123_deg_Msg5">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="Msg5" target="Msg5_p-_Fus3_[(T180)]">
+		<att name="interaction" type="string" value="modifiy"/>
+	</edge>
+	
+
+	<edge source="UC12_deg_Ste2" target="Ste2">
+		<att name="interaction" type="string" value="degrade"/>
+	</edge>
+	
+
+	<edge source="Far1" target="UC119_deg_Far1">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="UC119_deg_Far1" target="Far1">
+		<att name="interaction" type="string" value="degrade"/>
+	</edge>
+	
+
+	<edge source="Msg5_p-_Kss1_[(Y185)]" target="Kss1_[(Y185)]-{p}">
+		<att name="interaction" type="string" value="consume"/>
+	</edge>
+	
+
+	<edge source="Dig1_[MAPK]_ppi+_Kss1_[Dock]" target="Dig1_[MAPK]--Kss1_[Dock]">
+		<att name="interaction" type="string" value="produce"/>
+	</edge>
+	
+
+	<edge source="UC121_deg_Gpa1" target="Gpa1">
+		<att name="interaction" type="string" value="degrade"/>
+	</edge>
+	
+
+	<edge source="Ste11_[Ste5]--0" target="Kss1_[Dock]_ppi+_Ste11_[MAPK]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Ste11_[Ste5]--0" target="Fus3_[Dock]_ppi+_Ste11_[MAPK]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Ste11_[Ste5]--0" target="Kss1_p+_Ste11_[(Feedback)]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Ste11_[Ste5]--0" target="Fus3_p+_Ste11_[(Feedback)]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]_ppi-_Ste12_[MAPK]" target="Fus3_[Dock]--Ste12_[MAPK]">
+		<att name="interaction" type="string" value="consume"/>
+	</edge>
+	
+
+	<edge source="Ste7PKss1" target="Ste7_p+_Kss1_[(Y185)]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Ste7PKss1" target="Ste7_p+_Kss1_[(T183)]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Dig2_[MAPK]_ppi+_Kss1_[Dock]" target="Dig2_[MAPK]--Kss1_[Dock]">
+		<att name="interaction" type="string" value="produce"/>
+	</edge>
+	
+
+	<edge source="Ste12_trsl_Dig2mRNA" target="Dig2">
+		<att name="interaction" type="string" value="synthesis"/>
+	</edge>
+	
+
+	<edge source="Sst2" target="UC126_deg_Sst2">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="Sst2" target="UC17_deg_Sst2">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="UC109_trsl_Ste2mRNA" target="Ste2">
+		<att name="interaction" type="string" value="synthesis"/>
+	</edge>
+	
+
+	<edge source="UC111_trsl_Ste5mRNA" target="Ste5">
+		<att name="interaction" type="string" value="synthesis"/>
+	</edge>
+	
+
+	<edge source="UC18_trsl_Sst2mRNA" target="Sst2">
+		<att name="interaction" type="string" value="synthesis"/>
+	</edge>
+	
+
+	<edge source="UC117_deg_Dig1" target="Dig1">
+		<att name="interaction" type="string" value="degrade"/>
+	</edge>
+	
+
+	<edge source="Msg5_p-_Fus3_[(T180)]" target="Fus3_[(T180)]-{p}">
+		<att name="interaction" type="string" value="consume"/>
+	</edge>
+	
+
+	<edge source="UC124_deg_Pher" target="Pher">
+		<att name="interaction" type="string" value="degrade"/>
+	</edge>
+	
+
+	<edge source="Fus3P" target="Fus3_p+_Dig1_[(MAPK)]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Fus3P" target="Fus3_[Dock]_ppi+_Ste11_[MAPK]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Fus3P" target="Fus3_p+_Dig2_[(MAPK)]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Fus3P" target="Far1_[MAPK]_ppi+_Fus3_[Dock]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Fus3P" target="Dig1_[MAPK]_ppi+_Fus3_[Dock]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Fus3P" target="Fus3_p+_Ste11_[(Feedback)]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Fus3P" target="Fus3_deg_Ste7">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Fus3P" target="Fus3_deg_Ste12">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Fus3P" target="Fus3_[Dock]_ppi+_Msg5_[MAPK]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Fus3P" target="Fus3_p+_Far1_[(T306)]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Fus3P" target="Dig2_[MAPK]_ppi+_Fus3_[Dock]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Ste7_[(T363)]-{p}" target="Ste7_p+_Kss1_[(Y185)]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Ste7_[(T363)]-{p}" target="Ste7_p+_Kss1_[(T183)]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Ste7_[(T363)]-{p}" target="UC94_p-_Ste7_[(T363)]">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="Ste7_[(T363)]-{p}" target="Ste7_p+_Fus3_[(Y182)]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Ste7_[(T363)]-{p}" target="Ste7_p+_Fus3_[(T180)]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Ste7_[(T363)]-{p}" target="Ste7P">
+		<att name="interaction" type="string" value="OR"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]_ppi+_Sst2_[MAPK]" target="Fus3_[Dock]--Sst2_[MAPK]">
+		<att name="interaction" type="string" value="produce"/>
+	</edge>
+	
+
+	<edge source="Dig1_[Ste12]--Ste12_[Dig1]" target="Ste12_[Dig1]--0">
+		<att name="interaction" type="string" value="NOT"/>
+	</edge>
+	
+
+	<edge source="Dig1_[Ste12]--Ste12_[Dig1]" target="Dig1_[Ste12]_ppi-_Ste12_[Dig1]">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="Dig1_[Ste12]--Ste12_[Dig1]" target="Fus3_[Dock]_ppi+_Ste12_[MAPK]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Dig1_[Ste12]--Ste12_[Dig1]" target="Dig2_[Ste12]_ppi+_Ste12_[Dig2]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Dig1_[Ste12]--Ste12_[Dig1]" target="Kss1_[Dock]_ppi+_Ste12_[MAPK]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Fus3_[(Y182)]-{p}" target="Ptp_[MAPK]_ppi+_Fus3_[Dock]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Fus3_[(Y182)]-{p}" target="Fus3_p+_Dig1_[(MAPK)]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Fus3_[(Y182)]-{p}" target="Fus3P">
+		<att name="interaction" type="string" value="OR"/>
+	</edge>
+	
+
+	<edge source="Fus3_[(Y182)]-{p}" target="Far1_[MAPK]_ppi+_Fus3_[Dock]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Fus3_[(Y182)]-{p}" target="Fus3_[Dock]_ppi+_Sst2_[MAPK]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Fus3_[(Y182)]-{p}" target="Fus180or182P">
+		<att name="interaction" type="string" value="OR"/>
+	</edge>
+	
+
+	<edge source="Fus3_[(Y182)]-{p}" target="Fus3_p+_Dig2_[(MAPK)]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Fus3_[(Y182)]-{p}" target="Fus3_deg_Ste12">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Fus3_[(Y182)]-{p}" target="Msg5_p-_Fus3_[(Y182)]">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="Fus3_[(Y182)]-{p}" target="Fus3_deg_Ste7">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Fus3_[(Y182)]-{p}" target="Fus3_[Dock]_ppi+_Ste12_[MAPK]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Fus3_[(Y182)]-{p}" target="Fus3_p+_Far1_[(T306)]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Fus3_[(Y182)]-{p}" target="Fus3_p+_Sst2_[(S539)]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Fus3_[(Y182)]-{p}" target="Ptp_p-_Fus3_[(Y182)]">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="Fus3_[(Y182)]-{p}" target="Dig2_[MAPK]_ppi+_Fus3_[Dock]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Fus3_[(Y182)]-{p}" target="Fus3_[Dock]_ppi+_Ste11_[MAPK]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Fus3_[(Y182)]-{p}" target="Dig1_[MAPK]_ppi+_Fus3_[Dock]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Fus3_[(Y182)]-{p}" target="Ste7_p+_Fus3_[(T180)]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Fus3_[(Y182)]-{p}" target="Fus3_[(Y182)]-{0}">
+		<att name="interaction" type="string" value="NOT"/>
+	</edge>
+	
+
+	<edge source="Fus3_[(Y182)]-{p}" target="Fus3_[Dock]_ppi+_Msg5_[MAPK]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Fus3_[(Y182)]-{p}" target="Fus3_p+_Ste11_[(Feedback)]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Fus3_[(Y182)]-{p}" target="UC88_p-_Fus3_[(Y182)]">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Ste12_[MAPK]" target="Kss1_[Dock]_ppi+_Ste11_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Ste12_[MAPK]" target="Kss1_[Dock]_ppi+_Ste7_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Ste12_[MAPK]" target="Far1_[MAPK]_ppi+_Kss1_[Dock]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Ste12_[MAPK]" target="Dig1_[Ste12]_ppi+_Ste12_[Dig1]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Ste12_[MAPK]" target="Kss1_[Dock]_ppi+_Msg5_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Ste12_[MAPK]" target="Dig1_[MAPK]_ppi+_Kss1_[Dock]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Ste12_[MAPK]" target="Fus3_[Dock]_ppi+_Ste12_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Ste12_[MAPK]" target="Kss1_[Dock]_ppi+_Ste5_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Ste12_[MAPK]" target="Dig2_[MAPK]_ppi+_Kss1_[Dock]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Ste12_[MAPK]" target="not Ste12_[MAPK]--0">
+		<att name="interaction" type="string" value="OR"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Ste12_[MAPK]" target="Kss1_[Dock]_ppi-_Ste12_[MAPK]">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Ste12_[MAPK]" target="Ptp_[MAPK]_ppi+_Kss1_[Dock]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Ste12_[MAPK]" target="Kss1_[Dock]_ppi+_Sst2_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Sst2_[MAPK]" target="Ptp_[MAPK]_ppi+_Fus3_[Dock]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Sst2_[MAPK]" target="Fus3_[Dock]_ppi+_Ste11_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Sst2_[MAPK]" target="Far1_[MAPK]_ppi+_Fus3_[Dock]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Sst2_[MAPK]" target="Dig1_[MAPK]_ppi+_Fus3_[Dock]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Sst2_[MAPK]" target="Fus3_[Dock]_ppi-_Sst2_[MAPK]">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Sst2_[MAPK]" target="Fus3_[Dock]_ppi+_Ste5_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Sst2_[MAPK]" target="Fus3_[Dock]_ppi+_Ste7_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Sst2_[MAPK]" target="Fus3_[Dock]_ppi+_Ste12_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Sst2_[MAPK]" target="not Sst2_[MAPK]--0">
+		<att name="interaction" type="string" value="OR"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Sst2_[MAPK]" target="Fus3_p+_Sst2_[(S539)]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Sst2_[MAPK]" target="Fus3_[Dock]_ppi+_Msg5_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Sst2_[MAPK]" target="not Fus3_[Dock]--0">
+		<att name="interaction" type="string" value="OR"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Sst2_[MAPK]" target="Kss1_[Dock]_ppi+_Sst2_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Sst2_[MAPK]" target="Dig2_[MAPK]_ppi+_Fus3_[Dock]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Ste12_trsl_Sst2mRNA" target="Sst2">
+		<att name="interaction" type="string" value="synthesis"/>
+	</edge>
+	
+
+	<edge source="UC83_p-_Dig1_[(MAPK)]" target="Dig1_[(MAPK)]-{p}">
+		<att name="interaction" type="string" value="consume"/>
+	</edge>
+	
+
+	<edge source="Gpa1" target="UC121_deg_Gpa1">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="Gpa1" target="Gpa1_aGEx_Gpa1_[(GnP)]">
+		<att name="interaction" type="string" value="is"/>
+	</edge>
+	
+
+	<edge source="Gpa1" target="UC19_deg_Gpa1">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="Gpa1" target="Gpa1_[Ste2]_ppi+_Ste2_[Gpa1]">
+		<att name="interaction" type="string" value="is"/>
+	</edge>
+	
+
+	<edge source="Gpa1" target="Gpa1_[Ste4]_ppi+_Ste4_[Gpa1]">
+		<att name="interaction" type="string" value="is"/>
+	</edge>
+	
+
+	<edge source="Kss1" target="UC122_deg_Kss1">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="Kss1" target="Kss1_[Dock]_ppi+_Ste5_[MAPK]">
+		<att name="interaction" type="string" value="is"/>
+	</edge>
+	
+
+	<edge source="Kss1" target="Kss1_[Dock]_ppi+_Ste7_[MAPK]">
+		<att name="interaction" type="string" value="is"/>
+	</edge>
+	
+
+	<edge source="Kss1" target="Kss1_p+_Dig1_[(MAPK)]">
+		<att name="interaction" type="string" value="modifiy"/>
+	</edge>
+	
+
+	<edge source="Kss1" target="Kss1_[Dock]_ppi+_Ste12_[MAPK]">
+		<att name="interaction" type="string" value="is"/>
+	</edge>
+	
+
+	<edge source="Kss1" target="Kss1_p+_Sst2_[(S539)]">
+		<att name="interaction" type="string" value="modifiy"/>
+	</edge>
+	
+
+	<edge source="Kss1" target="Kss1_p+_Dig2_[(MAPK)]">
+		<att name="interaction" type="string" value="modifiy"/>
+	</edge>
+	
+
+	<edge source="Kss1" target="Kss1_p+_Ste11_[(Feedback)]">
+		<att name="interaction" type="string" value="modifiy"/>
+	</edge>
+	
+
+	<edge source="Kss1" target="Kss1_p+_Far1_[(T306)]">
+		<att name="interaction" type="string" value="modifiy"/>
+	</edge>
+	
+
+	<edge source="Ste7_[(S359)]-{p}" target="Ste7_p+_Kss1_[(Y185)]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Ste7_[(S359)]-{p}" target="Ste7_p+_Kss1_[(T183)]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Ste7_[(S359)]-{p}" target="Ste7_p+_Fus3_[(Y182)]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Ste7_[(S359)]-{p}" target="Ste7_p+_Fus3_[(T180)]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Ste7_[(S359)]-{p}" target="Ste7P">
+		<att name="interaction" type="string" value="OR"/>
+	</edge>
+	
+
+	<edge source="Ste7_[(S359)]-{p}" target="UC93_p-_Ste7_[(S359)]">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="Dig2_[MAPK]_ppi-_Fus3_[Dock]" target="Dig2_[MAPK]--Fus3_[Dock]">
+		<att name="interaction" type="string" value="consume"/>
+	</edge>
+	
+
+	<edge source="Yck" target="UC134_deg_Yck">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="Yck" target="Yck_p+_Ste2_[(S338orS339)]">
+		<att name="interaction" type="string" value="modifiy"/>
+	</edge>
+	
+
+	<edge source="Yck" target="Ste2_[Yck]_ppi+_Yck_[Ste2]">
+		<att name="interaction" type="string" value="is"/>
+	</edge>
+	
+
+	<edge source="UC104_trsl_Gpa1mRNA" target="Gpa1">
+		<att name="interaction" type="string" value="synthesis"/>
+	</edge>
+	
+
+	<edge source="Ptp_p-_Kss1_[(Y185)]" target="Kss1_[(Y185)]-{p}">
+		<att name="interaction" type="string" value="consume"/>
+	</edge>
+	
+
+	<edge source="Far1_[(S87)]-{p}" target="UC85_p-_Far1_[(S87)]">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="UC86_p-_Far1_[(T306)]" target="Far1_[(T306)]-{p}">
+		<att name="interaction" type="string" value="consume"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]_ppi-_Ste7_[MAPK]" target="Kss1_[Dock]--Ste7_[MAPK]">
+		<att name="interaction" type="string" value="consume"/>
+	</edge>
+	
+
+	<edge source="Ste20_p+_Ste11_[(S306)]" target="Ste11_[(S306)]-{p}">
+		<att name="interaction" type="string" value="produce"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Ste11_[MAPK]" target="Ptp_[MAPK]_ppi+_Fus3_[Dock]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Ste11_[MAPK]" target="Kss1_[Dock]_ppi+_Ste11_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Ste11_[MAPK]" target="Far1_[MAPK]_ppi+_Fus3_[Dock]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Ste11_[MAPK]" target="Fus3_[Dock]_ppi+_Sst2_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Ste11_[MAPK]" target="Dig1_[MAPK]_ppi+_Fus3_[Dock]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Ste11_[MAPK]" target="Dig2_[MAPK]_ppi+_Fus3_[Dock]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Ste11_[MAPK]" target="Fus3_[Dock]_ppi+_Ste5_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Ste11_[MAPK]" target="Fus3_[Dock]_ppi+_Ste7_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Ste11_[MAPK]" target="Fus3_[Dock]_ppi+_Ste12_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Ste11_[MAPK]" target="Fus3_p+_Ste11_[(Feedback)]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Ste11_[MAPK]" target="not Ste11_[MAPK]--0">
+		<att name="interaction" type="string" value="OR"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Ste11_[MAPK]" target="Fus3_[Dock]_ppi+_Msg5_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Ste11_[MAPK]" target="not Fus3_[Dock]--0">
+		<att name="interaction" type="string" value="OR"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Ste11_[MAPK]" target="Fus3_[Dock]_ppi-_Ste11_[MAPK]">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]_ppi-_Sst2_[MAPK]" target="Kss1_[Dock]--Sst2_[MAPK]">
+		<att name="interaction" type="string" value="consume"/>
+	</edge>
+	
+
+	<edge source="Sst2_[Ste2]--0" target="Fus3_[Dock]_ppi+_Sst2_[MAPK]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Sst2_[Ste2]--0" target="Kss1_[Dock]_ppi+_Sst2_[MAPK]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="UC87_p-_Fus3_[(T180)]" target="Fus3_[(T180)]-{p}">
+		<att name="interaction" type="string" value="consume"/>
+	</edge>
+	
+
+	<edge source="Ste4_[Ste5]--0" target="Gpa1_[Ste4]_ppi+_Ste4_[Gpa1]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Gpa1Ste2Sst2" target="Gpa1_aGHy_Gpa1_[(GnP)]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Ste4_[Ste20]_ppi-_Ste20_[Ste4]" target="Ste20_[Ste4]--Ste4_[Ste20]">
+		<att name="interaction" type="string" value="consume"/>
+	</edge>
+	
+
+	<edge source="Ptp_[MAPK]_ppi+_Fus3_[Dock]" target="Fus3_[Dock]--Ptp_[MAPK]">
+		<att name="interaction" type="string" value="produce"/>
+	</edge>
+	
+
+	<edge source="Gpa1_[(GnP)]-{gtp}" target="Gpa1_aGHy_Gpa1_[(GnP)]">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="Gpa1_[(GnP)]-{gtp}" target="Gpa1_[Ste4]_ppi+_Ste4_[Gpa1]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Ste11P" target="Ste11PSte5Ste5Ste7">
+		<att name="interaction" type="string" value="AND"/>
+	</edge>
+	
+
+	<edge source="Far1_[MAPK]_ppi+_Fus3_[Dock]" target="Far1_[MAPK]--Fus3_[Dock]">
+		<att name="interaction" type="string" value="produce"/>
+	</edge>
+	
+
+	<edge source="Ste11_[(S306)]-{p}" target="Ste11_p+_Ste7_[(T363)]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Ste11_[(S306)]-{p}" target="UC96_p-_Ste11_[(S306)]">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="Ste11_[(S306)]-{p}" target="Ste11_p+_Ste7_[(S359)]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Ste11_[(S306)]-{p}" target="Ste11P">
+		<att name="interaction" type="string" value="OR"/>
+	</edge>
+	
+
+	<edge source="Ste11_[(Feedback)]-{p}" target="Ste11_[(Feedback)]-{0}">
+		<att name="interaction" type="string" value="NOT"/>
+	</edge>
+	
+
+	<edge source="Ste11_[(Feedback)]-{p}" target="UC53_deg_Ste11">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Ste7_[MAPK]" target="Ste7Kss1noSte5">
+		<att name="interaction" type="string" value="AND"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Ste7_[MAPK]" target="Kss1_[Dock]_ppi+_Ste11_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Ste7_[MAPK]" target="Fus3_[Dock]_ppi+_Ste7_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Ste7_[MAPK]" target="Far1_[MAPK]_ppi+_Kss1_[Dock]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Ste7_[MAPK]" target="Kss1_[Dock]_ppi+_Msg5_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Ste7_[MAPK]" target="Kss1_[Dock]_ppi-_Ste7_[MAPK]">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Ste7_[MAPK]" target="Dig1_[MAPK]_ppi+_Kss1_[Dock]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Ste7_[MAPK]" target="Kss1_[Dock]_ppi+_Ste5_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Ste7_[MAPK]" target="not Ste7_[MAPK]--0">
+		<att name="interaction" type="string" value="OR"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Ste7_[MAPK]" target="Dig2_[MAPK]_ppi+_Kss1_[Dock]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Ste7_[MAPK]" target="Kss1_[Dock]_ppi+_Ste12_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Ste7_[MAPK]" target="Ptp_[MAPK]_ppi+_Kss1_[Dock]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Ste7_[MAPK]" target="Kss1_[Dock]_ppi+_Sst2_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Kss1_[(Y185)]-{p}" target="Kss1_[Dock]_ppi+_Ste11_[MAPK]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Kss1_[(Y185)]-{p}" target="Kss1_p+_Dig2_[(MAPK)]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Kss1_[(Y185)]-{p}" target="Dig1_[MAPK]_ppi+_Kss1_[Dock]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Kss1_[(Y185)]-{p}" target="Far1_[MAPK]_ppi+_Kss1_[Dock]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Kss1_[(Y185)]-{p}" target="Ptp_p-_Kss1_[(Y185)]">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="Kss1_[(Y185)]-{p}" target="Kss1_p+_Sst2_[(S539)]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Kss1_[(Y185)]-{p}" target="Msg5_p-_Kss1_[(Y185)]">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="Kss1_[(Y185)]-{p}" target="Kss1_[Dock]_ppi+_Ste12_[MAPK]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Kss1_[(Y185)]-{p}" target="UC90_p-_Kss1_[(Y185)]">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="Kss1_[(Y185)]-{p}" target="Kss183or185P">
+		<att name="interaction" type="string" value="OR"/>
+	</edge>
+	
+
+	<edge source="Kss1_[(Y185)]-{p}" target="Kss1_p+_Far1_[(T306)]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Kss1_[(Y185)]-{p}" target="Kss1_[(Y185)]-{0}">
+		<att name="interaction" type="string" value="NOT"/>
+	</edge>
+	
+
+	<edge source="Kss1_[(Y185)]-{p}" target="Dig2_[MAPK]_ppi+_Kss1_[Dock]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Kss1_[(Y185)]-{p}" target="Kss1_p+_Dig1_[(MAPK)]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Kss1_[(Y185)]-{p}" target="Kss1_[Dock]_ppi+_Msg5_[MAPK]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Kss1_[(Y185)]-{p}" target="Ptp_[MAPK]_ppi+_Kss1_[Dock]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Kss1_[(Y185)]-{p}" target="Kss1P">
+		<att name="interaction" type="string" value="OR"/>
+	</edge>
+	
+
+	<edge source="Kss1_[(Y185)]-{p}" target="Kss1_p+_Ste11_[(Feedback)]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Kss1_[(Y185)]-{p}" target="Kss1_[Dock]_ppi+_Sst2_[MAPK]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Kss1_[(Y185)]-{p}" target="Ste7_p+_Kss1_[(T183)]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Dig1_[Ste12]_ppi-_Ste12_[Dig1]" target="Dig1_[Ste12]--Ste12_[Dig1]">
+		<att name="interaction" type="string" value="consume"/>
+	</edge>
+	
+
+	<edge source="UC133_deg_Ste7" target="Ste7">
+		<att name="interaction" type="string" value="degrade"/>
+	</edge>
+	
+
+	<edge source="Fus3_p+_Far1_[(T306)]" target="Far1_[(T306)]-{p}">
+		<att name="interaction" type="string" value="produce"/>
+	</edge>
+	
+
+	<edge source="UC123_deg_Msg5" target="Msg5">
+		<att name="interaction" type="string" value="degrade"/>
+	</edge>
+	
+
+	<edge source="UC110_trsl_Ste4mRNA" target="Ste4">
+		<att name="interaction" type="string" value="synthesis"/>
+	</edge>
+	
+
+	<edge source="not Ste11_[MAPK]--0" target="Ste11_[MAPK]--0">
+		<att name="interaction" type="string" value="NOT"/>
+	</edge>
+	
+
+	<edge source="Ste12_[Dig1]--0" target="Ste12act">
+		<att name="interaction" type="string" value="AND"/>
+	</edge>
+	
+
+	<edge source="Dig2_[(MAPK)]-{0}" target="Dig2_[MAPK]_ppi+_Kss1_[Dock]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Dig2_[(MAPK)]-{0}" target="Dig2_[MAPK]_ppi+_Fus3_[Dock]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Gpa1_[Ste2]_ppi-_Ste2_[Gpa1]" target="Gpa1_[Ste2]--Ste2_[Gpa1]">
+		<att name="interaction" type="string" value="consume"/>
+	</edge>
+	
+
+	<edge source="Gpa1_[Ste2]--Ste2_[Gpa1]" target="Gpa1_aGHy_Gpa1_[(GnP)]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Gpa1_[Ste2]--Ste2_[Gpa1]" target="Gpa1_[Ste4]_ppi+_Ste4_[Gpa1]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Gpa1_[Ste2]--Ste2_[Gpa1]" target="Gpa1Ste2Pher">
+		<att name="interaction" type="string" value="AND"/>
+	</edge>
+	
+
+	<edge source="Gpa1_[Ste2]--Ste2_[Gpa1]" target="Gpa1_aGEx_Gpa1_[(GnP)]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Gpa1_[Ste2]--Ste2_[Gpa1]" target="Gpa1Ste2Sst2">
+		<att name="interaction" type="string" value="AND"/>
+	</edge>
+	
+
+	<edge source="Gpa1_[Ste2]--Ste2_[Gpa1]" target="Gpa1_[Ste2]_ppi-_Ste2_[Gpa1]">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="Ste11_[MAPK]--0" target="Ste5_[Ste11]_ppi+_Ste11_[Ste5]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Sst2_[Ste2]--Ste2_[Sst2]" target="Gpa1Ste2Sst2">
+		<att name="interaction" type="string" value="AND"/>
+	</edge>
+	
+
+	<edge source="Sst2_[Ste2]--Ste2_[Sst2]" target="Ste2_[Sst2]_ppi-_Sst2_[Ste2]">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="Sst2_[Ste2]--Ste2_[Sst2]" target="Sst2_[Ste2]--0">
+		<att name="interaction" type="string" value="NOT"/>
+	</edge>
+	
+
+	<edge source="Sst2_[Ste2]--Ste2_[Sst2]" target="Ste2_[Sst2]--0">
+		<att name="interaction" type="string" value="NOT"/>
+	</edge>
+	
+
+	<edge source="Kss1_p+_Far1_[(T306)]" target="Far1_[(T306)]-{p}">
+		<att name="interaction" type="string" value="produce"/>
+	</edge>
+	
+
+	<edge source="Ste4_[Ste20]_ppi+_Ste20_[Ste4]" target="Ste20_[Ste4]--Ste4_[Ste20]">
+		<att name="interaction" type="string" value="produce"/>
+	</edge>
+	
+
+	<edge source="Kss1_p+_Dig2_[(MAPK)]" target="Dig2_[(MAPK)]-{p}">
+		<att name="interaction" type="string" value="produce"/>
+	</edge>
+	
+
+	<edge source="Ste4_[Ste5]_ppi+_Ste5_[Ste4]" target="Ste4_[Ste5]--Ste5_[Ste4]">
+		<att name="interaction" type="string" value="produce"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]_ppi-_Ste7_[MAPK]" target="Fus3_[Dock]--Ste7_[MAPK]">
+		<att name="interaction" type="string" value="consume"/>
+	</edge>
+	
+
+	<edge source="UC106_trsl_Msg5mRNA" target="Msg5">
+		<att name="interaction" type="string" value="synthesis"/>
+	</edge>
+	
+
+	<edge source="UC84_p-_Dig2_[(MAPK)]" target="Dig2_[(MAPK)]-{p}">
+		<att name="interaction" type="string" value="consume"/>
+	</edge>
+	
+
+	<edge source="UC127_deg_Ste11" target="Ste11">
+		<att name="interaction" type="string" value="degrade"/>
+	</edge>
+	
+
+	<edge source="Ste2" target="Pher_[Ste2]_i+_Ste2_[Pher]">
+		<att name="interaction" type="string" value="is"/>
+	</edge>
+	
+
+	<edge source="Ste2" target="UC129_deg_Ste2">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="Ste2" target="Gpa1_[Ste2]_ppi+_Ste2_[Gpa1]">
+		<att name="interaction" type="string" value="is"/>
+	</edge>
+	
+
+	<edge source="Ste2" target="UC12_deg_Ste2">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="UC116_trsl_YckmRNA" target="Yck">
+		<att name="interaction" type="string" value="synthesis"/>
+	</edge>
+	
+
+	<edge source="Ste5_[Ste5]--Ste5_[Ste5]" target="Ste11PSte5Ste5Ste7">
+		<att name="interaction" type="string" value="AND"/>
+	</edge>
+	
+
+	<edge source="Ste5_[Ste5]--Ste5_[Ste5]" target="Ste5Ste5Ste4">
+		<att name="interaction" type="string" value="AND"/>
+	</edge>
+	
+
+	<edge source="Ste5_[Ste5]--Ste5_[Ste5]" target="Ste4_[Ste5]_ppi+_Ste5_[Ste4]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Ste5_[Ste5]--Ste5_[Ste5]" target="Ste5_[Ste5]_ppi-_Ste5_[Ste5]">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="UC100_trsl_Dig1mRNA" target="Dig1">
+		<att name="interaction" type="string" value="synthesis"/>
+	</edge>
+	
+
+	<edge source="Far1_[MAPK]_ppi-_Fus3_[Dock]" target="Far1_[MAPK]--Fus3_[Dock]">
+		<att name="interaction" type="string" value="consume"/>
+	</edge>
+	
+
+	<edge source="Fus3" target="Fus3_p+_Dig1_[(MAPK)]">
+		<att name="interaction" type="string" value="modifiy"/>
+	</edge>
+	
+
+	<edge source="Fus3" target="Fus3_p+_Dig2_[(MAPK)]">
+		<att name="interaction" type="string" value="modifiy"/>
+	</edge>
+	
+
+	<edge source="Fus3" target="Fus3_[Dock]_ppi+_Ste5_[MAPK]">
+		<att name="interaction" type="string" value="is"/>
+	</edge>
+	
+
+	<edge source="Fus3" target="Fus3_p+_Sst2_[(S539)]">
+		<att name="interaction" type="string" value="modifiy"/>
+	</edge>
+	
+
+	<edge source="Fus3" target="Fus3_p+_Ste11_[(Feedback)]">
+		<att name="interaction" type="string" value="modifiy"/>
+	</edge>
+	
+
+	<edge source="Fus3" target="Fus3_deg_Ste7">
+		<att name="interaction" type="string" value="modifiy"/>
+	</edge>
+	
+
+	<edge source="Fus3" target="Fus3_deg_Ste12">
+		<att name="interaction" type="string" value="modifiy"/>
+	</edge>
+	
+
+	<edge source="Fus3" target="Fus3_[Dock]_ppi+_Ste7_[MAPK]">
+		<att name="interaction" type="string" value="is"/>
+	</edge>
+	
+
+	<edge source="Fus3" target="Fus3_[Dock]_ppi+_Ste12_[MAPK]">
+		<att name="interaction" type="string" value="is"/>
+	</edge>
+	
+
+	<edge source="Fus3" target="Fus3_p+_Far1_[(T306)]">
+		<att name="interaction" type="string" value="modifiy"/>
+	</edge>
+	
+
+	<edge source="Fus3" target="UC120_deg_Fus3">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="Ste20Ste4Ste5Ste11" target="Ste20_p+_Ste11_[(S302)]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Ste20Ste4Ste5Ste11" target="Ste20_p+_Ste11_[(T307)]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Ste20Ste4Ste5Ste11" target="Ste20_p+_Ste11_[(S306)]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Fus3_p+_Dig1_[(MAPK)]" target="Dig1_[(MAPK)]-{p}">
+		<att name="interaction" type="string" value="produce"/>
+	</edge>
+	
+
+	<edge source="Ste2_[Sst2]_ppi+_Sst2_[Ste2]" target="Sst2_[Ste2]--Ste2_[Sst2]">
+		<att name="interaction" type="string" value="produce"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Ste5_[MAPK]" target="Ptp_[MAPK]_ppi+_Fus3_[Dock]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Ste5_[MAPK]" target="Fus3_[Dock]_ppi+_Ste11_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Ste5_[MAPK]" target="Far1_[MAPK]_ppi+_Fus3_[Dock]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Ste5_[MAPK]" target="Fus3_[Dock]_ppi+_Sst2_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Ste5_[MAPK]" target="Dig1_[MAPK]_ppi+_Fus3_[Dock]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Ste5_[MAPK]" target="Fus3_[Dock]_ppi+_Ste7_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Ste5_[MAPK]" target="Fus3_[Dock]_ppi-_Ste5_[MAPK]">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Ste5_[MAPK]" target="Fus3_[Dock]_ppi+_Ste12_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Ste5_[MAPK]" target="Kss1_[Dock]_ppi+_Ste5_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Ste5_[MAPK]" target="Ste7PSte5Fus3">
+		<att name="interaction" type="string" value="AND"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Ste5_[MAPK]" target="Fus3_[Dock]_ppi+_Msg5_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Ste5_[MAPK]" target="not Fus3_[Dock]--0">
+		<att name="interaction" type="string" value="OR"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Ste5_[MAPK]" target="Dig2_[MAPK]_ppi+_Fus3_[Dock]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Dig2_[MAPK]_ppi+_Fus3_[Dock]" target="Dig2_[MAPK]--Fus3_[Dock]">
+		<att name="interaction" type="string" value="produce"/>
+	</edge>
+	
+
+	<edge source="Ptp_[MAPK]_ppi-_Kss1_[Dock]" target="Kss1_[Dock]--Ptp_[MAPK]">
+		<att name="interaction" type="string" value="consume"/>
+	</edge>
+	
+
+	<edge source="UC125_deg_Ptp" target="Ptp">
+		<att name="interaction" type="string" value="degrade"/>
+	</edge>
+	
+
+	<edge source="Fus3_deg_Ste7" target="Ste7">
+		<att name="interaction" type="string" value="degrade"/>
+	</edge>
+	
+
+	<edge source="Dig2" target="UC118_deg_Dig2">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="Dig2" target="Dig2_[Ste12]_ppi+_Ste12_[Dig2]">
+		<att name="interaction" type="string" value="is"/>
+	</edge>
+	
+
+	<edge source="Ste2_[Yck]_ppi-_Yck_[Ste2]" target="Ste2_[Yck]--Yck_[Ste2]">
+		<att name="interaction" type="string" value="consume"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Sst2_[MAPK]" target="Kss1_[Dock]_ppi+_Ste11_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Sst2_[MAPK]" target="Kss1_[Dock]_ppi+_Ste7_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Sst2_[MAPK]" target="Fus3_[Dock]_ppi+_Sst2_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Sst2_[MAPK]" target="Kss1_p+_Sst2_[(S539)]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Sst2_[MAPK]" target="Kss1_[Dock]_ppi+_Msg5_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Sst2_[MAPK]" target="Dig1_[MAPK]_ppi+_Kss1_[Dock]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Sst2_[MAPK]" target="Kss1_[Dock]_ppi-_Sst2_[MAPK]">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Sst2_[MAPK]" target="Kss1_[Dock]_ppi+_Ste5_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Sst2_[MAPK]" target="not Sst2_[MAPK]--0">
+		<att name="interaction" type="string" value="OR"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Sst2_[MAPK]" target="Dig2_[MAPK]_ppi+_Kss1_[Dock]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Sst2_[MAPK]" target="Kss1_[Dock]_ppi+_Ste12_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Sst2_[MAPK]" target="Ptp_[MAPK]_ppi+_Kss1_[Dock]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Sst2_[MAPK]" target="Far1_[MAPK]_ppi+_Kss1_[Dock]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]_ppi+_Ste5_[MAPK]" target="Kss1_[Dock]--Ste5_[MAPK]">
+		<att name="interaction" type="string" value="produce"/>
+	</edge>
+	
+
+	<edge source="Ste5_[Ste5]_ppi+_Ste5_[Ste5]" target="Ste5_[Ste5]--Ste5_[Ste5]">
+		<att name="interaction" type="string" value="produce"/>
+	</edge>
+	
+
+	<edge source="UC99_syn_Pher" target="Pher">
+		<att name="interaction" type="string" value="synthesis"/>
+	</edge>
+	
+
+	<edge source="Far1_[MAPK]_ppi+_Kss1_[Dock]" target="Far1_[MAPK]--Kss1_[Dock]">
+		<att name="interaction" type="string" value="produce"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]_ppi-_Ste11_[MAPK]" target="Kss1_[Dock]--Ste11_[MAPK]">
+		<att name="interaction" type="string" value="consume"/>
+	</edge>
+	
+
+	<edge source="UC96_p-_Ste11_[(S306)]" target="Ste11_[(S306)]-{p}">
+		<att name="interaction" type="string" value="consume"/>
+	</edge>
+	
+
+	<edge source="UC105_trsl_Kss1mRNA" target="Kss1">
+		<att name="interaction" type="string" value="synthesis"/>
+	</edge>
+	
+
+	<edge source="Pher_[Ste2]--Ste2_[Pher]" target="Pher_[Ste2]_i-_Ste2_[Pher]">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="Pher_[Ste2]--Ste2_[Pher]" target="Gpa1Ste2Pher">
+		<att name="interaction" type="string" value="AND"/>
+	</edge>
+	
+
+	<edge source="Pher_[Ste2]--Ste2_[Pher]" target="Yck_p+_Ste2_[(S338orS339)]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Dig1_[MAPK]_ppi+_Fus3_[Dock]" target="Dig1_[MAPK]--Fus3_[Dock]">
+		<att name="interaction" type="string" value="produce"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]_ppi+_Ste5_[MAPK]" target="Fus3_[Dock]--Ste5_[MAPK]">
+		<att name="interaction" type="string" value="produce"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]_ppi+_Ste11_[MAPK]" target="Kss1_[Dock]--Ste11_[MAPK]">
+		<att name="interaction" type="string" value="produce"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Msg5_[MAPK]" target="Kss1_[Dock]_ppi+_Ste11_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Msg5_[MAPK]" target="Kss1_[Dock]_ppi+_Ste7_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Msg5_[MAPK]" target="Far1_[MAPK]_ppi+_Kss1_[Dock]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Msg5_[MAPK]" target="Kss1_[Dock]_ppi-_Msg5_[MAPK]">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Msg5_[MAPK]" target="Msg5_p-_Kss1_[(Y185)]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Msg5_[MAPK]" target="Dig1_[MAPK]_ppi+_Kss1_[Dock]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Msg5_[MAPK]" target="Kss1_[Dock]_ppi+_Ste5_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Msg5_[MAPK]" target="Dig2_[MAPK]_ppi+_Kss1_[Dock]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Msg5_[MAPK]" target="Msg5_p-_Kss1_[(T183)]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Msg5_[MAPK]" target="Kss1_[Dock]_ppi+_Ste12_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Msg5_[MAPK]" target="Ptp_[MAPK]_ppi+_Kss1_[Dock]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Msg5_[MAPK]" target="Fus3_[Dock]_ppi+_Msg5_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Msg5_[MAPK]" target="Kss1_[Dock]_ppi+_Sst2_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]_ppi-_Msg5_[MAPK]" target="Fus3_[Dock]--Msg5_[MAPK]">
+		<att name="interaction" type="string" value="consume"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]_ppi-_Sst2_[MAPK]" target="Fus3_[Dock]--Sst2_[MAPK]">
+		<att name="interaction" type="string" value="consume"/>
+	</edge>
+	
+
+	<edge source="Ste7P" target="Ste7PKss1">
+		<att name="interaction" type="string" value="AND"/>
+	</edge>
+	
+
+	<edge source="Ste7P" target="Ste7PSte5Fus3">
+		<att name="interaction" type="string" value="AND"/>
+	</edge>
+	
+
+	<edge source="Ste11_[Ste5]--Ste5_[Ste11]" target="Ste11PSte5Ste5Ste7">
+		<att name="interaction" type="string" value="AND"/>
+	</edge>
+	
+
+	<edge source="Ste11_[Ste5]--Ste5_[Ste11]" target="Ste11_[Ste5]--0">
+		<att name="interaction" type="string" value="NOT"/>
+	</edge>
+	
+
+	<edge source="Ste11_[Ste5]--Ste5_[Ste11]" target="Ste5_[Ste11]_ppi-_Ste11_[Ste5]">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="Ste11_[Ste5]--Ste5_[Ste11]" target="Ste20Ste4Ste5Ste11">
+		<att name="interaction" type="string" value="AND"/>
+	</edge>
+	
+
+	<edge source="Dig2_[MAPK]_ppi-_Kss1_[Dock]" target="Dig2_[MAPK]--Kss1_[Dock]">
+		<att name="interaction" type="string" value="consume"/>
+	</edge>
+	
+
+	<edge source="Far1_[(T306)]-{0}" target="Far1_[MAPK]_ppi+_Fus3_[Dock]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Far1_[(T306)]-{0}" target="Far1_[MAPK]_ppi+_Kss1_[Dock]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Ste5_[MAPK]" target="Kss1_[Dock]_ppi+_Ste11_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Ste5_[MAPK]" target="Kss1_[Dock]_ppi+_Ste7_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Ste5_[MAPK]" target="Far1_[MAPK]_ppi+_Kss1_[Dock]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Ste5_[MAPK]" target="Fus3_[Dock]_ppi+_Ste5_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Ste5_[MAPK]" target="Kss1_[Dock]_ppi+_Ste12_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Ste5_[MAPK]" target="Kss1_[Dock]_ppi+_Msg5_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Ste5_[MAPK]" target="Dig1_[MAPK]_ppi+_Kss1_[Dock]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Ste5_[MAPK]" target="Kss1_[Dock]_ppi-_Ste5_[MAPK]">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Ste5_[MAPK]" target="Dig2_[MAPK]_ppi+_Kss1_[Dock]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Ste5_[MAPK]" target="Ste7Ste5Kss1">
+		<att name="interaction" type="string" value="AND"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Ste5_[MAPK]" target="Ptp_[MAPK]_ppi+_Kss1_[Dock]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Ste5_[MAPK]" target="Kss1_[Dock]_ppi+_Sst2_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="not Fus3_[Dock]--0" target="Fus3_[Dock]--0">
+		<att name="interaction" type="string" value="NOT"/>
+	</edge>
+	
+
+	<edge source="UC91_p-_Sst2_[(S539)]" target="Sst2_[(S539)]-{p}">
+		<att name="interaction" type="string" value="consume"/>
+	</edge>
+	
+
+	<edge source="UC93_p-_Ste7_[(S359)]" target="Ste7_[(S359)]-{p}">
+		<att name="interaction" type="string" value="consume"/>
+	</edge>
+	
+
+	<edge source="Dig1" target="UC117_deg_Dig1">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="Dig1" target="Dig1_[Ste12]_ppi+_Ste12_[Dig1]">
+		<att name="interaction" type="string" value="is"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]_ppi+_Ste7_[MAPK]" target="Kss1_[Dock]--Ste7_[MAPK]">
+		<att name="interaction" type="string" value="produce"/>
+	</edge>
+	
+
+	<edge source="Fus180or182P" target="Fus3_[Dock]_ppi+_Sst2_[MAPK]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Fus180or182P" target="Fus3_p+_Sst2_[(S539)]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Fus3_p+_Dig2_[(MAPK)]" target="Dig2_[(MAPK)]-{p}">
+		<att name="interaction" type="string" value="produce"/>
+	</edge>
+	
+
+	<edge source="Far1_[MAPK]_ppi-_Kss1_[Dock]" target="Far1_[MAPK]--Kss1_[Dock]">
+		<att name="interaction" type="string" value="consume"/>
+	</edge>
+	
+
+	<edge source="Fus3_deg_Ste12" target="Ste12">
+		<att name="interaction" type="string" value="degrade"/>
+	</edge>
+	
+
+	<edge source="UC94_p-_Ste7_[(T363)]" target="Ste7_[(T363)]-{p}">
+		<att name="interaction" type="string" value="consume"/>
+	</edge>
+	
+
+	<edge source="Msg5_p-_Kss1_[(T183)]" target="Kss1_[(T183)]-{p}">
+		<att name="interaction" type="string" value="consume"/>
+	</edge>
+	
+
+	<edge source="Ste2_[Sst2]_ppi-_Sst2_[Ste2]" target="Sst2_[Ste2]--Ste2_[Sst2]">
+		<att name="interaction" type="string" value="consume"/>
+	</edge>
+	
+
+	<edge source="Ste11" target="UC127_deg_Ste11">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="Ste11" target="Ste11_p+_Ste7_[(S359)]">
+		<att name="interaction" type="string" value="modifiy"/>
+	</edge>
+	
+
+	<edge source="Ste11" target="Ste11_p+_Ste7_[(T363)]">
+		<att name="interaction" type="string" value="modifiy"/>
+	</edge>
+	
+
+	<edge source="Ste11" target="UC53_deg_Ste11">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="Ste5" target="Kss1_[Dock]_ppi+_Ste5_[MAPK]">
+		<att name="interaction" type="string" value="is"/>
+	</edge>
+	
+
+	<edge source="Ste5" target="Ste5_[Ste5]_ppi+_Ste5_[Ste5]">
+		<att name="interaction" type="string" value="is"/>
+	</edge>
+	
+
+	<edge source="Ste5" target="Ste5_[Ste11]_ppi+_Ste11_[Ste5]">
+		<att name="interaction" type="string" value="is"/>
+	</edge>
+	
+
+	<edge source="Ste5" target="UC132_deg_Ste5">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="Ste5" target="Fus3_[Dock]_ppi+_Ste5_[MAPK]">
+		<att name="interaction" type="string" value="is"/>
+	</edge>
+	
+
+	<edge source="Ste5" target="Ste4_[Ste5]_ppi+_Ste5_[Ste4]">
+		<att name="interaction" type="string" value="is"/>
+	</edge>
+	
+
+	<edge source="Ste5" target="Ste5_[Ste7]_ppi+_Ste7_[Ste5]">
+		<att name="interaction" type="string" value="is"/>
+	</edge>
+	
+
+	<edge source="Ptp" target="Ptp_[MAPK]_ppi+_Fus3_[Dock]">
+		<att name="interaction" type="string" value="is"/>
+	</edge>
+	
+
+	<edge source="Ptp" target="Ptp_[MAPK]_ppi+_Kss1_[Dock]">
+		<att name="interaction" type="string" value="is"/>
+	</edge>
+	
+
+	<edge source="Ptp" target="Ptp_p-_Kss1_[(Y185)]">
+		<att name="interaction" type="string" value="modifiy"/>
+	</edge>
+	
+
+	<edge source="Ptp" target="UC125_deg_Ptp">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="Ptp" target="Ptp_p-_Fus3_[(Y182)]">
+		<att name="interaction" type="string" value="modifiy"/>
+	</edge>
+	
+
+	<edge source="Ste7" target="Ste7_p+_Kss1_[(Y185)]">
+		<att name="interaction" type="string" value="modifiy"/>
+	</edge>
+	
+
+	<edge source="Ste7" target="Ste7_p+_Kss1_[(T183)]">
+		<att name="interaction" type="string" value="modifiy"/>
+	</edge>
+	
+
+	<edge source="Ste7" target="Fus3_deg_Ste7">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="Ste7" target="Ste7_p+_Fus3_[(Y182)]">
+		<att name="interaction" type="string" value="modifiy"/>
+	</edge>
+	
+
+	<edge source="Ste7" target="Ste7_p+_Fus3_[(T180)]">
+		<att name="interaction" type="string" value="modifiy"/>
+	</edge>
+	
+
+	<edge source="Ste7" target="UC133_deg_Ste7">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="Ste7PSte5Fus3" target="Ste7_p+_Fus3_[(Y182)]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Ste7PSte5Fus3" target="Ste7_p+_Fus3_[(T180)]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Gpa1_[Ste4]_ppi+_Ste4_[Gpa1]" target="Gpa1_[Ste4]--Ste4_[Gpa1]">
+		<att name="interaction" type="string" value="produce"/>
+	</edge>
+	
+
+	<edge source="Kss1_p+_Ste11_[(Feedback)]" target="Ste11_[(Feedback)]-{p}">
+		<att name="interaction" type="string" value="produce"/>
+	</edge>
+	
+
+	<edge source="UC17_deg_Sst2" target="Sst2">
+		<att name="interaction" type="string" value="degrade"/>
+	</edge>
+	
+
+	<edge source="UC89_p-_Kss1_[(T183)]" target="Kss1_[(T183)]-{p}">
+		<att name="interaction" type="string" value="consume"/>
+	</edge>
+	
+
+	<edge source="Sst2_[(S539)]-{0}" target="Fus3_[Dock]_ppi+_Sst2_[MAPK]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Sst2_[(S539)]-{0}" target="Kss1_[Dock]_ppi+_Sst2_[MAPK]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="UC126_deg_Sst2" target="Sst2">
+		<att name="interaction" type="string" value="degrade"/>
+	</edge>
+	
+
+	<edge source="Kss1_[(T183)]-{p}" target="Kss1_[Dock]_ppi+_Ste11_[MAPK]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Kss1_[(T183)]-{p}" target="Kss1_p+_Dig2_[(MAPK)]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Kss1_[(T183)]-{p}" target="UC89_p-_Kss1_[(T183)]">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="Kss1_[(T183)]-{p}" target="Far1_[MAPK]_ppi+_Kss1_[Dock]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Kss1_[(T183)]-{p}" target="Kss1_p+_Sst2_[(S539)]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Kss1_[(T183)]-{p}" target="Kss1_[Dock]_ppi+_Msg5_[MAPK]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Kss1_[(T183)]-{p}" target="Dig1_[MAPK]_ppi+_Kss1_[Dock]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Kss1_[(T183)]-{p}" target="Kss183or185P">
+		<att name="interaction" type="string" value="OR"/>
+	</edge>
+	
+
+	<edge source="Kss1_[(T183)]-{p}" target="Ste7_p+_Kss1_[(Y185)]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Kss1_[(T183)]-{p}" target="Dig2_[MAPK]_ppi+_Kss1_[Dock]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Kss1_[(T183)]-{p}" target="Msg5_p-_Kss1_[(T183)]">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="Kss1_[(T183)]-{p}" target="Kss1_p+_Dig1_[(MAPK)]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Kss1_[(T183)]-{p}" target="Kss1_[Dock]_ppi+_Ste12_[MAPK]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Kss1_[(T183)]-{p}" target="Kss1P">
+		<att name="interaction" type="string" value="OR"/>
+	</edge>
+	
+
+	<edge source="Kss1_[(T183)]-{p}" target="Kss1_p+_Ste11_[(Feedback)]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Kss1_[(T183)]-{p}" target="Kss1_[Dock]_ppi+_Sst2_[MAPK]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Kss1_[(T183)]-{p}" target="Kss1_p+_Far1_[(T306)]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="UC134_deg_Yck" target="Yck">
+		<att name="interaction" type="string" value="degrade"/>
+	</edge>
+	
+
+	<edge source="Dig1_[Ste12]_ppi+_Ste12_[Dig1]" target="Dig1_[Ste12]--Ste12_[Dig1]">
+		<att name="interaction" type="string" value="produce"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Msg5_[MAPK]" target="Ptp_[MAPK]_ppi+_Fus3_[Dock]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Msg5_[MAPK]" target="Fus3_[Dock]_ppi+_Ste11_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Msg5_[MAPK]" target="Far1_[MAPK]_ppi+_Fus3_[Dock]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Msg5_[MAPK]" target="Fus3_[Dock]_ppi+_Sst2_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Msg5_[MAPK]" target="Dig1_[MAPK]_ppi+_Fus3_[Dock]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Msg5_[MAPK]" target="Dig2_[MAPK]_ppi+_Fus3_[Dock]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Msg5_[MAPK]" target="Fus3_[Dock]_ppi+_Ste5_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Msg5_[MAPK]" target="Kss1_[Dock]_ppi+_Msg5_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Msg5_[MAPK]" target="Fus3_[Dock]_ppi+_Ste7_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Msg5_[MAPK]" target="Fus3_[Dock]_ppi-_Msg5_[MAPK]">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Msg5_[MAPK]" target="Fus3_[Dock]_ppi+_Ste12_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Msg5_[MAPK]" target="Msg5_p-_Fus3_[(Y182)]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Msg5_[MAPK]" target="not Fus3_[Dock]--0">
+		<att name="interaction" type="string" value="OR"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Msg5_[MAPK]" target="Msg5_p-_Fus3_[(T180)]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Dig2_[Ste12]_ppi-_Ste12_[Dig2]" target="Dig2_[Ste12]--Ste12_[Dig2]">
+		<att name="interaction" type="string" value="consume"/>
+	</edge>
+	
+
+	<edge source="Ste2_[(S338orS339)]-{p}" target="UC92_p-_Ste2_[(S338orS339)]">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="Ste2_[(S338orS339)]-{p}" target="Ste2_[(S338orS339)]-{0}">
+		<att name="interaction" type="string" value="NOT"/>
+	</edge>
+	
+
+	<edge source="Ste2_[(S338orS339)]-{p}" target="UC12_deg_Ste2">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Ste5Ste5Ste4" target="Ste4_[Ste5]_ppi+_Ste5_[Ste4]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Kss183or185P" target="Kss1_[Dock]_ppi+_Sst2_[MAPK]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Kss183or185P" target="Kss1_p+_Sst2_[(S539)]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Ste7Kss1" target="Ste7PKss1">
+		<att name="interaction" type="string" value="AND"/>
+	</edge>
+	
+
+	<edge source="Pher_[Ste2]_i-_Ste2_[Pher]" target="Pher_[Ste2]--Ste2_[Pher]">
+		<att name="interaction" type="string" value="consume"/>
+	</edge>
+	
+
+	<edge source="Ste12act" target="Ste12_trsl_Sst2mRNA">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Ste12act" target="Fus3_deg_Ste12">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Ste12act" target="Ste12_trsl_Msg5mRNA">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Ste12act" target="Ste12_trsl_Fus3mRNA">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Ste12act" target="Ste12_trsl_Dig2mRNA">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Ste12act" target="Ste12_trsl_Ste12mRNA">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Ste12act" target="Ste12_trsl_Gpa1mRNA">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Ste12act" target="Ste12_trsl_Ste2mRNA">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Ste12act" target="Ste12_trsl_Far1mRNA">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Ste12act" target="Ste12_trsl_PtpmRNA">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Msg5_p-_Fus3_[(Y182)]" target="Fus3_[(Y182)]-{p}">
+		<att name="interaction" type="string" value="consume"/>
+	</edge>
+	
+
+	<edge source="UC132_deg_Ste5" target="Ste5">
+		<att name="interaction" type="string" value="degrade"/>
+	</edge>
+	
+
+	<edge source="Ste5_[Ste5]_ppi-_Ste5_[Ste5]" target="Ste5_[Ste5]--Ste5_[Ste5]">
+		<att name="interaction" type="string" value="consume"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]_ppi+_Ste7_[MAPK]" target="Fus3_[Dock]--Ste7_[MAPK]">
+		<att name="interaction" type="string" value="produce"/>
+	</edge>
+	
+
+	<edge source="Ste7Kss1noSte5" target="Ste7Kss1">
+		<att name="interaction" type="string" value="OR"/>
+	</edge>
+	
+
+	<edge source="Ste5_[Ste11]_ppi+_Ste11_[Ste5]" target="Ste11_[Ste5]--Ste5_[Ste11]">
+		<att name="interaction" type="string" value="produce"/>
+	</edge>
+	
+
+	<edge source="Dig2_[MAPK]--Kss1_[Dock]" target="Kss1_[Dock]_ppi+_Ste11_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Dig2_[MAPK]--Kss1_[Dock]" target="Kss1_[Dock]_ppi+_Ste7_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Dig2_[MAPK]--Kss1_[Dock]" target="Far1_[MAPK]_ppi+_Kss1_[Dock]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Dig2_[MAPK]--Kss1_[Dock]" target="Dig2_[MAPK]_ppi+_Fus3_[Dock]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Dig2_[MAPK]--Kss1_[Dock]" target="Kss1_p+_Dig2_[(MAPK)]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Dig2_[MAPK]--Kss1_[Dock]" target="Kss1_[Dock]_ppi+_Msg5_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Dig2_[MAPK]--Kss1_[Dock]" target="Dig1_[MAPK]_ppi+_Kss1_[Dock]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Dig2_[MAPK]--Kss1_[Dock]" target="Kss1_[Dock]_ppi+_Ste5_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Dig2_[MAPK]--Kss1_[Dock]" target="Dig2_[MAPK]_ppi-_Kss1_[Dock]">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="Dig2_[MAPK]--Kss1_[Dock]" target="Kss1_[Dock]_ppi+_Ste12_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Dig2_[MAPK]--Kss1_[Dock]" target="Ptp_[MAPK]_ppi+_Kss1_[Dock]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Dig2_[MAPK]--Kss1_[Dock]" target="Kss1_[Dock]_ppi+_Sst2_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]_ppi-_Ste5_[MAPK]" target="Kss1_[Dock]--Ste5_[MAPK]">
+		<att name="interaction" type="string" value="consume"/>
+	</edge>
+	
+
+	<edge source="Ste7_p+_Fus3_[(Y182)]" target="Fus3_[(Y182)]-{p}">
+		<att name="interaction" type="string" value="produce"/>
+	</edge>
+	
+
+	<edge source="UC20_trsl_Gpa1mRNA" target="Gpa1">
+		<att name="interaction" type="string" value="synthesis"/>
+	</edge>
+	
+
+	<edge source="Dig2_[MAPK]--Fus3_[Dock]" target="Ptp_[MAPK]_ppi+_Fus3_[Dock]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Dig2_[MAPK]--Fus3_[Dock]" target="Fus3_[Dock]_ppi+_Ste11_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Dig2_[MAPK]--Fus3_[Dock]" target="Far1_[MAPK]_ppi+_Fus3_[Dock]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Dig2_[MAPK]--Fus3_[Dock]" target="Fus3_[Dock]_ppi+_Sst2_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Dig2_[MAPK]--Fus3_[Dock]" target="Dig1_[MAPK]_ppi+_Fus3_[Dock]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Dig2_[MAPK]--Fus3_[Dock]" target="Fus3_p+_Dig2_[(MAPK)]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Dig2_[MAPK]--Fus3_[Dock]" target="Fus3_[Dock]_ppi+_Ste5_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Dig2_[MAPK]--Fus3_[Dock]" target="Fus3_[Dock]_ppi+_Ste7_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Dig2_[MAPK]--Fus3_[Dock]" target="Fus3_[Dock]_ppi+_Ste12_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Dig2_[MAPK]--Fus3_[Dock]" target="Dig2_[MAPK]_ppi+_Kss1_[Dock]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Dig2_[MAPK]--Fus3_[Dock]" target="Fus3_[Dock]_ppi+_Msg5_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Dig2_[MAPK]--Fus3_[Dock]" target="not Fus3_[Dock]--0">
+		<att name="interaction" type="string" value="OR"/>
+	</edge>
+	
+
+	<edge source="Dig2_[MAPK]--Fus3_[Dock]" target="Dig2_[MAPK]_ppi-_Fus3_[Dock]">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]_ppi+_Ste12_[MAPK]" target="Fus3_[Dock]--Ste12_[MAPK]">
+		<att name="interaction" type="string" value="produce"/>
+	</edge>
+	
+
+	<edge source="Gpa1_[Ste4]_ppi-_Ste4_[Gpa1]" target="Gpa1_[Ste4]--Ste4_[Gpa1]">
+		<att name="interaction" type="string" value="consume"/>
+	</edge>
+	
+
+	<edge source="Gpa1_aGHy_Gpa1_[(GnP)]" target="Gpa1_[(GnP)]-{gtp}">
+		<att name="interaction" type="string" value="consume"/>
+	</edge>
+	
+
+	<edge source="UC92_p-_Ste2_[(S338orS339)]" target="Ste2_[(S338orS339)]-{p}">
+		<att name="interaction" type="string" value="consume"/>
+	</edge>
+	
+
+	<edge source="Fus3_p+_Ste11_[(Feedback)]" target="Ste11_[(Feedback)]-{p}">
+		<att name="interaction" type="string" value="produce"/>
+	</edge>
+	
+
+	<edge source="UC115_trsl_Ste20mRNA" target="Ste20">
+		<att name="interaction" type="string" value="synthesis"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Ste7_[MAPK]" target="Ptp_[MAPK]_ppi+_Fus3_[Dock]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Ste7_[MAPK]" target="Fus3_[Dock]_ppi+_Ste11_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Ste7_[MAPK]" target="Kss1_[Dock]_ppi+_Ste7_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Ste7_[MAPK]" target="Fus3_[Dock]_ppi+_Sst2_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Ste7_[MAPK]" target="Dig1_[MAPK]_ppi+_Fus3_[Dock]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Ste7_[MAPK]" target="Fus3_[Dock]_ppi+_Ste5_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Ste7_[MAPK]" target="Fus3_[Dock]_ppi-_Ste7_[MAPK]">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Ste7_[MAPK]" target="Far1_[MAPK]_ppi+_Fus3_[Dock]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Ste7_[MAPK]" target="Fus3_[Dock]_ppi+_Ste12_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Ste7_[MAPK]" target="not Ste7_[MAPK]--0">
+		<att name="interaction" type="string" value="OR"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Ste7_[MAPK]" target="Fus3_[Dock]_ppi+_Msg5_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Ste7_[MAPK]" target="not Fus3_[Dock]--0">
+		<att name="interaction" type="string" value="OR"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Ste7_[MAPK]" target="Dig2_[MAPK]_ppi+_Fus3_[Dock]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="UC95_p-_Ste11_[(S302)]" target="Ste11_[(S302)]-{p}">
+		<att name="interaction" type="string" value="consume"/>
+	</edge>
+	
+
+	<edge source="Far1_[MAPK]--Fus3_[Dock]" target="Ptp_[MAPK]_ppi+_Fus3_[Dock]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Far1_[MAPK]--Fus3_[Dock]" target="Fus3_[Dock]_ppi+_Ste11_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Far1_[MAPK]--Fus3_[Dock]" target="Fus3_[Dock]_ppi+_Sst2_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Far1_[MAPK]--Fus3_[Dock]" target="Dig1_[MAPK]_ppi+_Fus3_[Dock]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Far1_[MAPK]--Fus3_[Dock]" target="Fus3_[Dock]_ppi+_Ste5_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Far1_[MAPK]--Fus3_[Dock]" target="Fus3_[Dock]_ppi+_Ste7_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Far1_[MAPK]--Fus3_[Dock]" target="Fus3_[Dock]_ppi+_Ste12_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Far1_[MAPK]--Fus3_[Dock]" target="Fus3_p+_Far1_[(T306)]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Far1_[MAPK]--Fus3_[Dock]" target="Fus3_[Dock]_ppi+_Msg5_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Far1_[MAPK]--Fus3_[Dock]" target="Far1_[MAPK]_ppi+_Kss1_[Dock]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Far1_[MAPK]--Fus3_[Dock]" target="not Fus3_[Dock]--0">
+		<att name="interaction" type="string" value="OR"/>
+	</edge>
+	
+
+	<edge source="Far1_[MAPK]--Fus3_[Dock]" target="Far1_[MAPK]_ppi-_Fus3_[Dock]">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="Far1_[MAPK]--Fus3_[Dock]" target="Dig2_[MAPK]_ppi+_Fus3_[Dock]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Dig1_[(MAPK)]-{p}" target="Dig1_[(MAPK)]-{0}">
+		<att name="interaction" type="string" value="NOT"/>
+	</edge>
+	
+
+	<edge source="Dig1_[(MAPK)]-{p}" target="Dig1_[Ste12]_ppi+_Ste12_[Dig1]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Dig1_[(MAPK)]-{p}" target="UC83_p-_Dig1_[(MAPK)]">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="UC90_p-_Kss1_[(Y185)]" target="Kss1_[(Y185)]-{p}">
+		<att name="interaction" type="string" value="consume"/>
+	</edge>
+	
+
+	<edge source="Yck_p+_Ste2_[(S338orS339)]" target="Ste2_[(S338orS339)]-{p}">
+		<att name="interaction" type="string" value="produce"/>
+	</edge>
+	
+
+	<edge source="Dig2_[Ste12]--Ste12_[Dig2]" target="Dig1_[Ste12]_ppi+_Ste12_[Dig1]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Dig2_[Ste12]--Ste12_[Dig2]" target="Ste12_[Dig2]--0">
+		<att name="interaction" type="string" value="NOT"/>
+	</edge>
+	
+
+	<edge source="Dig2_[Ste12]--Ste12_[Dig2]" target="Dig2_[Ste12]_ppi-_Ste12_[Dig2]">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]_ppi-_Ste11_[MAPK]" target="Fus3_[Dock]--Ste11_[MAPK]">
+		<att name="interaction" type="string" value="consume"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]_ppi+_Ste11_[MAPK]" target="Fus3_[Dock]--Ste11_[MAPK]">
+		<att name="interaction" type="string" value="produce"/>
+	</edge>
+	
+
+	<edge source="Ste12_trsl_Fus3mRNA" target="Fus3">
+		<att name="interaction" type="string" value="synthesis"/>
+	</edge>
+	
+
+	<edge source="Dig2_[Ste12]_ppi+_Ste12_[Dig2]" target="Dig2_[Ste12]--Ste12_[Dig2]">
+		<att name="interaction" type="string" value="produce"/>
+	</edge>
+	
+
+	<edge source="Ste7_p+_Kss1_[(Y185)]" target="Kss1_[(Y185)]-{p}">
+		<att name="interaction" type="string" value="produce"/>
+	</edge>
+	
+
+	<edge source="Ste2_[Yck]--0" target="Ste2_[Sst2]_ppi+_Sst2_[Ste2]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Ste12_[MAPK]" target="Ptp_[MAPK]_ppi+_Fus3_[Dock]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Ste12_[MAPK]" target="Fus3_[Dock]_ppi+_Ste11_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Ste12_[MAPK]" target="Far1_[MAPK]_ppi+_Fus3_[Dock]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Ste12_[MAPK]" target="Fus3_[Dock]_ppi+_Sst2_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Ste12_[MAPK]" target="Dig1_[Ste12]_ppi+_Ste12_[Dig1]">
+		<att name="interaction" type="string" value="k+"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Ste12_[MAPK]" target="Dig2_[MAPK]_ppi+_Fus3_[Dock]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Ste12_[MAPK]" target="Fus3_[Dock]_ppi+_Ste5_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Ste12_[MAPK]" target="Fus3_[Dock]_ppi+_Ste7_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Ste12_[MAPK]" target="Fus3_[Dock]_ppi-_Ste12_[MAPK]">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Ste12_[MAPK]" target="not Ste12_[MAPK]--0">
+		<att name="interaction" type="string" value="OR"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Ste12_[MAPK]" target="Kss1_[Dock]_ppi+_Ste12_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Ste12_[MAPK]" target="Fus3_[Dock]_ppi+_Msg5_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Ste12_[MAPK]" target="not Fus3_[Dock]--0">
+		<att name="interaction" type="string" value="OR"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Ste12_[MAPK]" target="Dig1_[MAPK]_ppi+_Fus3_[Dock]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="UC108_trsl_Sst2mRNA" target="Sst2">
+		<att name="interaction" type="string" value="synthesis"/>
+	</edge>
+	
+
+	<edge source="Ste5_[Ste11]_ppi-_Ste11_[Ste5]" target="Ste11_[Ste5]--Ste5_[Ste11]">
+		<att name="interaction" type="string" value="consume"/>
+	</edge>
+	
+
+	<edge source="Ste20_p+_Ste11_[(S302)]" target="Ste11_[(S302)]-{p}">
+		<att name="interaction" type="string" value="produce"/>
+	</edge>
+	
+
+	<edge source="Dig1_[MAPK]--Fus3_[Dock]" target="Fus3_p+_Dig1_[(MAPK)]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Dig1_[MAPK]--Fus3_[Dock]" target="Ptp_[MAPK]_ppi+_Fus3_[Dock]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Dig1_[MAPK]--Fus3_[Dock]" target="Dig1_[MAPK]_ppi+_Kss1_[Dock]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Dig1_[MAPK]--Fus3_[Dock]" target="Fus3_[Dock]_ppi+_Sst2_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Dig1_[MAPK]--Fus3_[Dock]" target="Dig2_[MAPK]_ppi+_Fus3_[Dock]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Dig1_[MAPK]--Fus3_[Dock]" target="Fus3_[Dock]_ppi+_Ste11_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Dig1_[MAPK]--Fus3_[Dock]" target="Fus3_[Dock]_ppi+_Ste7_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Dig1_[MAPK]--Fus3_[Dock]" target="Fus3_[Dock]_ppi+_Ste12_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Dig1_[MAPK]--Fus3_[Dock]" target="Fus3_[Dock]_ppi+_Ste5_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Dig1_[MAPK]--Fus3_[Dock]" target="Far1_[MAPK]_ppi+_Fus3_[Dock]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Dig1_[MAPK]--Fus3_[Dock]" target="Fus3_[Dock]_ppi+_Msg5_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Dig1_[MAPK]--Fus3_[Dock]" target="not Fus3_[Dock]--0">
+		<att name="interaction" type="string" value="OR"/>
+	</edge>
+	
+
+	<edge source="Dig1_[MAPK]--Fus3_[Dock]" target="Dig1_[MAPK]_ppi-_Fus3_[Dock]">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="UC56_trsl_Ste7mRNA" target="Ste7">
+		<att name="interaction" type="string" value="synthesis"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]_ppi+_Msg5_[MAPK]" target="Kss1_[Dock]--Msg5_[MAPK]">
+		<att name="interaction" type="string" value="produce"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Ste11_[MAPK]" target="Kss1_[Dock]_ppi-_Ste11_[MAPK]">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Ste11_[MAPK]" target="Fus3_[Dock]_ppi+_Ste11_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Ste11_[MAPK]" target="Kss1_[Dock]_ppi+_Ste7_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Ste11_[MAPK]" target="Far1_[MAPK]_ppi+_Kss1_[Dock]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Ste11_[MAPK]" target="Kss1_[Dock]_ppi+_Ste12_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Ste11_[MAPK]" target="Kss1_[Dock]_ppi+_Msg5_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Ste11_[MAPK]" target="Dig1_[MAPK]_ppi+_Kss1_[Dock]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Ste11_[MAPK]" target="Kss1_[Dock]_ppi+_Ste5_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Ste11_[MAPK]" target="Dig2_[MAPK]_ppi+_Kss1_[Dock]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Ste11_[MAPK]" target="not Ste11_[MAPK]--0">
+		<att name="interaction" type="string" value="OR"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Ste11_[MAPK]" target="Ptp_[MAPK]_ppi+_Kss1_[Dock]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Ste11_[MAPK]" target="Kss1_p+_Ste11_[(Feedback)]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Kss1_[Dock]--Ste11_[MAPK]" target="Kss1_[Dock]_ppi+_Sst2_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Dig1_[(MAPK)]-{0}" target="Dig1_[MAPK]_ppi+_Kss1_[Dock]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Dig1_[(MAPK)]-{0}" target="Dig1_[MAPK]_ppi+_Fus3_[Dock]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Ptp_[MAPK]" target="Ptp_p-_Fus3_[(Y182)]">
+		<att name="interaction" type="string" value="!"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Ptp_[MAPK]" target="Fus3_[Dock]_ppi+_Ste11_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Ptp_[MAPK]" target="Far1_[MAPK]_ppi+_Fus3_[Dock]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Ptp_[MAPK]" target="Fus3_[Dock]_ppi+_Sst2_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Ptp_[MAPK]" target="Dig1_[MAPK]_ppi+_Fus3_[Dock]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Ptp_[MAPK]" target="Fus3_[Dock]_ppi+_Ste5_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Ptp_[MAPK]" target="Fus3_[Dock]_ppi+_Ste7_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Ptp_[MAPK]" target="Fus3_[Dock]_ppi+_Ste12_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Ptp_[MAPK]" target="Fus3_[Dock]_ppi+_Msg5_[MAPK]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Ptp_[MAPK]" target="Ptp_[MAPK]_ppi+_Kss1_[Dock]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Ptp_[MAPK]" target="not Fus3_[Dock]--0">
+		<att name="interaction" type="string" value="OR"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Ptp_[MAPK]" target="Ptp_[MAPK]_ppi-_Fus3_[Dock]">
+		<att name="interaction" type="string" value="ss"/>
+	</edge>
+	
+
+	<edge source="Fus3_[Dock]--Ptp_[MAPK]" target="Dig2_[MAPK]_ppi+_Fus3_[Dock]">
+		<att name="interaction" type="string" value="mutually_exclusive"/>
+	</edge>
+	
+
+	<edge source="UC103_trsl_Fus3mRNA" target="Fus3">
+		<att name="interaction" type="string" value="synthesis"/>
+	</edge>
+	
+
+</graph>

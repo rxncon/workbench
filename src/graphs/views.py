@@ -35,13 +35,6 @@ def apply_template_layout(request, graph_file_path, graph_string):
 
     return graph_string
 
-# def create_rxncon_system(system, system_type):
-#     if system_type == "File":
-#             book = rxncon_excel.ExcelBook(system.get_absolute_path())
-#     else:
-#         book = rxncon_quick.Quick(system.quick_input)
-#     return book.rxncon_system
-
 
 def check_filepath(request, graph_file_path, file, media_root):
     if os.path.exists(graph_file_path):
@@ -177,7 +170,16 @@ class ReaGraph(View):
             graph_string = xgmml_graph.to_string()
 
             if request.FILES.get('template'):
-                graph_string = apply_template_layout(request, graph_file_path, graph_string)
+                try:
+                    graph_string = apply_template_layout(request, graph_file_path, graph_string)
+                except AssertionError as e:
+                    os.remove(graph_file_path)
+                    context = {
+                        "sender_type": "Graph",
+                    }
+                    if str(e).strip():
+                        context["error"] = e
+                    return render(request, 'error.html', context)
 
             g = Graph_from_File(project_name=project_name, graph_file=graph_file_path, graph_string=graph_string,
                                     comment=request.POST.get('comment'))
@@ -283,7 +285,8 @@ def graph_delete(request, pk):
         form = DeleteGraphForm(request.POST, instance=f)
 
         if form.is_valid(): # checks CSRF
-            os.remove(f.graph_file.name)
+            if os.path.exists(f.graph_file.name):
+                os.remove(f.graph_file.name)
             f.delete()
             messages.success(request, "Successfully deleted")
             if system_type == "Quick":
