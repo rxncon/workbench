@@ -42,8 +42,8 @@ def compare_systems(request, id, system, called_from="File"):
     return {"rxns": rxns,
             "cnts": cnts}
 
-def guided_tour(request):
-    return render(request, "guided_tour.html")
+def getting_started(request):
+    return render(request, "getting_started.html")
 
 def create_rxncon_system(request, system_type, system_id):
     if system_type=="File":
