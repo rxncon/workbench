@@ -7,7 +7,7 @@
 <div style="clear: both;"></div>
 {% for project in projects|slice:":3" %}
 {% if project.project_name %}
-    {% include "file_list_items.html" %}
+{% include "file_list_items.html" %}
 {% endif %}
 {% endfor %}
 
@@ -15,19 +15,19 @@
 <div id="collapse_pList">
     <a class="btn btn-link" role="button" style="float: none;">
         <span class="button-text">Show more</span>
-    </a><br />
+    </a><br/>
     <div style="display: none">
         {% for project in projects|slice:"3:" %}
-          {% include "file_list_items.html" %}
+        {% include "file_list_items.html" %}
         {% endfor %}
     </div>
 </div>
 <!--<div style="clear: both;"></div>-->
 
 <script type="text/javascript">
-    $('#collapse_pList > a').click(function(){
+    $('#collapse_pList > a').click(function () {
         var span = $(this).find('span');
-        if(span.text() == "Show more"){
+        if (span.text() == "Show more") {
             span.text("Show less");
         } else {
             span.text("Show more");

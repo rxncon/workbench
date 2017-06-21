@@ -6,7 +6,6 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ('rxncon_system', '0002_rxncon_system_project_id'),
     ]

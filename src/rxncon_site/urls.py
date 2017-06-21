@@ -17,9 +17,10 @@ from django.conf import settings
 from django.conf.urls import include, url
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.views.generic.base import TemplateView
+
 from . import views
-#from posts import views
+
+# from posts import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -33,9 +34,6 @@ urlpatterns = [
     url(r'^funding', views.funding, name='funding'),
     url(r'^support', views.support, name='support'),
     url(r'^getting_started', views.getting_started, name='getting_started'),
-    #url(r'^delete/(?P<id>\d+)/$', fviews.file_delete, name="delete"),
-    # url(r'^$', TemplateView.as_view(template_name='static_pages/index.html'),
-    #     name='home'),
 ]
 
 if settings.DEBUG:

@@ -1,19 +1,16 @@
-from django.shortcuts import render
+import os
+import pickle
+
 from django.conf import settings
 from django.contrib import messages
-from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from django.core.urlresolvers import reverse
-from django.http import HttpResponse, HttpResponseRedirect
-from django.shortcuts import render, get_object_or_404, redirect
-import os
-import rxncon.input.quick.quick as rxncon_quick
-import rxncon.input.excel_book.excel_book as rxncon_excel
-from rxncon_site.views import compare_systems, create_rxncon_system_object
-import pickle
-from .models import Quick
+from django.http import HttpResponseRedirect
+from django.shortcuts import render, get_object_or_404
 from fileTree.models import File
+from rxncon_site.views import compare_systems, create_rxncon_system_object
 from rxncon_system.models import Rxncon_system
+
 from .forms import QuickForm, DeleteQuickForm
+from .models import Quick
 
 
 def quick_detail(request, id, compare_dict=None):
@@ -34,7 +31,6 @@ def quick_detail(request, id, compare_dict=None):
         context_data["nr_reactions"] = len(rxncon_system.reactions)
         context_data["nr_contingencies"] = len(rxncon_system.contingencies)
 
-
     if compare_dict:
         context_data.update(compare_dict)
 
@@ -44,11 +40,11 @@ def quick_detail(request, id, compare_dict=None):
 def quick_compare(request, id):
     loaded = File.objects.filter(loaded=True)
     if not loaded:
-        #Quick
+        # Quick
         loaded = Quick.objects.filter(loaded=True)
         pickled_rxncon_system = Rxncon_system.objects.get(project_id=loaded[0].id, project_type="Quick")
     else:
-        #File
+        # File
         pickled_rxncon_system = Rxncon_system.objects.get(project_id=loaded[0].id, project_type="File")
 
     loaded_rxncon_system = pickle.loads(pickled_rxncon_system.pickled_system)
@@ -60,7 +56,6 @@ def quick_compare(request, id):
         "nr_different_reactions": differences["rxns"],
         "nr_different_contingencies": differences["cnts"],
     }
-
 
     return quick_detail(request, id, compare_dict)
 
@@ -85,14 +80,15 @@ def quick_new(request):
         except FileExistsError as e:
             context = {
                 "project_name": instance.name,
-                "error": "There already is a project with the name \"" + str(instance.name) +"\". Please choose another name."
+                "error": "There already is a project with the name \"" + str(
+                    instance.name) + "\". Please choose another name."
             }
             instance.delete()
             return render(request, 'error.html', context)
 
         return HttpResponseRedirect(instance.load())
 
-    context={
+    context = {
         "form": form,
     }
     return render(request, "quick_form.html", context)
@@ -102,7 +98,7 @@ def quick_delete(request, id):
     q = get_object_or_404(Quick, id=id)
     if request.method == 'POST':
         form = DeleteQuickForm(request.POST, instance=q)
-        if form.is_valid(): # checks CSRF
+        if form.is_valid():  # checks CSRF
             if q.rxncon_system:
                 q.rxncon_system.delete()
             if q.reg_graph:
@@ -111,14 +107,14 @@ def quick_delete(request, id):
                 q.rea_graph.delete()
             if q.sRea_graph:
                 q.sRea_graph.delete()
-            if q.boolean_model: 
+            if q.boolean_model:
                 q.boolean_model.delete()
             if q.rule_based_model:
                 q.rule_based_model.delete()
             q.delete_from_harddisk()
             q.delete()
             messages.success(request, "Successfully deleted")
-            return HttpResponseRedirect("/") # wherever to go after deleting
+            return HttpResponseRedirect("/")  # wherever to go after deleting
     else:
         form = DeleteQuickForm(instance=q)
     template_vars = {'form': form,
@@ -129,24 +125,21 @@ def quick_delete(request, id):
                      }
     return render(request, 'quick_delete.html', template_vars)
 
+
 def quick_update(request, id=None):
     instance = get_object_or_404(Quick, id=id)
     form = QuickForm(request.POST or None, instance=instance)
     if form.is_valid():
-        # instance.rxncon_system = None
         instance = form.save(commit=False)
         instance.save()
         messages.success(request, "Item Saved", extra_tags='html_safe')
-        # return HttpResponseRedirect(instance.load())
         return quick_load(request, id, update=True)
     context_data = {
         "title": instance.name,
-        "instance":instance,
+        "instance": instance,
         "form": form,
     }
     return render(request, "quick_form.html", context_data)
-
-
 
 
 def quick_load(request, id, update=False):
@@ -156,7 +149,7 @@ def quick_load(request, id, update=False):
     if not target.rxncon_system:
         try:
             rxncon_system = create_rxncon_system_object(request=request, project_name=target.name,
-                                                project_type="Quick", project_id=id)
+                                                        project_type="Quick", project_id=id)
         except SyntaxError as e:
             context = {
                 "project_name": target.name,
@@ -173,12 +166,10 @@ def quick_load(request, id, update=False):
     else:
         rxncon_system = Quick.objects.get(id=id).rxncon_system
 
-    target = Quick.objects.filter(id=id) # target has to be redone with filter function, to make following update steps work
+    target = Quick.objects.filter(
+        id=id)  # target has to be redone with filter function, to make following update steps work
     target.update(loaded=True)
     target.update(rxncon_system=rxncon_system)
     if target[0].loaded:
         messages.info(request, "Quick definition '" + target[0].name + "' successfully loaded")
     return quick_detail(request, id)
-
-
-

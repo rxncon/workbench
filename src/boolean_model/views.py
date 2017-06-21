@@ -1,22 +1,23 @@
+import os
+import pickle
+
 from django.conf import settings
 from django.contrib import messages
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import View
 from fileTree.models import File
 from fileTree.views import file_detail
+from quick_format.models import Quick
+from quick_format.views import quick_detail
+from rxncon.simulation.boolean.boolean_model import SmoothingStrategy, KnockoutStrategy, OverexpressionStrategy
+from rxncon.simulation.boolean.boolnet_from_boolean_model import QuantitativeContingencyStrategy, \
+    boolnet_strs_from_rxncon
+from rxncon_system.models import Rxncon_system
+
 from .forms import BoolForm
 from .forms import DeleteBoolForm
 from .models import Bool_from_rxnconsys
-import os
-from quick_format.models import Quick
-from quick_format.views import quick_detail
-import pickle
-from rxncon_system.models import Rxncon_system
-from rxncon.simulation.boolean.boolean_model import SmoothingStrategy, KnockoutStrategy, OverexpressionStrategy
-from rxncon.simulation.boolean.boolnet_from_boolean_model import QuantitativeContingencyStrategy, boolnet_strs_from_rxncon
-
-
 
 
 def check_filepath(request, file_path, file, media_root):
@@ -28,6 +29,7 @@ def check_filepath(request, file_path, file, media_root):
         return True
     else:
         return True
+
 
 def bool(request, system_id=None):
     form = BoolForm(request.POST or None)
@@ -83,12 +85,12 @@ class Bool(View):
             k_minus = QuantitativeContingencyStrategy(request.POST.get('k_minus'))
             model_str, symbol_str, initial_val_str = boolnet_strs_from_rxncon(rxncon_system,
                                                                               smoothing_strategy=smoothing,
-                                                                              knockout_strategy = knockout,
+                                                                              knockout_strategy=knockout,
                                                                               overexpression_strategy=overexpr,
-                                                                                k_plus_strategy=k_plus,
-                                                                               k_minus_strategy=k_minus)
+                                                                              k_plus_strategy=k_plus,
+                                                                              k_minus_strategy=k_minus)
 
-            if not os.path.exists( "%s/%s/%s" % (media_root, system.slug, "boolnet")):
+            if not os.path.exists("%s/%s/%s" % (media_root, system.slug, "boolnet")):
                 os.mkdir("%s/%s/%s" % (media_root, system.slug, "boolnet"))
 
             with open(model_path, mode='w') as f:
@@ -100,8 +102,9 @@ class Bool(View):
             with open(init_path, mode='w') as f:
                 f.write(initial_val_str)
 
-            b = Bool_from_rxnconsys(project_name=project_name, model_path=model_path, symbol_path=symbol_path, init_path=init_path,
-                                comment=request.POST.get('comment'))
+            b = Bool_from_rxnconsys(project_name=project_name, model_path=model_path, symbol_path=symbol_path,
+                                    init_path=init_path,
+                                    comment=request.POST.get('comment'))
             b.save()
             messages.info(request, "BoolNet files for project '" + b.project_name + "' successfully created.")
             if system_type == "Quick":
@@ -110,8 +113,6 @@ class Bool(View):
             else:
                 File.objects.filter(id=system_id).update(boolean_model=b)
                 return file_detail(request, system_id)
-
-
 
 
 def bool_delete(request, pk):
@@ -130,7 +131,7 @@ def bool_delete(request, pk):
     if request.method == 'POST':
         form = DeleteBoolForm(request.POST, instance=f)
 
-        if form.is_valid(): # checks CSRF
+        if form.is_valid():  # checks CSRF
             if os.path.exists(f.model_path.name):
                 os.remove(f.model_path.name)
                 os.remove(f.symbol_path.name)
@@ -138,7 +139,7 @@ def bool_delete(request, pk):
             f.delete()
             messages.success(request, "Tree files Successfully deleted.")
             if system_type == "Quick":
-                return HttpResponseRedirect("/quick/"+str(id)+"/") # wherever to go after deleting
+                return HttpResponseRedirect("/quick/" + str(id) + "/")  # wherever to go after deleting
 
             else:
                 return HttpResponseRedirect("/files/" + str(id) + "/")  # wherever to go after deleting
@@ -149,6 +150,3 @@ def bool_delete(request, pk):
                      "timestamp": timestamp
                      }
     return render(request, 'bool_delete.html', template_vars)
-
-
-

@@ -1,24 +1,19 @@
-from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from django.core.urlresolvers import reverse
-from django.http import HttpResponse, HttpResponseRedirect
-from django.shortcuts import render, get_object_or_404, redirect
-import rxncon.input.excel_book.excel_book as rxncon_excel
-import rxncon.input.quick.quick as rxncon_quick
-import rxncon.visualization.regulatory_graph as regulatory_graph
-import rxncon.visualization.graphML as graphML
-from rxncon_site.views import compare_systems, create_rxncon_system_object
-from django.contrib import messages
-from .models import File
-from quick_format.models import Quick
-from rxncon_system.models import Rxncon_system
-from .forms import FileForm, DeleteFileForm
-import django.forms as forms
 import pickle
+
+import django.forms as forms
+from django.contrib import messages
+from django.http import HttpResponseRedirect
+from django.shortcuts import render, get_object_or_404
+from quick_format.models import Quick
 from rxncon_site.views import *
+from rxncon_site.views import compare_systems, create_rxncon_system_object
+from rxncon_system.models import Rxncon_system
 
-# TODO: all prints in logger, use function from rxncon utils to to as in rxncon_system.py
+from .forms import FileForm, DeleteFileForm
+from .models import File
 
-def file_detail(request, id, compare_dict = None):
+
+def file_detail(request, id, compare_dict=None):
     instance = File.objects.get(id=id)
     slug = File.objects.filter(id=id).values("slug")
     project_files = File.objects.filter(slug=slug).order_by("-updated")
@@ -59,20 +54,20 @@ def file_compare(request, id):
     differences = compare_systems(request, id, loaded_rxncon_system, called_from="Quick")
 
     compare_dict = {
-            "compare_nr_reactions": len(loaded_rxncon_system.reactions),
-            "compare_nr_contingencies": len(loaded_rxncon_system.contingencies),
-            "nr_different_reactions": differences["rxns"],
-            "nr_different_contingencies": differences["cnts"],
-        }
+        "compare_nr_reactions": len(loaded_rxncon_system.reactions),
+        "compare_nr_contingencies": len(loaded_rxncon_system.contingencies),
+        "nr_different_reactions": differences["rxns"],
+        "nr_different_contingencies": differences["cnts"],
+    }
 
     return file_detail(request, id, compare_dict)
 
 
-def file_upload(request, slug= None):
+def file_upload(request, slug=None):
     print("Entered file_upload")
     form = FileForm(request.POST or None, request.FILES or None)
     context = {}
-    if slug != None: # add file to existing project
+    if slug != None:  # add file to existing project
         try:
             file = File.objects.filter(slug=slug)[0]
             project_name = file.project_name
@@ -99,6 +94,7 @@ def file_upload(request, slug= None):
     })
     return render(request, "file_form.html", context)
 
+
 def file_delete(request, pk):
     f = get_object_or_404(File, pk=pk)
     project_name = f.project_name
@@ -107,7 +103,7 @@ def file_delete(request, pk):
     download = f.get_download_url()
     if request.method == 'POST':
         form = DeleteFileForm(request.POST, instance=f)
-        if form.is_valid(): # checks CSRF
+        if form.is_valid():  # checks CSRF
             if f.rxncon_system:
                 f.rxncon_system.delete()
             if f.reg_graph:
@@ -143,14 +139,15 @@ def file_delete(request, pk):
                      }
     return render(request, 'file_delete.html', template_vars)
 
+
 def file_delete_project(request, slug):
     project = File.objects.filter(slug=slug).order_by("-updated")
-    f = project[0] # latest file
+    f = project[0]  # latest file
     project_name = f.project_name
     timestamp = f.timestamp
     if request.method == 'POST':
         form = DeleteFileForm(request.POST, instance=f)
-        if form.is_valid(): # checks CSRF
+        if form.is_valid():  # checks CSRF
             if f.rxncon_system:
                 f.rxncon_system.delete()
             if f.reg_graph:
@@ -166,15 +163,16 @@ def file_delete_project(request, slug):
             f.delete_project_from_harddisk()
             project.delete()
             messages.success(request, "Successfully deleted")
-            return HttpResponseRedirect("/") # wherever to go after deleting
+            return HttpResponseRedirect("/")  # wherever to go after deleting
     else:
         form = DeleteFileForm(instance=f)
     template_vars = {'form': form,
                      'project': project_name,
                      "timestamp": timestamp,
                      "download": f.get_download_url(),
-                        }
+                     }
     return render(request, 'file_delete.html', template_vars)
+
 
 def file_load(request, id):
     File.objects.all().update(loaded=False)
@@ -182,11 +180,12 @@ def file_load(request, id):
     target = File.objects.get(id=id)
     if not target.rxncon_system:
         try:
-            rxncon_system = create_rxncon_system_object(request=request, project_name=target.project_name, project_type="File", project_id=id)
+            rxncon_system = create_rxncon_system_object(request=request, project_name=target.project_name,
+                                                        project_type="File", project_id=id)
         except SyntaxError as e:
 
-            context={
-                "project_name" : target.project_name,
+            context = {
+                "project_name": target.project_name,
                 "file_name": target.get_filename(),
                 "error": e,
                 "sender": target,
@@ -196,11 +195,10 @@ def file_load(request, id):
     else:
         rxncon_system = File.objects.get(id=id).rxncon_system
 
-    target = File.objects.filter(id=id) # target has to be redone with filter function, to make following update steps work
+    target = File.objects.filter(
+        id=id)  # target has to be redone with filter function, to make following update steps work
     target.update(loaded=True)
     target.update(rxncon_system=rxncon_system)
     if target[0].loaded:
         messages.info(request, "File '" + target[0].get_filename() + "' successfully loaded")
     return file_detail(request, id)
-
-
