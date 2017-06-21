@@ -1,5 +1,6 @@
-from .forms import FileForm, DeleteFileForm
 import django.forms as forms
+
+from .forms import FileForm, DeleteFileForm
 
 try:
     from rxncon_site.views import *
@@ -11,7 +12,8 @@ except ImportError:
 from .models import File
 from rxncon.input.excel_book.excel_book import ExcelBook
 
-def file_detail(request, id, compare_dict = None):
+
+def file_detail(request, id, compare_dict=None):
     instance = File.objects.get(id=id)
     slug = File.objects.filter(id=id).values("slug")
     project_files = File.objects.filter(slug=slug).order_by("-updated")
@@ -51,7 +53,6 @@ def file_compare(request, id):
         except:
             raise ImportError("Could not import quick")
 
-
     loaded_rxncon_system = loaded_rxncon.rxncon_system
 
     differences = compare_systems(request, id, loaded_rxncon_system)
@@ -63,15 +64,14 @@ def file_compare(request, id):
         "nr_different_contingencies": differences["cnts"],
     }
 
-
     return file_detail(request, id, compare_dict)
 
 
-def file_upload(request, slug= None):
+def file_upload(request, slug=None):
     # TODO: like this, it is not case sensitive. "Elefant" and "elefant" are the same project
     form = FileForm(request.POST or None, request.FILES or None)
     context = {}
-    if slug != None: # add file to existing project
+    if slug != None:  # add file to existing project
         try:
             file = File.objects.filter(slug=slug)[0]
             project_name = file.project_name
@@ -97,6 +97,7 @@ def file_upload(request, slug= None):
     })
     return render(request, "file_form.html", context)
 
+
 def file_delete(request, pk):
     f = get_object_or_404(File, pk=pk)
     project_name = f.project_name
@@ -106,12 +107,12 @@ def file_delete(request, pk):
     if request.method == 'POST':
         form = DeleteFileForm(request.POST, instance=f)
 
-        if form.is_valid(): # checks CSRF
+        if form.is_valid():  # checks CSRF
             f.delete_file_from_harddisk()
             f.delete()
             other_file_id = str(File.objects.filter(project_name=project_name).latest("updated").id)
             messages.success(request, "Successfully deleted")
-            return HttpResponseRedirect("/files/"+other_file_id+"/") # wherever to go after deleting
+            return HttpResponseRedirect("/files/" + other_file_id + "/")  # wherever to go after deleting
     else:
         form = DeleteFileForm(instance=f)
 
@@ -122,25 +123,27 @@ def file_delete(request, pk):
                      }
     return render(request, 'file_delete.html', template_vars)
 
+
 def file_delete_project(request, slug):
     project = File.objects.filter(slug=slug).order_by("-updated")
-    f = project[0] # latest file
+    f = project[0]  # latest file
     project_name = f.project_name
     timestamp = f.timestamp
     if request.method == 'POST':
         form = DeleteFileForm(request.POST, instance=f)
-        if form.is_valid(): # checks CSRF
+        if form.is_valid():  # checks CSRF
             f.delete_project_from_harddisk()
             project.delete()
             messages.success(request, "Successfully deleted")
-            return HttpResponseRedirect("/") # wherever to go after deleting
+            return HttpResponseRedirect("/")  # wherever to go after deleting
     else:
         form = DeleteFileForm(instance=f)
     template_vars = {'form': form,
                      'project': project_name,
                      "timestamp": timestamp,
-                        }
+                     }
     return render(request, 'file_delete.html', template_vars)
+
 
 def file_load(request, id):
     File.objects.all().update(loaded=False)
@@ -150,5 +153,3 @@ def file_load(request, id):
     if target[0].loaded:
         messages.info(request, "File '" + target[0].get_filename() + "' successfully loaded")
     return file_detail(request, id)
-
-

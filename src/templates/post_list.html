@@ -2,25 +2,26 @@
 
 {% block content%}
 <div class="col-sm-6 col-sm-offset-3">
-<h1> {{ title }}</h1>
-<div class="row">
-{% for obj in object_list %}
-   <div class="col-sm-12">
-    <div class="thumbnail">
-            {% if obj.image %}
-           <img src="{{obj.image.url}}" class="img-responsive" />
-            {% endif %}
-      <div class="caption">
-        <h3><a href="{{ obj.get_absolute_url }}"> {{obj.title}}  </a> <small> {{obj.timestamp|timesince}} ago</small>
-            </h3>
-        <p>{{obj.content|linebreaks|truncatechars:120}}</p>
-        <p><a href="{{ obj.get_absolute_url }}" class="btn btn-primary" role="button">View</a> </p>
-      </div>
-    </div>
-  </div>
+    <h1> {{ title }}</h1>
+    <div class="row">
+        {% for obj in object_list %}
+        <div class="col-sm-12">
+            <div class="thumbnail">
+                {% if obj.image %}
+                <img src="{{obj.image.url}}" class="img-responsive"/>
+                {% endif %}
+                <div class="caption">
+                    <h3><a href="{{ obj.get_absolute_url }}"> {{obj.title}} </a>
+                        <small> {{obj.timestamp|timesince}} ago</small>
+                    </h3>
+                    <p>{{obj.content|linebreaks|truncatechars:120}}</p>
+                    <p><a href="{{ obj.get_absolute_url }}" class="btn btn-primary" role="button">View</a></p>
+                </div>
+            </div>
+        </div>
 
-{% endfor %}
-</div>
+        {% endfor %}
+    </div>
     <div class="pagination">
     <span class="step-links">
         {% if object_list.has_previous %}
@@ -35,7 +36,7 @@
             <a href="?{{ page_request_var }}={{ object_list.next_page_number }}">next</a>
         {% endif %}
     </span>
-</div>
+    </div>
 </div>
 {%endblock content%}
 

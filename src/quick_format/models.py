@@ -1,11 +1,11 @@
+import shutil
+
 from django.conf import settings
 from django.core.urlresolvers import reverse
 from django.db import models
 from django.db.models.signals import pre_save
-from django.shortcuts import render_to_response
 from django.utils.text import slugify
-import os
-import shutil
+
 try:
     from graphs.models import Graph_from_File
     from boolean_model.models import Bool_from_rxnconsys
@@ -25,12 +25,16 @@ class Quick(models.Model):
     timestamp = models.DateTimeField(auto_now=False, auto_now_add=True)  # initial timestamp will be saved one time
     updated = models.DateTimeField(auto_now=True, auto_now_add=False)  # auto_now refers to every modification,
     # updated gets reset when Post is updated -duh
-    reg_graph = models.ForeignKey(Graph_from_File, null=True, on_delete=models.SET_NULL, blank=True, related_name="regulatory_graph_quick")
-    rea_graph = models.ForeignKey(Graph_from_File, null=True, on_delete=models.SET_NULL, blank=True, related_name="reaction_graph_quick")
-    sRea_graph = models.ForeignKey(Graph_from_File, null=True, on_delete=models.SET_NULL, blank=True, related_name="species reaction_graph_quick+")
-    boolean_model = models.ForeignKey(Bool_from_rxnconsys, null=True, on_delete=models.SET_NULL, blank=True, related_name="bool_quick")
-    rule_based_model = models.ForeignKey(Rule_based_from_rxnconsys, null=True, on_delete=models.SET_NULL, blank=True, related_name="rule_based_quick")
-
+    reg_graph = models.ForeignKey(Graph_from_File, null=True, on_delete=models.SET_NULL, blank=True,
+                                  related_name="regulatory_graph_quick")
+    rea_graph = models.ForeignKey(Graph_from_File, null=True, on_delete=models.SET_NULL, blank=True,
+                                  related_name="reaction_graph_quick")
+    sRea_graph = models.ForeignKey(Graph_from_File, null=True, on_delete=models.SET_NULL, blank=True,
+                                   related_name="species reaction_graph_quick+")
+    boolean_model = models.ForeignKey(Bool_from_rxnconsys, null=True, on_delete=models.SET_NULL, blank=True,
+                                      related_name="bool_quick")
+    rule_based_model = models.ForeignKey(Rule_based_from_rxnconsys, null=True, on_delete=models.SET_NULL, blank=True,
+                                         related_name="rule_based_quick")
 
     def __str__(self):
         return self.name
@@ -48,7 +52,7 @@ class Quick(models.Model):
         return self.name
 
     def get_download_url(self):
-        media_url= settings.MEDIA_URL
+        media_url = settings.MEDIA_URL
         # return media_url+"%s" %(self.file)
         # media_root = settings.MEDIA_ROOT
         filename = self.slug + "_quick_definition.txt"
@@ -61,11 +65,11 @@ class Quick(models.Model):
         path = "%s/%s/" % (media_root, self.slug)
         shutil.rmtree(path)
 
+
 def pre_save_post_receiver(sender, instance, *args, **kwargs):
     if not instance.slug:
         # instance.slug = create_slug(instance)
-        instance.slug=slugify(instance.name)
-
+        instance.slug = slugify(instance.name)
 
 
 pre_save.connect(pre_save_post_receiver, sender=Quick)

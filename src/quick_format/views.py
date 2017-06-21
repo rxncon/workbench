@@ -1,15 +1,12 @@
-from django.shortcuts import render
+import os
+
 from django.conf import settings
 from django.contrib import messages
-from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from django.core.urlresolvers import reverse
-from django.http import HttpResponse, HttpResponseRedirect
-from django.shortcuts import render, get_object_or_404, redirect
-import os
-import rxncon.input.quick.quick as rxncon_quick
-import rxncon.input.excel_book.excel_book as rxncon_excel
-from .models import Quick
+from django.http import HttpResponseRedirect
+from django.shortcuts import get_object_or_404
+
 from .forms import QuickForm, DeleteQuickForm
+
 try:
     from rxncon_site.views import *
     from fileTree.models import File
@@ -62,7 +59,6 @@ def quick_compare(request, id):
         "nr_different_contingencies": differences["cnts"],
     }
 
-
     return quick_detail(request, id, compare_dict)
 
 
@@ -87,7 +83,7 @@ def quick_new(request):
         messages.success(request, "Successfully created")
         return HttpResponseRedirect(instance.get_absolute_url())
 
-    context={
+    context = {
         "form": form,
     }
     return render(request, "quick_form.html", context)
@@ -98,11 +94,11 @@ def quick_delete(request, id):
     if request.method == 'POST':
         form = DeleteQuickForm(request.POST, instance=q)
 
-        if form.is_valid(): # checks CSRF
+        if form.is_valid():  # checks CSRF
             q.delete_from_harddisk()
             q.delete()
             messages.success(request, "Successfully deleted")
-            return HttpResponseRedirect("/") # wherever to go after deleting
+            return HttpResponseRedirect("/")  # wherever to go after deleting
     else:
         form = DeleteQuickForm(instance=q)
     template_vars = {'form': form,
@@ -112,6 +108,7 @@ def quick_delete(request, id):
                      "download": q.get_download_url()
                      }
     return render(request, 'quick_delete.html', template_vars)
+
 
 def quick_update(request, id=None):
     instance = get_object_or_404(Quick, id=id)
@@ -124,10 +121,11 @@ def quick_update(request, id=None):
 
     context_data = {
         "title": instance.name,
-        "instance":instance,
+        "instance": instance,
         "form": form,
     }
     return render(request, "quick_form.html", context_data)
+
 
 def quick_load(request, id):
     File.objects.all().update(loaded=False)
@@ -141,5 +139,3 @@ def quick_load(request, id):
 # def quick_save(request, id):
 #     q = get_object_or_404(Quick, id=id)
 #     q.download_system_description()
-
-

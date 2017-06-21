@@ -1,7 +1,7 @@
 from django.conf.urls import url
+
 from . import views
 from .views import Rule_based
-
 
 urlpatterns = [
     url(r'^rule_based/$', views.rule, name='rule_based'),
