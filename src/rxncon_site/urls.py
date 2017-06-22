@@ -38,6 +38,7 @@ try:
     ]
 
 except ImportError:
+    import src.rxncon_site.import_tester
     urlpatterns = [
         url(r'^admin/', admin.site.urls),
         url(r'^files/', include("src.fileTree.urls", namespace='fileTree')),

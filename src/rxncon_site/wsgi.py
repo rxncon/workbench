@@ -12,9 +12,10 @@ import os
 from django.core.wsgi import get_wsgi_application
 
 try:
-    import rxncon_site.import_tester.import_tester
+    import rxncon_site.import_tester
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "rxncon_site.settings")
 except ImportError:
+    import src.rxncon_site.import_tester
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "src.rxncon_site.settings")
 
 application = get_wsgi_application()

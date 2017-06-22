@@ -45,8 +45,6 @@ try:
         'rxncon_system',
     ]
 except ImportError:
-    print("here")
-
     import src.rxncon_site.import_tester
     INSTALLED_APPS = [
         'django.contrib.admin',
@@ -62,6 +60,7 @@ except ImportError:
         'src.rule_based',
         'src.rxncon_system',
     ]
+
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -77,10 +76,9 @@ try:
     ROOT_URLCONF = 'rxncon_site.urls'
 
 except ImportError:
-    print("here")
-
     import src.rxncon_site.import_tester
     ROOT_URLCONF = 'src.rxncon_site.urls'
+
 try:
     import rxncon_site.import_tester
     TEMPLATES = [
@@ -102,7 +100,6 @@ try:
         },
     ]
 except ImportError:
-    print("here")
 
     import src.rxncon_site.import_tester
     TEMPLATES = [
@@ -129,7 +126,6 @@ try:
     WSGI_APPLICATION = 'rxncon_site.wsgi.application'
 
 except ImportError:
-    print("here")
     import src.rxncon_site.import_tester
     WSGI_APPLICATION = 'src.rxncon_site.wsgi.application'
 

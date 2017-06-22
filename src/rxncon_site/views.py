@@ -1,3 +1,10 @@
+import pickle
+
+import rxncon.input.excel_book.excel_book as rxncon_excel
+import rxncon.input.quick.quick as rxncon_quick
+from django.contrib import messages
+from django.shortcuts import render
+
 try:
     from fileTree.models import File
     from quick_format.models import Quick
@@ -6,13 +13,6 @@ except ImportError:
     from src.fileTree.models import File
     from src.quick_format.models import Quick
     from src.rxncon_system.models import Rxncon_system
-
-import pickle
-
-import rxncon.input.excel_book.excel_book as rxncon_excel
-import rxncon.input.quick.quick as rxncon_quick
-from django.contrib import messages
-from django.shortcuts import render
 
 
 def rxncon_site_index(request):
