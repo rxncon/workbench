@@ -21,7 +21,7 @@ from django.contrib import admin
 from . import views
 
 try:
-    import fileTree.urls
+    import rxncon_site.import_tester
 
     urlpatterns = [
         url(r'^admin/', admin.site.urls),

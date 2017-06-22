@@ -11,8 +11,8 @@ from .models import Quick
 
 try:
     from rxncon_site.views import compare_systems, create_rxncon_system_object
-    from rxncon_system.models import Rxncon_system
     from fileTree.models import File
+    from rxncon_system.models import Rxncon_system
 except ImportError:
     from src.rxncon_site.views import compare_systems, create_rxncon_system_object
     from src.rxncon_system.models import Rxncon_system

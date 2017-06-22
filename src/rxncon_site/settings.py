@@ -28,7 +28,7 @@ ALLOWED_HOSTS = []
 
 # Application definition
 try:
-    import fileTree.urls
+    import rxncon_site.import_tester
 
     INSTALLED_APPS = [
         'django.contrib.admin',
@@ -42,9 +42,12 @@ try:
         'graphs',
         'boolean_model',
         'rule_based',
-        'rxncon_system'
+        'rxncon_system',
     ]
 except ImportError:
+    print("here")
+
+    import src.rxncon_site.import_tester
     INSTALLED_APPS = [
         'django.contrib.admin',
         'django.contrib.auth',
@@ -57,10 +60,8 @@ except ImportError:
         'src.graphs',
         'src.boolean_model',
         'src.rule_based',
-        'src.rxncon_system'
-
+        'src.rxncon_system',
     ]
-
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -72,14 +73,16 @@ MIDDLEWARE_CLASSES = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 try:
-    import rxncon_site.urls
-
+    import rxncon_site.import_tester
     ROOT_URLCONF = 'rxncon_site.urls'
+
 except ImportError:
+    print("here")
+
+    import src.rxncon_site.import_tester
     ROOT_URLCONF = 'src.rxncon_site.urls'
 try:
-    import rxncon_site.context_processors.file_list
-
+    import rxncon_site.import_tester
     TEMPLATES = [
         {
             'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -99,6 +102,9 @@ try:
         },
     ]
 except ImportError:
+    print("here")
+
+    import src.rxncon_site.import_tester
     TEMPLATES = [
         {
             'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -119,10 +125,12 @@ except ImportError:
     ]
 
 try:
-    import rxncon_site.wsgi.application
-
+    import rxncon_site.import_tester
     WSGI_APPLICATION = 'rxncon_site.wsgi.application'
+
 except ImportError:
+    print("here")
+    import src.rxncon_site.import_tester
     WSGI_APPLICATION = 'src.rxncon_site.wsgi.application'
 
 # Database
@@ -177,3 +185,4 @@ STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR),
                            "static_cdn")  # content delivery network, static on different server
 MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "media_cdn")
 MEDIA_URL = "/media/"
+

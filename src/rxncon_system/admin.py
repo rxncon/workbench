@@ -1,5 +1,8 @@
 from django.contrib import admin
-from rxncon_system.models import Rxncon_system
+try:
+    from rxncon_system.models import Rxncon_system
+except ImportError:
+    from src.rxncon_system.models import Rxncon_system
 
 
 class RxnconSystemAdmin(admin.ModelAdmin):

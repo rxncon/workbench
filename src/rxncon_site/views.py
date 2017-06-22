@@ -73,3 +73,4 @@ def create_rxncon_system_object(request, project_name, project_type, project_id)
         print("Rxncon system for project '" + project_name + "' successfully created.")
         messages.info(request, "Rxncon system for project '" + project_name + "' successfully created.")
         return sys_obj
+

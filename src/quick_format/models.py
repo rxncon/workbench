@@ -58,8 +58,6 @@ class Quick(models.Model):
     def get_absolute_url(self):
         return reverse("quick_format:quick_detail", kwargs={"id": self.id})
 
-    def get_filename(self):
-        return self.name
 
     def get_download_url(self):
         media_url = settings.MEDIA_URL
