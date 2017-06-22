@@ -4,17 +4,13 @@ from django.db.models.signals import pre_save
 from django.utils.text import slugify
 
 
-# from quick_format.models import Quick
-
-
 def upload_location(instance, filename):
-    # return "%s/%s" %(os.path.splitext(filename)[0],filename)
     return "%s/%s/%s" % (instance.slug, "graphs", filename)
 
 
-class Graph_from_File(models.Model):  # TODO: rename to just 'Graph', see django bookmarks for tutorial
+class Graph_from_File(models.Model):
     project_name = models.CharField(max_length=120)
-    slug = models.SlugField(blank=True)  # TODO: take blank out when file_upload with automated slug creation is done
+    slug = models.SlugField(blank=True)
     comment = models.TextField(null=True, blank=True)
     graph_file = models.FileField(null=True)
     graph_string = models.TextField(null=True)
@@ -42,7 +38,6 @@ class Graph_from_File(models.Model):  # TODO: rename to just 'Graph', see django
         return media_url + "%s" % (self.get_relative_path())
 
     def get_absolute_path(self):
-        # TODO: do I need this?
         media_root = settings.MEDIA_ROOT
         return media_root + "/%s" % (self.file)
 
@@ -52,7 +47,6 @@ class Graph_from_File(models.Model):  # TODO: rename to just 'Graph', see django
 
 def pre_save_post_receiver(sender, instance, *args, **kwargs):
     if not instance.slug:
-        # instance.slug = create_slug(instance)
         instance.slug = slugify(instance.project_name)
 
 

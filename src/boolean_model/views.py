@@ -1,7 +1,6 @@
 import os
+import pickle
 
-import rxncon.input.excel_book.excel_book as rxncon_excel
-import rxncon.input.quick.quick as rxncon_quick
 from django.conf import settings
 from django.contrib import messages
 from django.http import HttpResponseRedirect
@@ -20,22 +19,13 @@ try:
     from fileTree.views import file_detail
     from quick_format.models import Quick
     from quick_format.views import quick_detail
+    from rxncon_system.models import Rxncon_system
 except ImportError:
     from src.fileTree.models import File
     from src.fileTree.views import file_detail
     from src.quick_format.models import Quick
     from src.quick_format.views import quick_detail
-
-
-def create_rxncon_system(system, system_type):
-    if system_type == "File":
-        try:
-            book = rxncon_excel.ExcelBook(system.get_absolute_path())
-        except:
-            book = rxncon_excel.ExcelBook(system.get_absolute_path())
-    else:
-        book = rxncon_quick.Quick(system.quick_input)
-    return book.rxncon_system
+    from src.rxncon_system.models import Rxncon_system
 
 
 def check_filepath(request, file_path, file, media_root):
@@ -93,7 +83,8 @@ class Bool(View):
                     else:
                         return file_detail(request, system_id)
 
-            rxncon_system = create_rxncon_system(system, system_type)
+            pickled_rxncon_system = Rxncon_system.objects.get(project_id=system_id, project_type=system_type)
+            rxncon_system = pickle.loads(pickled_rxncon_system.pickled_system)
 
             smoothing = SmoothingStrategy(request.POST.get('smoothing'))
             knockout = KnockoutStrategy(request.POST.get('knockout'))
@@ -149,9 +140,11 @@ def bool_delete(request, pk):
         form = DeleteBoolForm(request.POST, instance=f)
 
         if form.is_valid():  # checks CSRF
-            os.remove(f.model_path.name)
-            os.remove(f.symbol_path.name)
-            os.remove(f.init_path.name)
+
+            if os.path.exists(f.model_path.name):
+                os.remove(f.model_path.name)
+                os.remove(f.symbol_path.name)
+                os.remove(f.init_path.name)
             f.delete()
             messages.success(request, "Tree files Successfully deleted.")
             if system_type == "Quick":

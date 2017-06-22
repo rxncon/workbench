@@ -1,18 +1,18 @@
-from django.shortcuts import render
-
 try:
     from fileTree.models import File
     from quick_format.models import Quick
+    from rxncon_system.models import Rxncon_system
 except ImportError:
     from src.fileTree.models import File
     from src.quick_format.models import Quick
+    from src.rxncon_system.models import Rxncon_system
 
-import rxncon.input.quick.quick as rxncon_quick
+import pickle
+
 import rxncon.input.excel_book.excel_book as rxncon_excel
-
-
-# function based view, easier than class based but less strong
-
+import rxncon.input.quick.quick as rxncon_quick
+from django.contrib import messages
+from django.shortcuts import render
 
 
 def rxncon_site_index(request):
@@ -32,20 +32,7 @@ def support(request):
 
 
 def compare_systems(request, id, system, called_from="File"):
-    if called_from == "File":
-        instance = File.objects.get(id=id)
-        try:
-            book = rxncon_excel.ExcelBook(instance.get_absolute_path())
-        except:
-            raise ImportError("Could not import file")
-    else:
-        instance = Quick.objects.get(id=id)
-        try:
-            book = rxncon_quick.Quick(instance.quick_input)
-        except:
-            raise ImportError("Could not import Quick")
-
-    rxncon_system = book.rxncon_system
+    rxncon_system = system
 
     rxns = 0
     for rxn in rxncon_system.reactions:
@@ -61,5 +48,28 @@ def compare_systems(request, id, system, called_from="File"):
             "cnts": cnts}
 
 
-def guided_tour(request):
-    return render(request, "guided_tour.html")
+def getting_started(request):
+    return render(request, "getting_started.html")
+
+
+def create_rxncon_system(request, system_type, system_id):
+    if system_type == "File":
+        system = File.objects.filter(id=system_id)[0]
+        book = rxncon_excel.ExcelBook(system.get_absolute_path())
+
+    else:
+        system = Quick.objects.filter(id=system_id)[0]
+        book = rxncon_quick.Quick(system.quick_input)
+    return book.rxncon_system
+
+
+def create_rxncon_system_object(request, project_name, project_type, project_id):
+    rxncon_system = create_rxncon_system(request, project_type, project_id)
+    if rxncon_system:
+        pickled_sys = pickle.dumps(rxncon_system)
+        sys_obj = Rxncon_system(project_name=project_name, pickled_system=pickled_sys, project_id=project_id,
+                                project_type=project_type)
+        sys_obj.save()
+        print("Rxncon system for project '" + project_name + "' successfully created.")
+        messages.info(request, "Rxncon system for project '" + project_name + "' successfully created.")
+        return sys_obj

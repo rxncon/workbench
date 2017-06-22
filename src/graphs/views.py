@@ -1,7 +1,6 @@
 import os
+import pickle
 
-import rxncon.input.excel_book.excel_book as rxncon_excel
-import rxncon.input.quick.quick as rxncon_quick
 import rxncon.visualization.graphML as graphML
 import rxncon.visualization.reaction_graph as reaction_graph
 import rxncon.visualization.regulatory_graph as regulatory_graph
@@ -22,11 +21,14 @@ try:
     from fileTree.views import file_detail
     from quick_format.models import Quick
     from quick_format.views import quick_detail
+    from rxncon_system.models import Rxncon_system
+
 except ImportError:
     from src.fileTree.models import File
     from src.fileTree.views import file_detail
     from src.quick_format.models import Quick
     from src.quick_format.views import quick_detail
+    from src.rxncon_system.models import Rxncon_system
 
 
 def apply_template_layout(request, graph_file_path, graph_string):
@@ -36,17 +38,6 @@ def apply_template_layout(request, graph_file_path, graph_string):
         graph_handle.write(mapped_layout)
 
     return graph_string
-
-
-def create_rxncon_system(system, system_type):
-    if system_type == "File":
-        try:
-            book = rxncon_excel.ExcelBook(system.get_absolute_path())
-        except:
-            book = rxncon_excel.ExcelBook(system.get_absolute_path())
-    else:
-        book = rxncon_quick.Quick(system.quick_input)
-    return book.rxncon_system
 
 
 def check_filepath(request, graph_file_path, file, media_root):
@@ -84,7 +75,8 @@ def regGraphFile(request, system_id=None):
         if not check_filepath(request, graph_file_path, system, media_root):
             return file_detail(request, system_id)
 
-        rxncon_system = create_rxncon_system(system, "File")
+        pickled_rxncon_system = Rxncon_system.objects.get(project_id=system_id, project_type="File")
+        rxncon_system = pickle.loads(pickled_rxncon_system.pickled_system)
 
         graph = regulatory_graph.RegulatoryGraph(rxncon_system).to_graph()
         xgmml_graph = graphML.XGMML(graph, system.slug)
@@ -117,9 +109,8 @@ def regGraphQuick(request, system_id=None):
         if not check_filepath(request, graph_file_path, system, media_root):
             return quick_detail(request, system_id)
 
-        rxncon_system = create_rxncon_system(system, "Quick")
-        # graph_file, graph_string = create_graph_without_template(request, media_root, system, rxncon_system,
-        #                                                          graph_file_path)
+        pickled_rxncon_system = Rxncon_system.objects.get(project_id=system_id, project_type="Quick")
+        rxncon_system = pickle.loads(pickled_rxncon_system.pickled_system)
         graph = regulatory_graph.RegulatoryGraph(rxncon_system).to_graph()
         xgmml_graph = graphML.XGMML(graph, system.slug)
         graph_file = xgmml_graph.to_file(graph_file_path)
@@ -175,7 +166,8 @@ class ReaGraph(View):
                 else:
                     return file_detail(request, system_id)
 
-            rxncon_system = create_rxncon_system(system, system_type)
+            pickled_rxncon_system = Rxncon_system.objects.get(project_id=system_id, project_type=system_type)
+            rxncon_system = pickle.loads(pickled_rxncon_system.pickled_system)
 
             graph = reaction_graph.rxngraph_from_rxncon_system(rxncon_system).reaction_graph
 
@@ -184,7 +176,16 @@ class ReaGraph(View):
             graph_string = xgmml_graph.to_string()
 
             if request.FILES.get('template'):
-                graph_string = apply_template_layout(request, graph_file_path, graph_string)
+                try:
+                    graph_string = apply_template_layout(request, graph_file_path, graph_string)
+                except AssertionError as e:
+                    os.remove(graph_file_path)
+                    context = {
+                        "sender_type": "Graph",
+                    }
+                    if str(e).strip():
+                        context["error"] = e
+                    return render(request, 'error.html', context)
 
             g = Graph_from_File(project_name=project_name, graph_file=graph_file_path, graph_string=graph_string,
                                 comment=request.POST.get('comment'))
@@ -236,7 +237,8 @@ class SReaGraph(ReaGraph):
                 else:
                     return file_detail(request, system_id)
 
-            rxncon_system = create_rxncon_system(system, system_type)
+            pickled_rxncon_system = Rxncon_system.objects.get(project_id=system_id, project_type=system_type)
+            rxncon_system = pickle.loads(pickled_rxncon_system.pickled_system)
 
             graph = regulatory_graph.ReactionSpeciesGraph(rxncon_system=rxncon_system).to_graph()
 
@@ -287,7 +289,8 @@ def graph_delete(request, pk):
         form = DeleteGraphForm(request.POST, instance=f)
 
         if form.is_valid():  # checks CSRF
-            os.remove(f.graph_file.name)
+            if os.path.exists(f.graph_file.name):
+                os.remove(f.graph_file.name)
             f.delete()
             messages.success(request, "Successfully deleted")
             if system_type == "Quick":

@@ -5,7 +5,6 @@ from django.utils.text import slugify
 
 
 def upload_location(instance, filename):
-    # return "%s/%s" %(os.path.splitext(filename)[0],filename)
     return "%s/%s/%s" % (instance.slug, "graphs", filename)
 
 
@@ -44,7 +43,6 @@ class Rule_based_from_rxnconsys(models.Model):
 
 def pre_save_post_receiver(sender, instance, *args, **kwargs):
     if not instance.slug:
-        # instance.slug = create_slug(instance)
         instance.slug = slugify(instance.project_name)
 
 

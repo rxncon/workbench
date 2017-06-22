@@ -34,7 +34,7 @@ try:
         url(r'^publications$', views.publications, name='publications'),
         url(r'^funding', views.funding, name='funding'),
         url(r'^support', views.support, name='support'),
-        url(r'^guided_tour', views.guided_tour, name='guided_tour'),
+        url(r'^getting_started', views.getting_started, name='getting_started'),
     ]
 
 except ImportError:
@@ -49,7 +49,7 @@ except ImportError:
         url(r'^publications$', views.publications, name='publications'),
         url(r'^funding', views.funding, name='funding'),
         url(r'^support', views.support, name='support'),
-        url(r'^guided_tour', views.guided_tour, name='guided_tour'),
+        url(r'^getting_started', views.getting_started, name='getting_started'),
     ]
 
 if settings.DEBUG:

@@ -59,7 +59,7 @@
             </div>
         </div>
         {% endif %}
-
+        {% if nr_reactions %}
         {% if compare_nr_reactions is None %}
         <div class="infos">
             <h5>Infos:</h5>
@@ -103,19 +103,28 @@
                 </table>
             </div>
         </div>
+        <<<<<<< HEAD
+        =======
+        {% endif %}
+        >>>>>>> master
         {% endif %}
 
         {% if instance.rea_graph %}
         <h5>Reaction Graph:</h5>
         <p style="display: inline-block">Created: {{ instance.rea_graph.timestamp }}
         <div class="btn-group btn-group-sm" role="group">
+            <<<<<<< HEAD
             <a href="{{ instance.rea_graph.get_download_url }}" class="btn btn-sm" role="button" title="Show">
                 <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
-            </a>
-            <a href="{% url 'graphs:delete' pk=instance.rea_graph.pk %}" class="btn btn-sm" role="button"
-               title="Delete File">
-                <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-            </a>
+                =======
+                <a href="{{ instance.rea_graph.get_download_url }}" class="btn btn-sm" role="button" title="Download">
+                    <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>
+                    >>>>>>> master
+                </a>
+                <a href="{% url 'graphs:delete' pk=instance.rea_graph.pk %}" class="btn btn-sm" role="button"
+                   title="Delete File">
+                    <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                </a>
         </div>
         {% if instance.rea_graph.comment %}
         <div class="rea_graph_comment">
@@ -131,13 +140,18 @@
         <h5>Regulatory Graph:</h5>
         <p style="display: inline-block">Created: {{ instance.reg_graph.timestamp }}
         <div class="btn-group btn-group-sm" role="group">
+            <<<<<<< HEAD
             <a href="{{ instance.reg_graph.get_download_url }}" class="btn btn-sm" role="button" title="Show">
                 <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
-            </a>
-            <a href="{% url 'graphs:delete' pk=instance.reg_graph.pk %}" class="btn btn-sm" role="button"
-               title="Delete File">
-                <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-            </a>
+                =======
+                <a href="{{ instance.reg_graph.get_download_url }}" class="btn btn-sm" role="button" title="Download">
+                    <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>
+                    >>>>>>> master
+                </a>
+                <a href="{% url 'graphs:delete' pk=instance.reg_graph.pk %}" class="btn btn-sm" role="button"
+                   title="Delete File">
+                    <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                </a>
         </div>
         {% if instance.reg_graph.comment %}
         <div class="reg_graph_comment">
@@ -153,13 +167,18 @@
         <h5>Species Reaction graph:</h5>
         <p style="display: inline-block">Created: {{ instance.sRea_graph.timestamp }}
         <div class="btn-group btn-group-sm" role="group">
+            <<<<<<< HEAD
             <a href="{{ instance.sRea_graph.get_download_url }}" class="btn btn-sm" role="button" title="Show">
                 <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
-            </a>
-            <a href="{% url 'graphs:delete' pk=instance.sRea_graph.pk %}" class="btn btn-sm" role="button"
-               title="Delete File">
-                <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-            </a>
+                =======
+                <a href="{{ instance.sRea_graph.get_download_url }}" class="btn btn-sm" role="button" title="Download">
+                    <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>
+                    >>>>>>> master
+                </a>
+                <a href="{% url 'graphs:delete' pk=instance.sRea_graph.pk %}" class="btn btn-sm" role="button"
+                   title="Delete File">
+                    <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                </a>
         </div>
         {% if instance.sRea_graph.comment %}
         <div class="sRea_graph_comment">
@@ -198,8 +217,13 @@
                         <div class="btn-group btn-group-sm" role="group">
                             <a href="{{ instance.boolean_model.get_model_download_url }}" class="btn btn-sm"
                                role="button"
-                               title="Show">
-                                <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+                            <<<<<<< HEAD
+                            title="Show">
+                            <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+                            =======
+                            title="Download">
+                            <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>
+                            >>>>>>> master
                             </a>
                         </div>
                     </li>
@@ -208,8 +232,13 @@
                         <div class="btn-group btn-group-sm" role="group">
                             <a href="{{ instance.boolean_model.get_symbol_download_url }}" class="btn btn-sm"
                                role="button"
-                               title="Show">
-                                <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+                            <<<<<<< HEAD
+                            title="Show">
+                            <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+                            =======
+                            title="Download">
+                            <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>
+                            >>>>>>> master
                             </a>
                         </div>
                     </li>
@@ -218,8 +247,13 @@
                         <div class="btn-group btn-group-sm" role="group">
                             <a href="{{ instance.boolean_model.get_init_download_url }}" class="btn btn-sm"
                                role="button"
-                               title="Show">
-                                <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+                            <<<<<<< HEAD
+                            title="Show">
+                            <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+                            =======
+                            title="Download">
+                            <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>
+                            >>>>>>> master
                             </a>
                         </div>
                     </li>
@@ -238,8 +272,13 @@
                     <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
                 </a>
                 <a href="{{ instance.rule_based.get_model_download_url }}" class="btn btn-sm" role="button"
-                   title="Show">
-                    <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+                <<<<<<< HEAD
+                title="Show">
+                <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+                =======
+                title="Download">
+                <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>
+                >>>>>>> master
                 </a>
             </h6>
             {% if instance.rule_based_model.comment %}

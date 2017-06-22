@@ -1,4 +1,5 @@
 import os
+import pickle
 
 import rxncon.input.excel_book.excel_book as rxncon_excel
 import rxncon.input.quick.quick as rxncon_quick
@@ -19,11 +20,14 @@ try:
     from fileTree.views import file_detail
     from quick_format.models import Quick
     from quick_format.views import quick_detail
+    from rxncon_system.models import Rxncon_system
+
 except ImportError:
     from src.fileTree.models import File
     from src.fileTree.views import file_detail
     from src.quick_format.models import Quick
     from src.quick_format.views import quick_detail
+    from src.rxncon_system.models import Rxncon_system
 
 
 def create_rxncon_system(system, system_type):
@@ -86,7 +90,9 @@ class Rule_based(View):
                 else:
                     return file_detail(request, system_id)
 
-            rxncon_system = create_rxncon_system(system, system_type)
+            pickled_rxncon_system = Rxncon_system.objects.get(project_id=system_id, project_type=system_type)
+            rxncon_system = pickle.loads(pickled_rxncon_system.pickled_system)
+
             rbm = rule_based_model_from_rxncon(rxncon_system)
             model_str = bngl_from_rule_based_model(rbm)
 
@@ -121,13 +127,14 @@ def rule_based_delete(request, pk):
         id = Quick.objects.filter(rule_based_model=f)[0].id
         system_type = "Quick"
 
-    slug = f.slug
     if request.method == 'POST':
         form = DeleteRuleForm(request.POST, instance=f)
 
         if form.is_valid():  # checks CSRF
+
+            if os.path.exists(f.model_path.name):
+                os.remove(f.model_path.name)
             f.delete()
-            os.remove(f.model_path.name)
             messages.success(request, "Successfully deleted")
             if system_type == "Quick":
                 return HttpResponseRedirect("/quick/" + str(id) + "/")  # wherever to go after deleting

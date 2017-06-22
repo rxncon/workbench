@@ -42,7 +42,7 @@ try:
         'graphs',
         'boolean_model',
         'rule_based',
-
+        'rxncon_system'
     ]
 except ImportError:
     INSTALLED_APPS = [
@@ -57,6 +57,7 @@ except ImportError:
         'src.graphs',
         'src.boolean_model',
         'src.rule_based',
+        'src.rxncon_system'
 
     ]
 

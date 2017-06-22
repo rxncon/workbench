@@ -3,12 +3,21 @@
 from __future__ import unicode_literals
 
 import django.db.models.deletion
+<< << << < HEAD
+== == == =
+import fileTree.models
+>> >> >> > master
 from django.db import migrations, models
 
 try:
     import fileTree as fileTree
 except ImportError:
     import src.fileTree as fileTree
+
+<< << << < HEAD
+
+== == == =
+>> >> >> > master
 
 
 class Migration(migrations.Migration):
