@@ -1,27 +1,34 @@
-from django.conf import settings
-from django.contrib import messages
-from django.http import HttpResponse, HttpResponseRedirect
-from django.shortcuts import render, get_object_or_404
-from django.views.generic import View
-from .forms import RuleForm
-from .forms import DeleteRuleForm
-from .models import Rule_based_from_rxnconsys
 import os
+import pickle
+
 import rxncon.input.excel_book.excel_book as rxncon_excel
 import rxncon.input.quick.quick as rxncon_quick
-from rxncon.simulation.rule_based.rule_based_model import rule_based_model_from_rxncon
+from django.conf import settings
+from django.contrib import messages
+from django.http import HttpResponseRedirect
+from django.shortcuts import render, get_object_or_404
+from django.views.generic import View
 from rxncon.simulation.rule_based.bngl_from_rule_based_model import bngl_from_rule_based_model
+from rxncon.simulation.rule_based.rule_based_model import rule_based_model_from_rxncon
+
+from .forms import DeleteRuleForm
+from .forms import RuleForm
+from .models import Rule_based_from_rxnconsys
 
 try:
     from fileTree.models import File
     from fileTree.views import file_detail
     from quick_format.models import Quick
     from quick_format.views import quick_detail
+    from rxncon_system.models import Rxncon_system
+
 except ImportError:
     from src.fileTree.models import File
     from src.fileTree.views import file_detail
     from src.quick_format.models import Quick
     from src.quick_format.views import quick_detail
+    from src.rxncon_system.models import Rxncon_system
+
 
 def create_rxncon_system(system, system_type):
     if system_type == "File":
@@ -43,6 +50,7 @@ def check_filepath(request, file_path, file, media_root):
         return True
     else:
         return True
+
 
 def rule(request, system_id=None):
     form = RuleForm(request.POST or None)
@@ -82,17 +90,20 @@ class Rule_based(View):
                 else:
                     return file_detail(request, system_id)
 
-            rxncon_system = create_rxncon_system(system, system_type)
+            pickled_rxncon_system = Rxncon_system.objects.get(project_id=system_id, project_type=system_type)
+            rxncon_system = pickle.loads(pickled_rxncon_system.pickled_system)
+
             rbm = rule_based_model_from_rxncon(rxncon_system)
             model_str = bngl_from_rule_based_model(rbm)
 
-            if not os.path.exists( "%s/%s/%s" % (media_root, system.slug, "rule_based")):
+            if not os.path.exists("%s/%s/%s" % (media_root, system.slug, "rule_based")):
                 os.mkdir("%s/%s/%s" % (media_root, system.slug, "rule_based"))
 
             with open(model_path, mode='w') as f:
                 f.write(model_str)
 
-            r = Rule_based_from_rxnconsys(project_name=project_name, model_path=model_path, comment=request.POST.get('comment'))
+            r = Rule_based_from_rxnconsys(project_name=project_name, model_path=model_path,
+                                          comment=request.POST.get('comment'))
             r.save()
             messages.info(request, "BoolNet files for project '" + r.project_name + "' successfully created.")
             if system_type == "Quick":
@@ -101,8 +112,6 @@ class Rule_based(View):
             else:
                 File.objects.filter(id=system_id).update(rule_based_model=r)
                 return file_detail(request, system_id)
-
-
 
 
 def rule_based_delete(request, pk):
@@ -118,16 +127,17 @@ def rule_based_delete(request, pk):
         id = Quick.objects.filter(rule_based_model=f)[0].id
         system_type = "Quick"
 
-    slug = f.slug
     if request.method == 'POST':
         form = DeleteRuleForm(request.POST, instance=f)
 
-        if form.is_valid(): # checks CSRF
+        if form.is_valid():  # checks CSRF
+
+            if os.path.exists(f.model_path.name):
+                os.remove(f.model_path.name)
             f.delete()
-            os.remove(f.model_path.name)
             messages.success(request, "Successfully deleted")
             if system_type == "Quick":
-                return HttpResponseRedirect("/quick/"+str(id)+"/") # wherever to go after deleting
+                return HttpResponseRedirect("/quick/" + str(id) + "/")  # wherever to go after deleting
 
             else:
                 return HttpResponseRedirect("/files/" + str(id) + "/")  # wherever to go after deleting
@@ -139,6 +149,3 @@ def rule_based_delete(request, pk):
                      "file": filename,
                      }
     return render(request, 'rule_delete.html', template_vars)
-
-
-

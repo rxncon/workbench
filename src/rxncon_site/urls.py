@@ -17,11 +17,12 @@ from django.conf import settings
 from django.conf.urls import include, url
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.views.generic.base import TemplateView
+
 from . import views
 
 try:
-    import fileTree.urls
+    import rxncon_site.import_tester
+
     urlpatterns = [
         url(r'^admin/', admin.site.urls),
         url(r'^files/', include("fileTree.urls", namespace='fileTree')),
@@ -33,10 +34,11 @@ try:
         url(r'^publications$', views.publications, name='publications'),
         url(r'^funding', views.funding, name='funding'),
         url(r'^support', views.support, name='support'),
-        url(r'^guided_tour', views.guided_tour, name='guided_tour'),
+        url(r'^getting_started', views.getting_started, name='getting_started'),
     ]
 
 except ImportError:
+    import src.rxncon_site.import_tester
     urlpatterns = [
         url(r'^admin/', admin.site.urls),
         url(r'^files/', include("src.fileTree.urls", namespace='fileTree')),
@@ -48,7 +50,7 @@ except ImportError:
         url(r'^publications$', views.publications, name='publications'),
         url(r'^funding', views.funding, name='funding'),
         url(r'^support', views.support, name='support'),
-        url(r'^guided_tour', views.guided_tour, name='guided_tour'),
+        url(r'^getting_started', views.getting_started, name='getting_started'),
     ]
 
 if settings.DEBUG:

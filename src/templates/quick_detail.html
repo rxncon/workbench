@@ -3,21 +3,21 @@
 
 
 {% block content %}
-<!--<div class="col-sm-6 col-sm-offset-3">-->
 <div class="detail">
     <div class="detail_header">
         <h2> {{ title }}
             <div class="btn-group btn-group-sm" role="group">
                 <a href="{% url 'quick_format:quick_load' id=instance.id %}" class="btn btn-sm" title="Load definition"
-                 role="button">
-                   <span class="glyphicon glyphicon-flash" aria-hidden="true"></span>
+                   role="button">
+                    <span class="glyphicon glyphicon-flash" aria-hidden="true"></span>
                 </a>
-                <a href="{{ instance.get_download_url }}" class="btn btn-sm" role="button" title="Download" target="_blank" download>
-                    <span class="glyphicon glyphicon-download-alt" aria-hidden="true" ></span>
+                <a href="{{ instance.get_download_url }}" class="btn btn-sm" role="button" title="Download"
+                   target="_blank" download>
+                    <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>
                 </a>
                 <a href="{% url 'quick_format:quick_delete' id=instance.id %}" class="btn btn-sm" role="button"
-                 title="Delete definition">
-                  <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                   title="Delete definition">
+                    <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
                 </a>
                 <a href="{{ instance.get_absolute_url }}edit" class="btn btn-sm" role="button" title="Edit Defintion">
                     <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
@@ -33,117 +33,121 @@
         <div id="collapse_quick_comment">
             <a class="btn btn-link" role="button" style="float: none;margin-top: -15px;">
                 <span class="button-text">Show all</span>
-            </a><br />
+            </a><br/>
             <div style="display: none">
                 <p>{{instance.comment|linebreaks}}</p>
             </div>
         </div>
-
+        {% if nr_reactions %}
         {% if compare_nr_reactions is None %}
-            <div class = "infos">
-                <h5>Infos:</h5>
-                <ul>
-                    <li>Number of Reactions: {{ nr_reactions }}</li>
-                    <li>Number of Contingencies: {{ nr_contingencies }}</li>
-                    <li>Loaded: {{ loaded }}</li>
-                </ul>
+        <div class="infos">
+            <h5>Infos:</h5>
+            <ul>
+                <li>Number of Reactions: {{ nr_reactions }}</li>
+                <li>Number of Contingencies: {{ nr_contingencies }}</li>
+                <li>Loaded: {{ loaded }}</li>
+            </ul>
 
-                {% if loaded == False %}
-                    <div class="compare_button">
-                        <a href="{% url 'quick_format:quick_compare' id=instance.id %}" class="btn btn-primary btn-xs " title="Compare with loaded">Compare</a>
-                    </div>
-                {% endif %}
+            {% if loaded == False %}
+            <div class="compare_button">
+                <a href="{% url 'quick_format:quick_compare' id=instance.id %}" class="btn btn-primary btn-xs "
+                   title="Compare with loaded">Compare</a>
             </div>
+            {% endif %}
+        </div>
         {% else %}
         <h5>Infos:</h5>
-            <div class = "infos">
-                <div class="tg-wrap"><table>
-                  <tr>
-                    <th></th>
-                    <th>This system<br></th>
-                    <th>Loaded system<br></th>
-                      <th title="Number of entries, that do not occur in the loaded system."># different <br></th>
-                  </tr>
-                  <tr>
-                    <td># Reactions<br></td>
-                    <td>{{ nr_reactions }}</td>
-                    <td>{{ compare_nr_reactions }}</td>
-                    <td>{{ nr_different_reactions}}</td>
-                  </tr>
-                  <tr>
-                    <td># Contingencies</td>
-                    <td>{{ nr_contingencies }}</td>
-                    <td>{{ compare_nr_contingencies }}</td>
-                    <td>{{ nr_different_contingencies}}</td>
-                  </tr>
+        <div class="infos">
+            <div class="tg-wrap">
+                <table>
+                    <tr>
+                        <th></th>
+                        <th>This system<br></th>
+                        <th>Loaded system<br></th>
+                        <th title="Number of entries, that do not occur in the loaded system."># different <br></th>
+                    </tr>
+                    <tr>
+                        <td># Reactions<br></td>
+                        <td>{{ nr_reactions }}</td>
+                        <td>{{ compare_nr_reactions }}</td>
+                        <td>{{ nr_different_reactions}}</td>
+                    </tr>
+                    <tr>
+                        <td># Contingencies</td>
+                        <td>{{ nr_contingencies }}</td>
+                        <td>{{ compare_nr_contingencies }}</td>
+                        <td>{{ nr_different_contingencies}}</td>
+                    </tr>
 
-                </table></div>
+                </table>
             </div>
+        </div>
+
         {% endif %}
 
         {% if instance.rea_graph %}
-            <h5>Reaction Graph:</h5>
-            <p style="display: inline-block">Created: {{ instance.rea_graph.timestamp }}
-                <div class="btn-group btn-group-sm" role="group">
-                    <a href="{{ instance.rea_graph.get_download_url }}" class="btn btn-sm" role="button" title="Show">
-                        <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
-                    </a>
-                    <a href="{% url 'graphs:delete' pk=instance.rea_graph.pk %}" class="btn btn-sm" role="button"
-                       title="Delete File">
-                        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-                    </a>
-                </div>
-            {% if instance.rea_graph.comment %}
-            <div class="rea_graph_comment">
-                <h6>Comment: </h6>
-                    {{ instance.rea_graph.comment | linebreaks}}
-            </div>
-                </p>
-            {% endif %}
+        <h5>Reaction Graph:</h5>
+        <p style="display: inline-block">Created: {{ instance.rea_graph.timestamp }}
+        <div class="btn-group btn-group-sm" role="group">
+                <a href="{{ instance.rea_graph.get_download_url }}" class="btn btn-sm" role="button" title="Download">
+                    <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>
+                </a>
+                <a href="{% url 'graphs:delete' pk=instance.rea_graph.pk %}" class="btn btn-sm" role="button"
+                   title="Delete File">
+                    <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                </a>
+        </div>
+        {% if instance.rea_graph.comment %}
+        <div class="rea_graph_comment">
+            <h6>Comment: </h6>
+            {{ instance.rea_graph.comment | linebreaks}}
+        </div>
+        </p>
+        {% endif %}
 
         {% endif %}
 
         {% if instance.reg_graph %}
-            <h5>Regulatory Graph:</h5>
-            <p style="display: inline-block">Created: {{ instance.reg_graph.timestamp }}
-                <div class="btn-group btn-group-sm" role="group">
-                    <a href="{{ instance.reg_graph.get_download_url }}" class="btn btn-sm" role="button" title="Show">
-                        <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
-                    </a>
-                    <a href="{% url 'graphs:delete' pk=instance.reg_graph.pk %}" class="btn btn-sm" role="button"
-                       title="Delete File">
-                        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-                    </a>
-                </div>
-            {% if instance.reg_graph.comment %}
-            <div class="reg_graph_comment">
-                <h6>Comment: </h6>
-                    {{ instance.reg_graph.comment | linebreaks}}
-            </div>
-                </p>
-            {% endif %}
+        <h5>Regulatory Graph:</h5>
+        <p style="display: inline-block">Created: {{ instance.reg_graph.timestamp }}
+        <div class="btn-group btn-group-sm" role="group">
+            <a href="{{ instance.reg_graph.get_download_url }}" class="btn btn-sm" role="button" title="Download">
+                <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>
+            </a>
+                <a href="{% url 'graphs:delete' pk=instance.reg_graph.pk %}" class="btn btn-sm" role="button"
+                   title="Delete File">
+                    <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                </a>
+        </div>
+        {% if instance.reg_graph.comment %}
+        <div class="reg_graph_comment">
+            <h6>Comment: </h6>
+            {{ instance.reg_graph.comment | linebreaks}}
+        </div>
+        </p>
+        {% endif %}
 
         {% endif %}
 
         {% if instance.sRea_graph %}
-            <h5>Species Reaction graph:</h5>
-            <p style="display: inline-block">Created: {{ instance.sRea_graph.timestamp }}
-                <div class="btn-group btn-group-sm" role="group">
-                    <a href="{{ instance.sRea_graph.get_download_url }}" class="btn btn-sm" role="button" title="Show">
-                        <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
-                    </a>
-                    <a href="{% url 'graphs:delete' pk=instance.sRea_graph.pk %}" class="btn btn-sm" role="button"
-                       title="Delete File">
-                        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-                    </a>
-                </div>
-            {% if instance.sRea_graph.comment %}
-            <div class="sRea_graph_comment">
-                <h6>Comment: </h6>
-                    {{ instance.sRea_graph.comment | linebreaks}}
-            </div>
-                </p>
-            {% endif %}
+        <h5>Species Reaction graph:</h5>
+        <p style="display: inline-block">Created: {{ instance.sRea_graph.timestamp }}
+        <div class="btn-group btn-group-sm" role="group">
+                <a href="{{ instance.sRea_graph.get_download_url }}" class="btn btn-sm" role="button" title="Download">
+                    <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>
+                </a>
+                <a href="{% url 'graphs:delete' pk=instance.sRea_graph.pk %}" class="btn btn-sm" role="button"
+                   title="Delete File">
+                    <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                </a>
+        </div>
+        {% if instance.sRea_graph.comment %}
+        <div class="sRea_graph_comment">
+            <h6>Comment: </h6>
+            {{ instance.sRea_graph.comment | linebreaks}}
+        </div>
+        </p>
+        {% endif %}
 
         {% endif %}
 
@@ -151,48 +155,51 @@
         <div class="boolean_model">
             <h5>Boolean Model:</h5>
             <h6>Created: {{ instance.boolean_model.timestamp }}
-            <a href="{% url 'bool:boolnetDelete' pk=instance.boolean_model.pk %}" class="btn btn-sm" role="button"
-                       title="Delete File">
+                <a href="{% url 'bool:boolnetDelete' pk=instance.boolean_model.pk %}" class="btn btn-sm" role="button"
+                   title="Delete File">
                     <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
                 </a>
                 <!--# TODO: download zip/tar would be nice here -->
-                </h6>
+            </h6>
             {% if instance.boolean_model.comment %}
             <div class="boolnet_comment">
                 <b>Comment: </b>
-                    {{ instance.boolean_model.comment | linebreaks}}
+                {{ instance.boolean_model.comment | linebreaks}}
             </div>
 
             {% endif %}
             <div class="boolean_model_files">
                 <b>Files:</b>
                 <ul>
-                <li style="display: inline-block">BoolNet model
-                    <div class="btn-group btn-group-sm" role="group">
-                        <a href="{{ instance.boolean_model.get_model_download_url }}" class="btn btn-sm" role="button"
-                           title="Show">
-                            <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
-                        </a>
-                    </div>
-                </li>
+                    <li style="display: inline-block">BoolNet model
+                        <div class="btn-group btn-group-sm" role="group">
+                            <a href="{{ instance.boolean_model.get_model_download_url }}" class="btn btn-sm"
+                               role="button"
+                            title="Download">
+                            <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>
+                            </a>
+                        </div>
+                    </li>
 
-                <li style="display: inline-block">Symbols
-                    <div class="btn-group btn-group-sm" role="group">
-                        <a href="{{ instance.boolean_model.get_symbol_download_url }}" class="btn btn-sm" role="button"
-                           title="Show">
-                            <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
-                        </a>
-                    </div>
-                </li>
+                    <li style="display: inline-block">Symbols
+                        <div class="btn-group btn-group-sm" role="group">
+                            <a href="{{ instance.boolean_model.get_symbol_download_url }}" class="btn btn-sm"
+                               role="button"
+                            title="Download">
+                            <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>
+                            </a>
+                        </div>
+                    </li>
 
-                <li style="display: inline-block">Initial values
-                    <div class="btn-group btn-group-sm" role="group">
-                        <a href="{{ instance.boolean_model.get_init_download_url }}" class="btn btn-sm" role="button"
-                           title="Show">
-                            <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
-                        </a>
-                    </div>
-                </li>
+                    <li style="display: inline-block">Initial values
+                        <div class="btn-group btn-group-sm" role="group">
+                            <a href="{{ instance.boolean_model.get_init_download_url }}" class="btn btn-sm"
+                               role="button"
+                            title="Download">
+                            <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>
+                            </a>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -202,19 +209,20 @@
         <div class="rule_based_model">
             <h5>Rule based model:</h5>
             <h6>Created: {{ instance.rule_based_model.timestamp }}
-            <a href="{% url 'rule_based:rule_basedDelete' pk=instance.rule_based_model.pk %}" class="btn btn-sm" role="button"
-                       title="Delete File">
-                <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-            </a>
-            <a href="{{ instance.rule_based.get_model_download_url }}" class="btn btn-sm" role="button"
-                       title="Show">
-                <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
-            </a>
-                </h6>
+                <a href="{% url 'rule_based:rule_basedDelete' pk=instance.rule_based_model.pk %}" class="btn btn-sm"
+                   role="button"
+                   title="Delete File">
+                    <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                </a>
+                <a href="{{ instance.rule_based.get_model_download_url }}" class="btn btn-sm" role="button"
+                title="Download">
+                <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>
+                </a>
+            </h6>
             {% if instance.rule_based_model.comment %}
             <div class="rule_based_comment">
                 <b>Comment: </b>
-                    {{ instance.rule_based_model.comment | linebreaks}}
+                {{ instance.rule_based_model.comment | linebreaks}}
             </div>
 
             {% endif %}
@@ -227,21 +235,20 @@
         <div id="collapse_quick_input">
             <a class="btn btn-link" role="button" style="float: none;margin-top: -15px;">
                 <span class="button-text">Show all</span>
-            </a><br />
-         <div style="display: none">
-            {{instance.quick_input|linebreaks}}
-         </div>
+            </a><br/>
+            <div style="display: none">
+                {{instance.quick_input|linebreaks}}
+            </div>
         </div>
 
     </div>
 </div>
 
-<!--</div>-->
 
 <script type="text/javascript">
-    $('#collapse_quick_comment > a').click(function(){
+    $('#collapse_quick_comment > a').click(function () {
         var span = $(this).find('span');
-        if(span.text() == "Show all"){
+        if (span.text() == "Show all") {
             span.text("Show less");
         } else {
             span.text("Show all");
@@ -252,9 +259,9 @@
 </script>
 
 <script type="text/javascript">
-    $('#collapse_quick_input > a').click(function(){
+    $('#collapse_quick_input > a').click(function () {
         var span = $(this).find('span');
-        if(span.text() == "Show all"){
+        if (span.text() == "Show all") {
             span.text("Show less");
         } else {
             span.text("Show all");

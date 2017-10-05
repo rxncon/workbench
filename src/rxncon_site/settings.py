@@ -15,7 +15,6 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
 
@@ -27,10 +26,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
 try:
-    import fileTree.urls
+    import rxncon_site.import_tester
+
     INSTALLED_APPS = [
         'django.contrib.admin',
         'django.contrib.auth',
@@ -43,9 +42,10 @@ try:
         'graphs',
         'boolean_model',
         'rule_based',
-
+        'rxncon_system',
     ]
 except ImportError:
+    import src.rxncon_site.import_tester
     INSTALLED_APPS = [
         'django.contrib.admin',
         'django.contrib.auth',
@@ -58,7 +58,7 @@ except ImportError:
         'src.graphs',
         'src.boolean_model',
         'src.rule_based',
-
+        'src.rxncon_system',
     ]
 
 MIDDLEWARE_CLASSES = [
@@ -72,12 +72,15 @@ MIDDLEWARE_CLASSES = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 try:
-    import rxncon_site.urls
+    import rxncon_site.import_tester
     ROOT_URLCONF = 'rxncon_site.urls'
+
 except ImportError:
+    import src.rxncon_site.import_tester
     ROOT_URLCONF = 'src.rxncon_site.urls'
+
 try:
-    import rxncon_site.context_processors.file_list
+    import rxncon_site.import_tester
     TEMPLATES = [
         {
             'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -97,6 +100,8 @@ try:
         },
     ]
 except ImportError:
+
+    import src.rxncon_site.import_tester
     TEMPLATES = [
         {
             'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -117,11 +122,12 @@ except ImportError:
     ]
 
 try:
-    import rxncon_site.wsgi.application
+    import rxncon_site.import_tester
     WSGI_APPLICATION = 'rxncon_site.wsgi.application'
-except ImportError:
-    WSGI_APPLICATION = 'src.rxncon_site.wsgi.application'
 
+except ImportError:
+    import src.rxncon_site.import_tester
+    WSGI_APPLICATION = 'src.rxncon_site.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
@@ -132,7 +138,6 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators
@@ -152,7 +157,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/1.9/topics/i18n/
 
@@ -166,14 +170,15 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
-    ]
-STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_cdn") # content delivery network, static on different server
+]
+STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR),
+                           "static_cdn")  # content delivery network, static on different server
 MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "media_cdn")
 MEDIA_URL = "/media/"
+
