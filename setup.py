@@ -20,7 +20,7 @@ setup(
     long_description=README,
     url='https://www.rxncon.org/',
     author='Mathias Wajnberg',
-    author_email='mathias.wajnberg@hu-berlin.de',
+    author_email='mathiasw224@yahoo.de',
     keywords=['sysbio', 'signalling', 'systems biology'],
     install_requires=[
         'django>=1.10',
