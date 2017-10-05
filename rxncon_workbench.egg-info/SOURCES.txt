@@ -2,16 +2,7 @@ LICENSE
 MANIFEST.in
 README.rst
 runserver.py
-runserver.sh
 setup.py
-media_cdn/example-4-application-note/description/example-4-application-note_quick_definition.txt
-media_cdn/example-4-application-note/graphs/example-4-application-note_example 4 application note_reaGraph.xgmml
-media_cdn/example-4-application-note/graphs/example-4-application-note_example 4 application note_regGraph.xgmml
-media_cdn/example-4-application-note/graphs/example-4-application-note_example 4 application note_sReaGraph.xgmml
-media_cdn/insulin/insulin.xls
-media_cdn/quick1/description/quick1_quick_definition.txt
-media_cdn/quick1/graphs/quick1_reaGraph.xgmml
-media_cdn/quick1/rule_based/quick1_model.bngl
 rxncon_workbench.egg-info/PKG-INFO
 rxncon_workbench.egg-info/SOURCES.txt
 rxncon_workbench.egg-info/dependency_links.txt
@@ -52,16 +43,13 @@ src/fileTree/__init__.py
 src/fileTree/admin.py
 src/fileTree/apps.py
 src/fileTree/forms.py
-src/fileTree/import_tester.py
 src/fileTree/models.py
 src/fileTree/tests.py
 src/fileTree/urls.py
 src/fileTree/views.py
 src/fileTree/__pycache__/__init__.cpython-35.pyc
 src/fileTree/__pycache__/admin.cpython-35.pyc
-src/fileTree/__pycache__/apps.cpython-35.pyc
 src/fileTree/__pycache__/forms.cpython-35.pyc
-src/fileTree/__pycache__/import_tester.cpython-35.pyc
 src/fileTree/__pycache__/models.cpython-35.pyc
 src/fileTree/__pycache__/urls.cpython-35.pyc
 src/fileTree/__pycache__/views.cpython-35.pyc
@@ -155,6 +143,9 @@ src/rxncon_system/__pycache__/models.cpython-35.pyc
 src/rxncon_system/migrations/0001_initial.py
 src/rxncon_system/migrations/__init__.py
 src/rxncon_system/migrations/__pycache__/0001_initial.cpython-35.pyc
+src/rxncon_system/migrations/__pycache__/0002_rxncon_system_project_id.cpython-35.pyc
+src/rxncon_system/migrations/__pycache__/0003_auto_20170520_1626.cpython-35.pyc
+src/rxncon_system/migrations/__pycache__/0004_rxncon_system_project_type.cpython-35.pyc
 src/rxncon_system/migrations/__pycache__/__init__.cpython-35.pyc
 src/static/bootstrap/css/bootstrap-theme.css
 src/static/bootstrap/css/bootstrap-theme.css.map
