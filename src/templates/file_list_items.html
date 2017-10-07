@@ -1,7 +1,7 @@
 {% with project|first as latest_file %}
 <div class="list_row">
     <b class="caption"
-       {% if latest_file.project_name== loaded_project_name %}
+       {% if latest_file.project_name == loaded_project_name %}
        style="color: green"
        {% endif %}
     >{{ latest_file.project_name }}</b>

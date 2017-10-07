@@ -165,8 +165,6 @@ src/static/bootstrap/js/bootstrap.min.js
 src/static/bootstrap/js/npm.js
 src/static/css/base.css
 src/static/css/joyride-2.1.css
-src/static/downloads/rxncon2_cytoscape.xml
-src/static/downloads/rxncon2cytoscape.xml
 src/static/img/BMBF_Logo.svg
 src/static/img/Japan-Society-600x227.jpg
 src/static/img/favicon.ico

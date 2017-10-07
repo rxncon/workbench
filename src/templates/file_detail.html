@@ -17,7 +17,7 @@
         <table>
             {% for file in project_files %}
             <tr>
-                <td {% if file.get_filename== loaded_file %}
+                <td {% if loaded_file and file.get_filename == loaded_file %}
                     style="color: green;"
                     {% endif %}>
                     {{file.timestamp}}
