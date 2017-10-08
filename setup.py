@@ -23,7 +23,7 @@ setup(
     author_email='mathiasw224@yahoo.de',
     keywords=['sysbio', 'signalling', 'systems biology'],
     install_requires=[
-        'django==1.10',
+        'django==1.10.4',
 	    'rxncon>=2.0b7',
     ]
 )
