@@ -12,11 +12,21 @@
                 <span class="button-text">Read more</span>
             </a><br />
             <div style="display: none" class="hidden_text">
-                Network reconstruction in biology is an iterative process to formalise the structure of a biological network,
-                reflecting our current knowledge. While reconstruction methods for metabolic networks are well established,
-                only few reconstruction methods exist for cellular signal transduction networks. Furthermore, reconstruction
-                of signalling networks is challenging, because state combinations lead to a large number of specific states,
-                generating highly complex structures.
+                <p> Signal transduction is characterised by state changes in components. In experiments, we measure these variables - 
+				or <i> elemental states </i> - as modifications at specific residues or bonds between pairs of components.
+				Single components may have many elemental states that, much like switches, can be combined into many specific
+				configuarations or <i> microstates</i>. Most modelling formalisms use a microstate-based description, leading
+				both to a combinatorial complexity and an ambiguity in the relationship between experiments (elemental states)
+				and model (microstates) that get worse the larger the model scope (in terms of elemental states) is.
+				Furthermore, microstates are moving targets, as they depend on the elemental states the model considers,
+				meaning that changes to a microstate model tend to have far-reaching consequences. </p>
+				
+				<p> By describing the network in terms of (combintions of) elemental states, the rxncon language gives the model
+				the same resolution as empirical data. This both minimises the (unnecessary) complexity and maximises the congruence
+				between experiment and model. Furthermore, elemental states do not depend on each other, making the rxncon language
+				highly composable. This makes it much easier to update, extend and merge rxncon models, and greatly facilitates the iterative and
+				cooperative work that is required to build models at the genome scale. </p>
+				
             </div>
         </div>
     </div>
@@ -25,52 +35,90 @@
     <div class="jumbotron">
         <p> - Building a rxncon model is writing down molecular biology. This process is straightforward when the biology is
             well known.</p>
-
         <div id="par_2">
             <a class="btn btn-link" role="button" style="float: none;margin-top: -15px;">
                 <span class="button-text">Read more</span>
             </a><br />
             <div style="display: none" class="hidden_text">
-                The rxncon-language enables a systematised and condensed reconstruction of
-                    cellular system by separating the reconstruction into reactions (rxn) and contingencies (con). It
-                    largely avoids the combinatorial problem by describing the network on the same granularity as the
-                    biological findings, but creates a gap between the reconstruction and established modelling methods.
-                    <a href="#" style="color: darkorange">How to create a rxncon model </a>
+                <p> rxncon is a higher level "biological" language that is <i> compilable </i> instead of <i> executable </i>.
+				This makes the language intuitive to use, as the rxncon network is built by statments such as: 
+				"Kinase X phosphorylates Target Y" or "Kinase X phosphorylates Target Y only when Kinase X is
+				phosphorylated on Residue Z". The first statement is an <i> elemental reaction</i>: This statement only defines a
+				possibility, Kinase X can phosphorylate Target Y, without stating when this reaction can happen.
+				The second statement is a <i> contingency</i>, constraining the reaction statement by specifying a necessary context,
+				in this case the phoshorylation at an activating residue. More complex requirements can be defined by Boolean
+				combinations of elemental states, making it possible to define arbitrarily complex requirements.
+				Hence, the model can be made as complex as data requires, but does not need to be more complex.
+				<a href="#" style="color: darkorange">How to create a rxncon model </a> </p>
             </div>
         </div>
     </div>
 
     <div class="jumbotron">
-        <p> - A carefully built rxncon model constitutes a detailed knowledge base.
-            <a href="model_examples.html" style="color: darkorange">Model examples </a></p>
-    </div>
-    <div class="jumbotron">
+        <p> - A carefully built rxncon model constitutes a detailed knowledge base.</p>
+        <div id="par_3">
+            <a class="btn btn-link" role="button" style="float: none;margin-top: -15px;">
+                <span class="button-text">Read more</span>
+            </a><br />
+            <div style="display: none" class="hidden_text">
+				<p> Building a rxncon model means making very specific statements about molecular biology. We define which reactions
+				are known to be possible (in the <i> reaction list</i>) and what we know about the conditions they are active
+				under (in the <i> contingency list</i>). Each statement must be made in terms of elemental states, making them
+				both highly specific and directly related to (possible) experiments. A carefully built and well annoated model
+				therefore constitute a high-quality knowledge base - which can be visualised or used as a template for (automatic)
+				model generation.
 
+				<a href="model_examples.html" style="color: darkorange">Model examples </a> </p>
+            </div>
+        </div>
+    </div>
+    
+	<div class="jumbotron">
         <p> - Compilation into an executable format is automatic, as is visualisation in graphical formats.</p>
-            <div id="par_3">
+        <div id="par_4">
             <a class="btn btn-link" role="button" style="float: none;margin-top: -15px;" class="hidden_text">
                 <span class="button-text">Read more</span>
             </a><br />
             <div style="display: none" class="hidden_text">
-                We developed a framework interpreting the rxncon-language and translating the reconstruction into
-                    mathematical models or visualisations. The user defines the network with one reaction list and one contingency list.
-                    From these data mathematical and graphical representation can be generated. The network can be modified and extended
-                    iteratively, and both visualisation and mathematical models can be generated automatically at any time.
-                    <a href="model_examples.html" style="color: darkorange">List of functions </a>
+			<p> We developed <i> the rxncon compiler </i> to compile the higher level "biological" language into executable model code
+			or graphical formalisms. The compilation is automatic and can use different options depending on target. Currently, we
+			support the following compilation targets: <i> Rule-based models </i> in the BioNetGen language, a parameter-free and mechanistic
+			<i> bipartite Boolean formalism</i>, the <i> reaction graph </i> to visualise the reaction topology, the <i> elemental
+			species-reaction graph </i> to visualise the complete regulatory structure, and the <i> regulatory graph </i> for a condensed
+			visualisation of the regulatory structure (omitting neutral states). The graphical compilation targets can reuse previous layout,
+			minimising the cost for iterative network extension, visualisation and model creation. </p>
+
+
+			<a href="model_examples.html" style="color: darkorange">List of functions </a>
             </div>
         </div>
     </div>
 
     <div class="jumbotron">
         <p> - The rxncon workbench integrates the rxncon toolbox with a local repository into a model managing system under a
-            single GUI. You can download both <a href="download_rxncon.html#gui">here</a>.</p>
+            single GUI.</p>
+
+            <div id="par_5">
+			<a class="btn btn-link" role="button" style="float: none;margin-top: -15px;">
+                <span class="button-text">Read more</span>
+            </a><br />
+            <div style="display: none" class="hidden_text">
+				<p> The <i> rxncon workbench </i> makes it even easier to work with rxncon. It 
+				combines a local model repository - with versioning - with the tools for visualisation and model creation.
+				Model versioning simplifies model development: When the model file is changed and uploaded again, the
+				active file gets overwritten but the old file gets stored and can be accessed anytime. There is in other words
+				no reason to have multiple files for the same model. The rxncon workbench can be installed directly from the 
+				Python package index through "pip install rxncon_workbench". </p>
+					
+				<p> You can download it <a href="download_rxncon.html#gui">here</a>. </p>
+            </div>
+        </div>
     </div>
 
     <div class="jumbotron">
         <p> - The rxncon tools are developed open source and released under the LGPL license.</p>
-
-<p>We finalised a major overhaul of the interpretation engine and the export features and are happy to present rxncon
-    2.0, the second generation rxncon language with an increased expressiveness and precision. </p>
+            </div>
+        </div>
     </div>
 
 </div>
@@ -111,6 +159,32 @@
 
 <script type="text/javascript">
     $('#par_3 > a').click(function(){
+        var span = $(this).find('span');
+        if(span.text() == "Read more"){
+            span.text("Show less");
+        } else {
+            span.text("Read more");
+        }
+        $(this).next().next().slideToggle();
+        return false;
+    });
+</script>
+
+<script type="text/javascript">
+    $('#par_4 > a').click(function(){
+        var span = $(this).find('span');
+        if(span.text() == "Read more"){
+            span.text("Show less");
+        } else {
+            span.text("Read more");
+        }
+        $(this).next().next().slideToggle();
+        return false;
+    });
+</script>
+
+<script type="text/javascript">
+    $('#par_5 > a').click(function(){
         var span = $(this).find('span');
         if(span.text() == "Read more"){
             span.text("Show less");
