@@ -39,116 +39,114 @@
             </div>
         </div>
         {% if nr_reactions %}
-        {% if compare_nr_reactions is None %}
-        <div class="infos">
+            {% if compare_nr_reactions is None %}
+            <div class="infos">
+                <h5>Infos:</h5>
+                <ul>
+                    <li>Number of Reactions: {{ nr_reactions }}</li>
+                    <li>Number of Contingencies: {{ nr_contingencies }}</li>
+                    <li>Loaded: {{ loaded }}</li>
+                </ul>
+
+                {% if loaded == False %}
+                <div class="compare_button">
+                    <a href="{% url 'quick_format:quick_compare' id=instance.id %}" class="btn btn-primary btn-xs "
+                       title="Compare with loaded">Compare</a>
+                </div>
+                {% endif %}
+            </div>
+            {% else %}
             <h5>Infos:</h5>
-            <ul>
-                <li>Number of Reactions: {{ nr_reactions }}</li>
-                <li>Number of Contingencies: {{ nr_contingencies }}</li>
-                <li>Loaded: {{ loaded }}</li>
-            </ul>
+            <div class="infos">
+                <div class="tg-wrap">
+                    <table>
+                        <tr>
+                            <th></th>
+                            <th>This system<br></th>
+                            <th>Loaded system<br></th>
+                            <th title="Number of entries, that do not occur in the loaded system."># different <br></th>
+                        </tr>
+                        <tr>
+                            <td># Reactions<br></td>
+                            <td>{{ nr_reactions }}</td>
+                            <td>{{ compare_nr_reactions }}</td>
+                            <td>{{ nr_different_reactions}}</td>
+                        </tr>
+                        <tr>
+                            <td># Contingencies</td>
+                            <td>{{ nr_contingencies }}</td>
+                            <td>{{ compare_nr_contingencies }}</td>
+                            <td>{{ nr_different_contingencies}}</td>
+                        </tr>
 
-            {% if loaded == False %}
-            <div class="compare_button">
-                <a href="{% url 'quick_format:quick_compare' id=instance.id %}" class="btn btn-primary btn-xs "
-                   title="Compare with loaded">Compare</a>
+                    </table>
+                </div>
             </div>
+
             {% endif %}
-        </div>
-        {% else %}
-        <h5>Infos:</h5>
-        <div class="infos">
-            <div class="tg-wrap">
-                <table>
-                    <tr>
-                        <th></th>
-                        <th>This system<br></th>
-                        <th>Loaded system<br></th>
-                        <th title="Number of entries, that do not occur in the loaded system."># different <br></th>
-                    </tr>
-                    <tr>
-                        <td># Reactions<br></td>
-                        <td>{{ nr_reactions }}</td>
-                        <td>{{ compare_nr_reactions }}</td>
-                        <td>{{ nr_different_reactions}}</td>
-                    </tr>
-                    <tr>
-                        <td># Contingencies</td>
-                        <td>{{ nr_contingencies }}</td>
-                        <td>{{ compare_nr_contingencies }}</td>
-                        <td>{{ nr_different_contingencies}}</td>
-                    </tr>
-
-                </table>
-            </div>
-        </div>
-
         {% endif %}
 
         {% if instance.rea_graph %}
-        <h5>Reaction Graph:</h5>
-        <p style="display: inline-block">Created: {{ instance.rea_graph.timestamp }}
-        <div class="btn-group btn-group-sm" role="group">
-                <a href="{{ instance.rea_graph.get_download_url }}" class="btn btn-sm" role="button" title="Download">
-                    <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>
-                </a>
-                <a href="{% url 'graphs:delete' pk=instance.rea_graph.pk %}" class="btn btn-sm" role="button"
-                   title="Delete File">
-                    <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-                </a>
-        </div>
-        {% if instance.rea_graph.comment %}
-        <div class="rea_graph_comment">
-            <h6>Comment: </h6>
-            {{ instance.rea_graph.comment | linebreaks}}
-        </div>
-        </p>
-        {% endif %}
-
+            <h5>Reaction Graph:</h5>
+            <p style="display: inline-block">Created: {{ instance.rea_graph.timestamp }}
+            <div class="btn-group btn-group-sm" role="group">
+                    <a href="{{ instance.rea_graph.get_download_url }}" class="btn btn-sm" role="button" title="Download">
+                        <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>
+                    </a>
+                    <a href="{% url 'graphs:delete' pk=instance.rea_graph.pk %}" class="btn btn-sm" role="button"
+                       title="Delete File">
+                        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                    </a>
+            </div>
+            {% if instance.rea_graph.comment %}
+                <div class="rea_graph_comment">
+                    <h6>Comment: </h6>
+                    {{ instance.rea_graph.comment | linebreaks}}
+                </div>
+                </p>
+            {% endif %}
         {% endif %}
 
         {% if instance.reg_graph %}
-        <h5>Regulatory Graph:</h5>
-        <p style="display: inline-block">Created: {{ instance.reg_graph.timestamp }}
-        <div class="btn-group btn-group-sm" role="group">
-            <a href="{{ instance.reg_graph.get_download_url }}" class="btn btn-sm" role="button" title="Download">
-                <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>
-            </a>
-                <a href="{% url 'graphs:delete' pk=instance.reg_graph.pk %}" class="btn btn-sm" role="button"
-                   title="Delete File">
-                    <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+            <h5>Regulatory Graph:</h5>
+            <p style="display: inline-block">Created: {{ instance.reg_graph.timestamp }}
+            <div class="btn-group btn-group-sm" role="group">
+                <a href="{{ instance.reg_graph.get_download_url }}" class="btn btn-sm" role="button" title="Download">
+                    <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>
                 </a>
-        </div>
-        {% if instance.reg_graph.comment %}
-        <div class="reg_graph_comment">
-            <h6>Comment: </h6>
-            {{ instance.reg_graph.comment | linebreaks}}
-        </div>
-        </p>
-        {% endif %}
-
+                    <a href="{% url 'graphs:delete' pk=instance.reg_graph.pk %}" class="btn btn-sm" role="button"
+                       title="Delete File">
+                        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                    </a>
+            </div>
+            {% if instance.reg_graph.comment %}
+                <div class="reg_graph_comment">
+                    <h6>Comment: </h6>
+                    {{ instance.reg_graph.comment | linebreaks}}
+                </div>
+                </p>
+            {% endif %}
         {% endif %}
 
         {% if instance.sRea_graph %}
-        <h5>Species Reaction graph:</h5>
-        <p style="display: inline-block">Created: {{ instance.sRea_graph.timestamp }}
-        <div class="btn-group btn-group-sm" role="group">
-                <a href="{{ instance.sRea_graph.get_download_url }}" class="btn btn-sm" role="button" title="Download">
-                    <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>
-                </a>
-                <a href="{% url 'graphs:delete' pk=instance.sRea_graph.pk %}" class="btn btn-sm" role="button"
-                   title="Delete File">
-                    <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-                </a>
-        </div>
-        {% if instance.sRea_graph.comment %}
-        <div class="sRea_graph_comment">
-            <h6>Comment: </h6>
-            {{ instance.sRea_graph.comment | linebreaks}}
-        </div>
-        </p>
-        {% endif %}
-
+            <h5>Species Reaction graph:</h5>
+            <p style="display: inline-block">Created: {{ instance.sRea_graph.timestamp }}
+            <div class="btn-group btn-group-sm" role="group">
+                    <a href="{{ instance.sRea_graph.get_download_url }}" class="btn btn-sm" role="button" title="Download">
+                        <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>
+                    </a>
+                    <a href="{% url 'graphs:delete' pk=instance.sRea_graph.pk %}" class="btn btn-sm" role="button"
+                       title="Delete File">
+                        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                    </a>
+            </div>
+            {% if instance.sRea_graph.comment %}
+                <div class="sRea_graph_comment">
+                    <h6>Comment: </h6>
+                    {{ instance.sRea_graph.comment | linebreaks}}
+                </div>
+                </p>
+            {% endif %}
         {% endif %}
 
         {% if instance.boolean_model %}
@@ -162,11 +160,10 @@
                 <!--# TODO: download zip/tar would be nice here -->
             </h6>
             {% if instance.boolean_model.comment %}
-            <div class="boolnet_comment">
-                <b>Comment: </b>
-                {{ instance.boolean_model.comment | linebreaks}}
-            </div>
-
+                <div class="boolnet_comment">
+                    <b>Comment: </b>
+                    {{ instance.boolean_model.comment | linebreaks}}
+                </div>
             {% endif %}
             <div class="boolean_model_files">
                 <b>Files:</b>
