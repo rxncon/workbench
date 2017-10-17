@@ -12,7 +12,7 @@ setup(
     scripts=[
         'runserver.py'
     ],
-    version='0.6',
+    version='0.7',
     packages=find_packages(),
     include_package_data=True,
     license='LGPL License', 
@@ -24,6 +24,6 @@ setup(
     keywords=['sysbio', 'signalling', 'systems biology'],
     install_requires=[
         'django==1.10.4',
-	    'rxncon>=2.0b7',
+	'rxncon==2.0b7',
     ]
 )

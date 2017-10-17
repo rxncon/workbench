@@ -3,6 +3,8 @@ MANIFEST.in
 README.rst
 runserver.py
 setup.py
+media_cdn/hog-example/Table_S1_Hog1_acyclic_reconstruction.xls
+media_cdn/hog-example-text-format/description/hog-example-text-format_quick_definition.txt
 rxncon_workbench.egg-info/PKG-INFO
 rxncon_workbench.egg-info/SOURCES.txt
 rxncon_workbench.egg-info/dependency_links.txt
@@ -56,9 +58,6 @@ src/fileTree/__pycache__/views.cpython-35.pyc
 src/fileTree/migrations/0001_initial.py
 src/fileTree/migrations/__init__.py
 src/fileTree/migrations/__pycache__/0001_initial.cpython-35.pyc
-src/fileTree/migrations/__pycache__/0002_file_rxncon_system.cpython-35.pyc
-src/fileTree/migrations/__pycache__/0003_auto_20170520_1427.cpython-35.pyc
-src/fileTree/migrations/__pycache__/0004_auto_20170520_2257.cpython-35.pyc
 src/fileTree/migrations/__pycache__/__init__.cpython-35.pyc
 src/graphs/__init__.py
 src/graphs/admin.py
@@ -95,9 +94,6 @@ src/quick_format/__pycache__/views.cpython-35.pyc
 src/quick_format/migrations/0001_initial.py
 src/quick_format/migrations/__init__.py
 src/quick_format/migrations/__pycache__/0001_initial.cpython-35.pyc
-src/quick_format/migrations/__pycache__/0002_quick_rxncon_system.cpython-35.pyc
-src/quick_format/migrations/__pycache__/0003_auto_20170520_1357.cpython-35.pyc
-src/quick_format/migrations/__pycache__/0004_auto_20170520_2257.cpython-35.pyc
 src/quick_format/migrations/__pycache__/__init__.cpython-35.pyc
 src/rule_based/__init__.py
 src/rule_based/admin.py
@@ -143,9 +139,6 @@ src/rxncon_system/__pycache__/models.cpython-35.pyc
 src/rxncon_system/migrations/0001_initial.py
 src/rxncon_system/migrations/__init__.py
 src/rxncon_system/migrations/__pycache__/0001_initial.cpython-35.pyc
-src/rxncon_system/migrations/__pycache__/0002_rxncon_system_project_id.cpython-35.pyc
-src/rxncon_system/migrations/__pycache__/0003_auto_20170520_1626.cpython-35.pyc
-src/rxncon_system/migrations/__pycache__/0004_rxncon_system_project_type.cpython-35.pyc
 src/rxncon_system/migrations/__pycache__/__init__.cpython-35.pyc
 src/static/bootstrap/css/bootstrap-theme.css
 src/static/bootstrap/css/bootstrap-theme.css.map
