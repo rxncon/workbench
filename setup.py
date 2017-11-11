@@ -24,6 +24,6 @@ setup(
     keywords=['sysbio', 'signalling', 'systems biology'],
     install_requires=[
         'django==1.10.4',
-	'rxncon==2.0b7',
+	    'rxncon==2.0b16',
     ]
 )

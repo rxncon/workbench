@@ -240,7 +240,7 @@ class SReaGraph(ReaGraph):
             pickled_rxncon_system = Rxncon_system.objects.get(project_id=system_id, project_type=system_type)
             rxncon_system = pickle.loads(pickled_rxncon_system.pickled_system)
 
-            graph = regulatory_graph.ReactionSpeciesGraph(rxncon_system=rxncon_system).to_graph()
+            graph = regulatory_graph.SpeciesReactionGraph(rxncon_system=rxncon_system).to_graph()
 
             xgmml_graph = graphML.XGMML(graph, system.slug)
             graph_file = xgmml_graph.to_file(graph_file_path)

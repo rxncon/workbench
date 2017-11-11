@@ -51,6 +51,9 @@ def compare_systems(request, id, system, called_from="File"):
 def getting_started(request):
     return render(request, "getting_started.html")
 
+def how_to_cite(request):
+    return render(request, "how_to_cite.html")
+
 
 def create_rxncon_system(request, system_type, system_id):
     if system_type == "File":

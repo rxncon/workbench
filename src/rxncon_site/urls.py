@@ -35,6 +35,7 @@ try:
         url(r'^funding', views.funding, name='funding'),
         url(r'^support', views.support, name='support'),
         url(r'^getting_started', views.getting_started, name='getting_started'),
+        url(r'^how_to_cite', views.how_to_cite, name='how_to_cite'),
     ]
 
 except ImportError:
@@ -51,6 +52,8 @@ except ImportError:
         url(r'^funding', views.funding, name='funding'),
         url(r'^support', views.support, name='support'),
         url(r'^getting_started', views.getting_started, name='getting_started'),
+        url(r'^how_to_cite', views.how_to_cite, name='how_to_cite'),
+
     ]
 
 if settings.DEBUG:
