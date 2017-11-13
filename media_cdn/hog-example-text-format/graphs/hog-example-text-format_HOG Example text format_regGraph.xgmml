@@ -5,10 +5,10 @@
 	<att name="selected" type="boolean" value="1"/>
 	
     
-	<att name="name" type="string" value="hog-example"/>
+	<att name="name" type="string" value="hog-example-text-format"/>
 	
     
-	<att name="shared name" type="string" value="hog-example"/>
+	<att name="shared name" type="string" value="hog-example-text-format"/>
 	
     
 
@@ -248,7 +248,7 @@
 	
 
 	<edge source="Ssk1_[(D544)]-{p}" target="Ssk1_[RR]_ppi+_Ssk2_[ssk1]">
-		<att name="interaction" type="string" value="x"/>
+		<att name="interaction" type="string" value="!"/>
 	</edge>
 	
 
