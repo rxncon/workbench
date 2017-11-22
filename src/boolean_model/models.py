@@ -43,13 +43,13 @@ class Bool_from_rxnconsys(models.Model):
         ("strict", "strict"),
         ("ignore", "ignore"),
     )
-    k_plus = models.CharField(max_length=len("strict"), choices=k_plus_choices, default="strict",
+    k_plus = models.CharField(max_length=len("strict"), choices=k_plus_choices, default="ignore",
                               help_text="Strategy for handling k+ contingencies.")
     k_minus_choices = (
         ("strict", "strict"),
         ("ignore", "ignore"),
     )
-    k_minus = models.CharField(max_length=len("strict"), choices=k_minus_choices, default="strict",
+    k_minus = models.CharField(max_length=len("strict"), choices=k_minus_choices, default="ignore",
                                help_text="Strategy for handling k- contingencies.")
 
     # rxncon2boolnet
