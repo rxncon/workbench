@@ -10,7 +10,7 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 setup(
     name='rxncon_workbench',
     scripts=[
-        'runserver.py'
+        'rxncon_workbench.py'
     ],
     version='0.9',
     packages=find_packages(),
