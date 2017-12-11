@@ -36,7 +36,8 @@ class Graph_from_File(models.Model):
     def get_download_url(self):
         media_url = settings.MEDIA_URL
         # return media_url + "%s" % (self.get_relative_path())
-        return "%s%s/%s/%s" % (media_url, self.slug, "graphs", self.graph_file)
+        graph_file_name = self.get_filename()#.split(".")[0] + "_regGraph.xgmml"
+        return "%s%s/%s/%s" % (media_url, self.slug, "graphs", graph_file_name)
 
 
     def get_absolute_path(self):
