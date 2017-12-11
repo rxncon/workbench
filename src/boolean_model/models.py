@@ -91,11 +91,14 @@ class Bool_from_rxnconsys(models.Model):
 
     def get_symbol_download_url(self):
         media_url = settings.MEDIA_URL
-        return media_url + "%s" % (self.get_relative_symbol_path())
+        # return media_url + "%s" % (self.get_relative_symbol_path())
+        return "%s%s/%s/%s" % (media_url, self.slug, "boolnet", self.get_symbol_filename())
 
     def get_init_download_url(self):
         media_url = settings.MEDIA_URL
-        return media_url + "%s" % (self.get_relative_init_path())
+        # return media_url + "%s" % (self.get_relative_init_path())
+        return "%s%s/%s/%s" % (media_url, self.slug, "boolnet", self.get_init_filename())
+
 
     class Meta:
         ordering = ["-updated", "-timestamp"]
