@@ -1,0 +1,13 @@
+- YeastPheromoneModel.xls newmodel generation ausprobieren (tbp/models)
+- kann man für pre installed models graphs erstellen?
+- hitting the "compare" button in the Hog example (because it's only one file?). See "error_2" attachment.
+    - Exception Type: 	IndexError
+      Exception Value: list index out of range
+      fileTree\views.py in file_compare
+
+            55. pickled_rxncon_system = Rxncon_system.objects.get(project_id=loaded[0].id, project_type="Quick")
+
+- generating a second Boolean model - could it be that we currently can't overwrite graphs & models?
+
+--- when I deleted all files, I could generate new Boolean & rule based models, and a new species-reaction graph.
+    But NOT the reaction or regulatory graph.
