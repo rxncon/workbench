@@ -10,6 +10,10 @@ from rxncon.simulation.boolean.boolean_model import SmoothingStrategy, KnockoutS
 from rxncon.simulation.boolean.boolnet_from_boolean_model import QuantitativeContingencyStrategy, \
     boolnet_strs_from_rxncon
 
+from rxncon.input.excel_book.excel_book import ExcelBook
+from rxncon.input.quick.quick import Quick as RxnconQuick
+
+
 from .forms import BoolForm
 from .forms import DeleteBoolForm
 from .models import Bool_from_rxnconsys
@@ -63,10 +67,12 @@ class Bool(View):
                 system = Quick.objects.filter(id=system_id)[0]
                 system_type = "Quick"
                 project_name = system.name
+                book = RxnconQuick(system.quick_input)
             except:
                 system = File.objects.filter(id=system_id)[0]
                 system_type = "File"
                 project_name = system.project_name
+                book = ExcelBook(system.get_absolute_path())
 
             boolnet_model_filename = system.slug + "_model.boolnet"
             boolnet_symbol_filename = system.slug + "_symbols.csv"
@@ -83,9 +89,9 @@ class Bool(View):
                     else:
                         return file_detail(request, system_id)
 
-            pickled_rxncon_system = Rxncon_system.objects.get(project_id=system_id, project_type=system_type)
-            rxncon_system = pickle.loads(pickled_rxncon_system.pickled_system)
-
+            # pickled_rxncon_system = Rxncon_system.objects.get(project_id=system_id, project_type=system_type)
+            # rxncon_system = pickle.loads(pickled_rxncon_system.pickled_system)
+            rxncon_system = book.rxncon_system
             smoothing = SmoothingStrategy(request.POST.get('smoothing'))
             knockout = KnockoutStrategy(request.POST.get('knockout'))
             overexpr = OverexpressionStrategy(request.POST.get('overexpr'))

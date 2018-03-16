@@ -1,7 +1,7 @@
 import pickle
 
-import rxncon.input.excel_book.excel_book as rxncon_excel
-import rxncon.input.quick.quick as rxncon_quick
+from rxncon.input.excel_book.excel_book import ExcelBook
+from rxncon.input.quick.quick import Quick as RxnconQuick
 from django.contrib import messages
 from django.shortcuts import render
 
@@ -58,11 +58,11 @@ def how_to_cite(request):
 def create_rxncon_system(request, system_type, system_id):
     if system_type == "File":
         system = File.objects.filter(id=system_id)[0]
-        book = rxncon_excel.ExcelBook(system.get_absolute_path())
+        book = ExcelBook(system.get_absolute_path())
 
     else:
         system = Quick.objects.filter(id=system_id)[0]
-        book = rxncon_quick.Quick(system.quick_input)
+        book = RxnconQuick(system.quick_input)
     return book.rxncon_system
 
 

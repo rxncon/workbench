@@ -3,6 +3,7 @@ try:
     from quick_format.models import Quick
     from rxncon_system.models import Rxncon_system
 
+
 except ImportError:
     from src.rxncon_site.views import compare_systems, create_rxncon_system_object
     from src.quick_format.models import Quick
@@ -14,20 +15,27 @@ import django.forms as forms
 from django.contrib import messages
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
+from rxncon.input.excel_book.excel_book import ExcelBook
+from rxncon.input.quick.quick import Quick as RxnconQuick
+
 
 from .forms import DeleteFileForm, FileForm
 from .models import File
+
 
 
 def file_detail(request, id, compare_dict=None):
     instance = File.objects.get(id=id)
     slug = File.objects.filter(id=id).values("slug")
     project_files = File.objects.filter(slug=slug).order_by("-updated")
-    if instance.rxncon_system:
-        pickled_rxncon_system = Rxncon_system.objects.get(project_id=id, project_type="File")
-        rxncon_system = pickle.loads(pickled_rxncon_system.pickled_system)
-    else:
-        rxncon_system = None
+    # if instance.rxncon_system:
+    #     pickled_rxncon_system = Rxncon_system.objects.get(project_id=id, project_type="File")
+    #     rxncon_system = pickle.loads(pickled_rxncon_system.pickled_system)
+    # else:
+    #     rxncon_system = None
+
+    book = ExcelBook(instance.get_absolute_path())
+    rxncon_system = book.rxncon_system
 
     context_data = {
         "project_files": project_files,
@@ -51,13 +59,17 @@ def file_compare(request, id):
 
     if not loaded:
         # Quick
-        loaded = Quick.objects.filter(loaded=True)
-        pickled_rxncon_system = Rxncon_system.objects.get(project_id=loaded[0].id, project_type="Quick")
+        loaded = Quick.objects.filter(loaded=True)[0]
+        # pickled_rxncon_system = Rxncon_system.objects.get(project_id=loaded[0].id, project_type="Quick")
+        book = RxnconQuick(loaded.quick_input)
     else:
         # File
-        pickled_rxncon_system = Rxncon_system.objects.get(project_id=loaded[0].id, project_type="File")
+        # pickled_rxncon_system = Rxncon_system.objects.get(project_id=loaded[0].id, project_type="File")
+        loaded = loaded[0]
+        book = ExcelBook(loaded.get_absolute_path())
 
-    loaded_rxncon_system = pickle.loads(pickled_rxncon_system.pickled_system)
+    # loaded_rxncon_system = pickle.loads(pickled_rxncon_system.pickled_system)
+    loaded_rxncon_system = book.rxncon_system
     differences = compare_systems(request, id, loaded_rxncon_system, called_from="Quick")
 
     compare_dict = {
@@ -185,6 +197,7 @@ def file_load(request, id):
     Quick.objects.all().update(loaded=False)
     target = File.objects.get(id=id)
     if not target.rxncon_system:
+        print("No rxncon_system found for " + target.get_filename())
         try:
             rxncon_system = create_rxncon_system_object(request=request, project_name=target.project_name,
                                                         project_type="File", project_id=id)
@@ -201,8 +214,8 @@ def file_load(request, id):
     else:
         rxncon_system = File.objects.get(id=id).rxncon_system
 
-    target = File.objects.filter(
-        id=id)  # target has to be redone with filter function, to make following update steps work
+    target = File.objects.filter(id=id)  # target has to be redone with filter function in order
+                                         #  to make following update steps work
     target.update(loaded=True)
     target.update(rxncon_system=rxncon_system)
     if target[0].loaded:

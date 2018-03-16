@@ -5,6 +5,11 @@ from django.conf import settings
 from django.contrib import messages
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
+from rxncon.input.quick.quick import Quick as RxnconQuick
+from rxncon.input.excel_book.excel_book import ExcelBook
+
+
+
 
 from .forms import QuickForm, DeleteQuickForm
 from .models import Quick
@@ -21,11 +26,13 @@ except ImportError:
 
 def quick_detail(request, id, compare_dict=None):
     instance = Quick.objects.get(id=id)
-    if instance.rxncon_system:
-        pickled_rxncon_system = Rxncon_system.objects.get(project_id=id, project_type="Quick")
-        rxncon_system = pickle.loads(pickled_rxncon_system.pickled_system)
-    else:
-        rxncon_system = None
+    # if instance.rxncon_system:
+    #     pickled_rxncon_system = Rxncon_system.objects.get(project_id=id, project_type="Quick")
+    #     rxncon_system = pickle.loads(pickled_rxncon_system.pickled_system)
+    # else:
+    #     rxncon_system = None
+    book = RxnconQuick(instance.quick_input)
+    rxncon_system = book.rxncon_system
 
     context_data = {
         "title": instance.name,
@@ -47,13 +54,17 @@ def quick_compare(request, id):
     loaded = File.objects.filter(loaded=True)
     if not loaded:
         # Quick
-        loaded = Quick.objects.filter(loaded=True)
-        pickled_rxncon_system = Rxncon_system.objects.get(project_id=loaded[0].id, project_type="Quick")
+        loaded = Quick.objects.filter(loaded=True)[0]
+        # pickled_rxncon_system = Rxncon_system.objects.get(project_id=loaded[0].id, project_type="Quick")
+        book = RxnconQuick(loaded.quick_input)
     else:
         # File
-        pickled_rxncon_system = Rxncon_system.objects.get(project_id=loaded[0].id, project_type="File")
+        # pickled_rxncon_system = Rxncon_system.objects.get(project_id=loaded[0].id, project_type="File")
+        loaded = loaded[0]
+        book = ExcelBook(loaded.get_absolute_path())
 
-    loaded_rxncon_system = pickle.loads(pickled_rxncon_system.pickled_system)
+    # loaded_rxncon_system = pickle.loads(pickled_rxncon_system.pickled_system)
+    loaded_rxncon_system = book.rxncon_system
     differences = compare_systems(request, id, loaded_rxncon_system, called_from="Quick")
 
     compare_dict = {

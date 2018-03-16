@@ -1,8 +1,9 @@
 import os
 import pickle
 
-import rxncon.input.excel_book.excel_book as rxncon_excel
-import rxncon.input.quick.quick as rxncon_quick
+from rxncon.input.excel_book.excel_book import ExcelBook
+from rxncon.input.quick.quick import Quick as RxnconQuick
+
 from django.conf import settings
 from django.contrib import messages
 from django.http import HttpResponseRedirect
@@ -28,17 +29,6 @@ except ImportError:
     from src.quick_format.models import Quick
     from src.quick_format.views import quick_detail
     from src.rxncon_system.models import Rxncon_system
-
-
-def create_rxncon_system(system, system_type):
-    if system_type == "File":
-        try:
-            book = rxncon_excel.ExcelBook(system.get_absolute_path())
-        except:
-            book = rxncon_excel.ExcelBook(system.get_absolute_path())
-    else:
-        book = rxncon_quick.Quick(system.quick_input)
-    return book.rxncon_system
 
 
 def check_filepath(request, file_path, file, media_root):
@@ -76,10 +66,12 @@ class Rule_based(View):
                 system = Quick.objects.filter(id=system_id)[0]
                 system_type = "Quick"
                 project_name = system.name
+                book = RxnconQuick(system.quick_input)
             except:
                 system = File.objects.filter(id=system_id)[0]
                 system_type = "File"
                 project_name = system.project_name
+                book = ExcelBook(system.get_absolute_path())
 
             bngl_model_filename = system.slug + "_model.bngl"
             model_path = "%s/%s/%s/%s" % (media_root, system.slug, "rule_based", bngl_model_filename)
@@ -90,8 +82,9 @@ class Rule_based(View):
                 else:
                     return file_detail(request, system_id)
 
-            pickled_rxncon_system = Rxncon_system.objects.get(project_id=system_id, project_type=system_type)
-            rxncon_system = pickle.loads(pickled_rxncon_system.pickled_system)
+            # pickled_rxncon_system = Rxncon_system.objects.get(project_id=system_id, project_type=system_type)
+            # rxncon_system = pickle.loads(pickled_rxncon_system.pickled_system)
+            rxncon_system = book.rxncon_system
 
             rbm = rule_based_model_from_rxncon(rxncon_system)
             model_str = bngl_from_rule_based_model(rbm)
