@@ -36,8 +36,8 @@ def check_filepath(request, file_path, file, media_root):
     if os.path.exists(file_path):
         messages.warning(request, "Boolean model files already exist. Delete first in the system's detail view.")
         return False
-    elif not os.path.exists("%s/%s/%s" % (media_root, file.slug, "graphs")):
-        os.makedirs("%s/%s/%s" % (media_root, file.slug, "graphs"))
+    elif not os.path.exists(os.path.join(media_root, file.slug, "graphs")):
+        os.makedirs(os.path.join(media_root, file.slug, "graphs"))
         return True
     else:
         return True
@@ -78,9 +78,9 @@ class Bool(View):
             boolnet_symbol_filename = system.slug + "_symbols.csv"
             boolnet_initial_val_filename = system.slug + "_initial_vals.csv"
 
-            model_path = "%s/%s/%s/%s" % (media_root, system.slug, "boolnet", boolnet_model_filename)
-            symbol_path = "%s/%s/%s/%s" % (media_root, system.slug, "boolnet", boolnet_symbol_filename)
-            init_path = "%s/%s/%s/%s" % (media_root, system.slug, "boolnet", boolnet_initial_val_filename)
+            model_path = os.path.join(media_root, system.slug, "boolnet", boolnet_model_filename)
+            symbol_path = os.path.join(media_root, system.slug, "boolnet", boolnet_symbol_filename)
+            init_path = os.path.join(media_root, system.slug, "boolnet", boolnet_initial_val_filename)
 
             for path in [model_path, symbol_path, init_path]:
                 if not check_filepath(request, path, system, media_root):
@@ -104,8 +104,8 @@ class Bool(View):
                                                                               k_plus_strategy=k_plus,
                                                                               k_minus_strategy=k_minus)
 
-            if not os.path.exists("%s/%s/%s" % (media_root, system.slug, "boolnet")):
-                os.mkdir("%s/%s/%s" % (media_root, system.slug, "boolnet"))
+            if not os.path.exists(os.path.join(media_root, system.slug, "boolnet")):
+                os.mkdir(os.path.join(media_root, system.slug, "boolnet"))
 
             with open(model_path, mode='w') as f:
                 f.write(model_str)

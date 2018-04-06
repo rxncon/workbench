@@ -5,8 +5,6 @@ rxncon_workbench.py
 setup.py
 media_cdn/hog-example/Table_S1_Hog1_acyclic_reconstruction.xls
 media_cdn/hog-example-text-format/description/hog-example-text-format_quick_definition.txt
-media_cdn/hog-example-text-format/graphs/hog-example-text-format_HOG Example text format_regGraph.xgmml
-media_cdn/hog-example/graphs/hog-example_Table_S1_Hog1_acyclic_reconstruction_regGraph.xgmml
 rxncon_workbench.egg-info/PKG-INFO
 rxncon_workbench.egg-info/SOURCES.txt
 rxncon_workbench.egg-info/dependency_links.txt

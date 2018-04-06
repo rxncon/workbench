@@ -2,11 +2,12 @@ from django.conf import settings
 from django.db import models
 from django.db.models.signals import pre_save
 from django.utils.text import slugify
+import os
 
 
 def upload_location(instance, filename):
     # return "%s/%s" %(os.path.splitext(filename)[0],filename)
-    return "%s/%s/%s" % (instance.slug, "graphs", filename)
+    return os.path.join(instance.slug, "boolnet", filename)
 
 
 class Bool_from_rxnconsys(models.Model):
@@ -64,40 +65,40 @@ class Bool_from_rxnconsys(models.Model):
         return self.project_name
 
     def get_model_filename(self):
-        return str(self.model_path.name).split("/")[-1]
+        return os.path.basename(self.model_path.name)
 
     def get_symbol_filename(self):
-        return str(self.symbol_path.name).split("/")[-1]
+        return os.path.basename(self.symbol_path.name)
 
     def get_init_filename(self):
-        return str(self.init_path.name).split("/")[-1]
+        return os.path.basename(self.init_path.name)
 
     def get_project_slug(self):
         return self.slug
 
     def get_relative_model_path(self):
-        return str(self.model_path).split("/media_cdn/")[-1]
+        return str(self.model_path).split("media_cdn")[-1][1:]
 
     def get_relative_symbol_path(self):
-        return str(self.symbol_path).split("/media_cdn/")[-1]
+        return str(self.symbol_path).split("media_cdn")[-1][1:]
 
     def get_relative_init_path(self):
-        return str(self.init_path).split("/media_cdn/")[-1]
+        return str(self.init_path).split("media_cdn")[-1][1:]
 
     def get_model_download_url(self):
         media_url = settings.MEDIA_URL
         # return media_url + "%s" % (self.get_relative_model_path())
-        return "%s%s/%s/%s" % (media_url, self.slug, "boolnet", self.get_model_filename())
+        return os.path.join(media_url[:-1], self.slug, "boolnet", self.get_model_filename())
 
     def get_symbol_download_url(self):
         media_url = settings.MEDIA_URL
         # return media_url + "%s" % (self.get_relative_symbol_path())
-        return "%s%s/%s/%s" % (media_url, self.slug, "boolnet", self.get_symbol_filename())
+        return os.path.join(media_url[:-1], self.slug, "boolnet", self.get_symbol_filename())
 
     def get_init_download_url(self):
         media_url = settings.MEDIA_URL
         # return media_url + "%s" % (self.get_relative_init_path())
-        return "%s%s/%s/%s" % (media_url, self.slug, "boolnet", self.get_init_filename())
+        return os.path.join(media_url[:-1], self.slug, "boolnet", self.get_init_filename())
 
 
     class Meta:
