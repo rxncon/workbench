@@ -62,15 +62,16 @@ class Bool(View):
         if self.form.is_valid():
             media_url = settings.MEDIA_URL
             media_root = settings.MEDIA_ROOT
-            system_type = None
-            try:
-                system = Quick.objects.filter(id=system_id)[0]
+            loaded = File.objects.filter(loaded=True)
+            if not loaded:
                 system_type = "Quick"
+                system = Quick.objects.filter(id=system_id)[0]
                 project_name = system.name
                 book = RxnconQuick(system.quick_input)
-            except:
-                system = File.objects.filter(id=system_id)[0]
+
+            else:
                 system_type = "File"
+                system = File.objects.filter(id=system_id)[0]
                 project_name = system.project_name
                 book = ExcelBook(system.get_absolute_path())
 

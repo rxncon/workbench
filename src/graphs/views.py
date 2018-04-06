@@ -10,6 +10,7 @@ from django.conf import settings
 from django.contrib import messages
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
+from django.template import RequestContext
 from django.views.generic import View
 from rxncon.visualization.graphML import map_layout2xgmml
 
@@ -156,15 +157,16 @@ class ReaGraph(View):
         if self.form.is_valid():
             media_url = settings.MEDIA_URL
             media_root = settings.MEDIA_ROOT
-            system_type = None
-            try:
-                system = Quick.objects.filter(id=system_id)[0]
+            loaded = File.objects.filter(loaded=True)
+            if not loaded:
                 system_type = "Quick"
+                system = Quick.objects.filter(id=system_id)[0]
                 project_name = system.name
                 book = RxnconQuick(system.quick_input)
-            except:
-                system = File.objects.filter(id=system_id)[0]
+
+            else:
                 system_type = "File"
+                system = File.objects.filter(id=system_id)[0]
                 project_name = system.project_name
                 book = ExcelBook(system.get_absolute_path())
 
@@ -230,17 +232,18 @@ class SReaGraph(ReaGraph):
         if self.form.is_valid():
             media_url = settings.MEDIA_URL
             media_root = settings.MEDIA_ROOT
-            system_type = None
-            try:
-                system = Quick.objects.filter(id=system_id)[0]
+            loaded = File.objects.filter(loaded=True)
+            if not loaded:
                 system_type = "Quick"
+                system = Quick.objects.filter(id=system_id)[0]
                 project_name = system.name
                 book = RxnconQuick(system.quick_input)
-            except:
-                system = File.objects.filter(id=system_id)[0]
+
+            else:
                 system_type = "File"
+                system = File.objects.filter(id=system_id)[0]
                 project_name = system.project_name
-                book = system.get_absolute_path()
+                book = ExcelBook(system.get_absolute_path())
 
             graph_file_name = system.slug + "_" + system.get_filename().split(".")[0] + "_sReaGraph.xgmml"
             graph_file_path = os.path.join(media_root, system.slug, "graphs", graph_file_name)
