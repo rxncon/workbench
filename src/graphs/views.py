@@ -46,8 +46,8 @@ def check_filepath(request, graph_file_path, file, media_root):
     if os.path.exists(graph_file_path):
         messages.warning(request, "Graph file already exists. Delete it first in the system's detail view.")
         return False
-    elif not os.path.exists("%s/%s/%s" % (media_root, file.slug, "graphs")):
-        os.makedirs("%s/%s/%s" % (media_root, file.slug, "graphs"))
+    elif not os.path.exists(os.path.join(media_root, file.slug, "graphs")):
+        os.makedirs(os.path.join(media_root, file.slug, "graphs"))
         return True
     else:
         return True
@@ -72,7 +72,7 @@ def regGraphFile(request, system_id=None):
 
         system = File.objects.get(id=system_id)
         graph_file_name = system.slug + "_" + system.get_filename().split(".")[0] + "_regGraph.xgmml"
-        graph_file_path = "%s/%s/%s/%s" % (media_root, system.slug, "graphs", graph_file_name)
+        graph_file_path = os.path.join(media_root, system.slug, "graphs", graph_file_name)
 
         if not check_filepath(request, graph_file_path, system, media_root):
             return file_detail(request, system_id)
@@ -109,7 +109,7 @@ def regGraphQuick(request, system_id=None):
 
         system = Quick.objects.get(id=system_id)
         graph_file_name = system.slug + "_" + system.get_filename().split(".")[0] + "_regGraph.xgmml"
-        graph_file_path = "%s/%s/%s/%s" % (media_root, system.slug, "graphs", graph_file_name)
+        graph_file_path = os.path.join(media_root, system.slug, "graphs", graph_file_name)
 
         if not check_filepath(request, graph_file_path, system, media_root):
             return quick_detail(request, system_id)
@@ -169,7 +169,7 @@ class ReaGraph(View):
                 book = ExcelBook(system.get_absolute_path())
 
             graph_file_name = system.slug + "_" + system.get_filename().split(".")[0] + "_reaGraph.xgmml"
-            graph_file_path = "%s/%s/%s/%s" % (media_root, system.slug, "graphs", graph_file_name)
+            graph_file_path = os.path.join(media_root, system.slug, "graphs", graph_file_name)
 
             if not check_filepath(request, graph_file_path, system, media_root):
                 if system_type == "Quick":
@@ -243,7 +243,7 @@ class SReaGraph(ReaGraph):
                 book = system.get_absolute_path()
 
             graph_file_name = system.slug + "_" + system.get_filename().split(".")[0] + "_sReaGraph.xgmml"
-            graph_file_path = "%s/%s/%s/%s" % (media_root, system.slug, "graphs", graph_file_name)
+            graph_file_path = os.path.join(media_root, system.slug, "graphs", graph_file_name)
 
             if not check_filepath(request, graph_file_path, system, media_root):
                 if system_type == "Quick":

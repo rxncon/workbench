@@ -2,11 +2,12 @@ from django.conf import settings
 from django.db import models
 from django.db.models.signals import pre_save
 from django.utils.text import slugify
+import os
 
 
 def upload_location(instance, filename):
-    return "%s/%s/%s" % (instance.slug, "graphs", filename)
-
+    # return "%s/%s/%s" % (instance.slug, "graphs", filename)
+    return os.path.join(instance.slug, "graphs", filename)
 
 class Graph_from_File(models.Model):
     project_name = models.CharField(max_length=120)
@@ -25,24 +26,23 @@ class Graph_from_File(models.Model):
         return self.project_name
 
     def get_filename(self):
-        return str(self.graph_file.name).split("/")[-1]
+        return os.path.basename(self.graph_file.name)
 
     def get_project_slug(self):
         return self.slug
 
     def get_relative_path(self):
-        return str(self.graph_file).split("/media_cdn/")[-1]
+        return str(self.graph_file).split("media_cdn")[-1][1:]
 
     def get_download_url(self):
         media_url = settings.MEDIA_URL
-        # return media_url + "%s" % (self.get_relative_path())
-        graph_file_name = self.get_filename()#.split(".")[0] + "_regGraph.xgmml"
-        return "%s%s/%s/%s" % (media_url, self.slug, "graphs", graph_file_name)
+        graph_file_name = self.get_filename()
+        return os.path.join(media_url[:-1], self.slug, "graphs", graph_file_name)
 
 
     def get_absolute_path(self):
         media_root = settings.MEDIA_ROOT
-        return media_root + "/%s" % (self.file)
+        return os.path.join(media_root, self.file)
 
     class Meta:
         ordering = ["-updated", "-timestamp"]

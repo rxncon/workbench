@@ -87,11 +87,11 @@ def quick_new(request):
         instance.save()
 
         filename = instance.slug + "_quick_definition.txt"
-        model_path = "%s/%s/%s/%s" % (media_root, instance.slug, "description", filename)
+        model_path = os.path.join(media_root, instance.slug, "description", filename)
 
         try:
-            os.mkdir("%s/%s" % (media_root, instance.slug))
-            os.mkdir("%s/%s/%s" % (media_root, instance.slug, "description"))
+            os.mkdir(os.path.join(media_root, instance.slug))
+            os.mkdir(os.path.join(media_root, instance.slug, "description"))
             with open(model_path, mode='w') as f:
                 f.write(instance.quick_input)
         except FileExistsError as e:

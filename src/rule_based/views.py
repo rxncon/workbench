@@ -35,8 +35,8 @@ def check_filepath(request, file_path, file, media_root):
     if os.path.exists(file_path):
         messages.warning(request, "Rule based model files already exist. Delete first in the system's detail view.")
         return False
-    elif not os.path.exists("%s/%s/%s" % (media_root, file.slug, "graphs")):
-        os.makedirs("%s/%s/%s" % (media_root, file.slug, "graphs"))
+    elif not os.path.exists(os.path.join(media_root, file.slug, "rule_based")):
+        os.makedirs(os.path.join(media_root, file.slug, "rule_based"))
         return True
     else:
         return True
@@ -74,7 +74,7 @@ class Rule_based(View):
                 book = ExcelBook(system.get_absolute_path())
 
             bngl_model_filename = system.slug + "_model.bngl"
-            model_path = "%s/%s/%s/%s" % (media_root, system.slug, "rule_based", bngl_model_filename)
+            model_path = os.path.join(media_root, system.slug, "rule_based", bngl_model_filename)
 
             if not check_filepath(request, model_path, system, media_root):
                 if system_type == "Quick":
@@ -89,8 +89,8 @@ class Rule_based(View):
             rbm = rule_based_model_from_rxncon(rxncon_system)
             model_str = bngl_from_rule_based_model(rbm)
 
-            if not os.path.exists("%s/%s/%s" % (media_root, system.slug, "rule_based")):
-                os.mkdir("%s/%s/%s" % (media_root, system.slug, "rule_based"))
+            if not os.path.exists(os.path.join(media_root, system.slug, "rule_based")):
+                os.mkdir(os.path.join(media_root, system.slug, "rule_based"))
 
             with open(model_path, mode='w') as f:
                 f.write(model_str)

@@ -21,7 +21,8 @@ except ImportError:
 
 
 def upload_location(instance, filename):
-    return "%s/%s" % (instance.slug, filename)
+    # return "%s/%s" % (instance.slug, filename)
+    return os.path.join(instance.slug, filename)
 
 
 class File(models.Model):
@@ -56,7 +57,7 @@ class File(models.Model):
         return reverse("fileTree:load", kwargs={"id": self.id})
 
     def get_filename(self):
-        return str(self.file.name).split("/")[-1]
+        return os.path.basename(self.file.name)
 
     def get_project_slug(self):
         return self.slug
@@ -69,11 +70,11 @@ class File(models.Model):
 
     def get_download_url(self):
         media_url = settings.MEDIA_URL
-        return media_url + "%s" % (self.file)
+        return os.path.join(media_url, str(self.file))
 
     def get_absolute_path(self):
         media_root = settings.MEDIA_ROOT
-        return media_root + "/%s" % (self.file)
+        return os.path.join(media_root, str(self.file))
 
     def delete_file_from_harddisk(self):
         path = self.get_absolute_path()

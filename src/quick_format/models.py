@@ -62,12 +62,12 @@ class Quick(models.Model):
     def get_download_url(self):
         media_url = settings.MEDIA_URL
         filename = self.slug + "_quick_definition.txt"
-        return "%s%s/%s/%s" % (media_url, self.slug, "description", filename)
+        return os.path.join(media_url[:-1], self.slug, "description", filename)
 
     def delete_from_harddisk(self):
         media_root = settings.MEDIA_ROOT
         filename = self.slug + "_quick_definition.txt"
-        path = "%s/%s/" % (media_root, self.slug)
+        path = os.path.join(media_root, self.slug)
         if os.path.exists(path):
             shutil.rmtree(path)
 
