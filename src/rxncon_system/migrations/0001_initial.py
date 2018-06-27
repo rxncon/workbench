@@ -14,18 +14,16 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Rule_based_from_rxnconsys',
+            name='Rxncon_system',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('project_name', models.CharField(max_length=120)),
+                ('project_id', models.IntegerField()),
+                ('project_type', models.CharField(max_length=5)),
                 ('slug', models.SlugField(blank=True)),
-                ('comment', models.TextField(blank=True, null=True)),
                 ('timestamp', models.DateTimeField(auto_now_add=True)),
                 ('updated', models.DateTimeField(auto_now=True)),
-                ('model_path', models.FileField(null=True, upload_to='')),
+                ('pickled_system', models.BinaryField()),
             ],
-            options={
-                'ordering': ['-updated', '-timestamp'],
-            },
         ),
     ]
