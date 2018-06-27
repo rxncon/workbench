@@ -3,7 +3,7 @@
 }
 
 .navbar a {
-    font-size: 11px;
+    font-size: 13px;
 }
 
 .navbar-header {
@@ -98,31 +98,6 @@ a:hover, a:active, a:focus { /* Durch diese Gruppe von Selektoren wird bei Verwe
     background-color: #FBFBFB;
 }
 
-/* ~~ Dies sind die Spalten für das Layout. ~~
-
-1) Eine Auffüllung wird nur oben und/oder unten in den div-Tags positioniert. Die Elemente innerhalb dieser div-Tags
-verfügen über eine seitliche Auffüllung. Dadurch müssen Sie keine Box-Modell-Berechnungen durchführen.
-Zu beachten: Wenn Sie dem div-Tag eine seitliche Auffüllung oder einen Rahmen hinzufügen, werden diese zu der f
-estgelegten Breite addiert und ergeben die *gesamte* Breite. Sie können auch die Auffüllung für das Element im div-Tag
-entfernen und ein zweites div-Tag ohne Breite und mit der gewünschten Auffüllung im ersten div-Tag einfügen.
-
-2) Für die Spalten wurde kein Rand angegeben, da es sich um fließende Spalten handelt. Wenn Sie unbedingt einen Rand
-hinzufügen möchten, platzieren Sie ihn nicht auf der Seite in Flussrichtung (z. B. ein rechter Rand in einem div-Tag,
-das so festgelegt ist, dass das Element nach rechts fließt). In vielen Fällen kann stattdessen eine Auffüllung verwendet
-werden. Bei div-Tags, bei denen diese Regel gebrochen werden muss, sollten Sie der Regel des div-Tags eine
-display:inline-Deklaration hinzufügen, um das Problem zu umgehen, dass in einigen Versionen von Internet Explorer der
-Rand doppelt angezeigt wird.
-
-3) Da Klassen in einem Dokument mehrmals verwendet werden können (und zudem auf ein Element mehrere Klassen angewendet
-werden können), wurden den Spalten Klassennamen statt IDs zugewiesen. Beispielsweise können zwei div-Tags für eine
-Seitenleiste bei Bedarf gestapelt werden. Diese div-Tags können problemlos in IDs geändert werden, solange Sie sie nur
-einmal pro Dokument verwenden.
-
-4) Wenn Sie die Navigation auf der rechten statt auf der linken Seite platzieren möchten, lassen Sie diese Spalten e
-infach in die andere Richtung fließen (alle nach rechts anstatt alle nach links). Die Spalten werden dann in umgekehrter
-Reihenfolge dargestellt. Die div-Tags in der HTML-Quelle müssen nicht verschoben werden.
-
-*/
 .sidebar1 {
     float: left;
     width: 20%;
@@ -170,6 +145,12 @@ Reihenfolge dargestellt. Die div-Tags in der HTML-Quelle müssen nicht verschobe
     border-top-width: 1px;
     border-top-style: solid;
     border-top-color: #a4a4a4;
+}
+
+.single_row {
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline;
 }
 
 .list_row {

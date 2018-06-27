@@ -15,7 +15,8 @@
     {% if add_to_project %}
     <h2 class="form"> Add file to '{{project_name}}'</h2>
     {% else %}
-    <h2 class="form"> Upload file</h2>
+        <h2 class="form"> Upload file <a href="{% url 'getting_started' %}"><span class="glyphicon glyphicon-question-sign"></span></a>
+</h2>
     {% endif %}
     <form class="form" method="post" action='' enctype="multipart/form-data">
         {% csrf_token %}
