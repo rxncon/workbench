@@ -12,7 +12,7 @@ setup(
     scripts=[
         'rxncon_workbench.py'
     ],
-    version='0.97',
+    version='0.98',
     packages=find_packages(),
     include_package_data=True,
     license='LGPL License', 
@@ -24,6 +24,7 @@ setup(
     keywords=['sysbio', 'signalling', 'systems biology'],
     install_requires=[
         'django==1.10.4',
+        'networkx==2.0',
         'rxncon==2.0b17',
     ],
 )
