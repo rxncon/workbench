@@ -143,6 +143,8 @@ src/rxncon_system/views.py
 src/rxncon_system/__pycache__/__init__.cpython-35.pyc
 src/rxncon_system/__pycache__/admin.cpython-35.pyc
 src/rxncon_system/__pycache__/models.cpython-35.pyc
+src/rxncon_system/migrations/0001_initial.py
+src/rxncon_system/migrations/__init__.py
 src/static/bootstrap/css/bootstrap-theme.css
 src/static/bootstrap/css/bootstrap-theme.css.map
 src/static/bootstrap/css/bootstrap-theme.min.css

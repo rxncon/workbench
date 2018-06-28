@@ -12,7 +12,7 @@ setup(
     scripts=[
         'rxncon_workbench.py'
     ],
-    version='0.98',
+    version='0.99',
     packages=find_packages(),
     include_package_data=True,
     license='LGPL License', 

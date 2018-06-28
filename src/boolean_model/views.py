@@ -34,7 +34,7 @@ except ImportError:
 
 def check_filepath(request, file_path, file, media_root):
     if os.path.exists(file_path):
-        messages.warning(request, "Boolean model files already exist. Delete first in the system's detail view.")
+        messages.warning(request, "Boolean model files already exist. Delete first in the respective system's detail view.")
         return False
     elif not os.path.exists(os.path.join(media_root, file.slug, "graphs")):
         os.makedirs(os.path.join(media_root, file.slug, "graphs"))
